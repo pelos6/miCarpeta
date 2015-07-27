@@ -42,25 +42,26 @@ AppAsset::register($this);
                     //['label' => 'Formulario', 'url' => ['/site/entry'], 'visible' => !Yii::$app->user->isGuest],
                     //['label' => 'Saludo', 'url' => ['/site/saluda']],
                     // ['label' => 'Paises', 'url' => ['/country/index'], 'visible' => !Yii::$app->user->isGuest],
-                   // ['label' => 'Usuarios', 'url' => ['/user/index'], 'visible' => Yii::$app->user->id == 1],
+                    // ['label' => 'Usuarios', 'url' => ['/user/index'], 'visible' => Yii::$app->user->id == 1],
                     ['label' => 'Acerca de', 'url' => ['/site/about'], 'visible' => !Yii::$app->user->isGuest],
-                     Yii::$app->user->isGuest ?
-                        ['label' => 'Usuarios', 'url' => ['/user/index'], 'visible' => false] :
-                        ['label' => 'Usuarios', 'url' => ['/user/index'], 'visible' => User::isUserAdmin(Yii::$app->user->identity->id)],
+                    Yii::$app->user->isGuest ?
+                            ['label' => 'Usuarios', 'url' => ['/user/index'], 'visible' => false] :
+                            ['label' => 'Usuarios', 'url' => ['/user/index'], 'visible' => User::isUserAdmin(Yii::$app->user->identity->id)],
+                    ['label' => 'Conversión', 'url' => ['/site/conversion']],
                     ['label' => 'Contacto', 'url' => ['/site/contacto']],
                     ['label' => 'Registro', 'url' => ['/site/registro'], 'visible' => Yii::$app->user->isGuest],
-                    Yii::$app->user->isGuest ?
-                            ['label' => 'Actos', 'url' => ['/site/actos'], 'visible' => false] :
-                            ['label' => 'Actos', 'url' => ['/site/actos'], 'visible' => Yii::$app->user->identity->actos == 1],
-                    Yii::$app->user->isGuest ?
-                            ['label' => 'Oposiciones', 'url' => ['/site/oposiciones'], 'visible' => false] :
-                            ['label' => 'Oposiciones', 'url' => ['/site/oposiciones'], 'visible' => Yii::$app->user->identity->oposiciones == 1],
                     Yii::$app->user->isGuest ?
                             ['label' => 'Interinos', 'url' => ['/site/interinos'], 'visible' => false] :
                             ['label' => 'Interinos', 'url' => ['/site/interinos'], 'visible' => Yii::$app->user->identity->interinos == 1],
                     Yii::$app->user->isGuest ?
+                            ['label' => 'Actos', 'url' => ['/site/actos'], 'visible' => false] :
+                            ['label' => 'Actos', 'url' => ['/site/actos'], 'visible' => Yii::$app->user->identity->actos == 1],
+                    Yii::$app->user->isGuest ?
                             ['label' => 'Concursos', 'url' => ['/site/concrusos'], 'visible' => false] :
                             ['label' => 'Concursos', 'url' => ['/site/concursos'], 'visible' => Yii::$app->user->identity->concursos == 1],
+                    Yii::$app->user->isGuest ?
+                            ['label' => 'Oposiciones', 'url' => ['/site/oposiciones'], 'visible' => false] :
+                            ['label' => 'Oposiciones', 'url' => ['/site/oposiciones'], 'visible' => Yii::$app->user->identity->oposiciones == 1],
                     Yii::$app->user->isGuest ?
                             ['label' => 'Acceder', 'url' => ['/site/login']] :
                             ['label' => 'Salir (' . Yii::$app->user->identity->username . ' i ' . Yii::$app->user->identity->interinos . ' a ' . Yii::$app->user->identity->actos . ' c ' . Yii::$app->user->identity->concursos . ' o ' . Yii::$app->user->identity->oposiciones . ')',
@@ -83,7 +84,7 @@ AppAsset::register($this);
 
         <footer class="footer">
             <div class="container">
-                <p class="pull-left">&copy; Mi Carpeta <?= date('Y') ?></p>
+                <p class="pull-left">&copy; Mi Carpeta <?= date('Y') . ' webServices ' . Yii::$app->params["servidor"] ?></p>
                 <p class="pull-right"><?= Yii::powered() ?></p>
             </div>
         </footer>

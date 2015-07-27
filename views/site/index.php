@@ -9,7 +9,7 @@ $this->title = 'Mi Carpeta';
     <div class="jumbotron">
         <h1>Bienvenido a MiCarpeta!</h1>
 
-        <p class="lead">Su espacio personal para consultar los temas de su interes relacionados con el Deparamento de Educación, Universidad, Cultura y Deporte.</p>
+        <p class="lead">Su espacio personal para consultar los temas de su interes relacionados con el Departamento de Educación, Cultura y Deporte.</p>
 
     </div>
 
@@ -19,36 +19,34 @@ $this->title = 'Mi Carpeta';
             <div class="col-lg-3">
                 <h2>Interinos</h2>
 
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
-                    dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
-                    ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
-                    fugiat nulla pariatur.</p>
+                <p>Podrá consultar las convocatorias de amplicación de listas y de nueva baremación de las listas actuales que 
+                    estan activas tanto de primaria como de secundaria.
+                    También podrá consultar las solicitudes presentadas en esas convocatorias así como el estado de tramitación 
+                    de esas solicitudes</p>
 
             </div>
             <div class="col-lg-3">
                 <h2>Actos de Elección</h2>
 
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
-                    dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
-                    ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
-                    fugiat nulla pariatur.</p>
+                <p>Podrá consultar los actos de elección activos tanto de primaria como de secundaria.
+                También podrá consultar en que actos de elección esta convocado y consultar el estado de 
+                su solicitud si la ha presentado.</p>
             </div>
             <div class="col-lg-3">
                 <h2>Consurso de Traslados</h2>
 
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
-                    dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
-                    ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
-                    fugiat nulla pariatur.</p>
+                <p>Podrá consultar las convocatorias de concurso de traslados activas tanto de primaria como de secundaria sean
+                    nacionales o autonómicas.
+                    También podrá consultar las solicitudes presentadas en esas convocatorias así como el estado de tramitación 
+                    de esas solicitudes</p>
 
             </div>
             <div class="col-lg-3">
                 <h2>Oposiciones</h2>
 
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
-                    dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
-                    ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
-                    fugiat nulla pariatur.</p>
+                <p>Podrá consultar las convocatorias de oposicion activas tanto de primaria como de secundaria .
+                    También podrá consultar las solicitudes presentadas en esas convocatorias así como el estado de tramitación 
+                    de esas solicitudes</p>
 
             </div>
         </div>

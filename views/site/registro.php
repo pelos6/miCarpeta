@@ -26,6 +26,10 @@ $form = ActiveForm::begin([
 </div>
 
 <div class="form-group">
+    <?= $form->field($model, "dni")->input("dni") ?>   
+</div>
+
+<div class="form-group">
     <?= $form->field($model, "email")->input("email") ?>   
 </div>
 

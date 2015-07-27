@@ -225,9 +225,10 @@ class SiteController extends Controller {
         if ($model->load(Yii::$app->request->post())) {
             if ($model->validate()) {
                 //Preparamos la consulta para guardar el usuario
-                error_log('DEBUG1: usuario-->'.$model->username .' interinos-->'.$model->interinos);
+                error_log('DEBUG1: usuario-->' . $model->username . ' interinos-->' . $model->interinos);
                 $table = new Users;
                 $table->username = $model->username;
+                $table->dni = $model->dni;
                 $table->email = $model->email;
                 $table->interinos = $model->interinos;
                 $table->actos = $model->actos;
@@ -252,9 +253,11 @@ class SiteController extends Controller {
 
                     $subject = "Confirmar registro";
                     $body = "<h1>Haga click en el siguiente enlace para finalizar su registro en MiCarpeta</h1>";
-                    //$body .= "<a href='http://yii.local/index.php?r=site/confirm&id=" . $id . "&authKey=" . $authKey . "'>Confirmar</a>";
+                    // para infenlaces
+                    //$body .= "<a href='http://www.javieriranzo.infenlaces.com/proyecto/web/index.php?r=site/confirm&id=" . $id . "&authKey=" . $authKey . "'>Confirmar</a>";
+                    // para desarrollo local
                     $body .= "<a href='http://localhost/CicloFormativoGradoSuperior/practicas_propias/php/miCarpeta/web/index.php?r=site/confirm&id=" . $id . "&authKey=" . $authKey . "'>Confirmar</a>";
-                    // tendra que ser diferente en producción
+       
                     //Enviamos el correo
                     Yii::$app->mailer->compose()
                             ->setTo($user->email)
@@ -264,6 +267,7 @@ class SiteController extends Controller {
                             ->send();
 
                     $model->username = null;
+                    $model->dni = null;
                     $model->email = null;
                     $model->password = null;
                     $model->password_repeat = null;
@@ -596,4 +600,20 @@ class SiteController extends Controller {
         return $this->render('interinos');
     }
 
+    public function actionActos() {
+        return $this->render('actos');
+    }
+
+    public function actionConcursos() {
+        return $this->render('concursos');
+    }
+
+    public function actionOposiciones() {
+        return $this->render('oposiciones');
+    }
+    
+    public function actionConversion() {
+        return $this->render('conversion');
+    }
+    
 }

@@ -3,12 +3,13 @@
 namespace app\models;
 
 use Yii;
-use yii\base\model;
+use yii\base\Model;
 use app\models\Users;
 
-class RegistroForm extends model {
+class RegistroForm extends Model {
 
-    public $username = 'interinos';
+    public $username = 'interinosModel';
+    public $dni = '01234567';
     public $email = 'javieriranzo3@gmail.com';
     public $password = 'interinos';
     public $password_repeat = 'interinos';
@@ -22,6 +23,7 @@ class RegistroForm extends model {
             [['username', 'email', 'password', 'password_repeat'], 'required', 'message' => 'Campo requerido'],
             ['username', 'match', 'pattern' => "/^.{6,50}$/", 'message' => 'Mínimo 6 y máximo 50 caracteres'],
             ['username', 'match', 'pattern' => "/^[0-9a-z]+$/i", 'message' => 'Sólo se aceptan letras y números'],
+            ['dni', 'required'],
             ['username', 'username_existe'],
             ['email', 'match', 'pattern' => "/^.{5,80}$/", 'message' => 'Mínimo 5 y máximo 80 caracteres'],
             ['email', 'email', 'message' => 'Formato no válido'],
@@ -71,6 +73,7 @@ class RegistroForm extends model {
     public function attributeLabels() {
         return [
             'username' => 'Nombre',
+            'dni' => 'Dni',
             'email' => 'Correo electrónico',
             'password' => 'Contraseña',
             'password_repeat' => 'Repite la contraseña',

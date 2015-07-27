@@ -12,7 +12,7 @@ $this->params['breadcrumbs'][] = $this->title;
 <div class="site-login">
     <h1><?= Html::encode($this->title) ?></h1>
 
-    <p>Please fill out the following fields to login:</p>
+    <p>Por favor, rellene los campos para acceder a su carpeta:</p>
 
     <?php $form = ActiveForm::begin([
         'id' => 'login-form',
@@ -40,7 +40,7 @@ $this->params['breadcrumbs'][] = $this->title;
     <?php ActiveForm::end(); ?>
 
     <div class="col-lg-offset-1" style="color:#999;">
-        You may login with <strong>javier/pelos678 administrador</strong> or <strong>pelos6/pelos678 usuario</strong>.<br>
+        Te puede logear con <strong>javier/pelos678 administrador</strong> or <strong>interinos/interinos usuario</strong>.<br>
        
     </div>
 </div>

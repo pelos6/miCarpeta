@@ -76,4 +76,14 @@ class LoginForm extends Model
 
         return $this->_user;
     }
+       /*
+    Pongo los textos en castellano*/
+    public function attributeLabels()
+    {
+     return array(
+      'username'=>'Usuario',
+      'password'=>'Contraseña',
+      'rememberMe'=>'Recordarme la siguiente vez',
+     );
+    }
 }
