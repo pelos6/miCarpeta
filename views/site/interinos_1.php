@@ -1,6 +1,7 @@
 <?php
 
 use yii\helpers\Html;
+use yii\helpers\Url;
 
 /* @var $this yii\web\View */
 $this->title = 'Interinos';
@@ -25,6 +26,7 @@ $clienteSigi = new SoapClient(null, array('location' => $urlSigi, 'uri' => $uriS
 //        error_log('DEBUG: $response_string ' . $response_string);
         foreach ($convocatoriasListasActivas as $convocatoriaListaActiva) {
             echo $convocatoriaListaActiva->des_con . "<br />\n";
+            echo '<a href="' .  Url::toRoute(["convocatoria", "id" => $convocatoriaListaActiva->cod_con]). '">'. $convocatoriaListaActiva->des_con. "</a><br />\n";
         }
 //    echo("<pre>");
 //    print_r($convocatoriasListasActivas);

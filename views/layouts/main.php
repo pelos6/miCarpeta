@@ -51,8 +51,8 @@ AppAsset::register($this);
                     ['label' => 'Contacto', 'url' => ['/site/contacto']],
                     ['label' => 'Registro', 'url' => ['/site/registro'], 'visible' => Yii::$app->user->isGuest],
                     Yii::$app->user->isGuest ?
-                            ['label' => 'Interinos', 'url' => ['/site/interinos'], 'visible' => false] :
-                            ['label' => 'Interinos', 'url' => ['/site/interinos'], 'visible' => Yii::$app->user->identity->interinos == 1],
+                            ['label' => 'Interinos', 'url' => ['/interinos/interinos'], 'visible' => false] :
+                            ['label' => 'Interinos', 'url' => ['/interinos/interinos'], 'visible' => Yii::$app->user->identity->interinos == 1],
                     Yii::$app->user->isGuest ?
                             ['label' => 'Actos', 'url' => ['/site/actos'], 'visible' => false] :
                             ['label' => 'Actos', 'url' => ['/site/actos'], 'visible' => Yii::$app->user->identity->actos == 1],

@@ -76,9 +76,34 @@ class DBSigicon {
      * para el usuario, tanto de ampliación de listas como de rebaremación
      * 
      */
+    public static function obtieneConvocatoriaListas($cod_con) {
+        $sql = "select cod_con, des_con, cod_tip_con, 'S' l_act, f_res, f_pub,";
+        $sql .= " f_ini_sol, f_fin_sol, url from vconvocatoriaslistasactivas ";
+        $sql .= " WHERE cod_con=:cod_con ";
+        error_log('DEBUG: en obtieneConvocatoriaListas ' . $sql);
+        // $resultado = self::ejecutaConsulta($sql);
+        $resultado = self::ejecutaConsulta($sql, array('cod_con' => $cod_con));
+        $convocatoriaListas = array();
+
+        if ($resultado) {
+            // Añadimos un elemento por cada producto obtenido
+            $row = $resultado->fetch();
+            error_log('DEBUG: en obtieneConvocatoriaListas resultado true');
+            $convocatoriaListas = new ConvocatoriaLista($row);
+        }
+        return $convocatoriaListas;
+    }
+
+    /**
+     * Devuelve un array con las convocatorias a listas que estan activas
+     * para el usuario, tanto de ampliación de listas como de rebaremación
+     * 
+     */
     public static function obtieneConvocatoriasListasActivas() {
-        $sql = "select cod_con, des_con, cod_tip_con, 'S' l_act from vconvocatoriaslistasactivas;";
-        error_log('DEBUG: en obtieneConvocatoriasListasActivas '.$sql);
+//        $sql = "select cod_con, des_con, cod_tip_con, 'S' l_act from vconvocatoriaslistasactivas;";
+        $sql = "select cod_con, des_con, cod_tip_con, 'S' l_act, f_res, f_pub,";
+        $sql .= " f_ini_sol, f_fin_sol, url from vconvocatoriaslistasactivas ";
+        error_log('DEBUG: en obtieneConvocatoriasListasActivas ' . $sql);
         // $resultado = self::ejecutaConsulta($sql);
         $resultado = self::ejecutaConsulta($sql, null);
         $convocatoriasListasActivas = array();
@@ -96,7 +121,7 @@ class DBSigicon {
 
         return $convocatoriasListasActivas;
     }
-    
+
     /**
      * Devuelve un array con las solicitudes a concursod de traslados del
      * usuario
@@ -120,6 +145,7 @@ class DBSigicon {
         }
         return $solicitudesOposiciones;
     }
+
     /**
      * Devuelve un array con las oposiciones que estan activas
      * 
@@ -133,7 +159,7 @@ class DBSigicon {
         $oposicionesActivos = array();
 
         if ($resultado) {
-           // error_log('DEBUG: en obtieneOposicionesActivas resultado true');
+            // error_log('DEBUG: en obtieneOposicionesActivas resultado true');
             $row = $resultado->fetch();
             while ($row != null) {
                 $oposicionesActivos[] = new Oposicion($row);
@@ -142,7 +168,6 @@ class DBSigicon {
         }
         return $oposicionesActivos;
     }
-
 
 }
 

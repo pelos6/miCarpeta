@@ -83,7 +83,6 @@ $f = ActiveForm::begin([
 <?php endforeach ?>
 </table>
 
-<?=
-LinkPager::widget([
+<?=LinkPager::widget([
     "pagination" => $pages,
 ]);

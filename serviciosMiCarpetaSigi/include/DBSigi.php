@@ -73,7 +73,7 @@ class DBSigi {
      * 
      */
     public static function obtieneConsultasSituacionListas($dni) {
-        $sql = "select cod_opc, tex_opc from vconsultasituacionlistas;";
+        $sql = "select cod_opc, tex_opc, url from vconsultasituacionlistas;";
         error_log('DEBUG: en obtieneConsultasSituacionListas  DBSigi ' . $sql. ' '.$dni);
         // $resultado = self::ejecutaConsulta($sql);
         $resultado = self::ejecutaConsulta($sql, null);

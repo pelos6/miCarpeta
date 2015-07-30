@@ -9,21 +9,6 @@ $urlPrimaria =   Yii::$app->params["servidor"] ."/serviciosMiCarpetaCtPri/servic
 $urlSecundaria = Yii::$app->params["servidor"] ."/serviciosMiCarpetaCtSec/servicioConcursosSecundaria.php";
 $uriPri = Yii::$app->params["servidor"] ."/serviciosMiCarpetaCtPri";
 $uriSec = Yii::$app->params["servidor"] ."/serviciosMiCarpetaCtSec";
-/* desde local */
-//$urlPrimaria =   "http://localhost/CicloFormativoGradoSuperior/practicas_propias/php/serviciosMiCarpetaCtPri/servicioConcursosPrimaria.php";
-//$urlSecundaria = "http://localhost/CicloFormativoGradoSuperior/practicas_propias/php/serviciosMiCarpetaCtSec/servicioConcursosSecundaria.php";
-//$uriPri = "http://localhost/CicloFormativoGradoSuperior/practicas_propias/php/serviciosMiCarpetaCtPri";
-//$uriSec = "http://localhost/CicloFormativoGradoSuperior/practicas_propias/php/serviciosMiCarpetaCtSec";
-/* desde infenlaces */
-//$urlPrimaria = "http://javieriranzo.infenlaces.com/serviciosMiCarpetaCtPri/servicioConcursosPrimaria.php";
-//$uriPri = "http://javieriranzo.infenlaces.com/serviciosMiCarpetaCtPri";
-//$urlSecundaria = "http://javieriranzo.infenlaces.com/serviciosMiCarpetaCtSec/servicioConcursosSecundaria.php";
-//$uriSec = "http://javieriranzo.infenlaces.com/serviciosMiCarpetaCtSec";
-/*desde  apostayadrede.com webserv.centroinf.com */
-//$urlPrimaria = "http://apostayadrede.com/serviciosMiCarpetaCtPri/servicioConcursosPrimaria.php";
-//$uriPri = "http://apostayadrede.com/serviciosMiCarpetaCtPri";
-//$urlSecundaria = "http://apostayadrede.com/serviciosMiCarpetaCtSec/servicioConcursosSecundaria.php";
-//$uriSec = "http://apostayadrede.com/serviciosMiCarpetaCtSec";
 error_log("DEBUG: desde parametros la urlPrimaria " . $urlPrimaria . " " . $urlSecundaria);
 $clienteConcursosPrimaria = new SoapClient(null, array('location' => $urlPrimaria, 'uri' => $uriPri));
 $clienteConcursosSecundaria = new SoapClient(null, array('location' => $urlSecundaria, 'uri' => $uriSec));

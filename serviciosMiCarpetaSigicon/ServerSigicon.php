@@ -3,6 +3,15 @@
 require_once('include/DBSigicon.php');
 
 class ServerSigicon {
+         /**
+     * Devuelve la información de la convocatoria a listas seleccionada
+     * 
+     */
+    public function getConvocatoriaListas($cod_con) {
+        error_log('DEBUG: en getConvocatoriaListas '.$cod_con);
+        $convocatoriaListas = DBSigicon::obtieneConvocatoriaListas($cod_con);
+        return $convocatoriaListas;
+    }
      /**
      * Devuelve un array con las convocatorias a listas activas
      * 

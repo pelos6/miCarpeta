@@ -257,7 +257,7 @@ class SiteController extends Controller {
                     //$body .= "<a href='http://www.javieriranzo.infenlaces.com/proyecto/web/index.php?r=site/confirm&id=" . $id . "&authKey=" . $authKey . "'>Confirmar</a>";
                     // para desarrollo local
                     $body .= "<a href='http://localhost/CicloFormativoGradoSuperior/practicas_propias/php/miCarpeta/web/index.php?r=site/confirm&id=" . $id . "&authKey=" . $authKey . "'>Confirmar</a>";
-       
+
                     //Enviamos el correo
                     Yii::$app->mailer->compose()
                             ->setTo($user->email)
@@ -596,8 +596,9 @@ class SiteController extends Controller {
         return $this->render('admin');
     }
 
-    public function actionInterinos() {
-        return $this->render('interinos');
+
+    public function actionConvocatoria() {
+        return $this->render('convocatoria');
     }
 
     public function actionActos() {
@@ -611,9 +612,9 @@ class SiteController extends Controller {
     public function actionOposiciones() {
         return $this->render('oposiciones');
     }
-    
+
     public function actionConversion() {
         return $this->render('conversion');
     }
-    
+
 }
