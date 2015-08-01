@@ -1,0 +1,3 @@
+create or replace synonym V_TIT_EXPTE_ACCESO
+  for EDUSOL.V_TIT_EXPTE_ACCESO;
+

@@ -1,0 +1,3 @@
+create or replace synonym T_SEG_APLICACIONES
+  for EDUSOL.T_SEG_APLICACIONES;
+

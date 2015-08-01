@@ -1,0 +1,19 @@
+create table W_AUD
+(
+  TIPO_ID   VARCHAR2(1) not null,
+  DNI       VARCHAR2(15) not null,
+  MODO      VARCHAR2(1) not null,
+  FECHA_USO DATE not null
+)
+;
+comment on column W_AUD.TIPO_ID
+  is 'Tido de identificador del participante';
+comment on column W_AUD.DNI
+  is 'Dni del del participante';
+comment on column W_AUD.MODO
+  is 'Modo de uso 0 correcto, 3 no hay contraseña, 9 contraseña incorrecta';
+comment on column W_AUD.FECHA_USO
+  is 'fecha de uso de la aplicación';
+alter table W_AUD
+  add constraint PK_W_AUD primary key (TIPO_ID, DNI, MODO, FECHA_USO);
+

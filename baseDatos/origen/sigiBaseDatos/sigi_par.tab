@@ -1,0 +1,27 @@
+create table SIGI_PAR
+(
+  TIPO_ID         VARCHAR2(1) not null,
+  DNI             VARCHAR2(15) not null,
+  COD_OPC         VARCHAR2(7) not null,
+  EST_PER         VARCHAR2(10),
+  DES_CAU_EST_PER VARCHAR2(177),
+  F_INI_PER       DATE
+)
+;
+comment on table SIGI_PAR
+  is ' Situación de los interinos a nivel de participante ';
+comment on column SIGI_PAR.TIPO_ID
+  is ' Tipo de Identificador del participante. ';
+comment on column SIGI_PAR.DNI
+  is ' Dni del participante. ';
+comment on column SIGI_PAR.COD_OPC
+  is 'Código de la opción para la que  puede consultar su situación en lsitas';
+comment on column SIGI_PAR.EST_PER
+  is 'Estado de la persona';
+comment on column SIGI_PAR.DES_CAU_EST_PER
+  is 'Descripción de la causa de estado de la persona';
+comment on column SIGI_PAR.F_INI_PER
+  is 'Fecha de inicio del estado';
+alter table SIGI_PAR
+  add constraint PK_SIGI_PAR primary key (TIPO_ID, DNI, COD_OPC);
+

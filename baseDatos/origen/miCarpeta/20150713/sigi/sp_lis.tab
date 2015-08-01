@@ -1,0 +1,69 @@
+create table SP_LIS
+(
+  TIPO_ID       VARCHAR2(1) not null,
+  DNI           VARCHAR2(15) not null,
+  COD_CUE       VARCHAR2(4) not null,
+  COD_ESP       VARCHAR2(3) not null,
+  TIP_LIS       VARCHAR2(1) not null,
+  FEC_ORI_BLO   VARCHAR2(8) not null,
+  COD_BLO       VARCHAR2(155) not null,
+  NUM_ORD       NUMBER(4) not null,
+  RES_TOT       NUMBER(6,4) not null,
+  COD_EST       VARCHAR2(10) not null,
+  DES_CAU_EST   VARCHAR2(150),
+  FEC_INI_EST   DATE,
+  DES_PRO_1_SUS VARCHAR2(8),
+  FEC_PRO_1_SUS DATE,
+  DES_PRO_2_SUS VARCHAR2(8),
+  FEC_PRO_2_SUS DATE,
+  ORD_DIS_ZA    VARCHAR2(4),
+  ORD_DIS_HU    VARCHAR2(4),
+  ORD_DIS_TE    VARCHAR2(4),
+  ORD_CCAO      VARCHAR2(4),
+  DES_PRO_REF   VARCHAR2(8)
+)
+;
+comment on table SP_LIS
+  is 'Situación del Participante a nivel de listas';
+comment on column SP_LIS.COD_CUE
+  is 'Cuerpo de la lista';
+comment on column SP_LIS.COD_ESP
+  is 'Especialidad que habilita para el cuerpo';
+comment on column SP_LIS.TIP_LIS
+  is 'Tipo lista';
+comment on column SP_LIS.FEC_ORI_BLO
+  is 'Fecha de origen del bloque de la lista';
+comment on column SP_LIS.COD_BLO
+  is 'Secuencia bloque y descripción de bloque de la lsita ';
+comment on column SP_LIS.NUM_ORD
+  is 'Numero de orden en el bloque';
+comment on column SP_LIS.COD_EST
+  is 'Estado a nivel de lista';
+comment on column SP_LIS.DES_CAU_EST
+  is 'Descripción causa estado lista';
+comment on column SP_LIS.FEC_INI_EST
+  is 'Fecha inicio de estado en lista';
+comment on column SP_LIS.DES_PRO_1_SUS
+  is 'Descripción provincia suspensión 1';
+comment on column SP_LIS.FEC_PRO_1_SUS
+  is 'Fecha suspensión provincia 1';
+comment on column SP_LIS.DES_PRO_2_SUS
+  is 'Descripción provincia suspensión 2';
+comment on column SP_LIS.FEC_PRO_2_SUS
+  is 'Fecha suspensión provincia 2';
+comment on column SP_LIS.ORD_DIS_ZA
+  is 'Número de orden de disponibilidad para vacantes en Zaragoza';
+comment on column SP_LIS.ORD_DIS_HU
+  is 'Número de orden de disponibilidad para vacantes en Huesca';
+comment on column SP_LIS.ORD_DIS_TE
+  is 'Número de orden de disponibilidad para vacantes en Teruel';
+comment on column SP_LIS.ORD_CCAO
+  is 'Número de orden de disponibilidad para vacantes de Curso Completo de AceptaciÃ³n Obligatoria';
+comment on column SP_LIS.DES_PRO_REF
+  is 'Descripción provincia de refenencia';
+alter table SP_LIS
+  add constraint PK_SIT_PAR primary key (TIPO_ID, DNI, COD_CUE, COD_ESP, TIP_LIS, FEC_ORI_BLO, COD_BLO, COD_EST);
+alter table SP_LIS
+  add constraint SP_LIS_SP_PAR foreign key (TIPO_ID, DNI)
+  references SP_PAR (TIPO_ID, DNI);
+

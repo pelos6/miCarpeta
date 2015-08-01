@@ -1,0 +1,3 @@
+create or replace synonym MIS_SESSIONES
+  for EDUSOL.MIS_SESSIONES;
+

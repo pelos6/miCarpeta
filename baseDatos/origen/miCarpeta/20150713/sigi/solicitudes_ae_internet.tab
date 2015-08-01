@@ -1,0 +1,42 @@
+create table SOLICITUDES_AE_INTERNET
+(
+  F_CONV_AE    DATE not null,
+  TIPO_ID      VARCHAR2(1) not null,
+  DNI          VARCHAR2(15) not null,
+  C_SOL        VARCHAR2(4) not null,
+  C_CENTGEST   VARCHAR2(8) not null,
+  F_HORA_ENT   DATE not null,
+  ESTADO_SOL   VARCHAR2(1) not null,
+  C_USU_ULTMOD VARCHAR2(8) not null,
+  F_ULTMOD     DATE not null
+)
+;
+comment on table SOLICITUDES_AE_INTERNET
+  is ' Solicitudes de vacantes realizadas por candidatos preseleccionados. ';
+comment on column SOLICITUDES_AE_INTERNET.F_CONV_AE
+  is 'Acto de Elección al que corresponde la Solicitud. ';
+comment on column SOLICITUDES_AE_INTERNET.TIPO_ID
+  is ' Tipo de Identificador del candidato preseleccionado. ';
+comment on column SOLICITUDES_AE_INTERNET.DNI
+  is ' Dni del candidato preseleccionado. ';
+comment on column SOLICITUDES_AE_INTERNET.C_SOL
+  is ' Código de solicitud de ese candidato para este Acto de Elección.';
+comment on column SOLICITUDES_AE_INTERNET.C_CENTGEST
+  is ' Código del Centro Gestor en el que la presenta. ';
+comment on column SOLICITUDES_AE_INTERNET.F_HORA_ENT
+  is ' Fecha y Hora en que el preseleccionado entrega la Solicitud. ';
+comment on column SOLICITUDES_AE_INTERNET.ESTADO_SOL
+  is ' Estado en el que se encuentra la Solicitud (A - Admitida, E - Excluida).';
+comment on column SOLICITUDES_AE_INTERNET.C_USU_ULTMOD
+  is ' Usuario que ha realizado la última modificación del registro. ';
+comment on column SOLICITUDES_AE_INTERNET.F_ULTMOD
+  is ' Fecha en que se ha realizado la última modificación del registro. ';
+alter table SOLICITUDES_AE_INTERNET
+  add constraint PK_SOLICITUDES_AE_INT primary key (F_CONV_AE, TIPO_ID, DNI, C_SOL);
+alter table SOLICITUDES_AE_INTERNET
+  add constraint FK_SOAEI_CAPAE foreign key (F_CONV_AE, TIPO_ID, DNI)
+  references CAND_PRESEL_AE (F_CONV_AE, TIPO_ID, DNI);
+alter table SOLICITUDES_AE_INTERNET
+  add constraint CK_SOLAE_ESTADO_SOL
+  check (ESTADO_SOL IN ('A','E'));
+

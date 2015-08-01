@@ -1,0 +1,15 @@
+create table SIGI_EST_PET
+(
+  COD_EST_PET VARCHAR2(1) not null,
+  DES_EST_PET VARCHAR2(210) not null
+)
+;
+comment on table SIGI_EST_PET
+  is ' Estados posibles de una petición de vacante concreta. ';
+comment on column SIGI_EST_PET.COD_EST_PET
+  is ' Código del estado de la petición de vacante. ';
+comment on column SIGI_EST_PET.DES_EST_PET
+  is ' Descripción del estado de la petición de vacante. ';
+alter table SIGI_EST_PET
+  add constraint PK_EST_PET primary key (COD_EST_PET);
+

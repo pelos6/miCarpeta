@@ -1,0 +1,37 @@
+create table SIGI_SOL
+(
+  TIPO_ID     VARCHAR2(1) not null,
+  DNI         VARCHAR2(15) not null,
+  COD_OPC     VARCHAR2(7) not null,
+  COD_SOL     VARCHAR2(4) not null,
+  F_HOR_ENT   DATE not null,
+  COD_EST_SOL VARCHAR2(1) not null,
+  COD_USU     VARCHAR2(8) not null,
+  F_HOR_PRE   DATE,
+  L_PRE       VARCHAR2(1)
+)
+;
+comment on table SIGI_SOL
+  is ' Solicitudes de vacantes realizadas por candidatos preseleccionados. ';
+comment on column SIGI_SOL.TIPO_ID
+  is ' Tipo de Identificador del candidato preseleccionado. ';
+comment on column SIGI_SOL.DNI
+  is ' Dni del candidato preseleccionado. ';
+comment on column SIGI_SOL.COD_SOL
+  is ' Código de solicitud de ese candidato para este Acto de Elección.';
+comment on column SIGI_SOL.F_HOR_ENT
+  is ' Fecha y Hora en que el preseleccionado entrega la Solicitud. ';
+comment on column SIGI_SOL.COD_EST_SOL
+  is ' Estado en el que se encuentra la Solicitud (A - Admitida, E - Excluida).';
+comment on column SIGI_SOL.COD_USU
+  is ' Usuario que ha realizado la última modificación del registro. ';
+comment on column SIGI_SOL.F_HOR_PRE
+  is 'Fecha y hora en la que se presenta la solicitud con contraseña al acto de elección ';
+comment on column SIGI_SOL.L_PRE
+  is 'Indicador de solicitud presentada con contraseña al acto de elección (N- no presentada, S - si presentada)';
+alter table SIGI_SOL
+  add constraint PK_SIGI_SOL primary key (TIPO_ID, DNI, COD_OPC, COD_SOL);
+alter table SIGI_SOL
+  add constraint CK_SOLAE_EST_SOL
+  check (COD_EST_SOL IN ('A','E'));
+

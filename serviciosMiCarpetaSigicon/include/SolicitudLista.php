@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Description of SolicitudLista
  *
@@ -11,8 +12,34 @@ class SolicitudLista {
     protected $cod_sol;
     protected $tipo_id;
     protected $dni;
-    protected $estado;
-    
+    protected $cod_est_sol;
+    protected $des_est_sol;
+    protected $fec_sol;
+
+    function getFec_sol() {
+        return $this->fec_sol;
+    }
+
+    function setFec_sol($fec_sol) {
+        $this->fec_sol = $fec_sol;
+    }
+
+        
+    function getCod_est_sol() {
+        return $this->cod_est_sol;
+    }
+
+    function getDes_est_sol() {
+        return $this->des_est_sol;
+    }
+
+    function setCod_est_sol($cod_est_sol) {
+        $this->cod_est_sol = $cod_est_sol;
+    }
+
+    function setDes_est_sol($des_est_sol) {
+        $this->des_est_sol = $des_est_sol;
+    }
 
     function getCod_sol() {
         return $this->cod_sol;
@@ -26,11 +53,6 @@ class SolicitudLista {
         return $this->dni;
     }
 
-    function getEstado() {
-        return $this->estado;
-    }
-
-  
     function setCod_sol($cod_sol) {
         $this->cod_sol = $cod_sol;
     }
@@ -43,9 +65,6 @@ class SolicitudLista {
         $this->dni = $dni;
     }
 
-    function setEstado($estado) {
-        $this->estado = $estado;
-    }
     function getCod_con() {
         return $this->cod_con;
     }
@@ -62,16 +81,17 @@ class SolicitudLista {
         $this->des_con = $des_con;
     }
 
-        
     public function __construct($row) {
         $this->cod_con = $row['cod_con'];
         $this->des_con = $row['des_con'];
         $this->tipo_id = $row['tipo_id'];
         $this->cod_sol = $row['cod_sol'];
         $this->dni = $row['dni'];
-        $this->estado = $row['estado'];
+        $this->cod_est_sol = $row['cod_est_sol'];
+        $this->des_est_sol = $row['des_est_sol'];
+        $this->fec_sol = $row['fec_sol'];
     }
-    
+
     public function muestra() {
         print "<p>" . $this->cod_opc . "</p>";
     }

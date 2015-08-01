@@ -1,0 +1,27 @@
+create table SIGI_PER
+(
+  DNI     VARCHAR2(15) not null,
+  TIPO_ID VARCHAR2(1) not null,
+  F_NAC   DATE not null,
+  NOM     VARCHAR2(14),
+  APE_1   VARCHAR2(22),
+  APE_2   VARCHAR2(22)
+)
+;
+comment on table SIGI_PER
+  is ' Persona que esta preseleccionada ';
+comment on column SIGI_PER.DNI
+  is ' DNI de la persona';
+comment on column SIGI_PER.TIPO_ID
+  is ' Tipo de identificador de la persona';
+comment on column SIGI_PER.F_NAC
+  is ' Fecha de nacimiento de la persona';
+comment on column SIGI_PER.NOM
+  is ' Nombre de la persona';
+comment on column SIGI_PER.APE_1
+  is ' Primer apellido de la persona';
+comment on column SIGI_PER.APE_2
+  is ' Segundo apellido de la persona';
+alter table SIGI_PER
+  add constraint SIGI_PAR_PK primary key (DNI, TIPO_ID);
+

@@ -1,0 +1,3 @@
+create or replace synonym FUNCIONES
+  for EDUSOL.FUNCIONES;
+

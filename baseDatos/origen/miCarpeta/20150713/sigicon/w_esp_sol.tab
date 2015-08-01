@@ -1,0 +1,52 @@
+create table W_ESP_SOL
+(
+  COD_CON         VARCHAR2(4),
+  COD_CUE         VARCHAR2(4) not null,
+  COD_ESP         VARCHAR2(3) not null,
+  COD_SOL         VARCHAR2(4),
+  TIPO_ID         VARCHAR2(1),
+  DNI             VARCHAR2(15),
+  COD_PRO_REF_NUE VARCHAR2(2),
+  COD_PRO_REF_VIE VARCHAR2(2)
+)
+;
+comment on table W_ESP_SOL
+  is 'Cambios en las Provincias de Referencia de las Solicitudes de los Participantes a la Nueva Baremación';
+comment on column W_ESP_SOL.COD_CON
+  is 'Código de la convocatoria a la que pertenece la solicitud';
+comment on column W_ESP_SOL.COD_CUE
+  is 'Código del cuerpo al que pertenece la solicitud';
+comment on column W_ESP_SOL.COD_ESP
+  is 'Código de la especialidad a la que pertenece la solicitud';
+comment on column W_ESP_SOL.COD_SOL
+  is 'Número de orden de la solicitud web';
+comment on column W_ESP_SOL.TIPO_ID
+  is 'Tipo de identificador del participante';
+comment on column W_ESP_SOL.DNI
+  is 'Dni o nif del participante';
+comment on column W_ESP_SOL.COD_PRO_REF_NUE
+  is 'Descripción Nueva de la Provincia de Referencia';
+comment on column W_ESP_SOL.COD_PRO_REF_VIE
+  is 'Código Nuevo de la Provincia de Referencia';
+alter table W_ESP_SOL
+  add constraint PK_W_ESP_SOL primary key (COD_CON, COD_SOL, COD_CUE, COD_ESP, TIPO_ID, DNI);
+alter table W_ESP_SOL
+  add constraint NN_W_ESPEC_SOLIC_COD_CON
+  check ("COD_CON" IS NOT NULL);
+alter table W_ESP_SOL
+  add constraint NN_W_ESP_SOL_COD_CON
+  check ("COD_CON" IS NOT NULL);
+alter table W_ESP_SOL
+  add constraint NN_W_ESP_SOL_COD_PRO_REF_VIE
+  check ("COD_PRO_REF_VIE" IS NOT NULL)
+  disable;
+alter table W_ESP_SOL
+  add constraint NN_W_ESP_SOL_DNI
+  check ("DNI" IS NOT NULL);
+alter table W_ESP_SOL
+  add constraint NN_W_ESP_SOL_NORDEN
+  check ("COD_SOL" IS NOT NULL);
+alter table W_ESP_SOL
+  add constraint NN_W_ESP_SOL_TIPO_ID
+  check ("TIPO_ID" IS NOT NULL);
+

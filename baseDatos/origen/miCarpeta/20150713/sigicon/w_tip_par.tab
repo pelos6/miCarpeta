@@ -1,0 +1,18 @@
+create table W_TIP_PAR
+(
+  COD_TIP_PAR VARCHAR2(1) not null,
+  DES_TIP_PAR VARCHAR2(100),
+  L_ACT       VARCHAR2(1)
+)
+;
+comment on table W_TIP_PAR
+  is 'Tipos de participación. Planes y Programas';
+comment on column W_TIP_PAR.COD_TIP_PAR
+  is 'Código del tipo de participación ';
+comment on column W_TIP_PAR.DES_TIP_PAR
+  is 'Descripción del tipo de participación';
+comment on column W_TIP_PAR.L_ACT
+  is 'Si esta activo o no el tipo de participación';
+alter table W_TIP_PAR
+  add constraint PK_W_TIP_PAR primary key (COD_TIP_PAR);
+

@@ -1,0 +1,3 @@
+create or replace synonym V_TIT_1_CICLO
+  for EDUSOL.V_TIT_1_CICLO;
+

@@ -1,0 +1,39 @@
+create table SIGI_CON_PRE
+(
+  DNI      VARCHAR2(15) not null,
+  COD_CUE  VARCHAR2(4) not null,
+  COD_ESP  VARCHAR2(3) not null,
+  FEC_OPO1 VARCHAR2(10),
+  NOT1     VARCHAR2(10),
+  FEC_OPO2 VARCHAR2(10),
+  NOT2     VARCHAR2(10),
+  FEC_OPO3 VARCHAR2(10),
+  NOT3     VARCHAR2(10),
+  L_CON    VARCHAR2(1)
+)
+;
+comment on table SIGI_CON_PRE
+  is 'Indica si un participantes cumple la condición de lista preferente y porque oposición';
+comment on column SIGI_CON_PRE.DNI
+  is 'Dni del participante en listas';
+comment on column SIGI_CON_PRE.COD_CUE
+  is 'Código de cuerpo';
+comment on column SIGI_CON_PRE.COD_ESP
+  is 'Código de especialidad';
+comment on column SIGI_CON_PRE.FEC_OPO1
+  is 'Fecha del primer proceso selectivo';
+comment on column SIGI_CON_PRE.NOT1
+  is 'Nota del primer proceso selectivo';
+comment on column SIGI_CON_PRE.FEC_OPO2
+  is 'Fecha del segundo proceso selectivo';
+comment on column SIGI_CON_PRE.NOT2
+  is 'Nota del segundo proceso selectivo';
+comment on column SIGI_CON_PRE.FEC_OPO3
+  is 'Fecha del tercer proceso selectivo';
+comment on column SIGI_CON_PRE.NOT3
+  is 'Nota del tercer proceso selectivo';
+comment on column SIGI_CON_PRE.L_CON
+  is 'Cumple la condición para lista preferente';
+alter table SIGI_CON_PRE
+  add constraint PK_SIGI_CON_PRE primary key (DNI, COD_CUE, COD_ESP);
+

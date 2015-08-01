@@ -1,0 +1,15 @@
+create table WCTEM_PROVINCIAS
+(
+  CPROV VARCHAR2(2) not null,
+  DPROV VARCHAR2(26) not null
+)
+;
+comment on table WCTEM_PROVINCIAS
+  is 'Tabla Provincias';
+comment on column WCTEM_PROVINCIAS.CPROV
+  is 'codigo de provincia';
+comment on column WCTEM_PROVINCIAS.DPROV
+  is 'descripcion larga de provincia';
+alter table WCTEM_PROVINCIAS
+  add constraint PK_PROVINCIAS primary key (CPROV);
+

@@ -1,0 +1,19 @@
+create table WCTEM_LOCCEN
+(
+  CPROV VARCHAR2(2),
+  CLOC  VARCHAR2(9) not null,
+  DLOC  VARCHAR2(50)
+)
+;
+comment on table WCTEM_LOCCEN
+  is 'Tabla que contiene las localidades con centros en funcionamiento.';
+comment on column WCTEM_LOCCEN.CLOC
+  is 'Código de Localidad.';
+comment on column WCTEM_LOCCEN.DLOC
+  is 'Descripción de la Localidad.';
+alter table WCTEM_LOCCEN
+  add constraint PK_CLOC primary key (CLOC);
+alter table WCTEM_LOCCEN
+  add constraint NN_DLOC
+  check ("DLOC" IS NOT NULL);
+

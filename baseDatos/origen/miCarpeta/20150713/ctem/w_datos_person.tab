@@ -1,0 +1,83 @@
+create table W_DATOS_PERSON
+(
+  DNI       VARCHAR2(9) not null,
+  APE1      VARCHAR2(24) not null,
+  APE2      VARCHAR2(24),
+  NOMBRE    VARCHAR2(24) not null,
+  FNAC      DATE,
+  DOMIC     VARCHAR2(35),
+  LOCDOM    VARCHAR2(27),
+  CP        VARCHAR2(5),
+  TELEF     VARCHAR2(15),
+  PROV      VARCHAR2(2) not null,
+  CCENTDEF  VARCHAR2(8),
+  ESPEDEF   VARCHAR2(3),
+  DCENDEF   VARCHAR2(40),
+  DLOCDEF   VARCHAR2(50),
+  DPROVDEF  VARCHAR2(26),
+  CCENTPROV VARCHAR2(8),
+  ESPEPROV  VARCHAR2(3),
+  DCENPROV  VARCHAR2(40),
+  DLOCPROV  VARCHAR2(50),
+  DPROVPROV VARCHAR2(26),
+  MOVIL     VARCHAR2(15),
+  MAIL      VARCHAR2(150),
+  AOPOS     VARCHAR2(4),
+  TIPO_SOL  VARCHAR2(1)
+)
+;
+comment on table W_DATOS_PERSON
+  is 'Datos de participantes.';
+comment on column W_DATOS_PERSON.DNI
+  is 'D.N.I. de la persona.';
+comment on column W_DATOS_PERSON.APE1
+  is 'Primer apellido';
+comment on column W_DATOS_PERSON.APE2
+  is 'Segundo apellido';
+comment on column W_DATOS_PERSON.NOMBRE
+  is 'Nombre';
+comment on column W_DATOS_PERSON.FNAC
+  is 'Fecha de nacimiento.';
+comment on column W_DATOS_PERSON.DOMIC
+  is 'Domicilio';
+comment on column W_DATOS_PERSON.LOCDOM
+  is 'Localidad de domicilio';
+comment on column W_DATOS_PERSON.CP
+  is 'Codigo Postal de domicilio';
+comment on column W_DATOS_PERSON.TELEF
+  is 'Telefono';
+comment on column W_DATOS_PERSON.PROV
+  is 'Provincia por la que el solicitante debe presentar la solicitud.';
+comment on column W_DATOS_PERSON.CCENTDEF
+  is 'Código del centro definitivo.';
+comment on column W_DATOS_PERSON.ESPEDEF
+  is 'Código de la especialidad en propiedad o definitiva.';
+comment on column W_DATOS_PERSON.DCENDEF
+  is 'Descripción del centro en propiedad o definitivo.';
+comment on column W_DATOS_PERSON.DLOCDEF
+  is 'Descripción de la localidad en propiedad o definitiva.';
+comment on column W_DATOS_PERSON.DPROVDEF
+  is 'Descripción de la provincia en propiedad o definitiva.';
+comment on column W_DATOS_PERSON.CCENTPROV
+  is 'Código del centro provisional o de servicio.';
+comment on column W_DATOS_PERSON.ESPEPROV
+  is 'Descripción de la especialidad provisional o de servicio.';
+comment on column W_DATOS_PERSON.DCENPROV
+  is 'Descripción del centro provisional o de servicio.';
+comment on column W_DATOS_PERSON.DLOCPROV
+  is 'Descripción de la localidad provisional o de servicio.';
+comment on column W_DATOS_PERSON.DPROVPROV
+  is 'Descripción de la provincia provisional o de servicio.';
+comment on column W_DATOS_PERSON.MOVIL
+  is 'Teléfono Móvil';
+comment on column W_DATOS_PERSON.MAIL
+  is 'Mail';
+comment on column W_DATOS_PERSON.AOPOS
+  is 'Año de oposición';
+comment on column W_DATOS_PERSON.TIPO_SOL
+  is 'Abre solicitud en blanco para el participante S-->ABRIR OTRO-->NADA';
+alter table W_DATOS_PERSON
+  add constraint PK_W_DATOS_PERSON primary key (DNI);
+create index CT01_PARTAPE1 on W_DATOS_PERSON (APE1);
+create unique index CT01_PARTDNI on W_DATOS_PERSON (DNI);
+

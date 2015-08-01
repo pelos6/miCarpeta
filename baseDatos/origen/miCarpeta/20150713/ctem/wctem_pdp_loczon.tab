@@ -1,0 +1,37 @@
+create table WCTEM_PDP_LOCZON
+(
+  NORDEN      VARCHAR2(4) not null,
+  DNI         VARCHAR2(9) not null,
+  ORDEN       NUMBER(2) not null,
+  ESPE        VARCHAR2(3) not null,
+  VERN        VARCHAR2(1) not null,
+  ITIN        VARCHAR2(1) not null,
+  FECULACT    DATE,
+  FEC_ULT_MOD DATE not null,
+  BILING      VARCHAR2(1) not null,
+  DESPE       VARCHAR2(150)
+)
+;
+comment on table WCTEM_PDP_LOCZON
+  is 'Peticiones de derecho preferente a localidad';
+comment on column WCTEM_PDP_LOCZON.NORDEN
+  is 'Numero de orden de la solicitud.';
+comment on column WCTEM_PDP_LOCZON.DNI
+  is 'DNI del participante';
+comment on column WCTEM_PDP_LOCZON.ESPE
+  is 'Peticion de especialidad';
+comment on column WCTEM_PDP_LOCZON.VERN
+  is 'Peticion de nivel de vernaculo';
+comment on column WCTEM_PDP_LOCZON.ITIN
+  is 'Peticion de itinerante';
+comment on column WCTEM_PDP_LOCZON.FECULACT
+  is 'Fecha ultima actualizacion';
+comment on column WCTEM_PDP_LOCZON.FEC_ULT_MOD
+  is 'Fecha última modificación ';
+comment on column WCTEM_PDP_LOCZON.BILING
+  is 'Bilingüismo';
+comment on column WCTEM_PDP_LOCZON.DESPE
+  is 'Descripción de la especialidad';
+alter table WCTEM_PDP_LOCZON
+  add constraint PK_WCTEM_PDP_LOCZON primary key (NORDEN, DNI, ORDEN);
+

@@ -1,0 +1,4 @@
+CREATE OR REPLACE TYPE "SIGI_ARRAY_VAC_PAR"
+is table of varchar2(5)
+/
+

@@ -1,0 +1,36 @@
+create table PETICESP_AE
+(
+  F_CONV_AE     DATE not null,
+  TIPO_ID       VARCHAR2(1) not null,
+  DNI           VARCHAR2(15) not null,
+  C_SOL         VARCHAR2(4) not null,
+  AÑO_INI_CUR   VARCHAR2(4) not null,
+  C_CUERPO      VARCHAR2(4) not null,
+  C_ESPEC       VARCHAR2(3) not null,
+  N_ORDEN_ESPEC NUMBER not null
+)
+;
+comment on table PETICESP_AE
+  is 'Peticiones de vacantes por especialidad.';
+comment on column PETICESP_AE.F_CONV_AE
+  is 'Acto de Elección al que corresponde la petición. ';
+comment on column PETICESP_AE.TIPO_ID
+  is ' Tipo de Identificador del candidato preseleccionado. ';
+comment on column PETICESP_AE.DNI
+  is ' Dni del candidato preseleccionado. ';
+comment on column PETICESP_AE.C_SOL
+  is 'Código de solicitud de ese candidato para este Acto de Elección.';
+comment on column PETICESP_AE.AÑO_INI_CUR
+  is ' Año de inicio de curso academico al que corresponde la Vacante. ';
+comment on column PETICESP_AE.C_CUERPO
+  is ' Código del cuerpo por la que se piden todas las vacantes obligatorias. ';
+comment on column PETICESP_AE.C_ESPEC
+  is ' Código de la especialidad por la que se piden todas las vacantes obligatorias. ';
+comment on column PETICESP_AE.N_ORDEN_ESPEC
+  is 'Número de preferencia de la especialidad.';
+alter table PETICESP_AE
+  add constraint PK_PETICESP_AE primary key (F_CONV_AE, TIPO_ID, DNI, AÑO_INI_CUR, C_CUERPO, C_ESPEC, C_SOL);
+alter table PETICESP_AE
+  add constraint FK_PETEAE_SOAEI foreign key (F_CONV_AE, TIPO_ID, DNI, C_SOL)
+  references SOLICITUDES_AE_INTERNET (F_CONV_AE, TIPO_ID, DNI, C_SOL);
+

@@ -1,0 +1,489 @@
+create table WCTEM_PART
+(
+  PROV            VARCHAR2(2),
+  ST              VARCHAR2(1),
+  DNI             VARCHAR2(9),
+  NORDEN          VARCHAR2(4) not null,
+  CUERPO          VARCHAR2(4),
+  APE1            VARCHAR2(24),
+  APE2            VARCHAR2(24),
+  NOMBRE          VARCHAR2(24),
+  INDMODDOM       VARCHAR2(1) default 'N',
+  CALLE           VARCHAR2(40),
+  LOCDOM          VARCHAR2(27),
+  CODPOS          VARCHAR2(5),
+  TELEF           VARCHAR2(15),
+  CENTRODEF       VARCHAR2(8),
+  ESPEDEF         VARCHAR2(3),
+  DLOCDEF         VARCHAR2(50),
+  DCENDEF         VARCHAR2(40),
+  DPROVDEF        VARCHAR2(26),
+  DCENPROV        VARCHAR2(40),
+  ESPEPROV        VARCHAR2(3),
+  DLOCPROV        VARCHAR2(50),
+  DPROVPROV       VARCHAR2(26),
+  DCENOTR         VARCHAR2(40),
+  ESPEOTR         VARCHAR2(3),
+  DLOCOTR         VARCHAR2(50),
+  DPROVOTR        VARCHAR2(26),
+  CENTROPROV      VARCHAR2(8),
+  ANOOPOSVOL      NUMBER(4),
+  ANOPRIMDES      NUMBER(4),
+  APTDO12X        VARCHAR2(1),
+  PVASCA          NUMBER(1) default 0,
+  PNAVARRA        NUMBER(1) default 0,
+  PGALLEGA        NUMBER(1) default 0,
+  PCATALAN        NUMBER(1) default 0,
+  PVALENCIA       NUMBER(1) default 0,
+  APDO1           NUMBER(1) default 0,
+  APDO2           NUMBER(1) default 0,
+  APDO3           NUMBER(1) default 0,
+  APDO4           NUMBER(1) default 0,
+  APDO5           NUMBER(1) default 0,
+  CUERPO1         VARCHAR2(4),
+  ESP1            VARCHAR2(3),
+  DESP1           VARCHAR2(30),
+  AESP1           NUMBER(4),
+  TESP1           VARCHAR2(1),
+  ORDESP1         NUMBER(4),
+  DESEMPATE1      VARCHAR2(1),
+  INDESP1         VARCHAR2(1),
+  CUERPO2         VARCHAR2(4),
+  ESP2            VARCHAR2(3),
+  DESP2           VARCHAR2(30),
+  AESP2           NUMBER(4),
+  TESP2           VARCHAR2(1),
+  ORDESP2         NUMBER(4),
+  DESEMPATE2      VARCHAR2(1),
+  INDESP2         VARCHAR2(1),
+  CUERPO3         VARCHAR2(4),
+  ESP3            VARCHAR2(3),
+  DESP3           VARCHAR2(30),
+  AESP3           NUMBER(4),
+  TESP3           VARCHAR2(1),
+  ORDESP3         NUMBER(4),
+  DESEMPATE3      VARCHAR2(1),
+  INDESP3         VARCHAR2(1),
+  CUERPO4         VARCHAR2(4),
+  ESP4            VARCHAR2(3),
+  DESP4           VARCHAR2(30),
+  AESP4           NUMBER(4),
+  TESP4           VARCHAR2(1),
+  ORDESP4         NUMBER(4),
+  DESEMPATE4      VARCHAR2(1),
+  INDESP4         VARCHAR2(1),
+  CUERPO5         VARCHAR2(4),
+  ESP5            VARCHAR2(3),
+  DESP5           VARCHAR2(30),
+  AESP5           NUMBER(4),
+  TESP5           VARCHAR2(1),
+  ORDESP5         NUMBER(4),
+  DESEMPATE5      VARCHAR2(1),
+  INDESP5         VARCHAR2(1),
+  CUERPO6         VARCHAR2(4),
+  ESP6            VARCHAR2(3),
+  DESP6           VARCHAR2(30),
+  AESP6           NUMBER(4),
+  TESP6           VARCHAR2(1),
+  ORDESP6         NUMBER(4),
+  DESEMPATE6      VARCHAR2(1),
+  INDESP6         VARCHAR2(1),
+  SUPERPREF       VARCHAR2(1),
+  CDERPREF        VARCHAR2(8),
+  LDERPREF        VARCHAR2(9),
+  DLDERPREF       VARCHAR2(50),
+  CAUSDERPREF     VARCHAR2(100),
+  OBSERVAA        VARCHAR2(150),
+  OBSERVAB        VARCHAR2(150),
+  TIPOBAR         VARCHAR2(1),
+  ANOCON          NUMBER(4),
+  CENT_RES        VARCHAR2(8),
+  CUERPO_RES      VARCHAR2(4),
+  ESPE_RES        VARCHAR2(3),
+  VERN_RES        NUMBER(1),
+  APDO5_INOBDEDEF NUMBER(1) default 0,
+  ANO_OPOS        NUMBER(4),
+  PUNT_OPOS       NUMBER(6,4),
+  COMPULSA        VARCHAR2(1) default 'S',
+  PRACTICAS       VARCHAR2(1),
+  AMBITO_PROV     VARCHAR2(3),
+  EXENTO_FOR      VARCHAR2(1) default '0',
+  ESTADO          VARCHAR2(1) default 'A',
+  FECULTMOD       DATE,
+  CUERPO_PERT     VARCHAR2(4) not null,
+  TIPO_SOL        VARCHAR2(1),
+  MODALIDAD       VARCHAR2(1),
+  DNI2            VARCHAR2(9),
+  APENOM2         VARCHAR2(72),
+  DNI3            VARCHAR2(9),
+  APENOM3         VARCHAR2(72),
+  DNI4            VARCHAR2(9),
+  APENOM4         VARCHAR2(72),
+  PROVCONC        VARCHAR2(2),
+  ZONA            VARCHAR2(6),
+  CAUDERPRELOCZON VARCHAR2(1),
+  MOVIL           VARCHAR2(15),
+  MAIL            VARCHAR2(150)
+)
+;
+comment on table WCTEM_PART
+  is 'Tabla que contiene los datos de participación de los presentados al concurso de traslados de E.E.M.M.';
+comment on column WCTEM_PART.PROV
+  is 'Ambito territorial de origen.';
+comment on column WCTEM_PART.ST
+  is 'Subdirección territorial de origen.';
+comment on column WCTEM_PART.DNI
+  is 'D.N.I.';
+comment on column WCTEM_PART.NORDEN
+  is 'Numero de orden de la solicitud.';
+comment on column WCTEM_PART.CUERPO
+  is 'Cuerpo al que pertenece el participante.';
+comment on column WCTEM_PART.APE1
+  is 'Primer apellido.';
+comment on column WCTEM_PART.APE2
+  is 'Segundo apellido.';
+comment on column WCTEM_PART.NOMBRE
+  is 'Nombre.';
+comment on column WCTEM_PART.INDMODDOM
+  is 'Indicador de modificación de domicilio.';
+comment on column WCTEM_PART.CALLE
+  is 'Domicilio del participante.';
+comment on column WCTEM_PART.LOCDOM
+  is 'Localidad del participante.';
+comment on column WCTEM_PART.CODPOS
+  is 'Código Postal del participante.';
+comment on column WCTEM_PART.TELEF
+  is 'Teléfono del participante.';
+comment on column WCTEM_PART.CENTRODEF
+  is 'Centro de destino definitivo.';
+comment on column WCTEM_PART.ESPEDEF
+  is 'Espedialidad definitiva.';
+comment on column WCTEM_PART.DLOCDEF
+  is 'Descripción de la localidad definitiva';
+comment on column WCTEM_PART.DCENDEF
+  is 'Descripción del centro definitivo';
+comment on column WCTEM_PART.DPROVDEF
+  is 'Descripción de la provincia definitiva';
+comment on column WCTEM_PART.DCENPROV
+  is 'Descripción del centro provisional';
+comment on column WCTEM_PART.ESPEPROV
+  is 'Espedialidad provisional.';
+comment on column WCTEM_PART.DLOCPROV
+  is 'Descripción de la localidad provisional';
+comment on column WCTEM_PART.DPROVPROV
+  is 'Descripción de la provincia provisional';
+comment on column WCTEM_PART.DCENOTR
+  is 'Descripción de otros centros';
+comment on column WCTEM_PART.ESPEOTR
+  is 'Otras especialidades';
+comment on column WCTEM_PART.DLOCOTR
+  is 'Descripción otras localidades';
+comment on column WCTEM_PART.DPROVOTR
+  is 'Descripción otras provincias';
+comment on column WCTEM_PART.CENTROPROV
+  is 'Centro de destino provisional.';
+comment on column WCTEM_PART.ANOOPOSVOL
+  is 'Año de la oposición de ingreso en el cuerpo.  (Si se participa por primera vez con carácter voluntario).';
+comment on column WCTEM_PART.ANOPRIMDES
+  is 'Año en que se obtuvo el primer destino definitivo.  (Si se participa por primera vez con carácter voluntario).';
+comment on column WCTEM_PART.APTDO12X
+  is 'Baremo elegido por el partipante que participa por primera vez con carácter voluntario.';
+comment on column WCTEM_PART.PVASCA
+  is 'Perfil lingüístico de la lengua vasca.';
+comment on column WCTEM_PART.PNAVARRA
+  is 'Perfil lingüístico de la lengua navarra.';
+comment on column WCTEM_PART.PGALLEGA
+  is 'Perfil lingüístico de la lengua gallega.';
+comment on column WCTEM_PART.PCATALAN
+  is 'Perfil lingüístico de la lengua catalan.';
+comment on column WCTEM_PART.PVALENCIA
+  is 'Perfil lingüístico de la lengua valencia.';
+comment on column WCTEM_PART.APDO1
+  is 'Apartado de participación 1.  Voluntarios con derecho preferente a centro.';
+comment on column WCTEM_PART.APDO2
+  is 'Apartado de participación 2.  Voluntarios con derecho preferente a localidad.';
+comment on column WCTEM_PART.APDO3
+  is 'Apartado de participación 3.  Voluntarios sin derecho preferente.';
+comment on column WCTEM_PART.APDO4
+  is 'Apartado de participación 4.  Forzosos con derecho preferente a localidad.';
+comment on column WCTEM_PART.APDO5
+  is 'Apartado de participación 5.  Forzosos sin derecho preferente.';
+comment on column WCTEM_PART.CUERPO1
+  is 'Cuerpo de participación 1.';
+comment on column WCTEM_PART.ESP1
+  is 'Especialidad de participación 1.';
+comment on column WCTEM_PART.DESP1
+  is 'Denominación Especialidad de participación 1.';
+comment on column WCTEM_PART.AESP1
+  is 'Año de la oposición en la que se adquirió la especialidad de participación 1.';
+comment on column WCTEM_PART.TESP1
+  is 'Turno de la oposición en la que se adquirió la especialidad de participación 1.';
+comment on column WCTEM_PART.ORDESP1
+  is 'Nº de orden de la oposición en la que se adquirió la especialidad de participación 1.';
+comment on column WCTEM_PART.DESEMPATE1
+  is 'Desempate del nº de orden de la oposición en la que se adquirió la especialidad de participación 1.';
+comment on column WCTEM_PART.INDESP1
+  is 'Titularidad y preferencia a centro de la especialidad 1.';
+comment on column WCTEM_PART.CUERPO2
+  is 'Cuerpo de participación 2.';
+comment on column WCTEM_PART.ESP2
+  is 'Especialidad de participación 2.';
+comment on column WCTEM_PART.DESP2
+  is 'Denominación Especialidad de participación 2.';
+comment on column WCTEM_PART.AESP2
+  is 'Año de la oposición en la que se adquirió la especialidad de participación 2.';
+comment on column WCTEM_PART.TESP2
+  is 'Turno de la oposición en la que se adquirió la especialidad de participación 2.';
+comment on column WCTEM_PART.ORDESP2
+  is 'Nº de orden de la oposición en la que se adquirió la especialidad de participación 2.';
+comment on column WCTEM_PART.DESEMPATE2
+  is 'Desempate del nº de orden de la oposición en la que se adquirió la especialidad de participación 2.';
+comment on column WCTEM_PART.INDESP2
+  is 'Titularidad y preferencia a centro de la especialidad 2.';
+comment on column WCTEM_PART.CUERPO3
+  is 'Cuerpo de participación 3.';
+comment on column WCTEM_PART.ESP3
+  is 'Especialidad de participación 3.';
+comment on column WCTEM_PART.DESP3
+  is 'Denominación Especialidad de participación 3.';
+comment on column WCTEM_PART.AESP3
+  is 'Año de la oposición en la que se adquirió la especialidad de participación 3.';
+comment on column WCTEM_PART.TESP3
+  is 'Turno de la oposición en la que se adquirió la especialidad de participación 3.';
+comment on column WCTEM_PART.ORDESP3
+  is 'Nº de orden de la oposición en la que se adquirió la especialidad de participación 3.';
+comment on column WCTEM_PART.DESEMPATE3
+  is 'Desempate del nº de orden de la oposición en la que se adquirió la especialidad de participación 3.';
+comment on column WCTEM_PART.INDESP3
+  is 'Titularidad y preferencia a centro de la especialidad 3.';
+comment on column WCTEM_PART.CUERPO4
+  is 'Cuerpo de participación 4.';
+comment on column WCTEM_PART.ESP4
+  is 'Especialidad de participación 4.';
+comment on column WCTEM_PART.DESP4
+  is 'Denominación Especialidad de participación 4.';
+comment on column WCTEM_PART.AESP4
+  is 'Año de la oposición en la que se adquirió la especialidad de participación 4.';
+comment on column WCTEM_PART.TESP4
+  is 'Turno de la oposición en la que se adquirió la especialidad de participación 4.';
+comment on column WCTEM_PART.ORDESP4
+  is 'Nº de orden de la oposición en la que se adquirió la especialidad de participación 4.';
+comment on column WCTEM_PART.DESEMPATE4
+  is 'Desempate del nº de orden de la oposición en la que se adquirió la especialidad de participación 4.';
+comment on column WCTEM_PART.INDESP4
+  is 'Titularidad y preferencia a centro de la especialidad 4.';
+comment on column WCTEM_PART.CUERPO5
+  is 'Cuerpo de participación 5.';
+comment on column WCTEM_PART.ESP5
+  is 'Especialidad de participación 5.';
+comment on column WCTEM_PART.DESP5
+  is 'Denominación Especialidad de participación 5.';
+comment on column WCTEM_PART.AESP5
+  is 'Año de la oposición en la que se adquirió la especialidad de participación 5.';
+comment on column WCTEM_PART.TESP5
+  is 'Turno de la oposición en la que se adquirió la especialidad de participación 5.';
+comment on column WCTEM_PART.ORDESP5
+  is 'Nº de orden de la oposición en la que se adquirió la especialidad de participación 5.';
+comment on column WCTEM_PART.DESEMPATE5
+  is 'Desempate del nº de orden de la oposición en la que se adquirió la especialidad de participación 5.';
+comment on column WCTEM_PART.INDESP5
+  is 'Titularidad y preferencia a centro de la especialidad 5.';
+comment on column WCTEM_PART.CUERPO6
+  is 'Cuerpo de participación 6.';
+comment on column WCTEM_PART.ESP6
+  is 'Especialidad de participación 6.';
+comment on column WCTEM_PART.DESP6
+  is 'Denominación Especialidad de participación 6.';
+comment on column WCTEM_PART.AESP6
+  is 'Año de la oposición en la que se adquirió la especialidad de participación 6.';
+comment on column WCTEM_PART.TESP6
+  is 'Turno de la oposición en la que se adquirió la especialidad de participación 6.';
+comment on column WCTEM_PART.ORDESP6
+  is 'Nº de orden de la oposición en la que se adquirió la especialidad de participación 6.';
+comment on column WCTEM_PART.DESEMPATE6
+  is 'Desempate del nº de orden de la oposición en la que se adquirió la especialidad de participación 6.';
+comment on column WCTEM_PART.INDESP6
+  is 'Titularidad y preferencia a centro de la especialidad 6.';
+comment on column WCTEM_PART.SUPERPREF
+  is 'Superpreferencia a centro.';
+comment on column WCTEM_PART.CDERPREF
+  is 'Centro de derecho preferente.';
+comment on column WCTEM_PART.LDERPREF
+  is 'Localidad de derecho preferente.';
+comment on column WCTEM_PART.DLDERPREF
+  is 'Descripción de la localidad de derecho preferente.';
+comment on column WCTEM_PART.CAUSDERPREF
+  is 'Causa de derecho preferente.';
+comment on column WCTEM_PART.OBSERVAA
+  is 'Observaciones A';
+comment on column WCTEM_PART.OBSERVAB
+  is 'Observaciones B';
+comment on column WCTEM_PART.TIPOBAR
+  is 'Tipo de baremo';
+comment on column WCTEM_PART.ANOCON
+  is 'Año de convocatoria';
+comment on column WCTEM_PART.CENT_RES
+  is 'Centro de la resulta.';
+comment on column WCTEM_PART.CUERPO_RES
+  is 'Cuerpo de la resulta.';
+comment on column WCTEM_PART.ESPE_RES
+  is 'Especialidad de la resulta.';
+comment on column WCTEM_PART.VERN_RES
+  is 'Vernáculo de la resulta.';
+comment on column WCTEM_PART.APDO5_INOBDEDEF
+  is 'Indicador de si ha obtenido alguna vez destino definitivo.';
+comment on column WCTEM_PART.ANO_OPOS
+  is 'Año de la oposición de ingreso en el cuerpo.';
+comment on column WCTEM_PART.PUNT_OPOS
+  is 'Puntuación obtenida en la oposición de ingreso en el cuerpo.';
+comment on column WCTEM_PART.COMPULSA
+  is 'Ha presentado o no compulsas. S/N';
+comment on column WCTEM_PART.PRACTICAS
+  is 'Indicador de participante en prácticas. Sólo apartado 5. 0 = no; 1 = sí';
+comment on column WCTEM_PART.AMBITO_PROV
+  is 'Ambito de destino provisional. Campo de información que no se envia a Madrid';
+comment on column WCTEM_PART.EXENTO_FOR
+  is 'Indicador de exención de destino de oficio';
+comment on column WCTEM_PART.ESTADO
+  is 'Indicador si la estancia se encuentra Activa o si ha Renunciado';
+comment on column WCTEM_PART.FECULTMOD
+  is 'Fecha de última modificación del registro';
+comment on column WCTEM_PART.CUERPO_PERT
+  is 'Cuerpo al que pertenece el participante (solo habrá diferencias en los catedráticos).';
+comment on column WCTEM_PART.TIPO_SOL
+  is 'Campo que identifica si una solicitud es en blanco o normal';
+comment on column WCTEM_PART.MODALIDAD
+  is 'Código de modalidad';
+comment on column WCTEM_PART.DNI2
+  is 'Derecho de Concurrencia: D.N.I del primer concurrente';
+comment on column WCTEM_PART.APENOM2
+  is 'Derecho de Concurrencia: Apellidos y nombre del primer concurrente (solo web)';
+comment on column WCTEM_PART.DNI3
+  is 'Derecho de Concurrencia: D.N.I del segundo concurrente';
+comment on column WCTEM_PART.APENOM3
+  is 'Derecho de Concurrencia: Apellidos y nombre del segundo concurrente (solo web)';
+comment on column WCTEM_PART.DNI4
+  is 'Derecho de Concurrencia: D.N.I del tercer concurrente';
+comment on column WCTEM_PART.APENOM4
+  is 'Derecho de Concurrencia: Apellidos y nombre del tercer concurrente (solo web)';
+comment on column WCTEM_PART.PROVCONC
+  is 'Código de provincia de concurrencia';
+comment on column WCTEM_PART.ZONA
+  is 'Código de zona de Derecho Preferente';
+comment on column WCTEM_PART.CAUDERPRELOCZON
+  is 'Código de causa de Derecho Preferente a Localidad o zona';
+comment on column WCTEM_PART.MOVIL
+  is 'Teléfono Móvil';
+comment on column WCTEM_PART.MAIL
+  is 'Mail';
+alter table WCTEM_PART
+  add constraint PK_WCTEM_PART primary key (DNI, NORDEN, CUERPO);
+alter table WCTEM_PART
+  add constraint CK_APDO1
+  check (APDO1 IN (0,1));
+alter table WCTEM_PART
+  add constraint CK_APDO2
+  check (APDO2 IN (0,1));
+alter table WCTEM_PART
+  add constraint CK_APDO3
+  check (APDO3 IN (0,1));
+alter table WCTEM_PART
+  add constraint CK_APDO4
+  check (APDO4 IN (0,1));
+alter table WCTEM_PART
+  add constraint CK_APDO5
+  check (APDO5 IN (0,1));
+alter table WCTEM_PART
+  add constraint CK_APDO5_IN
+  check (APDO5_INOBDEDEF IN (0,1));
+alter table WCTEM_PART
+  add constraint CK_APTDO12X
+  check (APTDO12X IN (NULL,'4','5'));
+alter table WCTEM_PART
+  add constraint CK_COMPULSA
+  check (COMPULSA IN ('S','N'));
+alter table WCTEM_PART
+  add constraint CK_ESTADO
+  check (ESTADO IN ('A','R'));
+alter table WCTEM_PART
+  add constraint CK_EXENTO_FOR
+  check (EXENTO_FOR IN (0,1));
+alter table WCTEM_PART
+  add constraint CK_GALLEGA
+  check (PGALLEGA  IN (0,1));
+alter table WCTEM_PART
+  add constraint CK_INDESP1
+  check (INDESP1 IN (null,'A','B','C','D'));
+alter table WCTEM_PART
+  add constraint CK_INDESP2
+  check (INDESP2 IN (null,'A','B','C','D'));
+alter table WCTEM_PART
+  add constraint CK_INDESP3
+  check (INDESP3 IN (null,'A','B','C','D'));
+alter table WCTEM_PART
+  add constraint CK_INDESP4
+  check (INDESP4 IN (null,'A','B','C','D'));
+alter table WCTEM_PART
+  add constraint CK_INDESP5
+  check (INDESP5 IN (null,'A','B','C','D'));
+alter table WCTEM_PART
+  add constraint CK_INDESP6
+  check (INDESP6 IN (null,'A','B','C','D'));
+alter table WCTEM_PART
+  add constraint CK_PCATALAN
+  check (PCATALAN IN (0,1,2));
+alter table WCTEM_PART
+  add constraint CK_PNAVARRA
+  check (PNAVARRA IN (0,1));
+alter table WCTEM_PART
+  add constraint CK_PRACTICAS
+  check (PRACTICAS IN (0,1));
+alter table WCTEM_PART
+  add constraint CK_PVALENCIA
+  check (PVALENCIA IN (0,1));
+alter table WCTEM_PART
+  add constraint CK_PVASCA
+  check (PVASCA IN (0,1,2,3));
+alter table WCTEM_PART
+  add constraint CK_SUPERPREF
+  check ((SUPERPREF >= 'A' AND SUPERPREF <= 'Z') OR SUPERPREF IS NULL);
+alter table WCTEM_PART
+  add constraint CK_TESP1
+  check (TESP1 IN (null,'A','B','C'));
+alter table WCTEM_PART
+  add constraint CK_TESP2
+  check (TESP2 IN (null,'A','B','C'));
+alter table WCTEM_PART
+  add constraint CK_TESP3
+  check (TESP3 IN (null,'A','B','C'));
+alter table WCTEM_PART
+  add constraint CK_TESP4
+  check (TESP4 IN (null,'A','B','C'));
+alter table WCTEM_PART
+  add constraint CK_TESP5
+  check (TESP5 IN (null,'A','B','C'));
+alter table WCTEM_PART
+  add constraint CK_TESP6
+  check (TESP6 IN (null,'A','B','C'));
+alter table WCTEM_PART
+  add constraint CK_VERN_RES
+  check (VERN_RES IN (null,0,1));
+alter table WCTEM_PART
+  add constraint NN_APE1
+  check ("APE1" IS NOT NULL);
+alter table WCTEM_PART
+  add constraint NN_CUERPO
+  check ("CUERPO" IS NOT NULL);
+alter table WCTEM_PART
+  add constraint NN_DNI
+  check ("DNI" IS NOT NULL);
+alter table WCTEM_PART
+  add constraint NN_NOMBRE
+  check ("NOMBRE" IS NOT NULL);
+alter table WCTEM_PART
+  add constraint NN_PROV
+  check ("PROV" IS NOT NULL);
+alter table WCTEM_PART
+  add constraint NN_ST
+  check ("ST" IS NOT NULL);
+

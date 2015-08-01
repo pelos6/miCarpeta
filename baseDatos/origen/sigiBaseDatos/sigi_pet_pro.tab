@@ -1,0 +1,25 @@
+create table SIGI_PET_PRO
+(
+  TIPO_ID VARCHAR2(1) not null,
+  DNI     VARCHAR2(15) not null,
+  COD_OPC VARCHAR2(7) not null,
+  COD_SOL VARCHAR2(4) not null,
+  COD_PRO VARCHAR2(2) not null,
+  ORD_PRO NUMBER(1) not null
+)
+;
+comment on table SIGI_PET_PRO
+  is 'Peticiones de vacantes por provincia.';
+comment on column SIGI_PET_PRO.TIPO_ID
+  is ' Tipo de Identificador del candidato preseleccionado. ';
+comment on column SIGI_PET_PRO.DNI
+  is ' Dni del candidato preseleccionado. ';
+comment on column SIGI_PET_PRO.COD_SOL
+  is 'Código de solicitud de ese candidato para este Acto de Elección.';
+comment on column SIGI_PET_PRO.COD_PRO
+  is ' Código de la provincia por la que se piden todas las vacantes obligatorias. ';
+comment on column SIGI_PET_PRO.ORD_PRO
+  is ' Número de preferencia de la provincia. ';
+alter table SIGI_PET_PRO
+  add constraint PK_SIGI_PET_PRO primary key (TIPO_ID, DNI, COD_OPC, COD_PRO, COD_SOL);
+

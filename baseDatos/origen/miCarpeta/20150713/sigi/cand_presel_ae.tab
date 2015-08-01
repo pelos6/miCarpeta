@@ -1,0 +1,33 @@
+create table CAND_PRESEL_AE
+(
+  F_CONV_AE   DATE not null,
+  TIPO_ID     VARCHAR2(1) not null,
+  DNI         VARCHAR2(15) not null,
+  C_COLECTIVO VARCHAR2(1) not null,
+  L_MEDIAS    VARCHAR2(1),
+  C_MUNICIPIO VARCHAR2(9)
+)
+;
+comment on table CAND_PRESEL_AE
+  is ' Candidatos preseleccionados para el AE. ';
+comment on column CAND_PRESEL_AE.F_CONV_AE
+  is 'Acto de Elección al que corresponde la preselección  ';
+comment on column CAND_PRESEL_AE.TIPO_ID
+  is ' Tipo de Identificador del candidato preseleccionado. ';
+comment on column CAND_PRESEL_AE.DNI
+  is ' Dni del candidato preseleccionado. ';
+comment on column CAND_PRESEL_AE.C_COLECTIVO
+  is ' Código del colectivo al que pertenece. ';
+comment on column CAND_PRESEL_AE.L_MEDIAS
+  is ' Si el candidato esta o no en situación de no decaido en listas de interinos de Enseñanzas Medias.. ';
+comment on column CAND_PRESEL_AE.C_MUNICIPIO
+  is 'Municipio / Localidad (a partir de 2012) en el que ha estado ocupando plaza el participante. ';
+alter table CAND_PRESEL_AE
+  add constraint PK_CAND_PRESEL_AE primary key (F_CONV_AE, TIPO_ID, DNI);
+alter table CAND_PRESEL_AE
+  add constraint FK_CAPAE_ACTEL foreign key (F_CONV_AE)
+  references ACTOS_ELECCION (F_CONV_AE);
+alter table CAND_PRESEL_AE
+  add constraint FK_CAPAE_PARTI foreign key (DNI, TIPO_ID)
+  references CLIPRI_PARTICIPANTE (DNI, TIPO_ID);
+

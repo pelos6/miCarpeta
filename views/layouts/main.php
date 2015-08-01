@@ -47,7 +47,6 @@ AppAsset::register($this);
                     Yii::$app->user->isGuest ?
                             ['label' => 'Usuarios', 'url' => ['/user/index'], 'visible' => false] :
                             ['label' => 'Usuarios', 'url' => ['/user/index'], 'visible' => User::isUserAdmin(Yii::$app->user->identity->id)],
-                    ['label' => 'Conversión', 'url' => ['/site/conversion']],
                     ['label' => 'Contacto', 'url' => ['/site/contacto']],
                     ['label' => 'Registro', 'url' => ['/site/registro'], 'visible' => Yii::$app->user->isGuest],
                     Yii::$app->user->isGuest ?

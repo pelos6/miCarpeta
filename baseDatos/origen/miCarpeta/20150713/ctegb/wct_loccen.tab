@@ -1,0 +1,23 @@
+create table WCT_LOCCEN
+(
+  CPROV     VARCHAR2(2) not null,
+  CLOC      VARCHAR2(9) not null,
+  DLOC      VARCHAR2(50),
+  ZCONCURSO VARCHAR2(6)
+)
+;
+comment on table WCT_LOCCEN
+  is 'Tabla que contiene las localidades con centros en funcionamiento.';
+comment on column WCT_LOCCEN.CPROV
+  is 'Código de la Provincia.';
+comment on column WCT_LOCCEN.CLOC
+  is 'Código de Localidad.';
+comment on column WCT_LOCCEN.DLOC
+  is 'Descripción de la Localidad.';
+alter table WCT_LOCCEN
+  add constraint PK_WCT_CLOC primary key (CLOC);
+alter table WCT_LOCCEN
+  add constraint NNWCT_DLOC
+  check ("DLOC" IS NOT NULL);
+create index I_DLOC on WCT_LOCCEN (DLOC);
+

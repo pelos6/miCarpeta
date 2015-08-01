@@ -1,0 +1,13 @@
+create table ESPEC_PRESEL_CAND_AE_20_07_12
+(
+  F_CONV_AE    DATE not null,
+  TIPO_ID      VARCHAR2(1) not null,
+  DNI          VARCHAR2(15) not null,
+  C_CUERPO     VARCHAR2(4) not null,
+  C_ESPEC      VARCHAR2(3) not null,
+  C_PROV1_SUSP VARCHAR2(2),
+  C_PROV2_SUSP VARCHAR2(2),
+  L_LISTA_SUSP VARCHAR2(1) not null
+)
+;
+

@@ -1,0 +1,3 @@
+create or replace synonym PKB_MANT_PARTIC_PSW
+  for EDUSOL.PKB_MANT_PARTIC_PSW;
+

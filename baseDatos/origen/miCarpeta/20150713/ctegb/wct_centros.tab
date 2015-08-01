@@ -1,0 +1,36 @@
+create table WCT_CENTROS
+(
+  CPROV   VARCHAR2(2),
+  CCENTRO VARCHAR2(8),
+  COD_LOC VARCHAR2(9),
+  DCENTRO VARCHAR2(50),
+  DDENCOR VARCHAR2(15),
+  INPS    VARCHAR2(1) not null
+)
+;
+comment on table WCT_CENTROS
+  is 'Tabla de Centros que se anuncian a concurso.';
+comment on column WCT_CENTROS.CCENTRO
+  is 'Código universal del Centro.';
+comment on column WCT_CENTROS.COD_LOC
+  is 'Código de la localidad del centro.';
+comment on column WCT_CENTROS.DCENTRO
+  is 'Denominación del Centro.';
+comment on column WCT_CENTROS.INPS
+  is 'Indicador si el centro es de Primaria - P / Secundaria - S / Adultos - A ';
+alter table WCT_CENTROS
+  add constraint PK_WCT_CENTROS primary key (CCENTRO);
+alter table WCT_CENTROS
+  add constraint CK_WCT_CENTROS
+  check (inps in ('P','S','A'));
+alter table WCT_CENTROS
+  add constraint NN_CCENTRO
+  check ("CCENTRO" IS NOT NULL);
+alter table WCT_CENTROS
+  add constraint NN_COD_LOC
+  check ("COD_LOC" IS NOT NULL);
+alter table WCT_CENTROS
+  add constraint NN_DCENTRO
+  check ("DCENTRO" IS NOT NULL);
+create index I_DCENTRO on WCT_CENTROS (DCENTRO);
+

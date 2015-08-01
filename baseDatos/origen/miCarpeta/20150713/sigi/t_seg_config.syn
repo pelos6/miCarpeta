@@ -1,0 +1,3 @@
+create or replace synonym T_SEG_CONFIG
+  for EDUSOL.T_SEG_CONFIG;
+

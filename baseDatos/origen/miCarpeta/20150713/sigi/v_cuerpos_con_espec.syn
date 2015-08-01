@@ -1,0 +1,3 @@
+create or replace synonym V_CUERPOS_CON_ESPEC
+  for EDUSOL.V_CUERPOS_CON_ESPEC;
+

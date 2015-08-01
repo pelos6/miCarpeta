@@ -1,0 +1,72 @@
+create table W_NOT_BAR
+(
+  TIPO_ID VARCHAR2(1) not null,
+  DNI     VARCHAR2(15) not null,
+  COD_CON NUMBER(4) not null,
+  COD_CUE VARCHAR2(4) not null,
+  COD_ESP VARCHAR2(3) not null,
+  COD_ACC VARCHAR2(1) not null,
+  TRI     VARCHAR2(200),
+  L_INF   VARCHAR2(1),
+  BAR_CON VARCHAR2(8),
+  BAR_OPO VARCHAR2(8),
+  NOT_A1  VARCHAR2(20),
+  BAR_A1  VARCHAR2(20),
+  NOT_B1  VARCHAR2(20),
+  BAR_B1  VARCHAR2(20),
+  NOT_B2  VARCHAR2(20),
+  BAR_B2  VARCHAR2(20),
+  NOT_B3  VARCHAR2(20),
+  BAR_B3  VARCHAR2(20),
+  NOT_OTR VARCHAR2(20),
+  TEX_FOR CLOB,
+  TEX_PDF CLOB
+)
+;
+comment on table W_NOT_BAR
+  is 'Nota y baremo obtenido por un opositor o participante en una convocatoria';
+comment on column W_NOT_BAR.TIPO_ID
+  is 'Tipo de identificador de la persona';
+comment on column W_NOT_BAR.DNI
+  is 'Dni de la persona';
+comment on column W_NOT_BAR.COD_CON
+  is 'Código ce la convocatoria ';
+comment on column W_NOT_BAR.COD_CUE
+  is 'Cuerpo de la convocatoria';
+comment on column W_NOT_BAR.COD_ESP
+  is 'Especialidad de la convocatoria';
+comment on column W_NOT_BAR.COD_ACC
+  is 'Acceso ';
+comment on column W_NOT_BAR.TRI
+  is 'Tribunal ';
+comment on column W_NOT_BAR.L_INF
+  is 'Si tiene informe que le exime de una prueba';
+comment on column W_NOT_BAR.BAR_CON
+  is 'Baremo de la fase de concurso';
+comment on column W_NOT_BAR.BAR_OPO
+  is 'Baremo de la fase de oposición';
+comment on column W_NOT_BAR.NOT_A1
+  is 'Nota de la parte a1';
+comment on column W_NOT_BAR.BAR_A1
+  is 'Baremo de la parte a1';
+comment on column W_NOT_BAR.NOT_B1
+  is 'Nota de la parte b1';
+comment on column W_NOT_BAR.BAR_B1
+  is 'Baremo de la parte b1';
+comment on column W_NOT_BAR.NOT_B2
+  is 'Nota de la parte b2';
+comment on column W_NOT_BAR.BAR_B2
+  is 'Baremo de la parte b2';
+comment on column W_NOT_BAR.NOT_B3
+  is 'Nota de la parte b3';
+comment on column W_NOT_BAR.BAR_B3
+  is 'Baremo de la parte b3';
+comment on column W_NOT_BAR.NOT_OTR
+  is 'Nota de otras pruebas';
+comment on column W_NOT_BAR.TEX_FOR
+  is 'Texto a mostrar en el formulario en html ';
+comment on column W_NOT_BAR.TEX_PDF
+  is 'Texto a mostrar en el pdf';
+alter table W_NOT_BAR
+  add constraint PK_W_NOT_BAR primary key (TIPO_ID, DNI, COD_CON, COD_CUE, COD_ESP, COD_ACC);
+

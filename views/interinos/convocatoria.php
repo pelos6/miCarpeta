@@ -4,7 +4,7 @@ use yii\helpers\Html;
 use yii\widgets\ActiveForm;
 use yii\helpers\Url;
 
-$this->title = 'convocatoria ' . Html::encode($_GET["id"]);
+$this->title = 'convocatoria '. Html::encode($_GET["des_con"]);
 $this->params['breadcrumbs'][] = ['label' => 'Interinos', 'url' => ['interinos']];
 $this->params['breadcrumbs'][] = $this->title;
 
@@ -13,7 +13,7 @@ $uriSigicon = Yii::$app->params["servidor"] . "/serviciosMiCarpetaSigicon";
 //error_log("DEBUG: la urlInterinos " . $urlInterinos . " " . $uriInterinos);
 //error_log("DEBUG: la urlActos " . $urlActos . " " . $uriActos);
 $clienteSigicon = new SoapClient(null, array('location' => $urlSigicon, 'uri' => $uriSigicon));
-$convocatoriaListas = $clienteSigicon->getConvocatoriaListas($_GET["id"]);
+$convocatoriaListas = $clienteSigicon->getConvocatoriaListas($_GET["cod_con"]);
 ?>
 
 <div class="panel panel-success">
@@ -21,7 +21,7 @@ $convocatoriaListas = $clienteSigicon->getConvocatoriaListas($_GET["id"]);
         <h3 class="panel-title">Codigo de convocatoria</h3>
     </div>
     <div class="panel-body">
-        <?= Html::encode($_GET["id"]) ?>
+        <?= Html::encode($_GET["cod_con"]) ?>
     </div>
 </div>    
 <div class="panel panel-success">

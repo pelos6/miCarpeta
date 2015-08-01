@@ -1,0 +1,3 @@
+create or replace synonym PB_INTERVALO_FECHAS
+  for EDUSOL.PB_INTERVALO_FECHAS;
+

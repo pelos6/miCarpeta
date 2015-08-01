@@ -1,0 +1,15 @@
+create table WCTEM_CAUDERPRECEN
+(
+  CCAUSA VARCHAR2(1) not null,
+  DCAUSA VARCHAR2(120)
+)
+;
+comment on table WCTEM_CAUDERPRECEN
+  is 'Causa de peticiones de Derecho Preferente a centro';
+comment on column WCTEM_CAUDERPRECEN.CCAUSA
+  is 'Código de Causa para peticiones de derecho preferente a centro';
+comment on column WCTEM_CAUDERPRECEN.DCAUSA
+  is 'Descripción de la causa';
+alter table WCTEM_CAUDERPRECEN
+  add constraint PK_WCTEM_CAUDERPRECEN primary key (CCAUSA);
+

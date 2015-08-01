@@ -1,0 +1,27 @@
+create table W_NOT_MED
+(
+  TIPO_ID   VARCHAR2(1) not null,
+  DNI       VARCHAR2(15) not null,
+  COD_CUE   VARCHAR2(4) not null,
+  COD_ESP   VARCHAR2(3) not null,
+  NOT_MED   NUMBER(6,4),
+  F_NOT_MED DATE
+)
+;
+comment on table W_NOT_MED
+  is 'Mejor nota media en los tres ultimos procesos selectivos convocados en el cuerpo/especialidad';
+comment on column W_NOT_MED.TIPO_ID
+  is 'Tipo de identificador del participante';
+comment on column W_NOT_MED.DNI
+  is 'Identificación del participante';
+comment on column W_NOT_MED.COD_CUE
+  is 'Código del Cuerpo de la especialidad a la que se presentó el participante';
+comment on column W_NOT_MED.COD_ESP
+  is 'Código de la Especialidad a la que se presentó el participante';
+comment on column W_NOT_MED.NOT_MED
+  is 'Mejor nota media de las oposiciciones anteriores.';
+comment on column W_NOT_MED.F_NOT_MED
+  is 'Fecha de la convocatoria en la que saco la mejor nota media';
+alter table W_NOT_MED
+  add constraint PK_W_NOT_MED primary key (TIPO_ID, DNI, COD_CUE, COD_ESP);
+

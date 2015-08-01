@@ -1,0 +1,3 @@
+create or replace synonym V_TIT_DOCTOR
+  for EDUSOL.V_TIT_DOCTOR;
+

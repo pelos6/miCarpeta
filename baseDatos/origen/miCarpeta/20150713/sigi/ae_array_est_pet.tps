@@ -1,0 +1,4 @@
+CREATE OR REPLACE TYPE AE_ARRAY_EST_PET
+is TABLE of ae_reg_est_pet
+/
+

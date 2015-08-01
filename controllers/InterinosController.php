@@ -34,8 +34,17 @@ class InterinosController extends Controller {
     public function actionInterinos() {
         return $this->render('interinos');
     }
+
     public function actionConvocatoria() {
         return $this->render('convocatoria');
+    }
+
+    public function actionSolicitudes() {
+        return $this->render('solicitudes');
+    }
+
+    public function actionSolicitud() {
+        return $this->render('solicitud');
     }
 
 }

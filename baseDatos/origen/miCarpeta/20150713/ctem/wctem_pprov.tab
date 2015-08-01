@@ -1,0 +1,57 @@
+create table WCTEM_PPROV
+(
+  PROV      VARCHAR2(2),
+  ST        VARCHAR2(1),
+  DNI       VARCHAR2(9),
+  NORDEN    VARCHAR2(4) not null,
+  CUERPO    VARCHAR2(4),
+  ORDEN     NUMBER(1),
+  PPROV     VARCHAR2(2),
+  PST       VARCHAR2(1),
+  FECULTMOD DATE not null
+)
+;
+comment on table WCTEM_PPROV
+  is 'Tabla que contiene las peticiones de provincias para forzosos';
+comment on column WCTEM_PPROV.PROV
+  is 'Ambito territorial de origen.';
+comment on column WCTEM_PPROV.ST
+  is 'Subdirección territorial de origen.';
+comment on column WCTEM_PPROV.DNI
+  is 'D.N.I.';
+comment on column WCTEM_PPROV.NORDEN
+  is 'Numero de orden de la solicitud.';
+comment on column WCTEM_PPROV.CUERPO
+  is 'Cuerpo al que pertenece el participante.';
+comment on column WCTEM_PPROV.ORDEN
+  is 'Nº de orden de petición .';
+comment on column WCTEM_PPROV.PPROV
+  is 'Código de la provincia que se solicita.';
+comment on column WCTEM_PPROV.PST
+  is 'Código de la Subdirección territorial';
+comment on column WCTEM_PPROV.FECULTMOD
+  is 'Fecha de última modificación del registro';
+alter table WCTEM_PPROV
+  add constraint PK_WCTEM_PPROV primary key (DNI, NORDEN, PPROV, PST);
+alter table WCTEM_PPROV
+  add constraint NN_PPROV_CUERPO
+  check ("CUERPO" IS NOT NULL);
+alter table WCTEM_PPROV
+  add constraint NN_PPROV_DNI
+  check ("DNI" IS NOT NULL);
+alter table WCTEM_PPROV
+  add constraint NN_PPROV_ORDEN
+  check ("ORDEN" IS NOT NULL);
+alter table WCTEM_PPROV
+  add constraint NN_PPROV_PPROV
+  check ("PPROV" IS NOT NULL);
+alter table WCTEM_PPROV
+  add constraint NN_PPROV_PROV
+  check ("PROV" IS NOT NULL);
+alter table WCTEM_PPROV
+  add constraint NN_PPROV_PST
+  check ("PST" IS NOT NULL);
+alter table WCTEM_PPROV
+  add constraint NN_PPROV_ST
+  check ("ST" IS NOT NULL);
+

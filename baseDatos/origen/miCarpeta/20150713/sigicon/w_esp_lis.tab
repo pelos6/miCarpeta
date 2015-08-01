@@ -1,0 +1,21 @@
+create table W_ESP_LIS
+(
+  COD_CON NUMBER(4) not null,
+  COD_CUE VARCHAR2(4) not null,
+  COD_ESP VARCHAR2(3) not null
+)
+;
+comment on table W_ESP_LIS
+  is ' Especialidades en una Convocatoria especifica que forman nuevas listas ';
+comment on column W_ESP_LIS.COD_CON
+  is ' Código de la convocatoria a la que corresponde ';
+comment on column W_ESP_LIS.COD_CUE
+  is ' Código del cuerpo al que pertenece la especialidad ';
+comment on column W_ESP_LIS.COD_ESP
+  is ' Código de la especialidad ';
+alter table W_ESP_LIS
+  add constraint PK_W_ESP_LIS primary key (COD_CON, COD_CUE, COD_ESP);
+alter table W_ESP_LIS
+  add constraint FK_ESP_LIS_CON foreign key (COD_CON)
+  references W_CON (COD_CON);
+

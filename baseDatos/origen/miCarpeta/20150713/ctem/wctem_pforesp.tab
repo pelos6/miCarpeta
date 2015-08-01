@@ -1,0 +1,33 @@
+create table WCTEM_PFORESP
+(
+  PROV      VARCHAR2(2),
+  ST        VARCHAR2(1),
+  DNI       VARCHAR2(9) not null,
+  NORDEN    VARCHAR2(4) not null,
+  CUERPO    VARCHAR2(4) not null,
+  ORDEN     NUMBER(1) not null,
+  CESP      VARCHAR2(3) not null,
+  FECULTMOD DATE not null
+)
+;
+comment on table WCTEM_PFORESP
+  is 'Tabla que contiene las peticiones de especialidades para forzosos';
+comment on column WCTEM_PFORESP.PROV
+  is 'Ambito territorial de origen.';
+comment on column WCTEM_PFORESP.ST
+  is 'Subdirección territorial de origen.';
+comment on column WCTEM_PFORESP.DNI
+  is 'D.N.I.';
+comment on column WCTEM_PFORESP.NORDEN
+  is 'Numero de orden de la solicitud.';
+comment on column WCTEM_PFORESP.CUERPO
+  is 'Cuerpo al que pertenece el participante.';
+comment on column WCTEM_PFORESP.ORDEN
+  is 'Nº de orden de petición .';
+comment on column WCTEM_PFORESP.CESP
+  is 'Código de la especialidad que se solicita.';
+comment on column WCTEM_PFORESP.FECULTMOD
+  is 'Fecha de última modificación del registro';
+alter table WCTEM_PFORESP
+  add constraint PK_WCTEM_PFORESP primary key (DNI, NORDEN, CUERPO, ORDEN, CESP);
+

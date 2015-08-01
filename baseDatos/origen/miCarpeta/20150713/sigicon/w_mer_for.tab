@@ -1,0 +1,51 @@
+create table W_MER_FOR
+(
+  COD_CON     NUMBER(4) not null,
+  COD_SOL     VARCHAR2(4),
+  TIPO_ID     VARCHAR2(1) not null,
+  DNI         VARCHAR2(15),
+  COD_FOR     NUMBER(2),
+  COD_TIT     VARCHAR2(12),
+  NOT_EXP_ACA NUMBER(4,2),
+  PRE_SN      VARCHAR2(1),
+  CIC_TIT     VARCHAR2(1)
+)
+;
+comment on table W_MER_FOR
+  is 'Meritos de formacion academica';
+comment on column W_MER_FOR.COD_CON
+  is 'Código de la convocatoria';
+comment on column W_MER_FOR.COD_SOL
+  is 'Código de la solicitud web';
+comment on column W_MER_FOR.TIPO_ID
+  is 'Código del identificador del participante';
+comment on column W_MER_FOR.DNI
+  is 'Identificacion del solicitante';
+comment on column W_MER_FOR.COD_FOR
+  is 'Códigodel merito dentro de la solicitud';
+comment on column W_MER_FOR.COD_TIT
+  is 'Código de titulacion';
+comment on column W_MER_FOR.NOT_EXP_ACA
+  is 'Nota del expediente academico para la titulación alegada';
+comment on column W_MER_FOR.PRE_SN
+  is 'Si tiene premio en doctorado en la titulación alegada';
+comment on column W_MER_FOR.CIC_TIT
+  is 'Ciclo completado de la titulación. Valores 0 (no universitario), 1, 2, 3 (Doctorado), ''A'' (Ambos: 1 y 2)';
+alter table W_MER_FOR
+  add constraint PK_W_MER_FOR primary key (COD_CON, COD_SOL, TIPO_ID, DNI, COD_FOR);
+alter table W_MER_FOR
+  add constraint FK_W_MER_FOR_CON foreign key (COD_CON)
+  references W_CON (COD_CON);
+alter table W_MER_FOR
+  add constraint FK_W_MER_FOR_SOL foreign key (COD_CON, COD_SOL, TIPO_ID, DNI)
+  references W_SOL (COD_CON, COD_SOL, TIPO_ID, DNI);
+alter table W_MER_FOR
+  add constraint NN_W_MER_FOR_DNI
+  check ("DNI" IS NOT NULL);
+alter table W_MER_FOR
+  add constraint NN_W_MER_FOR_M_ORDEN
+  check ("COD_FOR" IS NOT NULL);
+alter table W_MER_FOR
+  add constraint NN_W_MER_FOR_NORDEN
+  check ("COD_SOL" IS NOT NULL);
+

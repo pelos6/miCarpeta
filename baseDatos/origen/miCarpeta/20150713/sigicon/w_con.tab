@@ -1,0 +1,69 @@
+create table W_CON
+(
+  COD_CON     NUMBER(4) not null,
+  DES_CON     VARCHAR2(100) not null,
+  COD_CUE     VARCHAR2(4) not null,
+  DES_CUE     VARCHAR2(100) not null,
+  COD_ESP     VARCHAR2(3) not null,
+  DES_ESP     VARCHAR2(100) not null,
+  COD_TIP_CON VARCHAR2(1),
+  FAS_CON     VARCHAR2(2),
+  ORDEN       NUMBER,
+  F_RES       DATE not null,
+  F_PUB       DATE not null,
+  F_FIN_SOL   DATE not null,
+  F_FIN_MER   DATE not null,
+  ACT_CON_SN  VARCHAR2(1),
+  L_CAS       VARCHAR2(1),
+  L_ACC       VARCHAR2(1),
+  L_NUE_PRO   VARCHAR2(1),
+  L_TIT_ACC   VARCHAR2(1),
+  F_INI_SOL   DATE
+)
+;
+comment on table W_CON
+  is ' Datos especificos de la Convocatoria ';
+comment on column W_CON.COD_CON
+  is ' Código asignado a cada convocatoria';
+comment on column W_CON.DES_CON
+  is ' Descripción de la Convocatoria ';
+comment on column W_CON.COD_CUE
+  is ' Código del cuerpo de la convocatoria ';
+comment on column W_CON.DES_CUE
+  is ' Descripción del cuerpo de la convocatoria ';
+comment on column W_CON.COD_ESP
+  is ' Código de la especialidad de la convocatoria ';
+comment on column W_CON.DES_ESP
+  is ' Descripción de la especialidad de la convocatoria ';
+comment on column W_CON.COD_TIP_CON
+  is 'Código del tipo de convocatoria. C(pe), R(ebaramción), O(posición), (V)er Méritos';
+comment on column W_CON.FAS_CON
+  is 'Código de la fase de la convocatoria.';
+comment on column W_CON.ORDEN
+  is 'El orden en el que salen en la web';
+comment on column W_CON.F_RES
+  is ' Fecha de la Resolución en que se basa la convocatoria ';
+comment on column W_CON.F_PUB
+  is ' Fecha de publicación de la convocatoria ';
+comment on column W_CON.F_FIN_SOL
+  is ' Fecha final hasta la que pueden presentarse solicitudes (incluída)';
+comment on column W_CON.F_FIN_MER
+  is ' Fecha final hasta la que son válidos los méritos(incluída)';
+comment on column W_CON.ACT_CON_SN
+  is ' Si la convocatoria está activa (S) o no lo está (N) ';
+comment on column W_CON.L_CAS
+  is 'Si sale casilla para esta convocatoria';
+comment on column W_CON.L_ACC
+  is 'Si la convocatoria exige acceso';
+comment on column W_CON.L_NUE_PRO
+  is 'Si en la convocatoria se puede cambiar la provincia de preferencia';
+comment on column W_CON.L_TIT_ACC
+  is 'Si en la convocatoria es necesaria la titulación de acceso';
+comment on column W_CON.F_INI_SOL
+  is 'Fecha en la que se inicia el uso de la convocatoria';
+alter table W_CON
+  add constraint PK_W_CON primary key (COD_CON);
+alter table W_CON
+  add constraint FK_CON_TIP_CON foreign key (COD_TIP_CON)
+  references W_TIP_CON (COD_TIP_CON);
+

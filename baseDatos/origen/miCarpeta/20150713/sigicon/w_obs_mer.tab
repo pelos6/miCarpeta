@@ -1,0 +1,45 @@
+create table W_OBS_MER
+(
+  COD_CON     NUMBER(4) not null,
+  DNI         VARCHAR2(15),
+  TIPO_ID     VARCHAR2(1) not null,
+  COD_SOL     VARCHAR2(4),
+  OBS_MER_EXP VARCHAR2(500),
+  OBS_MER_FOR VARCHAR2(500),
+  OBS_MER_ACT VARCHAR2(500),
+  OBS_MER_IDI VARCHAR2(500),
+  OBS_MER_PLA VARCHAR2(500),
+  OBS_NUE_HAB VARCHAR2(500)
+)
+;
+comment on table W_OBS_MER
+  is 'Observaciones de los méritos aportados por los solicitantes.';
+comment on column W_OBS_MER.COD_CON
+  is 'Código de la convocatoria';
+comment on column W_OBS_MER.DNI
+  is 'Identificacion del participante';
+comment on column W_OBS_MER.TIPO_ID
+  is 'Tipo de identificador del participante';
+comment on column W_OBS_MER.COD_SOL
+  is 'Código de la solicitud web';
+comment on column W_OBS_MER.OBS_MER_EXP
+  is 'Observaciones de los méritos de Experiencia docente.';
+comment on column W_OBS_MER.OBS_MER_FOR
+  is 'Observaciones de los méritos de Formación.';
+comment on column W_OBS_MER.OBS_MER_ACT
+  is 'Observaciones de los méritos de Actividades de Formación.';
+comment on column W_OBS_MER.OBS_MER_IDI
+  is 'Observaciones de otros méritos, Idiomas Modernos.';
+comment on column W_OBS_MER.OBS_MER_PLA
+  is 'Observaciones de Planes y programas.';
+comment on column W_OBS_MER.OBS_NUE_HAB
+  is 'Observaciones a las nuevas habilitaciones';
+alter table W_OBS_MER
+  add constraint PK_W_OBS_MER primary key (TIPO_ID, DNI, COD_SOL, COD_CON);
+alter table W_OBS_MER
+  add constraint NN_W_OBS_MER_DNI
+  check ("DNI" IS NOT NULL);
+alter table W_OBS_MER
+  add constraint NN_W_OBS_MER_NORDEN
+  check ("COD_SOL" IS NOT NULL);
+

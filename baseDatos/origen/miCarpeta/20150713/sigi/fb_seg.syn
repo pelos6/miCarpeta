@@ -1,0 +1,3 @@
+create or replace synonym FB_SEG
+  for EDUSOL.FB_SEG;
+

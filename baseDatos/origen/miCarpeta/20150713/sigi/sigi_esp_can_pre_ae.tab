@@ -1,0 +1,33 @@
+create table SIGI_ESP_CAN_PRE_AE
+(
+  TIPO_ID       VARCHAR2(1) not null,
+  DNI           VARCHAR2(15) not null,
+  COD_OPC       VARCHAR2(7) not null,
+  COD_CUE       VARCHAR2(4) not null,
+  COD_ESP       VARCHAR2(3) not null,
+  COD_PRO_1_SUS VARCHAR2(2),
+  COD_PRO_2_SUS VARCHAR2(2),
+  L_LIS_SUS     VARCHAR2(1)
+)
+;
+comment on table SIGI_ESP_CAN_PRE_AE
+  is 'Especialidades de los candidatos preseleccionados para el AE. ';
+comment on column SIGI_ESP_CAN_PRE_AE.TIPO_ID
+  is ' Tipo de Identificador del candidato preseleccionado. ';
+comment on column SIGI_ESP_CAN_PRE_AE.DNI
+  is ' Dni del candidato preseleccionado. ';
+comment on column SIGI_ESP_CAN_PRE_AE.COD_OPC
+  is 'Código de la opción para la que la persona esta preseleccionada o puede consultar su situación en lsitas';
+comment on column SIGI_ESP_CAN_PRE_AE.COD_CUE
+  is 'Cuerpo por el que esta preseleccionado';
+comment on column SIGI_ESP_CAN_PRE_AE.COD_ESP
+  is 'Especialidad por la que esta preseleccionado';
+comment on column SIGI_ESP_CAN_PRE_AE.COD_PRO_1_SUS
+  is 'Primera provincia en la que esta suspendido';
+comment on column SIGI_ESP_CAN_PRE_AE.COD_PRO_2_SUS
+  is 'Segunda provincia en la que esta suspendido';
+comment on column SIGI_ESP_CAN_PRE_AE.L_LIS_SUS
+  is 'Sí está, o no, suspendido en la lista . ';
+alter table SIGI_ESP_CAN_PRE_AE
+  add constraint SIGI_ESP_CAN_PRE_AE_PK primary key (TIPO_ID, DNI, COD_OPC, COD_CUE, COD_ESP);
+

@@ -1,0 +1,21 @@
+create table SIGI_PAR_APL
+(
+  NOM_PAR VARCHAR2(25 BYTE) not null,
+  VAL_PAR VARCHAR2(60 BYTE) not null,
+  FOR_PAR VARCHAR2(20),
+  DES_PAR VARCHAR2(200)
+)
+;
+comment on table SIGI_PAR_APL
+  is 'Parametros de la aplicación SIGI';
+comment on column SIGI_PAR_APL.NOM_PAR
+  is 'Nombre del parámetro';
+comment on column SIGI_PAR_APL.VAL_PAR
+  is 'Valor del parámetro';
+comment on column SIGI_PAR_APL.FOR_PAR
+  is 'Formato del parámetro';
+comment on column SIGI_PAR_APL.DES_PAR
+  is 'Descripción del parámetro';
+alter table SIGI_PAR_APL
+  add constraint SIGI_PARAM_AP_PK primary key (NOM_PAR);
+
