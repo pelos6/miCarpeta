@@ -3,17 +3,48 @@
 require_once('include/DBSigi.php');
 
 class ServerSigi {
-
-    /**
-     * Devuelve un array con las solicitudes a actos de elección
-     *  relevantes para el usuario
+      /**
+     * Devuelve un array con los actos de elección en las que 
+     * tiene solicitud
      * 
      */
-    public function getSolicitudesActos($dni) {
-        error_log('DEBUG: en getSolicitudesActos ' . $dni);
-       // error_log('DEBUG: en getSolicitudesActos ' . $dni);
-        $solicitudesActos = DBSigi::obtieneSolicitudesActos($dni);
-        return $solicitudesActos;
+    public function getActosHaySolicitud($dni) {
+        //error_log('DEBUG: en getActosHaySolicitud ' . $dni);
+        $actosHaySolicitud = DBSigi::obtieneActosHaySolicitud($dni);
+        return $actosHaySolicitud;
+    }
+
+    /**
+     * Devuelve un array con los actos de elección en las que 
+     * esta convocado
+     * 
+     */
+    public function getActosConvocado($dni) {
+        //error_log('DEBUG: en getActosConvocado ' . $dni);
+        $actosConvocado = DBSigi::obtieneActosConvocado($dni);
+        return $actosConvocado;
+    }
+
+    /**
+     * Devuelve un array con las solicitudes al acto de elección
+     *  del usuario
+     * 
+     */
+    public function getSolicitudesActo($cod_opc,$dni) {
+        error_log('DEBUG: en getSolicitudesActos ' . $cod_opc.' '. $dni);
+        $solicitudesActo = DBSigi::obtieneSolicitudesActo($cod_opc,$dni);
+        return $solicitudesActo;
+    }
+
+    /**
+     * Devuelve la información de la solicitud al acto de elección
+     *  del usuario
+     * 
+     */
+    public function getSolicitudActo($cod_opc,$dni,$cod_sol) {
+        error_log('DEBUG: en getSolicitudActo ' . $cod_opc.' '. $dni. ' '. $cod_sol);
+        $solicitudActo = DBSigi::obtieneSolicitudActo($cod_opc,$dni,$cod_sol);
+        return $solicitudActo;
     }
 
     /**
@@ -22,7 +53,7 @@ class ServerSigi {
      * 
      */
     public function getConsultasSituacionListas($dni) {
-        error_log('DEBUG: en getConsultasSituacionListas ' . $dni);
+        //error_log('DEBUG: en getConsultasSituacionListas ' . $dni);
         $consultasSituacionListas = DBSigi::obtieneConsultasSituacionListas($dni);
         return $consultasSituacionListas;
     }
@@ -32,8 +63,7 @@ class ServerSigi {
      * 
      */
     public function getEstaConvocado($dni) {
-        error_log('DEBUG: el codigo ' . $dni);
-        // $producto = DBSigi::obtieneProducto($codigo);
+        //error_log('DEBUG: getEstaConvocado ' . $dni);
         return DBSigi::consultaConvocadoActoEleccion($dni);
         ;
     }
@@ -43,9 +73,19 @@ class ServerSigi {
      * 
      */
     public function getActosActivos() {
-        error_log('DEBUG: en getActosActivos');
+        //error_log('DEBUG: en getActosActivos');
         $actosActivos = DBSigi::obtieneActosActivos();
         return $actosActivos;
+    }
+
+    /**
+     * Devuelve la información del acto de elección activo
+     * 
+     */
+    public function getActoActivo($cod_opc) {
+        //error_log('DEBUG: en getActoActivo '.$cod_opc);
+        $actoActivo = DBSigi::obtieneActoActivo($cod_opc);
+        return $actoActivo;
     }
 
     /**
@@ -53,13 +93,13 @@ class ServerSigi {
      * 
      */
     public function getVacantesSolicitables($dni) {
-        error_log('DEBUG: en getVacantesSolicitables ' . $dni);
+        //error_log('DEBUG: en getVacantesSolicitables ' . $dni);
         $vacantesSolicitables = DBSigi::obtieneVacantesSolicitables($dni);
         return $vacantesSolicitables;
     }
 
     public function getActoEleccion($cod_opc, $f_con_ae) {
-        error_log('DEBUG: el cod_opc ' . $cod_opc);
+        //error_log('DEBUG: el cod_opc ' . $cod_opc);
         // $producto = DBSigi::obtieneProducto($codigo);
         return DBSigi::obtieneActoEleccion($cod_opc, $f_con_ae);
         ;

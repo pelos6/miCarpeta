@@ -9,7 +9,7 @@ class ServerSigicon {
      * en la convocatoria seleccionada
      */
     public function getSolicitudListas($cod_con,$dni,$cod_sol) {
-        error_log('DEBUG: en getSolicitudListas '. $cod_con.' ' . $dni. ' '. $cod_sol);
+        //error_log('DEBUG: en getSolicitudListas '. $cod_con.' ' . $dni. ' '. $cod_sol);
         $solicitudesListas = DBSigicon::obtieneSolicitudListas($cod_con,$dni, $cod_sol);
         return $solicitudesListas;
     }
@@ -18,7 +18,7 @@ class ServerSigicon {
      * 
      */
     public function getConvocatoriasListasActivas() {
-        error_log('DEBUG: en getConvocatoriasListasActivas');
+        //error_log('DEBUG: en getConvocatoriasListasActivas');
         $convocatoriasListasActivas = DBSigicon::obtieneConvocatoriasListasActivas();
         return $convocatoriasListasActivas;
     }
@@ -27,7 +27,7 @@ class ServerSigicon {
      * 
      */
     public function getConvocatoriaListas($cod_con) {
-        error_log('DEBUG: en getConvocatoriaListas ' . $cod_con);
+        //error_log('DEBUG: en getConvocatoriaListas ' . $cod_con);
         $convocatoriaListas = DBSigicon::obtieneConvocatoriaListas($cod_con);
         return $convocatoriaListas;
     }
@@ -38,7 +38,7 @@ class ServerSigicon {
      * 
      */
     public function getConvocatoriasListasHaySolicitud($dni) {
-       // error_log('DEBUG: en getConvocatoriasListasHaySolicitud ' . $dni);
+       //error_log('DEBUG: en getConvocatoriasListasHaySolicitud ' . $dni);
         $convocatoriasListasSolicitud = DBSigicon::obtieneConvocatoriasListasHaySolicitud($dni);
         return $convocatoriasListasSolicitud;
     }
@@ -49,13 +49,13 @@ class ServerSigicon {
      * 
      */
     public function getSolicitudesConvocatoriaListas($cod_con,$dni) {
-        error_log('DEBUG: en getSolicitudesConvocatoriaListas '. $cod_con.' ' . $dni);
+        //error_log('DEBUG: en getSolicitudesConvocatoriaListas '. $cod_con.' ' . $dni);
         $solicitudesListas = DBSigicon::obtieneSolicitudesConvocatoriaListas($cod_con,$dni);
         return $solicitudesListas;
     }
 
     public function getSolicitudesOposiciones($dni) {
-        error_log('DEBUG: en getSolicitudesOposiciones ' . $dni);
+        //error_log('DEBUG: en getSolicitudesOposiciones ' . $dni);
         $solicitudesOposiciones = DBSigicon::obtieneSolicitudesOposiciones($dni);
         return $solicitudesOposiciones;
     }
@@ -65,7 +65,7 @@ class ServerSigicon {
      * 
      */
     public function getOposicionesActivas() {
-        error_log('DEBUG: en getOposicionesActivas');
+        //error_log('DEBUG: en getOposicionesActivas');
         $oposicionesActivos = DBSigicon::obtieneOposicionesActivas();
         return $oposicionesActivos;
     }

@@ -596,12 +596,12 @@ class SiteController extends Controller {
         return $this->render('admin');
     }
 
-
+/*
     public function actionConvocatoria() {
         return $this->render('convocatoria');
     }
-
-    public function actionActos() {
+*/
+  /*  public function actionActos() {
         return $this->render('actos');
     }
 
@@ -611,7 +611,7 @@ class SiteController extends Controller {
 
     public function actionOposiciones() {
         return $this->render('oposiciones');
-    }
+    }*/
 
     public function actionConversion() {
         return $this->render('conversion');

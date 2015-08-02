@@ -7,27 +7,32 @@
 class SolicitudActo {
 
     protected $cod_opc;
-    protected $tex_con;
+    protected $tex_opc;
     protected $cod_sol;
-    protected $tipo_id;
     protected $dni;
-    protected $estado;
+    protected $cod_est_sol;
+    protected $des_est_sol;
+    protected $f_hor_ent;
     
 
     function getCod_sol() {
         return $this->cod_sol;
     }
 
-    function getTipo_id() {
-        return $this->tipo_id;
+    function getDes_est_sol() {
+        return $this->des_est_sol;
+    }
+    
+     function getF_hor_ent() {
+        return $this->f_hor_ent;
     }
 
     function getDni() {
         return $this->dni;
     }
 
-    function getEstado() {
-        return $this->estado;
+    function getcod_est_sol() {
+        return $this->cod_est_sol;
     }
 
   
@@ -35,33 +40,37 @@ class SolicitudActo {
         $this->cod_sol = $cod_sol;
     }
 
-    function setTipo_id($tipo_id) {
-        $this->tipo_id = $tipo_id;
-    }
 
     function setDni($dni) {
         $this->dni = $dni;
     }
 
-    function setEstado($estado) {
-        $this->estado = $estado;
+    function setCod_est_sol($cod_est_sol) {
+        $this->cod_est_sol = $cod_est_sol;
+    }
+
+        function setDes_est_sol($des_est_sol) {
+        $this->des_est_sol = $des_est_sol;
+    }
+
+        function setF_hor_ent($f_hor_ent) {
+        $this->f_hor_ent = $f_hor_ent;
     }
  
-
     function getCod_opc() {
         return $this->cod_opc;
     }
 
-    function getTex_con() {
-        return $this->tex_con;
+    function getTex_opc() {
+        return $this->tex_opc;
     }
 
     function setCod_opc($cod_opc) {
         $this->cod_opc = $cod_opc;
     }
 
-    function setTex_con($tex_con) {
-        $this->tex_con = $tex_con;
+    function setTex_opc($tex_opc) {
+        $this->tex_opc = $tex_opc;
     }
 
     
@@ -69,10 +78,11 @@ class SolicitudActo {
     public function __construct($row) {
         $this->cod_opc = $row['cod_opc'];
         $this->tex_opc = $row['tex_opc'];
-        $this->tipo_id = $row['tipo_id'];
         $this->cod_sol = $row['cod_sol'];
         $this->dni = $row['dni'];
-        $this->estado = $row['estado'];
+        $this->cod_est_sol = $row['cod_est_sol'];
+        $this->des_est_sol = $row['des_est_sol'];
+        $this->f_hor_ent = $row['f_hor_ent'];
     }
     
     public function muestra() {

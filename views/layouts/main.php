@@ -53,14 +53,14 @@ AppAsset::register($this);
                             ['label' => 'Interinos', 'url' => ['/interinos/interinos'], 'visible' => false] :
                             ['label' => 'Interinos', 'url' => ['/interinos/interinos'], 'visible' => Yii::$app->user->identity->interinos == 1],
                     Yii::$app->user->isGuest ?
-                            ['label' => 'Actos', 'url' => ['/site/actos'], 'visible' => false] :
-                            ['label' => 'Actos', 'url' => ['/site/actos'], 'visible' => Yii::$app->user->identity->actos == 1],
+                            ['label' => 'Actos', 'url' => ['/actos/actos'], 'visible' => false] :
+                            ['label' => 'Actos', 'url' => ['/actos/actos'], 'visible' => Yii::$app->user->identity->actos == 1],
                     Yii::$app->user->isGuest ?
-                            ['label' => 'Concursos', 'url' => ['/site/concrusos'], 'visible' => false] :
-                            ['label' => 'Concursos', 'url' => ['/site/concursos'], 'visible' => Yii::$app->user->identity->concursos == 1],
+                            ['label' => 'Concursos', 'url' => ['/concursos/concrusos'], 'visible' => false] :
+                            ['label' => 'Concursos', 'url' => ['/concursos/concursos'], 'visible' => Yii::$app->user->identity->concursos == 1],
                     Yii::$app->user->isGuest ?
-                            ['label' => 'Oposiciones', 'url' => ['/site/oposiciones'], 'visible' => false] :
-                            ['label' => 'Oposiciones', 'url' => ['/site/oposiciones'], 'visible' => Yii::$app->user->identity->oposiciones == 1],
+                            ['label' => 'Oposiciones', 'url' => ['/oposiciones/oposiciones'], 'visible' => false] :
+                            ['label' => 'Oposiciones', 'url' => ['/oposiciones/oposiciones'], 'visible' => Yii::$app->user->identity->oposiciones == 1],
                     Yii::$app->user->isGuest ?
                             ['label' => 'Acceder', 'url' => ['/site/login']] :
                             ['label' => 'Salir (' . Yii::$app->user->identity->username . ' i ' . Yii::$app->user->identity->interinos . ' a ' . Yii::$app->user->identity->actos . ' c ' . Yii::$app->user->identity->concursos . ' o ' . Yii::$app->user->identity->oposiciones . ')',

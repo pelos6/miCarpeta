@@ -10,16 +10,16 @@ class SolicitudConcurso {
     protected $des_con;
     protected $cod_sol;
     protected $dni;
-    protected $estado;
-    protected $fechagrabacion;
+    protected $des_est_sol;
+    protected $f_hor_ent;
     
 
-    function getFechagrabacion() {
-        return $this->fechagrabacion;
+    function getF_hor_ent() {
+        return $this->f_hor_ent;
     }
 
-    function setFechagrabacion($fechagrabacion) {
-        $this->fechagrabacion = $fechagrabacion;
+    function setF_hor_ent($f_hor_ent) {
+        $this->f_hor_ent = $f_hor_ent;
     }
 
         
@@ -31,8 +31,8 @@ class SolicitudConcurso {
         return $this->dni;
     }
 
-    function getEstado() {
-        return $this->estado;
+    function getDes_est_sol() {
+        return $this->des_est_sol;
     }
 
   
@@ -44,8 +44,8 @@ class SolicitudConcurso {
         $this->dni = $dni;
     }
 
-    function setEstado($estado) {
-        $this->estado = $estado;
+    function setDes_est_sol($des_est_sol) {
+        $this->des_est_sol = $des_est_sol;
     }
  
     function getCod_con() {
@@ -70,8 +70,8 @@ class SolicitudConcurso {
         $this->des_con = $row['des_con'];
         $this->cod_sol = $row['cod_sol'];
         $this->dni = $row['dni'];
-        $this->estado = $row['estado'];
-        $this->fechagrabacion = $row['fechagrabacion'];
+        $this->des_est_sol = $row['des_est_sol'];
+        $this->f_hor_ent = $row['f_hor_ent'];
     }
     
     public function muestra() {
