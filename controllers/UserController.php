@@ -34,6 +34,7 @@ class UserController extends Controller {
     public function actionIndex() {
         $form = new FormSearch;
         $search = null;
+        error_log('DEBUG: actionIndex 1' ) ;
         if ($form->load(Yii::$app->request->get())) {
             if ($form->validate()) {
                 $search = Html::encode($form->q);
@@ -57,6 +58,7 @@ class UserController extends Controller {
                 $form->getErrors();
             }
         } else {
+               error_log('DEBUG: actionIndex 2' ) ;
             $table = Users::find();
             $count = clone $table;
             $pages = new Pagination([
@@ -72,6 +74,7 @@ class UserController extends Controller {
     }
 
     /**
+    * ESTA NO SE USA
      * Lists all User models.
      * @return mixed
      */
@@ -95,13 +98,58 @@ class UserController extends Controller {
                     'model' => $this->findModel($id),
         ]);
     }
+  public function actionCreate()
+    {
+        $model = new UsuarioForm;
+        $msg = null;
+        if($model->load(Yii::$app->request->post()))
+        {
+            if($model->validate())
+            {
+              /*  $table = new Alumnos;
+                $table->nombre = $model->nombre;
+                $table->apellidos = $model->apellidos;
+                $table->clase = $model->clase;
+                $table->nota_final = $model->nota_final;*/
+                $table = new Users;
+                 $table->username = $model->username;
+                    $table->role = $model->role;
+                    $table->email = $model->email;
+                    $table->interinos = $model->interinos;
+                    $table->actos = $model->actos;
+                    $table->concursos = $model->concursos;
+                    $table->oposiciones = $model->oposiciones;
+                if ($table->insert())
+                {
+                    $msg = "Enhorabuena registro guardado correctamente";
+                    $model->role = null;
+                    $model->email = null;
+                    $model->username = null;
+                    $model->interinos = null;
+                    $model->actos = null;
+                    $model->concursos = null;
+                    $model->oposiciones = null;
+                }
+                else
+                {
+                    $msg = "Ha ocurrido un error al insertar el registro";
+                }
+            }
+            else
+            {
+                $model->getErrors();
+            }
+        }
+        return $this->render("create", ['model' => $model, 'msg' => $msg]);
+    }
+
 
     /**
      * Creates a new User model.
      * If creation is successful, the browser will be redirected to the 'view' page.
      * @return mixed
      */
-    public function actionCreate() {
+    public function actionCreate1() {
         $model = new User();
 
         if ($model->load(Yii::$app->request->post()) && $model->save()) {

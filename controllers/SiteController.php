@@ -69,7 +69,10 @@ class SiteController extends Controller {
                     $subject = "Recuperar password";
                     $body = "<p>Copie el siguiente código de verificación para restablecer su password ... ";
                     $body .= "<strong>" . $verification_code . "</strong></p>";
-                    $body .= "<p><a href='http://yii.local/index.php?r=site/resetpass'>Recuperar password</a></p>";
+                    //$body .= "<p><a href='http://yii.local/index.php?r=site/resetpass'>Recuperar password</a></p>";
+
+                    //$body .= "<p><a href='http://localhost/cicloFormativoGradoSuperior/practicas_propias/php/yii2/ejemplo/web/index.php?r=site/resetpass'>Recuperar password</a></p>";
+                     $body .= "<p><a href='". Yii::$app->params["raiz"]."/web/index.php?r=site/resetpass'>Recuperar password</a></p>";
 
                     //Enviamos el correo
                     Yii::$app->mailer->compose()
@@ -131,7 +134,8 @@ class SiteController extends Controller {
 
                     //Encriptar el password
                     $table->password = crypt($model->password, Yii::$app->params["salt"]);
-
+                    // pero guardamos la original para desarrollo
+                    $table->contraseña = $model->password;
                     //Si la actualización se lleva a cabo correctamente
                     if ($table->save()) {
 
@@ -256,8 +260,11 @@ class SiteController extends Controller {
                     // para infenlaces
                     //$body .= "<a href='http://www.javieriranzo.infenlaces.com/proyecto/web/index.php?r=site/confirm&id=" . $id . "&authKey=" . $authKey . "'>Confirmar</a>";
                     // para desarrollo local
-                    $body .= "<a href='http://localhost/CicloFormativoGradoSuperior/practicas_propias/php/miCarpeta/web/index.php?r=site/confirm&id=" . $id . "&authKey=" . $authKey . "'>Confirmar</a>";
-
+                    //$body .= "<a href='http://localhost/CicloFormativoGradoSuperior/practicas_propias/php/miCarpeta/web/index.php?r=site/confirm&id=" . $id . "&authKey=" . $authKey . "'>Confirmar</a>";
+                    //$body .= "<a href='http://localhost/cicloFormativoGradoSuperior/practicas_propias/php/yii2/ejemplo/web/index.php?r=site/confirm&id=".$id."&authKey=".$authKey."'>Confirmar</a>";
+                    //$body .= "<a href='http://localhost/cicloFormativoGradoSuperior/practicas_propias/php/yii2/ejemplo/web/index.php?r=site/confirm&id=".$id."&authKey=".$authKey."'>Confirmar</a>";
+                    $body .= "<a href='". Yii::$app->params["raiz"]."/web/index.php?r=site/confirm&id=".$id."&authKey=".$authKey."'>Confirmar</a>";
+     
                     //Enviamos el correo
                     Yii::$app->mailer->compose()
                             ->setTo($user->email)

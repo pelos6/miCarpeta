@@ -83,7 +83,7 @@ AppAsset::register($this);
 
         <footer class="footer">
             <div class="container">
-                <p class="pull-left">&copy; Mi Carpeta <?= date('Y') . ' webServices ' . Yii::$app->params["servidor"] ?></p>
+                <p class="pull-left">&copy; Mi Carpeta  <?= Yii::$app->params["version"] .' '. date('Y') . ' webServices ' . Yii::$app->params["servidor"] ?></p>
                 <p class="pull-right"><?= Yii::powered() ?></p>
             </div>
         </footer>

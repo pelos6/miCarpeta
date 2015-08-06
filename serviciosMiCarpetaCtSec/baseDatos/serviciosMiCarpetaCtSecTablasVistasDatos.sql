@@ -15,21 +15,78 @@ CREATE DATABASE IF NOT EXISTS `serviciosmicarpetaconcursossecundaria` /*!40100 D
 USE `serviciosmicarpetaconcursossecundaria`;
 
 
--- Volcando estructura para tabla serviciosmicarpetaconcursossecundaria.ct_con
-CREATE TABLE IF NOT EXISTS `ct_con` (
+-- Volcando estructura para tabla serviciosmicarpetaconcursossecundaria.ctsec_con
+CREATE TABLE IF NOT EXISTS `ctsec_con` (
   `cod_con` varchar(20) NOT NULL,
   `des_con` varchar(200) NOT NULL,
   `cod_tip_con` varchar(1) NOT NULL,
   `l_act` varchar(1) NOT NULL,
-  `cod_fas` varchar(1) NOT NULL,
+  `cod_fas_con` varchar(1) NOT NULL,
+  `f_ini_sol` date NOT NULL,
+  `f_fin_sol` date NOT NULL,
   PRIMARY KEY (`cod_con`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
--- Volcando datos para la tabla serviciosmicarpetaconcursossecundaria.ct_con: ~1 rows (aproximadamente)
-/*!40000 ALTER TABLE `ct_con` DISABLE KEYS */;
-INSERT INTO `ct_con` (`cod_con`, `des_con`, `cod_tip_con`, `l_act`, `cod_fas`) VALUES
-	('CT_SEC', 'Concurso de traslados de secundaria', 'N', 'S', '1');
-/*!40000 ALTER TABLE `ct_con` ENABLE KEYS */;
+-- Volcando datos para la tabla serviciosmicarpetaconcursossecundaria.ctsec_con: ~1 rows (aproximadamente)
+/*!40000 ALTER TABLE `ctsec_con` DISABLE KEYS */;
+INSERT INTO `ctsec_con` (`cod_con`, `des_con`, `cod_tip_con`, `l_act`, `cod_fas_con`, `f_ini_sol`, `f_fin_sol`) VALUES
+	('51', 'Concurso de traslados de secundaria', 'N', 'S', '1', '0000-00-00', '0000-00-00');
+/*!40000 ALTER TABLE `ctsec_con` ENABLE KEYS */;
+
+
+-- Volcando estructura para tabla serviciosmicarpetaconcursossecundaria.ctsec_est_sol
+CREATE TABLE IF NOT EXISTS `ctsec_est_sol` (
+  `COD_EST_SOL` varchar(1) NOT NULL,
+  `DES_EST_SOL` varchar(200) NOT NULL,
+  `L_ACT` varchar(1) NOT NULL,
+  PRIMARY KEY (`COD_EST_SOL`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- Volcando datos para la tabla serviciosmicarpetaconcursossecundaria.ctsec_est_sol: ~4 rows (aproximadamente)
+/*!40000 ALTER TABLE `ctsec_est_sol` DISABLE KEYS */;
+INSERT INTO `ctsec_est_sol` (`COD_EST_SOL`, `DES_EST_SOL`, `L_ACT`) VALUES
+	('0', 'SOLICITUD GRABADA CORRECTAMENTE', 'S'),
+	('1', 'SOLICITUD PRESENTADA AL PROCEDIMIENTO', 'S'),
+	('2', 'SOLICITUD ADMITIDA AL PROCEDIMIENTO', 'S'),
+	('3', 'SOLICITUD EXCLUIDA DEL PROCEDIMIENTO', 'S');
+/*!40000 ALTER TABLE `ctsec_est_sol` ENABLE KEYS */;
+
+
+-- Volcando estructura para tabla serviciosmicarpetaconcursossecundaria.ctsec_fas_con
+CREATE TABLE IF NOT EXISTS `ctsec_fas_con` (
+  `COD_FAS_CON` varchar(1) NOT NULL,
+  `DES_FAS_CON` varchar(200) NOT NULL,
+  `L_ACT` varchar(1) NOT NULL,
+  PRIMARY KEY (`COD_FAS_CON`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- Volcando datos para la tabla serviciosmicarpetaconcursossecundaria.ctsec_fas_con: ~2 rows (aproximadamente)
+/*!40000 ALTER TABLE `ctsec_fas_con` DISABLE KEYS */;
+INSERT INTO `ctsec_fas_con` (`COD_FAS_CON`, `DES_FAS_CON`, `L_ACT`) VALUES
+	('0', 'convocatoria creada', 'S'),
+	('1', 'grabación de solicitudes', 'S'),
+	('2', 'petición de documentación', 'S');
+/*!40000 ALTER TABLE `ctsec_fas_con` ENABLE KEYS */;
+
+
+-- Volcando estructura para tabla serviciosmicarpetaconcursossecundaria.ctsec_sol
+CREATE TABLE IF NOT EXISTS `ctsec_sol` (
+  `DNI` varchar(15) NOT NULL,
+  `COD_CON` varchar(7) NOT NULL,
+  `COD_SOL` varchar(4) NOT NULL,
+  `F_HOR_ENT` date NOT NULL,
+  `COD_EST_SOL` varchar(1) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- Volcando datos para la tabla serviciosmicarpetaconcursossecundaria.ctsec_sol: ~4 rows (aproximadamente)
+/*!40000 ALTER TABLE `ctsec_sol` DISABLE KEYS */;
+INSERT INTO `ctsec_sol` (`DNI`, `COD_CON`, `COD_SOL`, `F_HOR_ENT`, `COD_EST_SOL`) VALUES
+	('000000001', '51', '0011', '2015-08-02', '0'),
+	('000000001', '51', '0012', '2015-08-02', '0'),
+	('000000001', '51', '0013', '2015-08-02', '0'),
+	('000000002', '51', '0003', '2015-08-02', '0');
+/*!40000 ALTER TABLE `ctsec_sol` ENABLE KEYS */;
+
 
 
 -- Volcando estructura para tabla serviciosmicarpetaconcursossecundaria.wctem_part
@@ -76,13 +133,31 @@ INSERT INTO `wctem_part` (`PROV`, `NORDEN`, `DNI`, `APE1`, `APE2`, `NOMBRE`, `TE
 /*!40000 ALTER TABLE `wctem_part` ENABLE KEYS */;
 
 
+-- Volcando estructura para vista serviciosmicarpetaconcursossecundaria.vconcursosactivos
+-- Eliminando tabla temporal y crear estructura final de VIEW
+CREATE VIEW `vconcursosactivos` AS select c.cod_con, c.des_con, if((`cod_tip_con` = 'N'),'Nacional','Autonómico') AS `des_tip_con`, cod_tip_con
+, c.l_act, f.des_fas_con ,'http://servicios.aragon.es/tsec/' AS `url`, f_ini_sol, f_fin_sol from ctsec_con c , 
+ctsec_fas_con f
+where c.cod_fas_con = f.cod_fas_con ;
 
-CREATE VIEW `vconcursosactivos` AS select `ct_con`.`cod_con` AS `cod_con`,`ct_con`.`des_con` AS `des_con`,if((`ct_con`.`cod_tip_con` = 'N'),'Nacional','Autonómico') AS `cod_tip_con`,`ct_con`.`l_act` AS `l_act`,'http://servicios.aragon.es/tsec/' AS `url`,
-if((`ct_con`.`cod_fas` = '1'),'Solicitudes','Peticion documentacion') AS `des_fas`
- from `ct_con` ;
+
+-- Volcando estructura para vista serviciosmicarpetaconcursossecundaria.vconcursossolicitud
+-- Eliminando tabla temporal y crear estructura final de VIEW
+CREATE VIEW `vconcursossolicitud` AS select o.cod_con, o.cod_tip_con, o.des_con, o.l_act,
+s.dni, s.cod_sol, s.f_hor_ent, s.cod_est_sol, e.des_est_sol
+, 'http://servicios.aragon.es/tpri/' AS `url`, o.f_ini_sol, o.f_fin_sol,
+if((`cod_tip_con` = 'N'),'Nacional','Autonómico') AS `des_tip_con`,
+des_fas_con
+FROM ctsec_con o, ctsec_sol s, ctsec_fas_con f,
+ctsec_est_sol e
+WHERE s.cod_con = o.cod_con AND s.cod_est_sol = e.cod_est_sol 
+and f.cod_fas_con = o.cod_fas_con ;
 
 
-CREATE  VIEW `vsolicitudesconcursos` AS SELECT c.des_con as des_con, cod_con, dni, norden as cod_sol , fechagrabacion, 'grabada correctamente' estado
+-- Volcando estructura para vista serviciosmicarpetaconcursossecundaria.vsolicitudesconcursos
+-- Eliminando tabla temporal y crear estructura final de VIEW
+
+CREATE VIEW `vsolicitudesconcursos` AS SELECT c.des_con as des_con, cod_con, dni, norden as cod_sol , fechagrabacion, 'grabada correctamente' estado
 FROM wctem_part p, ct_con c
 where c.cod_con = 'CT_SEC' ;
 /*!40101 SET SQL_MODE=IFNULL(@OLD_SQL_MODE, '') */;

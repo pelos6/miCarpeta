@@ -28,9 +28,9 @@ class DBConcursosSecundaria {
 //        $usuario = 'javieriranzo_dwe';
 //        $contrasena = 'javier';
 //        // para apostayadrede.com
-//        $dsn = "mysql:host=localhost;dbname=c23ctpri";
-//        $usuario = 'c23ctpri';
-//        $contrasena = 'c23ctpri';
+//        $dsn = "mysql:host=localhost;dbname=c23ctsec";
+//        $usuario = 'c23ctsec';
+//        $contrasena = 'c23ctsec';
         $dwes = new PDO($dsn, $usuario, $contrasena, $opc);
         $resultado = null;
 //        if (isset($dwes)) {

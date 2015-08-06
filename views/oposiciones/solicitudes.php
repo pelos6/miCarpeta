@@ -7,27 +7,30 @@ use yii\web\Session;
 
 $session = Yii::$app->session;
 $session->open();
-$session->set('tex_opc_sel', Html::encode($_GET["tex_opc"]));
+$session->set('des_con_sel', Html::encode($_GET["des_con"]));
 //echo("<pre>");
 //print_r($_SESSION);
 //echo ("</pre>");
-$this->title = 'solicitudes ' . Html::encode($_GET["tex_opc"]);
-$this->params['breadcrumbs'][] = ['label' => 'Actos', 'url' => ['actos']];
+$this->title = 'solicitudes ' . Html::encode($_GET["des_con"]);
+$this->params['breadcrumbs'][] = ['label' => 'Oposiciones', 'url' => ['oposiciones']];
 $this->params['breadcrumbs'][] = $this->title;
 
-$urlSigi = Yii::$app->params["servidor"] . "/serviciosMiCarpetaSigi/servicioSigi.php";
-$uriSigi = Yii::$app->params["servidor"] . "/serviciosMiCarpetaSigi";
-$clienteSigi = new SoapClient(null, array('location' => $urlSigi, 'uri' => $uriSigi));
+$urlSigicon = Yii::$app->params["servidor"] . "/serviciosMiCarpetaSigicon/servicioSigicon.php";
+$uriSigicon = Yii::$app->params["servidor"] . "/serviciosMiCarpetaSigicon";
+$clienteSigicon = new SoapClient(null, array('location' => $urlSigicon, 'uri' => $uriSigicon));
 ?>
 <div class="site-about">
-    <h4> Solicitudes presentadas al acto de elección  </h4> 
+    <h4> Solicitudes presentadas a la oposición  </h4> 
     <div class="alert alert-success">
         <?php
-        $solicitudesActo = $clienteSigi->getSolicitudesActo(Html::encode($_GET["cod_opc"]), Yii::$app->user->identity->dni);
-        foreach ($solicitudesActo as $solicitudesActo) {
-            echo '<a href="' . Url::toRoute(["actos/solicitud", "cod_opc" => $solicitudesActo->cod_opc, "cod_sol" => $solicitudesActo->cod_sol]) . '">' . $solicitudesActo->cod_sol . "</a><br />\n";
+        $solicitudesOposicion = $clienteSigicon->getSolicitudesConvocatoriaOposicion(Html::encode($_GET["cod_con"]), Yii::$app->user->identity->dni);
+        foreach ($solicitudesOposicion as $solicitudOposicion) {
+            echo '<a href="' . Url::toRoute(["oposiciones/solicitud", "cod_con" => $solicitudOposicion->cod_con, "cod_sol" => $solicitudOposicion->cod_sol]) . '">' . $solicitudOposicion->cod_sol . "</a><br />\n";
         }
-
+//    echo("<pre>");
+//    print_r($solicitudesOposicion);
+//    echo ("</pre>");
+//    
         ?>
     </div>
 

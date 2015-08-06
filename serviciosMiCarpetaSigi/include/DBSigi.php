@@ -28,9 +28,9 @@ class DBSigi {
 //        $usuario = 'javieriranzo_dwe';
 //        $contrasena = 'javier';
         // para apostayadrede.com
-//         $dsn = "mysql:host=localhost;dbname=c23sigi";
-//          $usuario = 'c23sigi';
-//          $contrasena = 'c23sigi';
+/*        $dsn = "mysql:host=localhost;dbname=c23sigi";
+         $usuario = 'c23sigi';
+         $contrasena = 'c23sigi';*/
         $dwes = new PDO($dsn, $usuario, $contrasena, $opc);
         $resultado = null;
 //        if (isset($dwes)) {

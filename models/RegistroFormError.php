@@ -9,7 +9,7 @@ use app\models\Users;
 class RegistroForm extends Model {
 
     public $username = 'interinosModel';
-    public $dni = '012345678';
+    public $dni = '01234567';
     public $email = 'javieriranzo3@gmail.com';
     public $password = 'interinos';
     public $password_repeat = 'interinos';
@@ -25,8 +25,8 @@ class RegistroForm extends Model {
             ['username', 'match', 'pattern' => "/^[0-9a-z]+$/i", 'message' => 'Sólo se aceptan letras y números'],
             ['dni', 'required'],
             ['dni', 'validar_dni'],
-            ['dni', 'match', 'pattern' => "/^[0-9a-z]+$/i", 'message' => 'Sólo se aceptan letras y números'],
-            ['dni', 'match', 'pattern' => "/^.{9,10}$/", 'message' => 'Mínimo 9 y máximo 10 caracteres'],
+            ['dni','match', 'pattern' => "/^[0-9a-z]+$/i", 'message' => 'Sólo se aceptan letras y números'],
+            ['dni', 'match', 'pattern' => "/^.{9,00}$/", 'message' => 'Mínimo 9 y máximo 10 caracteres'],
             ['username', 'username_existe'],
             ['email', 'match', 'pattern' => "/^.{5,80}$/", 'message' => 'Mínimo 5 y máximo 80 caracteres'],
             ['email', 'email', 'message' => 'Formato no válido'],
@@ -39,19 +39,6 @@ class RegistroForm extends Model {
             ['oposiciones', 'boolean'],
         ];
     }
-
-    public function validar_dni($attribute, $params) {
-        error_log('DEBUG: dni'. $this->dni);
-
-        $letra = substr($this->dni, -1);
-        error_log('DEBUG: letra '. $letra);
-        $numeros = substr($this->dni, 0, -1);
-        error_log('DEBUG: numeros '. $numeros);
-        if (!( substr("TRWAGMYFPDXBNJZSQVHLCKE", $numeros%23, 1) == $letra && 
-            strlen($letra) == 1 && strlen ($numeros) == 8 )){
-             $this->addError($attribute, "El dni no es válido. 8 numeros, 1 letra mayuscula sin ceros por delante ");
-        }
-    }   
 
     public function email_existe($attribute, $params) {
 
@@ -74,6 +61,17 @@ class RegistroForm extends Model {
         }
     }
 
+    public function validar_dni($attribute, $params) {
+    $letra = substr($this->dni, -1);
+    $numeros = substr($thid->dni, 0, -1);
+    if ( substr("TRWAGMYFPDXBNJZSQVHLCKE", $numeros%23, 1) == $letra && strlen($letra) == 1 && strlen ($numeros) == 8 ){
+        echo 'valido';
+    }else{
+        //echo 'no valido';
+         $this->addError($attribute, "El dni no es válido");
+    }
+}
+
     public function prueba() {
         if ($this->interinos == 0 && $this->actos == 0 && $this->concursos == 0 && $this->oposiciones == 0) {
             $this->addError('interinos', 'Debe indicar al menos un tema de interes!');
@@ -89,10 +87,11 @@ class RegistroForm extends Model {
     public function attributeLabels() {
         return [
             'username' => 'Nombre',
-            'dni' => 'Dni: 8 numeros, 1 letra mayuscula sin ceros por delante',
+            'dni' => 'Dni',
             'email' => 'Correo electrónico',
             'password' => 'Contraseña',
             'password_repeat' => 'Repite la contraseña',
         ];
     }
+
 }

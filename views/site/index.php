@@ -9,7 +9,8 @@ $this->title = 'Mi Carpeta';
     <div class="jumbotron">
         <h1>Bienvenido a MiCarpeta!</h1>
 
-        <p class="lead">Su espacio personal para consultar los temas de su interes relacionados con el Departamento de Educación, Cultura y Deporte.</p>
+        <p class="lead">Su espacio personal para consultar los temas de su interes relacionados con el </p>
+        <p class="lead">Departamento de Educación, Cultura y Deporte.</p>
 
     </div>
 

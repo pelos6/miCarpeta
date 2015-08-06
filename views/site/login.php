@@ -1,6 +1,7 @@
 <?php
 use yii\helpers\Html;
 use yii\bootstrap\ActiveForm;
+use yii\helpers\Url;
 
 /* @var $this yii\web\View */
 /* @var $form yii\bootstrap\ActiveForm */
@@ -38,7 +39,9 @@ $this->params['breadcrumbs'][] = $this->title;
     </div>
 
     <?php ActiveForm::end(); ?>
-
+    <div class="form-group">
+        <a href="<?= Url::toRoute("site/recoverpass") ?>">Recuperar contraseña</a>
+    </div>
     <div class="col-lg-offset-1" style="color:#999;">
         Te puede logear con <strong>javier/pelos678 administrador</strong> or <strong>interinos/interinos usuario</strong>.<br>
        

@@ -1,0 +1,428 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"que",
+				"query_res"
+			],
+			[
+				"ID",
+				"id"
+			],
+			[
+				"e",
+				"email"
+			],
+			[
+				"no",
+				"nombre"
+			],
+			[
+				"apellido",
+				"apellidos"
+			],
+			[
+				"email",
+				"email2"
+			],
+			[
+				"contr",
+				"contraseña"
+			]
+		]
+	},
+	"buffers":
+	[
+	],
+	"build_system": "",
+	"command_palette":
+	{
+		"height": 392.0,
+		"selected_items":
+		[
+			[
+				"p",
+				"Package Control: Install Package"
+			],
+			[
+				"Snippet: ",
+				"Snippet: databinding"
+			],
+			[
+				"Package Control: ins",
+				"Package Control: Install Package"
+			],
+			[
+				"Package Control: insta",
+				"Package Control: Install Package"
+			],
+			[
+				"Package Control: int",
+				"Package Control: Install Package"
+			],
+			[
+				"Package Control: in",
+				"Package Control: Install Package"
+			],
+			[
+				"Package Control:in",
+				"Package Control: Install Package"
+			]
+		],
+		"width": 400.0
+	},
+	"console":
+	{
+		"height": 125.0
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"file_history":
+	[
+		"/C/Users/Javier/Dropbox/CicloFormativoGradoSuperior/practicas_propias/php/yii2/ejemplo/config/params.php",
+		"/C/Users/Javier/Dropbox/CicloFormativoGradoSuperior/practicas_propias/php/yii2/ejemplo/views/alumnos/view.php",
+		"/C/Users/Javier/Dropbox/CicloFormativoGradoSuperior/practicas_propias/php/yii2/ejemplo/views/alumnos/alumnos.php",
+		"/C/Users/Javier/Dropbox/CicloFormativoGradoSuperior/practicas_propias/php/yii2/ejemplo/models/FormSearch.php",
+		"/C/Users/Javier/Dropbox/CicloFormativoGradoSuperior/practicas_propias/php/yii2/ejemplo/controllers/AlumnosController.php",
+		"/C/Users/Javier/Dropbox/CicloFormativoGradoSuperior/practicas_propias/php/yii2/ejemplo/views/alumnos/update.php",
+		"/C/Users/Javier/Dropbox/CicloFormativoGradoSuperior/practicas_propias/php/yii2/ejemplo/models/ContactForm.php",
+		"/C/Users/Javier/Dropbox/CicloFormativoGradoSuperior/practicas_propias/php/yii2/ejemplo/config/web.php",
+		"/C/Users/Javier/Dropbox/CicloFormativoGradoSuperior/practicas_propias/php/yii2/ejemplo/config/webOriginal.php",
+		"/C/Users/Javier/Dropbox/CicloFormativoGradoSuperior/practicas_propias/php/yii2/ejemplo/models/ContactFormOriginal.php",
+		"/C/Users/Javier/Dropbox/CicloFormativoGradoSuperior/practicas_propias/php/yii2/ejemplo/controllers/SiteController.php",
+		"/C/Users/Javier/Dropbox/CicloFormativoGradoSuperior/practicas_propias/php/yii2/ejemplo/views/site/validarformularioajax.php",
+		"/C/Users/Javier/Dropbox/CicloFormativoGradoSuperior/practicas_propias/php/yii2/ejemplo/models/ValidarFormularioAjax.php",
+		"/C/Users/Javier/Dropbox/CicloFormativoGradoSuperior/practicas_propias/php/yii2/ejemplo/views/layouts/main.php",
+		"/C/Users/Javier/Dropbox/CicloFormativoGradoSuperior/practicas_propias/php/yii2/ejemplo/models/ValidarFormulario.php",
+		"/C/Users/Javier/Dropbox/CicloFormativoGradoSuperior/practicas_propias/php/yii2/ejemplo/views/alumnos/create.php",
+		"/C/Users/Javier/Dropbox/CicloFormativoGradoSuperior/practicas_propias/php/yii2/ejemplo/models/FormAlumnos.php",
+		"/C/Users/Javier/Dropbox/CicloFormativoGradoSuperior/practicas_propias/php/yii2/ejemplo/models/Alumnos.php",
+		"/C/Users/Javier/Dropbox/CicloFormativoGradoSuperior/practicas_propias/php/yii2/ejemplo/config/db.php",
+		"/C/Users/Javier/Dropbox/CicloFormativoGradoSuperior/practicas_propias/php/yii2/readme.md",
+		"/C/Users/Javier/Dropbox/CicloFormativoGradoSuperior/practicas_propias/php/baseDatosREstos/tablas20150713/sigicon/w_sol.sql",
+		"/C/Users/Javier/Dropbox/CicloFormativoGradoSuperior/practicas_propias/php/deInfenlaces/EducAragón ___ Departamento de Educación, Universidad, Cultura y Deporte. Gobierno de Aragón.html",
+		"/C/viejos/20150712/serviciosMiCarpeta/ServerOposiciones.php",
+		"/C/viejos/20150712/serviciosMiCarpeta/include/DBOposiciones.php",
+		"/C/Users/Javier/Dropbox/CicloFormativoGradoSuperior/practicas_propias/php/copia/serviciosMiCarpetaCtPri/servicioConcursosPrimaria.php",
+		"/C/Users/Javier/Dropbox/CicloFormativoGradoSuperior/practicas_propias/php/copia/serviciosMiCarpetaCtPri/ServerConcursosPrimaria.php",
+		"/C/Users/Javier/Dropbox/CicloFormativoGradoSuperior/practicas_propias/php/copia/serviciosMiCarpetaCtPri/include/DBConcursos.php",
+		"/C/Users/Javier/Dropbox/CicloFormativoGradoSuperior/practicas_propias/php/app_yii1/protected/views/layouts/main.php",
+		"/C/Users/Javier/Dropbox/CicloFormativoGradoSuperior/practicas_propias/php/yii_1/framework/yii.php",
+		"/C/Users/Javier/Dropbox/CicloFormativoGradoSuperior/practicas_propias/php/yii_1/framework/YiiBase.php",
+		"/C/Users/Javier/Dropbox/CicloFormativoGradoSuperior/practicas_propias/php/app_yii1/index.php",
+		"/C/Users/Javier/Dropbox/CicloFormativoGradoSuperior/practicas_propias/php/app_yii1/protected/config/main.php",
+		"/C/Bitnami/wampstack-5.5.22-0/apps/mediawiki/htdocs/README",
+		"/C/Users/Javier/Downloads/image-img_metadata.bin",
+		"/C/Bitnami/wampstack-5.5.22-0/apps/mediawiki/htdocs/RELEASE-NOTES-1.24",
+		"/C/Bitnami/wampstack-5.5.22-0/apps/mediawiki/htdocs/INSTALL",
+		"/C/Bitnami/wampstack-5.5.22-0/apps/mediawiki/htdocs/HISTORY",
+		"/C/Bitnami/wampstack-5.5.22-0/apps/mediawiki/licenses/COPYING",
+		"/C/Bitnami/wampstack-5.5.22-0/php/php.ini",
+		"/C/Users/Javier/Dropbox/CicloFormativoGradoSuperior/practicas_propias/php/serviciosMiCarpeta/baseDatos/deCTEGB/wct_part.tab",
+		"/C/Users/Javier/Dropbox/CicloFormativoGradoSuperior/practicas_propias/php/serviciosMiCarpeta/baseDatos/tablas.sql",
+		"/C/Users/Javier/Dropbox/CicloFormativoGradoSuperior/app_yii1/index.php",
+		"/C/Users/Javier/Dropbox/CicloFormativoGradoSuperior/practicas_propias/php/serviciosMiCarpeta/baseDatos/exportMySql/serviciosMiCarpetaConcursosDatosEsquema.sql",
+		"/C/Users/Javier/Dropbox/CicloFormativoGradoSuperior/practicas_propias/php/serviciosMiCarpeta/baseDatos/exportMySql/serviciosMiCarpetaAdministracionDatosEsquema.sql",
+		"/C/Users/Javier/Dropbox/CicloFormativoGradoSuperior/practicas_propias/php/serviciosMiCarpeta/baseDatos/exportMySql/serviciosMiCarpetaConcursosPrimariaDatosEsquema.sql",
+		"/C/Users/Javier/Dropbox/CicloFormativoGradoSuperior/practicas_propias/php/yii_1/yii-1.1.10.r3566/framework/.htaccess",
+		"/C/Users/Javier/Downloads/seriesYPelis/javieriranzo_dwes.sql",
+		"/C/Users/Javier/Dropbox/CicloFormativoGradoSuperior/practicas_propias/php/serviciosMiCarpeta/baseDatos/deCTEGB/ctegb.sql",
+		"/C/Users/Javier/Dropbox/CicloFormativoGradoSuperior/practicas_propias/php/serviciosMiCarpeta/baseDatos/exportMySql/serviciosMiCarpetaInterinosDatosEsquema.sql",
+		"/C/Users/Javier/Dropbox/CicloFormativoGradoSuperior/practicas_propias/php/serviciosMiCarpeta/baseDatos/exportMySql/serviciosMiCarpetaOposicionesDatosEsquema.sql",
+		"/C/Users/Javier/Dropbox/CicloFormativoGradoSuperior/practicas_propias/php/miCarpeta/baseDatos/exportTablasDatosYII.sql",
+		"/C/Users/Javier/Dropbox/CicloFormativoGradoSuperior/practicas_propias/php/serviciosMiCarpeta/baseDatos/exportMySql/serviciosMiCarpetaDatosEsquema.sql",
+		"/C/Users/Javier/AppData/Local/Temp/fz3temp-1/EducAragón ___ Departamento de Educación, Universidad, Cultura y Deporte. Gobierno de Aragón.html",
+		"/C/viejos/20150712/serviciosMiCarpeta/baseDatos/exportMySql/serviciosMiCarpetaDatosEsquema.sql",
+		"/C/Users/Javier/Dropbox/CicloFormativoGradoSuperior/DAW_DWES/tema_7_WebDinamica_JavaScript/plataforma/tiendaOnline/productos.php",
+		"/C/Users/Javier/Dropbox/CicloFormativoGradoSuperior/DAW_DWES/tema_7_WebDinamica_JavaScript/plataforma/tiendaOnline/include/DB.php",
+		"/C/Users/Javier/Dropbox/CicloFormativoGradoSuperior/practicas_propias/php/serviciosMiCarpeta/baseDatos/deSigi/sigi.sql",
+		"/C/Users/Javier/Dropbox/CicloFormativoGradoSuperior/practicas_propias/php/serviciosMiCarpeta/baseDatos/productosDatos.sql",
+		"/C/Users/Javier/Dropbox/CicloFormativoGradoSuperior/practicas_propias/php/serviciosMiCarpeta/baseDatos/tablasServiciosMiCarpeta.sql",
+		"/C/Users/Javier/Dropbox/CicloFormativoGradoSuperior/practicas_propias/php/serviciosMiCarpeta/baseDatos/deSigi/sigi_aud.tab",
+		"/C/Users/Javier/Dropbox/CicloFormativoGradoSuperior/practicas_propias/php/serviciosMiCarpeta/baseDatos/sigi_opc.sql",
+		"/C/Users/Javier/Dropbox/CicloFormativoGradoSuperior/DAW_DWES/tema_6_serviciosWeb/practica9_1/cliente.php",
+		"/C/Users/Javier/Dropbox/CicloFormativoGradoSuperior/practicas_propias/php/serviciosMiCarpeta/baseDatos/tablasAcentos.sql",
+		"/C/Users/Javier/Dropbox/CicloFormativoGradoSuperior/practicas_propias/php/serviciosMiCarpeta/baseDatos/sigi_can_pre_ae.sql",
+		"/C/Users/Javier/Dropbox/CicloFormativoGradoSuperior/DAW_DWES/tema_6_serviciosWeb/practica9_1/Server.php",
+		"/C/Users/Javier/Dropbox/CicloFormativoGradoSuperior/DAW_DWES/tema_6_serviciosWeb/practica9_1/servicio.php",
+		"/C/Users/Javier/Dropbox/CicloFormativoGradoSuperior/DAW_DWES/tema_6_serviciosWeb/practica9_1/ServerW.php",
+		"/C/Users/Javier/Dropbox/CicloFormativoGradoSuperior/practicas_propias/php/serviciosMiCarpeta/baseDatos/tablasServiciosMiCarpeta",
+		"/C/Users/Javier/Dropbox/CicloFormativoGradoSuperior/DAW_DWES/practicas/tarea7JavaScriptAjax/include/DB.php",
+		"/C/Users/Javier/Dropbox/CicloFormativoGradoSuperior/practicas_propias/php/yii/basic/.git/COMMIT_EDITMSG",
+		"/C/Users/Javier/Dropbox/CicloFormativoGradoSuperior/practicas_propias/php/yii/basic/.git/config",
+		"/C/Users/Javier/AppData/Local/Temp/fz3temp-1/index.html",
+		"/C/Bitnami/wampstack-5.4.31-0/apache2/logs/error.log",
+		"/C/Users/Javier/Dropbox/CicloFormativoGradoSuperior/DAW_DWES/tema_6_serviciosWeb/serviciosWeb/GlobalWeather.php",
+		"/C/Users/Javier/Dropbox/CicloFormativoGradoSuperior/DAW_DWES/tema_8_AplicacionesWebHibridas/plataforma/google-api-php-client/examples/multi-api.php",
+		"/C/Users/Javier/Dropbox/CicloFormativoGradoSuperior/DAW_DWES/practicas/tarea7JavaScriptAjax/baseDatos/dwes.sql",
+		"/C/Users/Javier/Dropbox/CicloFormativoGradoSuperior/DAW_DWES/tema_7_WebDinamica_JavaScript/R11/form.php",
+		"/C/Users/Javier/Dropbox/CicloFormativoGradoSuperior/DAW_DWES/tema_6_serviciosWeb/serviciosWeb/DWES06_CONT_R14_CurrencyConvertor.wsdl",
+		"/C/Users/Javier/Dropbox/CicloFormativoGradoSuperior/DAW_DWES/tema_6_serviciosWeb/serviciosWeb/modificado.php",
+		"/C/Bitnami/wampstack-5.5.22-0/php/pear.ini",
+		"/C/Users/Javier/Dropbox/CicloFormativoGradoSuperior/DAW_DWES/tema_6_serviciosWeb/serviciosWeb/GlobalWeather1.php",
+		"/C/Bitnami/wampstack-5.5.22-0/apache2/logs/access.log",
+		"/C/Users/Javier/Dropbox/CicloFormativoGradoSuperior/DAW_DWES/laravel/wikiManuel/wikiManuel/.env.example",
+		"/C/Users/Javier/Dropbox/CicloFormativoGradoSuperior/DAW_DWES/laravel/wikiManuel/wikiManuel/storage/logs/laravel-2015-05-12.log",
+		"/C/Bitnami/wampstack-5.5.22-0/apache2/logs/error.log",
+		"/C/Users/Javier/Dropbox/CicloFormativoGradoSuperior/DAW_DWES/laravel/puntoPe/tiendaLaravel/artisan",
+		"/C/Users/Javier/Dropbox/CicloFormativoGradoSuperior/DAW_DWES/laravel/puntoPe/tiendaLaravel/app/storage/logs/laravel.log",
+		"/C/Users/Javier/Dropbox/CicloFormativoGradoSuperior/DAW_DWES/laravel/codeHero/codehero-laravel/config/database.php",
+		"/C/Users/Javier/Dropbox/CicloFormativoGradoSuperior/DAW_DWES/practicas/companeros/tareaAPP_reparto/Tarea8Armando/ajaxmaps.php",
+		"/C/Users/Javier/Dropbox/CicloFormativoGradoSuperior/DAW_DWES/practicas/companeros/tareaAPP_reparto/Tarea8Armando/codigo.js",
+		"/C/Users/Javier/Dropbox/CicloFormativoGradoSuperior/DAW_DWES/practicas/companeros/tareaAPP_reparto/Tarea8Armando/repartos.php",
+		"/C/Users/Javier/Dropbox/CicloFormativoGradoSuperior/DAW_DWES/practicas/tarea8_app_reparto/traza.txt",
+		"/C/Users/Javier/Dropbox/CicloFormativoGradoSuperior/DAW_DWEC/tema_6_AngularJs/ejercicios/Ejercicios-angularJS/soluciones/ejercicio7c.html",
+		"/C/Users/Javier/Dropbox/CicloFormativoGradoSuperior/DAW_DWES/tema_8_AplicacionesWebHibridas/googleTask/librerias/google-api-php-client/examples/user-example.php",
+		"/C/Users/Javier/Dropbox/CicloFormativoGradoSuperior/DAW_DWES/tema_8_AplicacionesWebHibridas/googleTask/librerias/google-api-php-client/examples/batch.php",
+		"/C/Users/Javier/Dropbox/CicloFormativoGradoSuperior/DAW_DWES/tema_8_AplicacionesWebHibridas/googleTask/librerias/google-api-php-client/examples/service-account.php",
+		"/C/Users/Javier/Dropbox/CicloFormativoGradoSuperior/DAW_DWES/tema_8_AplicacionesWebHibridas/googleTask/librerias/google-api-php-client/examples/simplefileupload.php",
+		"/C/Users/Javier/Dropbox/CicloFormativoGradoSuperior/DAW_DWES/tema_8_AplicacionesWebHibridas/googleTask/librerias/google-api-php-client/examples/templates/base.php",
+		"/C/Users/Javier/Dropbox/CicloFormativoGradoSuperior/DAW_DWES/practicas/compañeros/tareaAPP_reparto/Tarea8Armando/google-api-php-client/examples/index.php",
+		"/C/Users/Javier/Dropbox/CicloFormativoGradoSuperior/DAW_DWES/tema_8_AplicacionesWebHibridas/googleTask/librerias/google-api-php-client/examples/simple-query.php",
+		"/C/Users/Javier/Dropbox/CicloFormativoGradoSuperior/DAW_DWES/tema_8_AplicacionesWebHibridas/googleTask/librerias/google-api-php-client/src/Google/Config.php",
+		"/C/Users/Javier/Dropbox/CicloFormativoGradoSuperior/DAW_DWES/practicas/compañeros/tareaAPP_reparto/Tarea8Armando/repartos.php",
+		"/C/Users/Javier/Dropbox/CicloFormativoGradoSuperior/DAW_DWES/practicas/compañeros/tareaAPP_reparto/Tarea8Armando/ajaxmaps.php",
+		"/C/Users/Javier/Dropbox/CicloFormativoGradoSuperior/DAW_DWES/tema_8_AplicacionesWebHibridas/googleTask/librerias/google-api-php-client/examples/index.php",
+		"/C/Users/Javier/Dropbox/CicloFormativoGradoSuperior/DAW_DWES/practicas/R18/ubicar.js",
+		"/C/Users/Javier/Dropbox/CicloFormativoGradoSuperior/DAW_DWES/practicas/R18/form.php",
+		"/C/Users/Javier/Dropbox/CicloFormativoGradoSuperior/DAW_DWES/tema_8_AplicacionesWebHibridas/R18/form.php",
+		"/C/Users/Javier/Desktop/borrar.html",
+		"/C/Users/Javier/Dropbox/CicloFormativoGradoSuperior/DAW_DWEC/sublime/sublime/Data/Packages/User/databinding.sublime-snippe",
+		"/C/Users/Javier/Dropbox/CicloFormativoGradoSuperior/DAW_DWEC/sublime/sublime/Data/Packages/User/databinding.sublime-snippet",
+		"/C/Users/Javier/Dropbox/CicloFormativoGradoSuperior/DAW_DWES/tareas/tarea9_serviciosSOAP/WSDLDocument-0.5/sample/01-array.php",
+		"/C/Users/Javier/Dropbox/CicloFormativoGradoSuperior/proyectos/DAWES/tema3TareaBD1Felix/entrar.php",
+		"/C/Users/Javier/Dropbox/CicloFormativoGradoSuperior/proyectos/DAWES/DAWES2TRIMESTRE/TiendaPlataforma/login.php",
+		"/C/Users/Javier/Dropbox/CicloFormativoGradoSuperior/proyectos/DAWES/tema3TareaBD1Felix/index.php",
+		"/C/Users/Javier/Dropbox/CicloFormativoGradoSuperior/proyectos/DAWES/DAWES2TRIMESTRE/preparandoExamen/tema4Autenticacion.php",
+		"/C/Users/Javier/Dropbox/CicloFormativoGradoSuperior/proyectos/DAWES/DAWES2TRIMESTRE/contadorVisitas/contadorVisitas.php",
+		"/C/Users/Javier/Dropbox/CicloFormativoGradoSuperior/DAW_DWES/PHP_Oracle/conexion.php",
+		"/C/Users/Javier/Dropbox/CicloFormativoGradoSuperior/DAW_DWES/PHP_Oracle/connect.php",
+		"/C/Users/Javier/Dropbox/CicloFormativoGradoSuperior/DAW_DWES/tutoria3Trimestre.txt",
+		"/C/Bitnami/wampstack-5.4.31-0/apache2/logs/access.log",
+		"/C/Users/Javier/Dropbox/CicloFormativoGradoSuperior/proyectos/DAWEC/YEOMAN/practicaValidacionFormularios/practica-validacion-formularios/app/scripts/main.js",
+		"/C/Users/Javier/Dropbox/CicloFormativoGradoSuperior/DAW_DWEC/tema_4/jqueryValidationPluginTutorial/ejemplo.html",
+		"/C/Users/Javier/Dropbox/CicloFormativoGradoSuperior/DAW_DWEC/tema_4/jqueryValidationPluginTutorial/js/ejemplo.js",
+		"/C/Users/Javier/Dropbox/CicloFormativoGradoSuperior/DAW_DWEC/tema_4/jqueryValidationPluginTutorial/css/ejemplo.css",
+		"/C/Users/Javier/Dropbox/CicloFormativoGradoSuperior/DAW_DWEC/tema_4/jqueryValidationPluginTutorial/css/reset.css",
+		"/C/Users/Javier/Dropbox/CicloFormativoGradoSuperior/DAW_DWEC/tema_4/jqueryValidationPluginTutorial/css/screen.css",
+		"/C/Users/Javier/Dropbox/CicloFormativoGradoSuperior/proyectos/DAWEC/YEOMAN/practicaValidacionFormularios/practica-validacion-formularios/app/index.html",
+		"/C/Users/Javier/Dropbox/CicloFormativoGradoSuperior/proyectos/DAWEC/YEOMAN/practicaValidacionFormularios/practica-validacion-formularios/app/styles/estilos.css"
+	],
+	"find":
+	{
+		"height": 41.0
+	},
+	"find_in_files":
+	{
+		"height": 0.0,
+		"where_history":
+		[
+			"<open folders>",
+			""
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"actionlogin",
+			"validarformulario",
+			"site",
+			"                    ",
+			"ctpri",
+			"ctrpi",
+			"sigi",
+			"varchar2",
+			"departamento",
+			"DBSigiDEBUG: en obtieneConsultasSituacionListas ",
+			"DBSigi",
+			"obtieneSolicitudesConcursos secundaria",
+			"smtp",
+			"smtp_port",
+			"hotmail",
+			"algo",
+			"072982803",
+			"012345678",
+			"pr",
+			"vconcurso",
+			"vcon",
+			"alg",
+			"micarpeta",
+			"algori",
+			"drop",
+			"w_con",
+			"vconvocatoriaslistasactivas",
+			"activas",
+			"vsolicitudesoposiciones",
+			"vsolicitudesoposiciones ",
+			"vactos",
+			"v",
+			"dd-mm-yyyy",
+			"insertn into sigi_sol",
+			"sigi_sol",
+			"commit;",
+			"SIGI_VAC",
+			"INSERT INTO SIGI_ESP_CAN_PRE_AE",
+			"INSER INTO SIGI_ESP_CAN_PRE_AE",
+			"insert into sigi_can_pre_ae",
+			"insert into asigi_can_pre_ae",
+			"hh24:mi:ss",
+			"to_date",
+			"sigi_opc",
+			"insert",
+			"VARCHAR2",
+			"[",
+			"ConversionRateResult",
+			"message",
+			"encode",
+			"encod",
+			"())",
+			"api",
+			"url",
+			"addm",
+			"ins",
+			"soap",
+			"web",
+			"antes",
+			"content",
+			"intruduc",
+			"javi",
+			"javi		",
+			"\"bower_",
+			"wiredep",
+			"index",
+			"crear",
+			"en vo",
+			"volver",
+			"?",
+			"editar",
+			"Editar",
+			"cre",
+			"maria",
+			"nombre",
+			"Editar",
+			"col",
+			"olver",
+			"id=",
+			"clinicas",
+			"Editar",
+			"mitabla",
+			"\").",
+			"').",
+			"\"];",
+			"idClinicaEditar",
+			"').",
+			"editarbtn",
+			"\"bower",
+			"razonSocial",
+			"idClinicac",
+			"\"bower",
+			"http://http://",
+			"sindicacion/sindicacion",
+			"127.0.0.1",
+			"127.0.0.127",
+			"dir = '",
+			"empresa",
+			"span",
+			"REQ_DOC",
+			"codigo",
+			"elección",
+			"lagu",
+			"MODALIDAD_CONVOCADA"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+			"descripcion",
+			"PETICION_GENERAL"
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"sheets":
+			[
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 0.0
+	},
+	"input":
+	{
+		"height": 31.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.unsaved_changes":
+	{
+		"height": 157.0
+	},
+	"replace":
+	{
+		"height": 62.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 500.0,
+		"selected_items":
+		[
+		],
+		"width": 380.0
+	},
+	"show_minimap": true,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 329.0,
+	"status_bar_visible": true
+}

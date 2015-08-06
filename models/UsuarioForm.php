@@ -15,6 +15,22 @@ public $actos;
 public $concursos;
 public $oposiciones;
 
+/*    public $id;
+    public $dni;
+    public $username;
+    public $email;
+    public $password;
+    public $authKey;
+    public $accessToken;
+    public $activate;
+    public $verification_code;
+    public $role;
+    public $interinos;
+    public $actos;
+    public $concursos;
+    public $oposiciones;
+    public $contraseña;*/
+
 public function rules()
  {
   return [

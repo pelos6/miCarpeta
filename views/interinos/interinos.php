@@ -35,7 +35,7 @@ $clienteSigi = new SoapClient(null, array('location' => $urlSigi, 'uri' => $uriS
         <?php
         $consultasSituacionListas = $clienteSigi->getConsultasSituacionListas(Yii::$app->user->identity->dni);
         foreach ($consultasSituacionListas as $consultaSituacionListas) {
-            echo '<a href="' . $consultaSituacionListas->url . '">' . $consultaSituacionListas->tex_opc . "</a><br />\n";
+            echo '<a href="' . $consultaSituacionListas->url . '" target= "_blank">' . $consultaSituacionListas->tex_opc . "</a><br />\n";
         }
          ?>
     </div>

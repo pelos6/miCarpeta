@@ -7,7 +7,7 @@ use yii\data\Pagination;
 use yii\widgets\LinkPager;
 ?>
 
-<a href="<?= Url::toRoute("site/create") ?>">Crear un nuevo usuario</a>
+<a href="<?= Url::toRoute("user/create") ?>">Crear un nuevo usuario</a>
 
 <?php
 $f = ActiveForm::begin([
@@ -42,19 +42,19 @@ $f = ActiveForm::begin([
         <th></th>
         <th></th>
     </tr>
-<?php foreach ($model as $row): ?>
+<?php foreach ($model as $row): ?>   
         <tr>
             <td><?= $row->username ?></td>
-            <td><?= $row->email ?></td>>
+            <td><?= $row->email ?></td>
             <td><?= $row->dni ?></td>
             <td><?= $row->role ?></td>
-            <td><?= $row->contraseña ?></td>
+            <td><?= $row->contraseña ?></td> 
             <td><?= $row->interinos ?></td>
             <td><?= $row->actos ?></td>
             <td><?= $row->concursos ?></td>
             <td><?= $row->oposiciones ?></td>
 
-
+ 
             <td><a href="<?= Url::toRoute(["user/update", "id" => $row->id]) ?>">Editar</a></td>
             <td>
                 <a href="#" data-toggle="modal" data-target="#id_alumno_<?= $row->id ?>">Eliminar</a>
