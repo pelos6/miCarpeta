@@ -19,7 +19,17 @@ class FormResetPass extends model{
             ['email', 'match', 'pattern' => "/^.{5,80}$/", 'message' => 'Mínimo 5 y máximo 80 caracteres'],
             ['email', 'email', 'message' => 'Formato no válido'],
             ['password', 'match', 'pattern' => "/^.{6,16}$/", 'message' => 'Mínimo 6 y máximo 16 caracteres'],
-            ['password_repeat', 'compare', 'compareAttribute' => 'password', 'message' => 'Los passwords no coinciden'],
+            ['password_repeat', 'compare', 'compareAttribute' => 'password', 'message' => 'Las contraseñas no coinciden'],
         ];
+    }
+          /*
+    Pongo los textos en castellano*/
+    public function attributeLabels()
+    {
+     return array(
+      'email'=>'Correo electrónico',
+      'password'=>'Contraseña',
+      'password_repeat'=>'Repita la Contraseña',
+     );
     }
 }

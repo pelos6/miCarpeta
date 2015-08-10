@@ -1,11 +1,13 @@
 <?php
 use yii\helpers\Html;
 use yii\widgets\ActiveForm;
+$this->title = 'Recuperar Contraseña';
+$this->params['breadcrumbs'][] = $this->title;
 ?>
  
 <h3><?= $msg ?></h3>
  
-<h1>Reset Password</h1>
+<h1>Nueva Contraseña</h1>
 <?php $form = ActiveForm::begin([
     'method' => 'post',
     'enableClientValidation' => true,
@@ -32,6 +34,6 @@ use yii\widgets\ActiveForm;
  <?= $form->field($model, "recover")->input("hidden")->label(false) ?>  
 </div>
  
-<?= Html::submitButton("Reset password", ["class" => "btn btn-primary"]) ?>
+<?= Html::submitButton("Nueva Contraseña", ["class" => "btn btn-primary"]) ?>
  
 <?php $form->end() ?>

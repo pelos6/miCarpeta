@@ -16,4 +16,12 @@ class FormRecoverPass extends model{
             ['email', 'email', 'message' => 'Formato no válido'],
         ];
     }
+        /*
+    Pongo los textos en castellano*/
+    public function attributeLabels()
+    {
+     return array(
+      'email'=>'Correo electrónico',
+     );
+    }
 }

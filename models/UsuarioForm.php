@@ -36,13 +36,14 @@ public function rules()
   return [
    ['id', 'integer', 'message' => 'Id incorrecto'],
    ['username', 'required', 'message' => 'Campo requerido'],
-   ['username', 'match', 'pattern' => '/^[a-záéíóúñ\s]+$/i', 'message' => 'Sólo se aceptan letras'],
-   ['username', 'match', 'pattern' => '/^.{3,50}$/', 'message' => 'Mínimo 3 máximo 50 caracteres'],
+/*   ['username', 'match', 'pattern' => '/^[a-záéíóúñ\s]+$/i', 'message' => 'Sólo se aceptan letras'],
+   ['username', 'match', 'pattern' => '/^.{3,50}$/', 'message' => 'Mínimo 3 máximo 50 caracteres'],*/
+   ['username', 'match', 'pattern' => "/^.{6,50}$/", 'message' => 'Mínimo 6 y máximo 50 caracteres'],
+   ['username', 'match', 'pattern' => "/^[0-9a-z]+$/i", 'message' => 'Sólo se aceptan letras y números'],
    ['email','email'],
    ['email','required'],
-   ['role','required'],
    ['interinos','boolean'],
-   ['actos','boolean'],
+   ['actos', 'prueba'],
    ['concursos','boolean'],
    ['oposiciones','boolean'],
       
@@ -55,5 +56,25 @@ public function rules()
 //   ['nota_final', 'number', 'message' => 'Sólo números'],
   ];
  }
- 
+     public function prueba() {
+        if ($this->interinos == 0 && $this->actos == 0 && $this->concursos == 0 && $this->oposiciones == 0) {
+            $this->addError('interinos', 'Debe indicar al menos un tema de interes.');
+            $this->addError('actos', 'Debe indicar al menos un tema de interes.');
+            $this->addError('concursos', 'Debe indicar al menos un tema de interes.');
+            $this->addError('oposiciones', 'Debe indicar al menos un tema de interes.');
+        }
+    }
+
+    /**
+     * @return array customized attribute labels
+     */
+    public function attributeLabels() {
+        return [
+            'username' => 'Nombre',
+            //'dni' => 'Dni: formato 00000001R',
+            'email' => 'Correo electrónico',
+            'password' => 'Contraseña',
+            'password_repeat' => 'Repite la contraseña',
+        ];
+    }
 }

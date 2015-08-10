@@ -10,7 +10,7 @@ use yii\widgets\ActiveForm;
 $this->title = 'Registro';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
-<h1><?= Html::encode($this->title) . ' casi 10' ?></h1>
+<h1><?= Html::encode($this->title) ?></h1>
 <h3><?= $msg ?></h3>
 
 <?php

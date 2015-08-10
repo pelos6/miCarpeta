@@ -189,7 +189,7 @@ class UserController extends Controller {
                 $table = Users::findOne($model->id);
                 if ($table) {
                     $table->username = $model->username;
-                    $table->role = $model->role;
+                   // $table->role = $model->role;
                     $table->email = $model->email;
                     $table->interinos = $model->interinos;
                     $table->actos = $model->actos;

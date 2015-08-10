@@ -20,12 +20,18 @@ $clienteConcursosSecundaria = new SoapClient(null, array('location' => $urlSecun
     <div class="alert alert-success">
         <?php
         $concursosActivosPrimaria = $clienteConcursosPrimaria->getConcursosActivos();
+        $nada = true;
         foreach ($concursosActivosPrimaria as $concursoActivo) {
             echo '<a href="' . Url::toRoute(["concursos/convocatoria", "cod_tip_con" => 'P', "cod_con" => $concursoActivo->cod_con,"des_con" => $concursoActivo->des_con]) . '">' . $concursoActivo->des_con . "</a><br />\n";
+            $nada = false;
         }
         $concursosActivosSecundaria = $clienteConcursosSecundaria->getConcursosActivos();
         foreach ($concursosActivosSecundaria as $concursoActivo) {
             echo '<a href="' . Url::toRoute(["concursos/convocatoria","cod_tip_con" => 'S', "cod_con" => $concursoActivo->cod_con,"des_con" => $concursoActivo->des_con]) . '">' . $concursoActivo->des_con . "</a><br />\n";
+            $nada = false;
+        }
+        if ($nada){
+            echo 'No hay ninguna convocatoria de Concurso de Traslados activa';
         }
         ?>
     </div>
@@ -35,18 +41,21 @@ $clienteConcursosSecundaria = new SoapClient(null, array('location' => $urlSecun
      <div class="alert alert-success">
         <?php
         $ConcursosPrimariaConSolicitud = $clienteConcursosPrimaria->getConcursoHaySolicitud(Yii::$app->user->identity->dni);
+        $nada = true;
         foreach ($ConcursosPrimariaConSolicitud as $ConcursoPrimariaConSolicitud) {
-           // echo $ConcursoPrimariaConSolicitud->des_con  . "<br />\n";
             echo '<a href="' . Url::toRoute(["concursos/solicitudes","cod_tip_con" => 'P', "cod_con" => $ConcursoPrimariaConSolicitud->cod_con,"des_con" => $ConcursoPrimariaConSolicitud->des_con]) . '">' . $ConcursoPrimariaConSolicitud->des_con . "</a><br />\n";
+            $nada = false;
         }
         ?>
         <?php
         $ConcursosSecundariaConSolicitud = $clienteConcursosSecundaria->getConcursoHaySolicitud(Yii::$app->user->identity->dni);
         foreach ($ConcursosSecundariaConSolicitud as $ConcursoSecundariaConSolicitud) {
-           // echo $ConcursoSecundariaConSolicitud->des_con  . "<br />\n";
             echo '<a href="' . Url::toRoute(["concursos/solicitudes","cod_tip_con" => 'S', "cod_con" => $ConcursoSecundariaConSolicitud->cod_con,"des_con" => $ConcursoSecundariaConSolicitud->des_con]) . '">' . $ConcursoSecundariaConSolicitud->des_con . "</a><br />\n";
+            $nada = false;
         }
-
+        if ($nada){
+            echo 'El usuario no tiene ninguna solicitud en convocatoria de Concurso de Traslados';
+        }
 //    echo("<pre>");
 //    print_r($solicitudesConcursos);
 //    echo ("</pre>");

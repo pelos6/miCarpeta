@@ -6,6 +6,7 @@ use yii\bootstrap\NavBar;
 use yii\widgets\Breadcrumbs;
 use app\assets\AppAsset;
 use app\models\User;
+use yii\helpers\Url;
 
 /* @var $this \yii\web\View */
 /* @var $content string */
@@ -27,7 +28,6 @@ AppAsset::register($this);
         <?php $this->beginBody() ?>
         <div class="wrap">
             <?php
-            //error_log('DEBUG: main.php el id ' . Yii::$app->user->id);
             NavBar::begin([
                 'brandLabel' => 'Mi Carpeta ',
                 'brandUrl' => Yii::$app->homeUrl,
@@ -39,10 +39,6 @@ AppAsset::register($this);
                 'options' => ['class' => 'navbar-nav navbar-right'],
                 'items' => [
                     ['label' => 'Inicio', 'url' => ['/site/index']],
-                    //['label' => 'Formulario', 'url' => ['/site/entry'], 'visible' => !Yii::$app->user->isGuest],
-                    //['label' => 'Saludo', 'url' => ['/site/saluda']],
-                    // ['label' => 'Paises', 'url' => ['/country/index'], 'visible' => !Yii::$app->user->isGuest],
-                    // ['label' => 'Usuarios', 'url' => ['/user/index'], 'visible' => Yii::$app->user->id == 1],
                     ['label' => 'Acerca de', 'url' => ['/site/about'], 'visible' => !Yii::$app->user->isGuest],
                     Yii::$app->user->isGuest ?
                             ['label' => 'Usuarios', 'url' => ['/user/index'], 'visible' => false] :
@@ -62,10 +58,14 @@ AppAsset::register($this);
                             ['label' => 'Oposiciones', 'url' => ['/oposiciones/oposiciones'], 'visible' => false] :
                             ['label' => 'Oposiciones', 'url' => ['/oposiciones/oposiciones'], 'visible' => Yii::$app->user->identity->oposiciones == 1],
                     Yii::$app->user->isGuest ?
+                            ['label' => 'modificar el usuario', 'visible' => false] :
+                            ['label' => 'modificar el usuario', 'url' => Url::toRoute(["user/update", "id" => Yii::$app->user->identity->id])],
+                    Yii::$app->user->isGuest ?
                             ['label' => 'Acceder', 'url' => ['/site/login']] :
-                            ['label' => 'Salir (' . Yii::$app->user->identity->username . ' i ' . Yii::$app->user->identity->interinos . ' a ' . Yii::$app->user->identity->actos . ' c ' . Yii::$app->user->identity->concursos . ' o ' . Yii::$app->user->identity->oposiciones . ')',
-                        'url' => ['/site/logout'],
-                        'linkOptions' => ['data-method' => 'post']],
+                           // ['label' => 'Salir (' . Yii::$app->user->identity->username . ' i ' . Yii::$app->user->identity->interinos . ' a ' . Yii::$app->user->identity->actos . ' c ' . Yii::$app->user->identity->concursos . ' o ' . Yii::$app->user->identity->oposiciones . ')',
+                            ['label' => 'Salir (' . Yii::$app->user->identity->username .')',
+                            'url' => ['/site/logout'],
+                            'linkOptions' => ['data-method' => 'post']],
                 ],
             ]);
             NavBar::end();

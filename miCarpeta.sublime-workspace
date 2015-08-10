@@ -4,6 +4,10 @@
 		"selected_items":
 		[
 			[
+				"Oposic",
+				"Oposición"
+			],
+			[
 				"que",
 				"query_res"
 			],
@@ -35,6 +39,70 @@
 	},
 	"buffers":
 	[
+		{
+			"file": "controllers/SiteController.php",
+			"settings":
+			{
+				"buffer_size": 24139,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "views/layouts/main.php",
+			"settings":
+			{
+				"buffer_size": 4655,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "models/User.php",
+			"settings":
+			{
+				"buffer_size": 3618,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "controllers/ConcursosController.php",
+			"settings":
+			{
+				"buffer_size": 1068,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "controllers/UserController.php",
+			"settings":
+			{
+				"buffer_size": 10232,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "views/site/contacto.php",
+			"settings":
+			{
+				"buffer_size": 1623,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "models/ContactoForm.php",
+			"settings":
+			{
+				"buffer_size": 1689,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "models/LoginForm.php",
+			"settings":
+			{
+				"buffer_size": 2149,
+				"line_ending": "Unix"
+			}
+		}
 	],
 	"build_system": "",
 	"command_palette":
@@ -88,6 +156,42 @@
 	},
 	"file_history":
 	[
+		"/C/Users/Javier/Dropbox/CicloFormativoGradoSuperior/practicas_propias/php/miCarpeta/models/UsuarioForm.php",
+		"/C/Users/Javier/Dropbox/CicloFormativoGradoSuperior/practicas_propias/php/miCarpeta/views/site/registro.php",
+		"/C/Users/Javier/Dropbox/CicloFormativoGradoSuperior/practicas_propias/php/miCarpeta/models/RegistroForm.php",
+		"/C/Users/Javier/Dropbox/CicloFormativoGradoSuperior/practicas_propias/php/miCarpeta/views/user/update1.php",
+		"/C/Users/Javier/Dropbox/CicloFormativoGradoSuperior/practicas_propias/php/miCarpeta/views/user/update.php",
+		"/C/Users/Javier/Dropbox/CicloFormativoGradoSuperior/practicas_propias/php/miCarpeta/views/layouts/main.php",
+		"/C/Users/Javier/Dropbox/CicloFormativoGradoSuperior/practicas_propias/php/miCarpeta/config/web.php",
+		"/C/Users/Javier/Dropbox/CicloFormativoGradoSuperior/practicas_propias/php/miCarpeta/views/actos/actos.php",
+		"/C/Users/Javier/Dropbox/CicloFormativoGradoSuperior/practicas_propias/php/miCarpeta/views/interinos/interinos.php",
+		"/C/Users/Javier/Dropbox/CicloFormativoGradoSuperior/practicas_propias/php/miCarpeta/views/oposiciones/oposiciones.php",
+		"/C/Users/Javier/Dropbox/CicloFormativoGradoSuperior/practicas_propias/php/miCarpeta/views/concursos/concursos.php",
+		"/C/Users/Javier/Dropbox/CicloFormativoGradoSuperior/practicas_propias/php/miCarpeta/controllers/SiteController.php",
+		"/C/Users/Javier/Dropbox/CicloFormativoGradoSuperior/practicas_propias/php/miCarpeta/models/LoginForm.php",
+		"/C/Users/Javier/Dropbox/CicloFormativoGradoSuperior/practicas_propias/php/miCarpeta/views/site/login.php",
+		"/C/Users/Javier/Dropbox/CicloFormativoGradoSuperior/practicas_propias/php/miCarpeta/models/User.php",
+		"/C/Users/Javier/Dropbox/CicloFormativoGradoSuperior/practicas_propias/php/miCarpeta/views/site/recoverpass.php",
+		"/C/Users/Javier/Dropbox/CicloFormativoGradoSuperior/practicas_propias/php/miCarpeta/models/FormRecoverPass.php",
+		"/C/Users/Javier/Dropbox/CicloFormativoGradoSuperior/practicas_propias/php/miCarpeta/views/user/index.php",
+		"/C/Users/Javier/Dropbox/CicloFormativoGradoSuperior/practicas_propias/php/miCarpeta/views/site/resetpass.php",
+		"/C/Users/Javier/Dropbox/CicloFormativoGradoSuperior/practicas_propias/php/miCarpeta/models/FormResetPass.php",
+		"/C/Users/Javier/Dropbox/CicloFormativoGradoSuperior/practicas_propias/php/miCarpeta/controllers/UserController.php",
+		"/C/Users/Javier/Dropbox/CicloFormativoGradoSuperior/practicas_propias/php/miCarpeta/views/user/create1.php",
+		"/C/Users/Javier/Dropbox/CicloFormativoGradoSuperior/practicas_propias/php/miCarpeta/views/user/create.php",
+		"/C/Users/Javier/Dropbox/CicloFormativoGradoSuperior/practicas_propias/php/miCarpeta/README.md",
+		"/C/Users/Javier/Dropbox/CicloFormativoGradoSuperior/practicas_propias/php/miCarpeta/doc/.gitignore",
+		"/C/Users/Javier/Dropbox/CicloFormativoGradoSuperior/practicas_propias/php/miCarpeta/serviciosMiCarpetaCtPri/include/DBConcursosPrimaria.php",
+		"/C/Users/Javier/Dropbox/CicloFormativoGradoSuperior/practicas_propias/php/miCarpeta/models/UserErrorAgosto.php",
+		"/C/Users/Javier/Dropbox/CicloFormativoGradoSuperior/practicas_propias/php/miCarpeta/models/Users.php",
+		"/C/Users/Javier/Dropbox/CicloFormativoGradoSuperior/practicas_propias/php/miCarpeta/vendor/yiisoft/yii2/db/ActiveRecord.php",
+		"/C/Users/Javier/Dropbox/CicloFormativoGradoSuperior/practicas_propias/php/miCarpeta/models/FormSearch.php",
+		"/C/Users/Javier/Dropbox/CicloFormativoGradoSuperior/practicas_propias/php/miCarpeta/views/site/index.php",
+		"/C/Users/Javier/Dropbox/CicloFormativoGradoSuperior/practicas_propias/php/miCarpeta/views/site/user.php",
+		"/C/Users/Javier/Dropbox/CicloFormativoGradoSuperior/practicas_propias/php/miCarpeta/config/params.php",
+		"/C/Users/Javier/Dropbox/CicloFormativoGradoSuperior/practicas_propias/php/miCarpeta/views/site/error.php",
+		"/C/Users/Javier/Dropbox/CicloFormativoGradoSuperior/practicas_propias/php/miCarpeta/models/RegistroFormError.php",
+		"/C/Users/Javier/Dropbox/CicloFormativoGradoSuperior/DAW_Proyecto/baseDatos/scriptDesdeModeloInnoDbSigi.sql",
 		"/C/Users/Javier/Dropbox/CicloFormativoGradoSuperior/practicas_propias/php/yii2/ejemplo/config/params.php",
 		"/C/Users/Javier/Dropbox/CicloFormativoGradoSuperior/practicas_propias/php/yii2/ejemplo/views/alumnos/view.php",
 		"/C/Users/Javier/Dropbox/CicloFormativoGradoSuperior/practicas_propias/php/yii2/ejemplo/views/alumnos/alumnos.php",
@@ -179,43 +283,7 @@
 		"/C/Users/Javier/Dropbox/CicloFormativoGradoSuperior/DAW_DWES/practicas/companeros/tareaAPP_reparto/Tarea8Armando/ajaxmaps.php",
 		"/C/Users/Javier/Dropbox/CicloFormativoGradoSuperior/DAW_DWES/practicas/companeros/tareaAPP_reparto/Tarea8Armando/codigo.js",
 		"/C/Users/Javier/Dropbox/CicloFormativoGradoSuperior/DAW_DWES/practicas/companeros/tareaAPP_reparto/Tarea8Armando/repartos.php",
-		"/C/Users/Javier/Dropbox/CicloFormativoGradoSuperior/DAW_DWES/practicas/tarea8_app_reparto/traza.txt",
-		"/C/Users/Javier/Dropbox/CicloFormativoGradoSuperior/DAW_DWEC/tema_6_AngularJs/ejercicios/Ejercicios-angularJS/soluciones/ejercicio7c.html",
-		"/C/Users/Javier/Dropbox/CicloFormativoGradoSuperior/DAW_DWES/tema_8_AplicacionesWebHibridas/googleTask/librerias/google-api-php-client/examples/user-example.php",
-		"/C/Users/Javier/Dropbox/CicloFormativoGradoSuperior/DAW_DWES/tema_8_AplicacionesWebHibridas/googleTask/librerias/google-api-php-client/examples/batch.php",
-		"/C/Users/Javier/Dropbox/CicloFormativoGradoSuperior/DAW_DWES/tema_8_AplicacionesWebHibridas/googleTask/librerias/google-api-php-client/examples/service-account.php",
-		"/C/Users/Javier/Dropbox/CicloFormativoGradoSuperior/DAW_DWES/tema_8_AplicacionesWebHibridas/googleTask/librerias/google-api-php-client/examples/simplefileupload.php",
-		"/C/Users/Javier/Dropbox/CicloFormativoGradoSuperior/DAW_DWES/tema_8_AplicacionesWebHibridas/googleTask/librerias/google-api-php-client/examples/templates/base.php",
-		"/C/Users/Javier/Dropbox/CicloFormativoGradoSuperior/DAW_DWES/practicas/compañeros/tareaAPP_reparto/Tarea8Armando/google-api-php-client/examples/index.php",
-		"/C/Users/Javier/Dropbox/CicloFormativoGradoSuperior/DAW_DWES/tema_8_AplicacionesWebHibridas/googleTask/librerias/google-api-php-client/examples/simple-query.php",
-		"/C/Users/Javier/Dropbox/CicloFormativoGradoSuperior/DAW_DWES/tema_8_AplicacionesWebHibridas/googleTask/librerias/google-api-php-client/src/Google/Config.php",
-		"/C/Users/Javier/Dropbox/CicloFormativoGradoSuperior/DAW_DWES/practicas/compañeros/tareaAPP_reparto/Tarea8Armando/repartos.php",
-		"/C/Users/Javier/Dropbox/CicloFormativoGradoSuperior/DAW_DWES/practicas/compañeros/tareaAPP_reparto/Tarea8Armando/ajaxmaps.php",
-		"/C/Users/Javier/Dropbox/CicloFormativoGradoSuperior/DAW_DWES/tema_8_AplicacionesWebHibridas/googleTask/librerias/google-api-php-client/examples/index.php",
-		"/C/Users/Javier/Dropbox/CicloFormativoGradoSuperior/DAW_DWES/practicas/R18/ubicar.js",
-		"/C/Users/Javier/Dropbox/CicloFormativoGradoSuperior/DAW_DWES/practicas/R18/form.php",
-		"/C/Users/Javier/Dropbox/CicloFormativoGradoSuperior/DAW_DWES/tema_8_AplicacionesWebHibridas/R18/form.php",
-		"/C/Users/Javier/Desktop/borrar.html",
-		"/C/Users/Javier/Dropbox/CicloFormativoGradoSuperior/DAW_DWEC/sublime/sublime/Data/Packages/User/databinding.sublime-snippe",
-		"/C/Users/Javier/Dropbox/CicloFormativoGradoSuperior/DAW_DWEC/sublime/sublime/Data/Packages/User/databinding.sublime-snippet",
-		"/C/Users/Javier/Dropbox/CicloFormativoGradoSuperior/DAW_DWES/tareas/tarea9_serviciosSOAP/WSDLDocument-0.5/sample/01-array.php",
-		"/C/Users/Javier/Dropbox/CicloFormativoGradoSuperior/proyectos/DAWES/tema3TareaBD1Felix/entrar.php",
-		"/C/Users/Javier/Dropbox/CicloFormativoGradoSuperior/proyectos/DAWES/DAWES2TRIMESTRE/TiendaPlataforma/login.php",
-		"/C/Users/Javier/Dropbox/CicloFormativoGradoSuperior/proyectos/DAWES/tema3TareaBD1Felix/index.php",
-		"/C/Users/Javier/Dropbox/CicloFormativoGradoSuperior/proyectos/DAWES/DAWES2TRIMESTRE/preparandoExamen/tema4Autenticacion.php",
-		"/C/Users/Javier/Dropbox/CicloFormativoGradoSuperior/proyectos/DAWES/DAWES2TRIMESTRE/contadorVisitas/contadorVisitas.php",
-		"/C/Users/Javier/Dropbox/CicloFormativoGradoSuperior/DAW_DWES/PHP_Oracle/conexion.php",
-		"/C/Users/Javier/Dropbox/CicloFormativoGradoSuperior/DAW_DWES/PHP_Oracle/connect.php",
-		"/C/Users/Javier/Dropbox/CicloFormativoGradoSuperior/DAW_DWES/tutoria3Trimestre.txt",
-		"/C/Bitnami/wampstack-5.4.31-0/apache2/logs/access.log",
-		"/C/Users/Javier/Dropbox/CicloFormativoGradoSuperior/proyectos/DAWEC/YEOMAN/practicaValidacionFormularios/practica-validacion-formularios/app/scripts/main.js",
-		"/C/Users/Javier/Dropbox/CicloFormativoGradoSuperior/DAW_DWEC/tema_4/jqueryValidationPluginTutorial/ejemplo.html",
-		"/C/Users/Javier/Dropbox/CicloFormativoGradoSuperior/DAW_DWEC/tema_4/jqueryValidationPluginTutorial/js/ejemplo.js",
-		"/C/Users/Javier/Dropbox/CicloFormativoGradoSuperior/DAW_DWEC/tema_4/jqueryValidationPluginTutorial/css/ejemplo.css",
-		"/C/Users/Javier/Dropbox/CicloFormativoGradoSuperior/DAW_DWEC/tema_4/jqueryValidationPluginTutorial/css/reset.css",
-		"/C/Users/Javier/Dropbox/CicloFormativoGradoSuperior/DAW_DWEC/tema_4/jqueryValidationPluginTutorial/css/screen.css",
-		"/C/Users/Javier/Dropbox/CicloFormativoGradoSuperior/proyectos/DAWEC/YEOMAN/practicaValidacionFormularios/practica-validacion-formularios/app/index.html",
-		"/C/Users/Javier/Dropbox/CicloFormativoGradoSuperior/proyectos/DAWEC/YEOMAN/practicaValidacionFormularios/practica-validacion-formularios/app/styles/estilos.css"
+		"/C/Users/Javier/Dropbox/CicloFormativoGradoSuperior/DAW_DWES/practicas/tarea8_app_reparto/traza.txt"
 	],
 	"find":
 	{
@@ -223,7 +291,7 @@
 	},
 	"find_in_files":
 	{
-		"height": 0.0,
+		"height": 90.0,
 		"where_history":
 		[
 			"<open folders>",
@@ -235,6 +303,23 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"debug",
+			" ');",
+			"No tiene permitido ejecutar esta acción.",
+			"activo",
+			"', ",
+			"electrónico",
+			"login",
+			"interes!",
+			"Recup",
+			"contains",
+			"new",
+			"create",
+			"find",
+			">",
+			"find",
+			"index",
+			"enviamos",
 			"actionlogin",
 			"validarformulario",
 			"site",
@@ -358,8 +443,233 @@
 	"groups":
 	[
 		{
+			"selected": 0,
 			"sheets":
 			[
+				{
+					"buffer": 0,
+					"file": "controllers/SiteController.php",
+					"settings":
+					{
+						"buffer_size": 24139,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								20566,
+								20566
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 6930.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "views/layouts/main.php",
+					"settings":
+					{
+						"buffer_size": 4655,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								2993,
+								2993
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 495.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "models/User.php",
+					"settings":
+					{
+						"buffer_size": 3618,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								935,
+								935
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 405.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "controllers/ConcursosController.php",
+					"settings":
+					{
+						"buffer_size": 1068,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 225.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "controllers/UserController.php",
+					"settings":
+					{
+						"buffer_size": 10232,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								6158,
+								6158
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 3645.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 5,
+					"file": "views/site/contacto.php",
+					"settings":
+					{
+						"buffer_size": 1623,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 90.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 6,
+					"file": "models/ContactoForm.php",
+					"settings":
+					{
+						"buffer_size": 1689,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								233,
+								233
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 495.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 7,
+					"file": "models/LoginForm.php",
+					"settings":
+					{
+						"buffer_size": 2149,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				}
 			]
 		}
 	],
@@ -423,6 +733,6 @@
 	"show_open_files": false,
 	"show_tabs": true,
 	"side_bar_visible": true,
-	"side_bar_width": 329.0,
+	"side_bar_width": 285.0,
 	"status_bar_visible": true
 }

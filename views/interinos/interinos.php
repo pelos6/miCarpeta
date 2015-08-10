@@ -23,8 +23,13 @@ $clienteSigi = new SoapClient(null, array('location' => $urlSigi, 'uri' => $uriS
     <div class="alert alert-success">
         <?php
         $convocatoriasListasActivas = $clienteSigicon->getConvocatoriasListasActivas();
+        $nada = true;
         foreach ($convocatoriasListasActivas as $convocatoriaListaActiva) {
             echo '<a href="' . Url::toRoute(["interinos/convocatoria", "cod_con" => $convocatoriaListaActiva->cod_con,"des_con" => $convocatoriaListaActiva->des_con]) . '">' . $convocatoriaListaActiva->des_con . "</a><br />\n";
+            $nada = false;
+        }
+        if ($nada){
+            echo 'Ninguna Convocatoria a listas ni de rebaremación activa';
         }
         ?>
     </div>
@@ -34,8 +39,13 @@ $clienteSigi = new SoapClient(null, array('location' => $urlSigi, 'uri' => $uriS
     <div class="alert alert-success">
         <?php
         $consultasSituacionListas = $clienteSigi->getConsultasSituacionListas(Yii::$app->user->identity->dni);
+        $nada = true;
         foreach ($consultasSituacionListas as $consultaSituacionListas) {
             echo '<a href="' . $consultaSituacionListas->url . '" target= "_blank">' . $consultaSituacionListas->tex_opc . "</a><br />\n";
+           $nada = false; 
+        }
+        if ($nada){
+            echo 'Ninguna información a mostrar';
         }
          ?>
     </div>
@@ -43,8 +53,13 @@ $clienteSigi = new SoapClient(null, array('location' => $urlSigi, 'uri' => $uriS
     <div class="alert alert-success">
         <?php
         $ListasConSolilcitud = $clienteSigicon->getConvocatoriasListasHaySolicitud(Yii::$app->user->identity->dni);
+        $nada = true;
         foreach ($ListasConSolilcitud as $ListaConSolilcitud) {
             echo '<a href="' . Url::toRoute(["interinos/solicitudes", "cod_con" => $ListaConSolilcitud->cod_con,"des_con" => $ListaConSolilcitud->des_con]) . '">' . $ListaConSolilcitud->des_con . "</a><br />\n";
+            $nada = false;
+        }
+       if ($nada){
+            echo 'El usuario no tiene solicitud en ninguna de las convocatorias activas';
         }
 //    echo("<pre>");
 //    print_r($solicitudesListas);

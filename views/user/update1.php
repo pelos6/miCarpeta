@@ -30,6 +30,15 @@ use yii\helpers\Url;
  <?= $form->field($model, "email")->input("text") ?>   
 </div>
 
+<?php 
+    if  ($model->role == 2) { 
+?>
+<div class="form-group">
+ <?= $form->field($model, "role")->input("text") ?>   
+</div>
+<?php 
+    } 
+?>
 
 <p>Por favor indique al menos un tema de interes:</p>
 <?= $form->field($model, 'interinos')->checkbox() ?>

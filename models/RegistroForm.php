@@ -8,11 +8,11 @@ use app\models\Users;
 
 class RegistroForm extends Model {
 
-    public $username = 'interinosModel';
-    public $dni = '012345678';
-    public $email = 'javieriranzo3@gmail.com';
-    public $password = 'interinos';
-    public $password_repeat = 'interinos';
+    public $username = 'usuario1';
+    public $dni = '00000001R';
+    public $email = 'javieriranzo@hotmail.com';
+    public $password = 'usuario1';
+    public $password_repeat = 'usuario1';
     public $interinos = false;
     public $actos = false;
     public $concursos = false;
@@ -25,6 +25,7 @@ class RegistroForm extends Model {
             ['username', 'match', 'pattern' => "/^[0-9a-z]+$/i", 'message' => 'Sólo se aceptan letras y números'],
             ['dni', 'required'],
             ['dni', 'validar_dni'],
+            ['dni', 'dni_existe'],
             ['dni', 'match', 'pattern' => "/^[0-9a-z]+$/i", 'message' => 'Sólo se aceptan letras y números'],
             ['dni', 'match', 'pattern' => "/^.{9,10}$/", 'message' => 'Mínimo 9 y máximo 10 caracteres'],
             ['username', 'username_existe'],
@@ -32,7 +33,7 @@ class RegistroForm extends Model {
             ['email', 'email', 'message' => 'Formato no válido'],
             ['email', 'email_existe'],
             ['password', 'match', 'pattern' => "/^.{6,16}$/", 'message' => 'Mínimo 6 y máximo 16 caracteres'],
-            ['password_repeat', 'compare', 'compareAttribute' => 'password', 'message' => 'Los passwords no coinciden'],
+            ['password_repeat', 'compare', 'compareAttribute' => 'password', 'message' => 'Las contraseñas no coinciden'],
             ['interinos', 'boolean'],
             ['actos', 'prueba'],
             ['concursos', 'boolean'],
@@ -60,7 +61,7 @@ class RegistroForm extends Model {
 
         //Si el email existe mostrar el error
         if ($table->count() == 1) {
-            $this->addError($attribute, "El email seleccionado existe");
+            $this->addError($attribute, "El email introducido existe");
         }
     }
 
@@ -70,16 +71,27 @@ class RegistroForm extends Model {
 
         //Si el username existe mostrar el error
         if ($table->count() == 1) {
-            $this->addError($attribute, "El usuario seleccionado existe");
+            $this->addError($attribute, "El usuario introducido existe");
+        }
+    }
+
+     public function dni_existe($attribute, $params) {
+
+        //Buscar el email en la tabla
+        $table = Users::find()->where("dni=:dni", [":dni" => $this->dni]);
+
+        //Si el email existe mostrar el error
+        if ($table->count() == 1) {
+            $this->addError($attribute, "El dni introducido existe");
         }
     }
 
     public function prueba() {
         if ($this->interinos == 0 && $this->actos == 0 && $this->concursos == 0 && $this->oposiciones == 0) {
-            $this->addError('interinos', 'Debe indicar al menos un tema de interes!');
-            $this->addError('actos', 'Debe indicar al menos un tema de interes!');
-            $this->addError('concursos', 'Debe indicar al menos un tema de interes!');
-            $this->addError('oposiciones', 'Debe indicar al menos un tema de interes!');
+            $this->addError('interinos', 'Debe indicar al menos un tema de interes.');
+            $this->addError('actos', 'Debe indicar al menos un tema de interes.');
+            $this->addError('concursos', 'Debe indicar al menos un tema de interes.');
+            $this->addError('oposiciones', 'Debe indicar al menos un tema de interes.');
         }
     }
 
@@ -89,7 +101,7 @@ class RegistroForm extends Model {
     public function attributeLabels() {
         return [
             'username' => 'Nombre',
-            'dni' => 'Dni: 8 numeros, 1 letra mayuscula sin ceros por delante',
+            'dni' => 'Dni: formato 00000001R',
             'email' => 'Correo electrónico',
             'password' => 'Contraseña',
             'password_repeat' => 'Repite la contraseña',
