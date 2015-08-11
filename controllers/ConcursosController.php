@@ -15,9 +15,6 @@ use yii\helpers\Html;
 use yii\helpers\Url;
 use app\models\UsuarioForm;
 
-/**
- * UserController implements the CRUD actions for User model.
- */
 class ConcursosController extends Controller {
 
     public function behaviors() {

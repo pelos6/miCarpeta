@@ -4,7 +4,7 @@ use yii\helpers\Html;
 use yii\widgets\ActiveForm;
 use yii\helpers\Url;
 
-$this->title = 'convocatoria '. Html::encode($_GET["tex_opc"]);
+$this->title = Html::encode($_GET["tex_opc"]);
 $this->params['breadcrumbs'][] = ['label' => 'Actos', 'url' => ['actos']];
 $this->params['breadcrumbs'][] = $this->title;
 
@@ -73,6 +73,6 @@ $actoActivo = $clienteSigi->getActoActivo($_GET["cod_opc"]);
     </div>
 </div>  
 
-
-
-
+    <div class="panel-body">
+       <?= Html::a('Vacantes ofertadas', ['actos/vacantes',"cod_opc" => $_GET["cod_opc"],"tex_opc" => $_GET["tex_opc"]], ['class' => 'btn btn-success']) ?>
+    </div>

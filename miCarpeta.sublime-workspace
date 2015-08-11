@@ -4,6 +4,14 @@
 		"selected_items":
 		[
 			[
+				"google",
+				"googleMap"
+			],
+			[
+				"de",
+				"descripcion"
+			],
+			[
 				"Oposic",
 				"Oposición"
 			],
@@ -40,66 +48,42 @@
 	"buffers":
 	[
 		{
-			"file": "controllers/SiteController.php",
+			"file": "serviciosMiCarpetaSigi/include/DBSigi.php",
 			"settings":
 			{
-				"buffer_size": 24139,
+				"buffer_size": 13794,
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "views/layouts/main.php",
+			"file": "views/actos/vacantes.php",
 			"settings":
 			{
-				"buffer_size": 4655,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "models/User.php",
-			"settings":
-			{
-				"buffer_size": 3618,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "controllers/ConcursosController.php",
-			"settings":
-			{
-				"buffer_size": 1068,
+				"buffer_size": 2413,
 				"line_ending": "Windows"
 			}
 		},
 		{
-			"file": "controllers/UserController.php",
+			"file": "web/js/codigo.js",
 			"settings":
 			{
-				"buffer_size": 10232,
-				"line_ending": "Unix"
+				"buffer_size": 3107,
+				"line_ending": "Windows"
 			}
 		},
 		{
-			"file": "views/site/contacto.php",
+			"file": "serviciosMiCarpetaSigi/ServerSigi.php",
 			"settings":
 			{
-				"buffer_size": 1623,
-				"line_ending": "Unix"
+				"buffer_size": 3909,
+				"line_ending": "Windows"
 			}
 		},
 		{
-			"file": "models/ContactoForm.php",
+			"file": "views/actos/convocatoria.php",
 			"settings":
 			{
-				"buffer_size": 1689,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "models/LoginForm.php",
-			"settings":
-			{
-				"buffer_size": 2149,
+				"buffer_size": 2419,
 				"line_ending": "Unix"
 			}
 		}
@@ -156,27 +140,48 @@
 	},
 	"file_history":
 	[
+		"/C/Users/Javier/Dropbox/CicloFormativoGradoSuperior/practicas_propias/php/miCarpeta/views/interinos/interinos.php",
+		"/C/Users/Javier/Dropbox/CicloFormativoGradoSuperior/practicas_propias/php/miCarpeta/serviciosMiCarpetaSigi/include/Especialidad.php",
+		"/C/Users/Javier/Dropbox/CicloFormativoGradoSuperior/practicas_propias/php/miCarpeta/serviciosMiCarpetaSigi/include/Vacante.php",
+		"/C/Users/Javier/Dropbox/CicloFormativoGradoSuperior/practicas_propias/php/miCarpeta/curro/javier/js/codigo.js",
+		"/C/Users/Javier/Dropbox/CicloFormativoGradoSuperior/practicas_propias/php/miCarpeta/curro/javier/vacantes.php",
+		"/C/Users/Javier/Dropbox/CicloFormativoGradoSuperior/practicas_propias/php/miCarpeta/views/actos/vacantes.php",
+		"/C/Users/Javier/Dropbox/CicloFormativoGradoSuperior/practicas_propias/php/miCarpeta/views/actos/actos.php",
+		"/C/Users/Javier/Dropbox/CicloFormativoGradoSuperior/practicas_propias/php/miCarpeta/serviciosMiCarpetaSigi/ServerSigi.php",
+		"/C/Users/Javier/Dropbox/CicloFormativoGradoSuperior/practicas_propias/php/miCarpeta/serviciosMiCarpetaSigi/include/DBSigi.php",
+		"/C/Users/Javier/Dropbox/CicloFormativoGradoSuperior/practicas_propias/php/miCarpeta/web/js/codigo.js",
+		"/C/Users/Javier/Dropbox/CicloFormativoGradoSuperior/practicas_propias/php/miCarpeta/serviciosMiCarpetaSigi/baseDatos/coordenadas.sql",
+		"/C/Users/Javier/Dropbox/CicloFormativoGradoSuperior/practicas_propias/php/miCarpeta/views/actos/convocatoria.php",
+		"/C/Users/Javier/Dropbox/CicloFormativoGradoSuperior/practicas_propias/php/miCarpeta/serviciosMiCarpetaSigi/servicioSigi.php",
+		"/C/Users/Javier/Dropbox/CicloFormativoGradoSuperior/practicas_propias/php/miCarpeta/config/params.php",
+		"/C/Users/Javier/Dropbox/CicloFormativoGradoSuperior/practicas_propias/php/miCarpeta/views/user/index.php",
+		"/C/Users/Javier/Dropbox/CicloFormativoGradoSuperior/practicas_propias/php/miCarpeta/views/actos/solicitudes.php",
+		"/C/Users/Javier/Dropbox/CicloFormativoGradoSuperior/practicas_propias/php/miCarpeta/controllers/ActosController.php",
+		"/C/Users/Javier/Dropbox/CicloFormativoGradoSuperior/practicas_propias/php/miCarpeta/views/user/view.php",
+		"/C/Users/Javier/Dropbox/CicloFormativoGradoSuperior/practicas_propias/php/miCarpeta/views/interinos/convocatoria.php",
+		"/C/Users/Javier/Dropbox/CicloFormativoGradoSuperior/practicas_propias/php/miCarpeta/models/User.php",
+		"/C/Users/Javier/Dropbox/CicloFormativoGradoSuperior/practicas_propias/php/miCarpeta/controllers/SiteController.php",
+		"/C/Users/Javier/Dropbox/CicloFormativoGradoSuperior/practicas_propias/php/miCarpeta/views/layouts/main.php",
+		"/C/Users/Javier/Dropbox/CicloFormativoGradoSuperior/practicas_propias/php/miCarpeta/controllers/ConcursosController.php",
+		"/C/Users/Javier/Dropbox/CicloFormativoGradoSuperior/practicas_propias/php/miCarpeta/controllers/UserController.php",
+		"/C/Users/Javier/Dropbox/CicloFormativoGradoSuperior/practicas_propias/php/miCarpeta/views/site/contacto.php",
+		"/C/Users/Javier/Dropbox/CicloFormativoGradoSuperior/practicas_propias/php/miCarpeta/models/ContactoForm.php",
+		"/C/Users/Javier/Dropbox/CicloFormativoGradoSuperior/practicas_propias/php/miCarpeta/models/LoginForm.php",
+		"/C/Users/Javier/Dropbox/CicloFormativoGradoSuperior/practicas_propias/php/miCarpeta/views/interinos/solicitudes.php",
+		"/C/Users/Javier/Dropbox/CicloFormativoGradoSuperior/practicas_propias/php/miCarpeta/controllers/UserController - copia.php",
 		"/C/Users/Javier/Dropbox/CicloFormativoGradoSuperior/practicas_propias/php/miCarpeta/models/UsuarioForm.php",
 		"/C/Users/Javier/Dropbox/CicloFormativoGradoSuperior/practicas_propias/php/miCarpeta/views/site/registro.php",
 		"/C/Users/Javier/Dropbox/CicloFormativoGradoSuperior/practicas_propias/php/miCarpeta/models/RegistroForm.php",
 		"/C/Users/Javier/Dropbox/CicloFormativoGradoSuperior/practicas_propias/php/miCarpeta/views/user/update1.php",
 		"/C/Users/Javier/Dropbox/CicloFormativoGradoSuperior/practicas_propias/php/miCarpeta/views/user/update.php",
-		"/C/Users/Javier/Dropbox/CicloFormativoGradoSuperior/practicas_propias/php/miCarpeta/views/layouts/main.php",
 		"/C/Users/Javier/Dropbox/CicloFormativoGradoSuperior/practicas_propias/php/miCarpeta/config/web.php",
-		"/C/Users/Javier/Dropbox/CicloFormativoGradoSuperior/practicas_propias/php/miCarpeta/views/actos/actos.php",
-		"/C/Users/Javier/Dropbox/CicloFormativoGradoSuperior/practicas_propias/php/miCarpeta/views/interinos/interinos.php",
 		"/C/Users/Javier/Dropbox/CicloFormativoGradoSuperior/practicas_propias/php/miCarpeta/views/oposiciones/oposiciones.php",
 		"/C/Users/Javier/Dropbox/CicloFormativoGradoSuperior/practicas_propias/php/miCarpeta/views/concursos/concursos.php",
-		"/C/Users/Javier/Dropbox/CicloFormativoGradoSuperior/practicas_propias/php/miCarpeta/controllers/SiteController.php",
-		"/C/Users/Javier/Dropbox/CicloFormativoGradoSuperior/practicas_propias/php/miCarpeta/models/LoginForm.php",
 		"/C/Users/Javier/Dropbox/CicloFormativoGradoSuperior/practicas_propias/php/miCarpeta/views/site/login.php",
-		"/C/Users/Javier/Dropbox/CicloFormativoGradoSuperior/practicas_propias/php/miCarpeta/models/User.php",
 		"/C/Users/Javier/Dropbox/CicloFormativoGradoSuperior/practicas_propias/php/miCarpeta/views/site/recoverpass.php",
 		"/C/Users/Javier/Dropbox/CicloFormativoGradoSuperior/practicas_propias/php/miCarpeta/models/FormRecoverPass.php",
-		"/C/Users/Javier/Dropbox/CicloFormativoGradoSuperior/practicas_propias/php/miCarpeta/views/user/index.php",
 		"/C/Users/Javier/Dropbox/CicloFormativoGradoSuperior/practicas_propias/php/miCarpeta/views/site/resetpass.php",
 		"/C/Users/Javier/Dropbox/CicloFormativoGradoSuperior/practicas_propias/php/miCarpeta/models/FormResetPass.php",
-		"/C/Users/Javier/Dropbox/CicloFormativoGradoSuperior/practicas_propias/php/miCarpeta/controllers/UserController.php",
 		"/C/Users/Javier/Dropbox/CicloFormativoGradoSuperior/practicas_propias/php/miCarpeta/views/user/create1.php",
 		"/C/Users/Javier/Dropbox/CicloFormativoGradoSuperior/practicas_propias/php/miCarpeta/views/user/create.php",
 		"/C/Users/Javier/Dropbox/CicloFormativoGradoSuperior/practicas_propias/php/miCarpeta/README.md",
@@ -188,7 +193,6 @@
 		"/C/Users/Javier/Dropbox/CicloFormativoGradoSuperior/practicas_propias/php/miCarpeta/models/FormSearch.php",
 		"/C/Users/Javier/Dropbox/CicloFormativoGradoSuperior/practicas_propias/php/miCarpeta/views/site/index.php",
 		"/C/Users/Javier/Dropbox/CicloFormativoGradoSuperior/practicas_propias/php/miCarpeta/views/site/user.php",
-		"/C/Users/Javier/Dropbox/CicloFormativoGradoSuperior/practicas_propias/php/miCarpeta/config/params.php",
 		"/C/Users/Javier/Dropbox/CicloFormativoGradoSuperior/practicas_propias/php/miCarpeta/views/site/error.php",
 		"/C/Users/Javier/Dropbox/CicloFormativoGradoSuperior/practicas_propias/php/miCarpeta/models/RegistroFormError.php",
 		"/C/Users/Javier/Dropbox/CicloFormativoGradoSuperior/DAW_Proyecto/baseDatos/scriptDesdeModeloInnoDbSigi.sql",
@@ -263,27 +267,7 @@
 		"/C/Users/Javier/Dropbox/CicloFormativoGradoSuperior/DAW_DWES/practicas/tarea7JavaScriptAjax/include/DB.php",
 		"/C/Users/Javier/Dropbox/CicloFormativoGradoSuperior/practicas_propias/php/yii/basic/.git/COMMIT_EDITMSG",
 		"/C/Users/Javier/Dropbox/CicloFormativoGradoSuperior/practicas_propias/php/yii/basic/.git/config",
-		"/C/Users/Javier/AppData/Local/Temp/fz3temp-1/index.html",
-		"/C/Bitnami/wampstack-5.4.31-0/apache2/logs/error.log",
-		"/C/Users/Javier/Dropbox/CicloFormativoGradoSuperior/DAW_DWES/tema_6_serviciosWeb/serviciosWeb/GlobalWeather.php",
-		"/C/Users/Javier/Dropbox/CicloFormativoGradoSuperior/DAW_DWES/tema_8_AplicacionesWebHibridas/plataforma/google-api-php-client/examples/multi-api.php",
-		"/C/Users/Javier/Dropbox/CicloFormativoGradoSuperior/DAW_DWES/practicas/tarea7JavaScriptAjax/baseDatos/dwes.sql",
-		"/C/Users/Javier/Dropbox/CicloFormativoGradoSuperior/DAW_DWES/tema_7_WebDinamica_JavaScript/R11/form.php",
-		"/C/Users/Javier/Dropbox/CicloFormativoGradoSuperior/DAW_DWES/tema_6_serviciosWeb/serviciosWeb/DWES06_CONT_R14_CurrencyConvertor.wsdl",
-		"/C/Users/Javier/Dropbox/CicloFormativoGradoSuperior/DAW_DWES/tema_6_serviciosWeb/serviciosWeb/modificado.php",
-		"/C/Bitnami/wampstack-5.5.22-0/php/pear.ini",
-		"/C/Users/Javier/Dropbox/CicloFormativoGradoSuperior/DAW_DWES/tema_6_serviciosWeb/serviciosWeb/GlobalWeather1.php",
-		"/C/Bitnami/wampstack-5.5.22-0/apache2/logs/access.log",
-		"/C/Users/Javier/Dropbox/CicloFormativoGradoSuperior/DAW_DWES/laravel/wikiManuel/wikiManuel/.env.example",
-		"/C/Users/Javier/Dropbox/CicloFormativoGradoSuperior/DAW_DWES/laravel/wikiManuel/wikiManuel/storage/logs/laravel-2015-05-12.log",
-		"/C/Bitnami/wampstack-5.5.22-0/apache2/logs/error.log",
-		"/C/Users/Javier/Dropbox/CicloFormativoGradoSuperior/DAW_DWES/laravel/puntoPe/tiendaLaravel/artisan",
-		"/C/Users/Javier/Dropbox/CicloFormativoGradoSuperior/DAW_DWES/laravel/puntoPe/tiendaLaravel/app/storage/logs/laravel.log",
-		"/C/Users/Javier/Dropbox/CicloFormativoGradoSuperior/DAW_DWES/laravel/codeHero/codehero-laravel/config/database.php",
-		"/C/Users/Javier/Dropbox/CicloFormativoGradoSuperior/DAW_DWES/practicas/companeros/tareaAPP_reparto/Tarea8Armando/ajaxmaps.php",
-		"/C/Users/Javier/Dropbox/CicloFormativoGradoSuperior/DAW_DWES/practicas/companeros/tareaAPP_reparto/Tarea8Armando/codigo.js",
-		"/C/Users/Javier/Dropbox/CicloFormativoGradoSuperior/DAW_DWES/practicas/companeros/tareaAPP_reparto/Tarea8Armando/repartos.php",
-		"/C/Users/Javier/Dropbox/CicloFormativoGradoSuperior/DAW_DWES/practicas/tarea8_app_reparto/traza.txt"
+		"/C/Users/Javier/AppData/Local/Temp/fz3temp-1/index.html"
 	],
 	"find":
 	{
@@ -291,7 +275,7 @@
 	},
 	"find_in_files":
 	{
-		"height": 90.0,
+		"height": 0.0,
 		"where_history":
 		[
 			"<open folders>",
@@ -303,6 +287,16 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"cod",
+			"opc",
+			"prompt",
+			"coordenadas",
+			"[]\"",
+			"Cod_cue",
+			"Cod_opc",
+			"Cod_sol",
+			"debug",
+			"alumno",
 			"debug",
 			" ');",
 			"No tiene permitido ejecutar esta acción.",
@@ -420,13 +414,10 @@
 			"empresa",
 			"span",
 			"REQ_DOC",
-			"codigo",
-			"elección",
-			"lagu",
-			"MODALIDAD_CONVOCADA"
+			"codigo"
 		],
 		"highlight": true,
-		"in_selection": false,
+		"in_selection": true,
 		"preserve_case": false,
 		"regex": false,
 		"replace_history":
@@ -443,219 +434,23 @@
 	"groups":
 	[
 		{
-			"selected": 0,
+			"selected": 2,
 			"sheets":
 			[
 				{
 					"buffer": 0,
-					"file": "controllers/SiteController.php",
+					"file": "serviciosMiCarpetaSigi/include/DBSigi.php",
 					"settings":
 					{
-						"buffer_size": 24139,
+						"buffer_size": 13794,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								20566,
-								20566
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/PHP/PHP.tmLanguage",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 6930.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 1,
-					"file": "views/layouts/main.php",
-					"settings":
-					{
-						"buffer_size": 4655,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								2993,
-								2993
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/PHP/PHP.tmLanguage",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 495.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 2,
-					"file": "models/User.php",
-					"settings":
-					{
-						"buffer_size": 3618,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								935,
-								935
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/PHP/PHP.tmLanguage",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 405.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 3,
-					"file": "controllers/ConcursosController.php",
-					"settings":
-					{
-						"buffer_size": 1068,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								0,
-								0
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/PHP/PHP.tmLanguage",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 225.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 4,
-					"file": "controllers/UserController.php",
-					"settings":
-					{
-						"buffer_size": 10232,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								6158,
-								6158
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/PHP/PHP.tmLanguage",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 3645.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 5,
-					"file": "views/site/contacto.php",
-					"settings":
-					{
-						"buffer_size": 1623,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								0,
-								0
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/PHP/PHP.tmLanguage",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 90.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 6,
-					"file": "models/ContactoForm.php",
-					"settings":
-					{
-						"buffer_size": 1689,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								233,
-								233
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/PHP/PHP.tmLanguage",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 495.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 7,
-					"file": "models/LoginForm.php",
-					"settings":
-					{
-						"buffer_size": 2149,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								0,
-								0
+								306,
+								306
 							]
 						],
 						"settings":
@@ -666,6 +461,118 @@
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "views/actos/vacantes.php",
+					"settings":
+					{
+						"buffer_size": 2413,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1333,
+								1333
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "web/js/codigo.js",
+					"settings":
+					{
+						"buffer_size": 3107,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								344,
+								344
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "serviciosMiCarpetaSigi/ServerSigi.php",
+					"settings":
+					{
+						"buffer_size": 3909,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								397,
+								397
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "views/actos/convocatoria.php",
+					"settings":
+					{
+						"buffer_size": 2419,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								2408,
+								2253
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 675.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"

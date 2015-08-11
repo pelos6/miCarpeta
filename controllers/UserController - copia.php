@@ -3,7 +3,6 @@
 namespace app\controllers;
 
 use Yii;
-use yii\filters\AccessControl;
 use app\models\User;
 use app\models\UserSearch;
 use yii\web\Controller;
@@ -16,50 +15,13 @@ use yii\helpers\Html;
 use yii\helpers\Url;
 use app\models\UsuarioForm;
 
-
 /**
  * UserController implements the CRUD actions for User model.
  */
 class UserController extends Controller {
 
-
     public function behaviors() {
         return [
-            'access' => [
-                'class' => AccessControl::className(),
-                'only' => ['index', 'view','create', 'update', 'delete'],
-                'rules' => [
-                    [
-                        //El administrador tiene permisos sobre las siguientes acciones
-                        'actions' => ['index', 'create', 'view', 'update', 'delete'],
-                        //Esta propiedad establece que tiene permisos
-                        'allow' => true,
-                        //Usuarios autenticados, el signo ? es para invitados
-                        'roles' => ['@'],
-                        //Este método nos permite crear un filtro sobre la identidad del usuario
-                        //y así establecer si tiene permisos o no
-                                'matchCallback' => function ($rule, $action) {
-                            //Llamada al método que comprueba si es un administrador
-                            return User::isUserAdmin(Yii::$app->user->identity->id);
-                            }
-                        ],
-                          [
-                        //Los usuarios simples tienen permisos sobre las siguientes acciones
-                        'actions' => ['update'],
-                        //Esta propiedad establece que tiene permisos
-                        'allow' => true,
-                        //Usuarios autenticados, el signo ? es para invitados
-                        'roles' => ['@'],
-                        //Este método nos permite crear un filtro sobre la identidad del usuario
-                        //y así establecer si tiene permisos o no
-                                'matchCallback' => function ($rule, $action) {
-                            //Llamada al método que comprueba si es un administrador
-                            return User::isUserSimple(Yii::$app->user->identity->id);
-                            }
-                        ]
-                    ]
-                ],
-
             'verbs' => [
                 'class' => VerbFilter::className(),
                 'actions' => [
@@ -220,6 +182,7 @@ class UserController extends Controller {
     public function actionUpdate() {
         $model = new UsuarioForm;
         $msg = null;
+        error_log('DEBUG 1: en actionUpdate');
         if ($model->load(Yii::$app->request->post())) {
             if ($model->validate()) {
                 error_log('DEBUG 2: ' . $model->id . ' ' . $model->username);
@@ -232,6 +195,7 @@ class UserController extends Controller {
                     $table->actos = $model->actos;
                     $table->concursos = $model->concursos;
                     $table->oposiciones = $model->oposiciones;
+                    error_log('DEBUG 3: interinos' . $model->interinos);
                     try {
                         /* if ($table->update()) {
                           $msg = "El Usuario ha sido actualizado correctamente";
@@ -285,6 +249,7 @@ class UserController extends Controller {
      * @return mixed
      */
     public function actionDelete1($id) {
+        error_log('DEBUG: ' . $id);
         $this->findModel($id)->delete();
 
         return $this->redirect(['index']);

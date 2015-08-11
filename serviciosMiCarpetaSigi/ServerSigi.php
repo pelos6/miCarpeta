@@ -3,6 +3,24 @@
 require_once('include/DBSigi.php');
 
 class ServerSigi {
+     /**
+     * Devuelve un array con las especialidades convocadas a un acto de elección 
+     * 
+     */
+    public function getEspecialidadesActo($cod_opc) {
+        error_log('DEBUG: en getEspecialidadesActo '.$cod_opc);
+        $especialidadesActo = DBSigi::obtieneEspecialidadesActo($cod_opc);
+        return $especialidadesActo;
+    }
+    /**
+     * Devuelve un array con las vacantes convocadas a un acto de elección 
+     * 
+     */
+    public function getVacantesActo($cod_opc) {
+        //error_log('DEBUG: en getVacantesActo '.$cod_opc);
+        $vacantesActo = DBSigi::obtieneVacantesActo($cod_opc);
+        return $vacantesActo;
+    }
       /**
      * Devuelve un array con los actos de elección en las que 
      * tiene solicitud

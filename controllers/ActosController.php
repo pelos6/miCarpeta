@@ -47,4 +47,7 @@ class ActosController extends Controller {
         return $this->render('solicitud');
     }
 
+    public function actionVacantes() {
+        return $this->render('vacantes');
+    }
 }

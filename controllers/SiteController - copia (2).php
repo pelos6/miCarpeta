@@ -12,8 +12,8 @@ use app\models\ValidarFormulario;
 use app\models\ValidarFormularioAjax;
 use yii\widgets\ActiveForm;
 use yii\web\Response;
-/*use app\models\FormAlumnos;
-use app\models\Alumnos;*/
+use app\models\FormAlumnos;
+use app\models\Alumnos;
 use app\models\FormSearch;
 use app\models\RegistroForm;
 use app\models\Users;
@@ -293,7 +293,7 @@ class SiteController extends Controller {
         return $this->render("registro", ["model" => $model, "msg" => $msg]);
     }
 
-   /* public function actionUpdate() {
+    public function actionUpdate() {
         $model = new FormAlumnos;
         $msg = null;
 
@@ -422,7 +422,7 @@ class SiteController extends Controller {
             }
         }
         return $this->render("create", ['model' => $model, 'msg' => $msg]);
-    }*/
+    }
 
     public function actionFormulario($mensaje = null) {
         return $this->render("formulario", ["mensaje" => $mensaje]);
@@ -527,7 +527,9 @@ class SiteController extends Controller {
     }
 
     public function actionLogout() {
+        error_log('DEBUG: en actionLogout');
         Yii::$app->user->logout();
+          error_log('DEBUG: en actionLogout 1 ');
         return $this->goHome();
     }
 

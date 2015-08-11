@@ -21,23 +21,17 @@ class User extends \yii\base\Object implements \yii\web\IdentityInterface {
     public $contraseña;
 
     public static function isUserAdmin($id) {
-        error_log('DEBUG; en User isUserAdmin');
         if (Users::findOne(['id' => $id, 'activate' => '1', 'role' => 2])) {
-                    error_log('DEBUG; en User isUserAdmin SI ');
             return true;
         } else {
-             error_log('DEBUG; en User isUserAdmin NO');
             return false;
         }
     }
 
     public static function isUserSimple($id) {
-        error_log('DEBUG; en User isUserSimple');
         if (Users::findOne(['id' => $id, 'activate' => '1', 'role' => 1])) {
-            error_log('DEBUG; en User isUserSimple SI');
             return true;
         } else {
-            error_log('DEBUG; en User isUserSimple NO');
             return false;
         }
     }

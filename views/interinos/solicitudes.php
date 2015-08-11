@@ -11,7 +11,7 @@ $session->set('des_con_sel', Html::encode($_GET["des_con"]));
 //echo("<pre>");
 //print_r($_SESSION);
 //echo ("</pre>");
-$this->title = 'solicitudes ' . Html::encode($_GET["des_con"]);
+$this->title = 'Solicitudes ' . Html::encode($_GET["des_con"]);
 $this->params['breadcrumbs'][] = ['label' => 'Interinos', 'url' => ['interinos']];
 $this->params['breadcrumbs'][] = $this->title;
 

@@ -11,6 +11,8 @@
 require_once('ActoEleccion.php');
 require_once('SolicitudActo.php');
 require_once('ConsultaSituacionLista.php');
+require_once('Vacante.php');
+require_once('Especialidad.php');
 
 class DBSigi {
 
@@ -42,7 +44,54 @@ class DBSigi {
         }
         return $resultado;
     }
+  /**
+     * Devuelve un array con las especialidades ofertadas en un acto de elección 
+     * 
+     */
+    public static function obtieneEspecialidadesActo($cod_opc) {
+        //error_log('DEBUG: en obtieneEspecialidadesActo');
+        $sql = "SELECT distinct cod_cue , cod_esp  ";
+        $sql .= " FROM vvacantesacto ";
+        $sql .= " WHERE cod_opc=:cod_opc ";
+        error_log('DEBUG: en obtieneEspecialidadesActo ' . $sql);
+        // $resultado = self::ejecutaConsulta($sql);
+        $resultado = self::ejecutaConsulta($sql, array('cod_opc' => $cod_opc));
+        $especialidadesActo = array();
 
+        if ($resultado) {
+            //error_log('DEBUG: en obtieneActosActivos resultado true');
+            $row = $resultado->fetch();
+            while ($row != null) {
+                $especialidadesActo[] = new Especialidad($row);
+                $row = $resultado->fetch();
+            }
+        }
+        return $especialidadesActo;
+    }
+  /**
+     * Devuelve un array con las vacantes ofertadas en un acto de elección 
+     * 
+     */
+    public static function obtieneVacantesActo($cod_opc) {
+        //error_log('DEBUG: en obtieneVacantesActo');
+        $sql = "SELECT cod_opc , cod_cue , cod_esp, cod_cen, des_cen, num_vac, lat, lon  ";
+        $sql .= " FROM vvacantesacto ";
+        $sql .= " WHERE cod_opc=:cod_opc ";
+        error_log('DEBUG: en obtieneActosActivos ' . $sql);
+        // $resultado = self::ejecutaConsulta($sql);
+        $resultado = self::ejecutaConsulta($sql, array('cod_opc' => $cod_opc));
+        $vacantesActo = array();
+
+        if ($resultado) {
+            //error_log('DEBUG: en obtieneActosActivos resultado true');
+            $row = $resultado->fetch();
+            while ($row != null) {
+                $vacantesActo[] = new Vacante($row);
+                $row = $resultado->fetch();
+            }
+        }
+        return $vacantesActo;
+    }
 
     /**
      * Devuelve un array con los actos de elección en las que tiene solicitud
