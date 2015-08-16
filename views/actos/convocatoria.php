@@ -74,5 +74,11 @@ $actoActivo = $clienteSigi->getActoActivo($_GET["cod_opc"]);
 </div>  
 
     <div class="panel-body">
-       <?= Html::a('Vacantes ofertadas', ['actos/vacantes',"cod_opc" => $_GET["cod_opc"],"tex_opc" => $_GET["tex_opc"]], ['class' => 'btn btn-success']) ?>
+       <?php
+       if (Html::encode($_GET["modo"]) == '1' ) {
+            echo Html::a('Vacantes ofertadas', ['actos/vacantes',"cod_opc" => $_GET["cod_opc"],"tex_opc" => $_GET["tex_opc"],"modo" => '1'], ['class' => 'btn btn-success']) ;
+        } else {
+            echo Html::a('Vacantes seleccionables', ['actos/vacantes',"cod_opc" => $_GET["cod_opc"],"tex_opc" => $_GET["tex_opc"],"modo" => '2'], ['class' => 'btn btn-success']) ;
+        }
+       ?>
     </div>

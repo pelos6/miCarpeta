@@ -48,42 +48,18 @@
 	"buffers":
 	[
 		{
-			"file": "serviciosMiCarpetaSigi/include/DBSigi.php",
+			"file": "serviciosMiCarpetaSigi/baseDatos/serviciosMiCarpetaSigiTablasVistasDatos20150813.sql",
 			"settings":
 			{
-				"buffer_size": 13794,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "views/actos/vacantes.php",
-			"settings":
-			{
-				"buffer_size": 2413,
+				"buffer_size": 119390,
 				"line_ending": "Windows"
 			}
 		},
 		{
-			"file": "web/js/codigo.js",
+			"file": "views/site/login.php",
 			"settings":
 			{
-				"buffer_size": 3107,
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "serviciosMiCarpetaSigi/ServerSigi.php",
-			"settings":
-			{
-				"buffer_size": 3909,
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "views/actos/convocatoria.php",
-			"settings":
-			{
-				"buffer_size": 2419,
+				"buffer_size": 1624,
 				"line_ending": "Unix"
 			}
 		}
@@ -140,20 +116,24 @@
 	},
 	"file_history":
 	[
+		"/C/Users/Javier/Dropbox/CicloFormativoGradoSuperior/practicas_propias/php/miCarpeta/serviciosMiCarpetaSigi/include/DBSigi.php",
+		"/C/Users/Javier/Dropbox/CicloFormativoGradoSuperior/practicas_propias/php/miCarpeta/views/actos/vacantes.php",
+		"/C/Users/Javier/Dropbox/CicloFormativoGradoSuperior/practicas_propias/php/miCarpeta/web/js/codigo.js",
+		"/C/Users/Javier/Dropbox/CicloFormativoGradoSuperior/practicas_propias/php/miCarpeta/serviciosMiCarpetaSigi/ServerSigi.php",
+		"/C/Users/Javier/Dropbox/CicloFormativoGradoSuperior/practicas_propias/php/miCarpeta/views/actos/convocatoria.php",
+		"/C/Users/Javier/Dropbox/CicloFormativoGradoSuperior/practicas_propias/php/miCarpeta/views/actos/actos.php",
+		"/C/Users/Javier/Dropbox/CicloFormativoGradoSuperior/practicas_propias/php/miCarpeta/config/db.php",
+		"/C/Users/Javier/Dropbox/CicloFormativoGradoSuperior/practicas_propias/php/miCarpeta/config/web.php",
+		"/C/Users/Javier/Dropbox/CicloFormativoGradoSuperior/practicas_propias/php/miCarpeta/config/params.php",
+		"/C/Users/Javier/Dropbox/CicloFormativoGradoSuperior/practicas_propias/php/miCarpeta/views/layouts/main.php",
+		"/C/Users/Javier/Dropbox/CicloFormativoGradoSuperior/practicas_propias/php/miCarpeta/serviciosMiCarpetaSigi/include/config.php",
 		"/C/Users/Javier/Dropbox/CicloFormativoGradoSuperior/practicas_propias/php/miCarpeta/views/interinos/interinos.php",
 		"/C/Users/Javier/Dropbox/CicloFormativoGradoSuperior/practicas_propias/php/miCarpeta/serviciosMiCarpetaSigi/include/Especialidad.php",
 		"/C/Users/Javier/Dropbox/CicloFormativoGradoSuperior/practicas_propias/php/miCarpeta/serviciosMiCarpetaSigi/include/Vacante.php",
 		"/C/Users/Javier/Dropbox/CicloFormativoGradoSuperior/practicas_propias/php/miCarpeta/curro/javier/js/codigo.js",
 		"/C/Users/Javier/Dropbox/CicloFormativoGradoSuperior/practicas_propias/php/miCarpeta/curro/javier/vacantes.php",
-		"/C/Users/Javier/Dropbox/CicloFormativoGradoSuperior/practicas_propias/php/miCarpeta/views/actos/vacantes.php",
-		"/C/Users/Javier/Dropbox/CicloFormativoGradoSuperior/practicas_propias/php/miCarpeta/views/actos/actos.php",
-		"/C/Users/Javier/Dropbox/CicloFormativoGradoSuperior/practicas_propias/php/miCarpeta/serviciosMiCarpetaSigi/ServerSigi.php",
-		"/C/Users/Javier/Dropbox/CicloFormativoGradoSuperior/practicas_propias/php/miCarpeta/serviciosMiCarpetaSigi/include/DBSigi.php",
-		"/C/Users/Javier/Dropbox/CicloFormativoGradoSuperior/practicas_propias/php/miCarpeta/web/js/codigo.js",
 		"/C/Users/Javier/Dropbox/CicloFormativoGradoSuperior/practicas_propias/php/miCarpeta/serviciosMiCarpetaSigi/baseDatos/coordenadas.sql",
-		"/C/Users/Javier/Dropbox/CicloFormativoGradoSuperior/practicas_propias/php/miCarpeta/views/actos/convocatoria.php",
 		"/C/Users/Javier/Dropbox/CicloFormativoGradoSuperior/practicas_propias/php/miCarpeta/serviciosMiCarpetaSigi/servicioSigi.php",
-		"/C/Users/Javier/Dropbox/CicloFormativoGradoSuperior/practicas_propias/php/miCarpeta/config/params.php",
 		"/C/Users/Javier/Dropbox/CicloFormativoGradoSuperior/practicas_propias/php/miCarpeta/views/user/index.php",
 		"/C/Users/Javier/Dropbox/CicloFormativoGradoSuperior/practicas_propias/php/miCarpeta/views/actos/solicitudes.php",
 		"/C/Users/Javier/Dropbox/CicloFormativoGradoSuperior/practicas_propias/php/miCarpeta/controllers/ActosController.php",
@@ -161,7 +141,6 @@
 		"/C/Users/Javier/Dropbox/CicloFormativoGradoSuperior/practicas_propias/php/miCarpeta/views/interinos/convocatoria.php",
 		"/C/Users/Javier/Dropbox/CicloFormativoGradoSuperior/practicas_propias/php/miCarpeta/models/User.php",
 		"/C/Users/Javier/Dropbox/CicloFormativoGradoSuperior/practicas_propias/php/miCarpeta/controllers/SiteController.php",
-		"/C/Users/Javier/Dropbox/CicloFormativoGradoSuperior/practicas_propias/php/miCarpeta/views/layouts/main.php",
 		"/C/Users/Javier/Dropbox/CicloFormativoGradoSuperior/practicas_propias/php/miCarpeta/controllers/ConcursosController.php",
 		"/C/Users/Javier/Dropbox/CicloFormativoGradoSuperior/practicas_propias/php/miCarpeta/controllers/UserController.php",
 		"/C/Users/Javier/Dropbox/CicloFormativoGradoSuperior/practicas_propias/php/miCarpeta/views/site/contacto.php",
@@ -174,7 +153,6 @@
 		"/C/Users/Javier/Dropbox/CicloFormativoGradoSuperior/practicas_propias/php/miCarpeta/models/RegistroForm.php",
 		"/C/Users/Javier/Dropbox/CicloFormativoGradoSuperior/practicas_propias/php/miCarpeta/views/user/update1.php",
 		"/C/Users/Javier/Dropbox/CicloFormativoGradoSuperior/practicas_propias/php/miCarpeta/views/user/update.php",
-		"/C/Users/Javier/Dropbox/CicloFormativoGradoSuperior/practicas_propias/php/miCarpeta/config/web.php",
 		"/C/Users/Javier/Dropbox/CicloFormativoGradoSuperior/practicas_propias/php/miCarpeta/views/oposiciones/oposiciones.php",
 		"/C/Users/Javier/Dropbox/CicloFormativoGradoSuperior/practicas_propias/php/miCarpeta/views/concursos/concursos.php",
 		"/C/Users/Javier/Dropbox/CicloFormativoGradoSuperior/practicas_propias/php/miCarpeta/views/site/login.php",
@@ -265,9 +243,7 @@
 		"/C/Users/Javier/Dropbox/CicloFormativoGradoSuperior/DAW_DWES/tema_6_serviciosWeb/practica9_1/ServerW.php",
 		"/C/Users/Javier/Dropbox/CicloFormativoGradoSuperior/practicas_propias/php/serviciosMiCarpeta/baseDatos/tablasServiciosMiCarpeta",
 		"/C/Users/Javier/Dropbox/CicloFormativoGradoSuperior/DAW_DWES/practicas/tarea7JavaScriptAjax/include/DB.php",
-		"/C/Users/Javier/Dropbox/CicloFormativoGradoSuperior/practicas_propias/php/yii/basic/.git/COMMIT_EDITMSG",
-		"/C/Users/Javier/Dropbox/CicloFormativoGradoSuperior/practicas_propias/php/yii/basic/.git/config",
-		"/C/Users/Javier/AppData/Local/Temp/fz3temp-1/index.html"
+		"/C/Users/Javier/Dropbox/CicloFormativoGradoSuperior/practicas_propias/php/yii/basic/.git/COMMIT_EDITMSG"
 	],
 	"find":
 	{
@@ -287,6 +263,21 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"SIGI_CAN_PRE_AE",
+			"sigi_esp_can_pre_ae",
+			"SIGI_ESP_CAN_PRE_AE",
+			"SIGI_CAN_PRE_AE",
+			"SIGI_CAN_PRE",
+			"SIGI_CAN",
+			"SIGI_OPC",
+			",\n",
+			"dot",
+			"$vacanteActo",
+			"$especialidadActo",
+			"$especialidadesActo",
+			"$vacantesActo",
+			"vacantesActo",
+			"}\n",
 			"cod",
 			"opc",
 			"prompt",
@@ -399,25 +390,10 @@
 			"\").",
 			"').",
 			"\"];",
-			"idClinicaEditar",
-			"').",
-			"editarbtn",
-			"\"bower",
-			"razonSocial",
-			"idClinicac",
-			"\"bower",
-			"http://http://",
-			"sindicacion/sindicacion",
-			"127.0.0.1",
-			"127.0.0.127",
-			"dir = '",
-			"empresa",
-			"span",
-			"REQ_DOC",
-			"codigo"
+			"idClinicaEditar"
 		],
 		"highlight": true,
-		"in_selection": true,
+		"in_selection": false,
 		"preserve_case": false,
 		"regex": false,
 		"replace_history":
@@ -434,51 +410,50 @@
 	"groups":
 	[
 		{
-			"selected": 2,
+			"selected": 1,
 			"sheets":
 			[
 				{
 					"buffer": 0,
-					"file": "serviciosMiCarpetaSigi/include/DBSigi.php",
+					"file": "serviciosMiCarpetaSigi/baseDatos/serviciosMiCarpetaSigiTablasVistasDatos20150813.sql",
 					"settings":
 					{
-						"buffer_size": 13794,
+						"buffer_size": 119390,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								306,
-								306
+								2313,
+								2120
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/PHP/PHP.tmLanguage",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
+							"syntax": "Packages/SQL/SQL.tmLanguage",
+							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 0.0,
+						"translation.y": 315.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
 				},
 				{
 					"buffer": 1,
-					"file": "views/actos/vacantes.php",
+					"file": "views/site/login.php",
 					"settings":
 					{
-						"buffer_size": 2413,
+						"buffer_size": 1624,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								1333,
-								1333
+								1569,
+								1569
 							]
 						],
 						"settings":
@@ -488,91 +463,7 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 2,
-					"file": "web/js/codigo.js",
-					"settings":
-					{
-						"buffer_size": 3107,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								344,
-								344
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 3,
-					"file": "serviciosMiCarpetaSigi/ServerSigi.php",
-					"settings":
-					{
-						"buffer_size": 3909,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								397,
-								397
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/PHP/PHP.tmLanguage",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 4,
-					"file": "views/actos/convocatoria.php",
-					"settings":
-					{
-						"buffer_size": 2419,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								2408,
-								2253
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/PHP/PHP.tmLanguage",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 675.0,
+						"translation.y": 270.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
@@ -640,6 +531,6 @@
 	"show_open_files": false,
 	"show_tabs": true,
 	"side_bar_visible": true,
-	"side_bar_width": 285.0,
+	"side_bar_width": 361.0,
 	"status_bar_visible": true
 }

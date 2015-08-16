@@ -44,6 +44,109 @@ class DBSigi {
         }
         return $resultado;
     }
+     /**
+     * Devuelve un array con las especialidades de las vacantes pedidas en una solicitud 
+     * de un acto de elección 
+     */
+    public static function obtieneEspecialidadesPedidas($cod_opc, $dni , $cod_sol) {
+        error_log('DEBUG: en obtieneEspecialidadesPedidas '.$cod_opc .' ' .$dni);
+        $sql = "SELECT distinct cod_cue , cod_esp  ";
+        $sql .= " FROM vvacantespedidas ";
+        $sql .= " WHERE cod_opc=:cod_opc ";
+        $sql .= " and  dni=:dni ";
+        $sql .= " and  cod_sol=:cod_sol ";
+        error_log('DEBUG: en obtieneEspecialidadesPedidas ' . $sql);
+        // $resultado = self::ejecutaConsulta($sql);
+        $resultado = self::ejecutaConsulta($sql, array('cod_opc' => $cod_opc, 'dni' => $dni, 'cod_sol' => $cod_sol));
+        $especialidadesPedidas = array();
+
+        if ($resultado) {
+            //error_log('DEBUG: en obtieneEspecialidadesPedidas resultado true');
+            $row = $resultado->fetch();
+            while ($row != null) {
+                $especialidadesPedidas[] = new Especialidad($row);
+                $row = $resultado->fetch();
+            }
+        }
+        return $especialidadesPedidas;
+    }
+     /**
+     * Devuelve un array con las vacantes pedidas en una solicitud de un acto de elección 
+     * 
+     */
+    public static function obtieneVacantesPedidas($cod_opc, $dni, $cod_sol ) {
+        error_log('DEBUG: en obtieneVacantesPedidas '.$cod_opc .' ' .$dni .' '.$cod_sol);
+        $sql = "SELECT cod_opc , cod_cue , cod_esp, cod_cen, des_cen, des_vac, num_vac, lat, lon  ";
+        $sql .= " FROM vvacantespedidas ";
+        $sql .= " WHERE cod_opc=:cod_opc ";
+        $sql .= " and  dni=:dni ";
+        $sql .= " and  cod_sol=:cod_sol ";
+        error_log('DEBUG: en obtieneVacantesPedidas ' . $sql);
+        // $resultado = self::ejecutaConsulta($sql);
+        $resultado = self::ejecutaConsulta($sql, array('cod_opc' => $cod_opc, 'dni' => $dni, 'cod_sol' => $cod_sol));
+        $vacantesPedidas = array();
+
+        if ($resultado) {
+            //error_log('DEBUG: en obtieneVacantesPedidas resultado true');
+            $row = $resultado->fetch();
+            while ($row != null) {
+                $vacantesPedidas[] = new Vacante($row);
+                $row = $resultado->fetch();
+            }
+        }
+        return $vacantesPedidas;
+    }
+
+      /**
+     * Devuelve un array con las especialidades seleccionable en un acto de elección 
+     * seleccionables por el usuario
+     */
+    public static function obtieneEspecialidadesSeleccionables($cod_opc, $dni) {
+        error_log('DEBUG: en obtieneEspecialidadesSeleccionables '.$cod_opc .' ' .$dni);
+        $sql = "SELECT distinct cod_cue , cod_esp  ";
+        $sql .= " FROM vvacantesseleccionables ";
+        $sql .= " WHERE cod_opc=:cod_opc ";
+        $sql .= " and  dni=:dni ";
+        error_log('DEBUG: en obtieneEspecialidadesSeleccionables ' . $sql);
+        // $resultado = self::ejecutaConsulta($sql);
+        $resultado = self::ejecutaConsulta($sql, array('cod_opc' => $cod_opc, 'dni' => $dni));
+        $especialidadesActo = array();
+
+        if ($resultado) {
+            //error_log('DEBUG: en obtieneActosActivos resultado true');
+            $row = $resultado->fetch();
+            while ($row != null) {
+                $especialidadesActo[] = new Especialidad($row);
+                $row = $resultado->fetch();
+            }
+        }
+        return $especialidadesActo;
+    }
+     /**
+     * Devuelve un array con las vacantes en un acto de elección 
+     * que puede pedir el usuario
+     */
+    public static function obtieneVacantesSeleccionables($cod_opc, $dni) {
+        error_log('DEBUG: en obtieneVacantesSeleccionables '.$cod_opc .' ' .$dni);
+        $sql = "SELECT cod_opc , cod_cue , cod_esp, cod_cen, des_cen, des_vac, num_vac, lat, lon  ";
+        $sql .= " FROM vvacantesseleccionables ";
+        $sql .= " WHERE cod_opc=:cod_opc ";
+        $sql .= " and  dni=:dni ";
+        error_log('DEBUG: en obtieneVacantesSeleccionables ' . $sql);
+        // $resultado = self::ejecutaConsulta($sql);
+        $resultado = self::ejecutaConsulta($sql, array('cod_opc' => $cod_opc, 'dni' => $dni));
+        $vacantesActo = array();
+
+        if ($resultado) {
+            //error_log('DEBUG: en obtieneVacantesSeleccionables resultado true');
+            $row = $resultado->fetch();
+            while ($row != null) {
+                $vacantesActo[] = new Vacante($row);
+                $row = $resultado->fetch();
+            }
+        }
+        return $vacantesActo;
+    }
   /**
      * Devuelve un array con las especialidades ofertadas en un acto de elección 
      * 
@@ -74,7 +177,7 @@ class DBSigi {
      */
     public static function obtieneVacantesActo($cod_opc) {
         //error_log('DEBUG: en obtieneVacantesActo');
-        $sql = "SELECT cod_opc , cod_cue , cod_esp, cod_cen, des_cen, num_vac, lat, lon  ";
+        $sql = "SELECT cod_opc , cod_cue , cod_esp, cod_cen, des_cen, des_vac, num_vac, lat, lon  ";
         $sql .= " FROM vvacantesacto ";
         $sql .= " WHERE cod_opc=:cod_opc ";
         error_log('DEBUG: en obtieneActosActivos ' . $sql);
@@ -152,7 +255,7 @@ class DBSigi {
      * 
      */
     public static function obtieneSolicitudesActo($cod_opc,$dni) {
-        $sql = "select dni, cod_opc, tex_opc, cod_sol, cod_est_sol  from vsolicitudesacto ";
+        $sql = "select dni, cod_opc, tex_opc, cod_sol, des_est_sol, f_hor_ent ,cod_est_sol  from vsolicitudesacto ";
         $sql .= " WHERE dni=:dni ";
         $sql .= " and  cod_opc=:cod_opc ";
         error_log('DEBUG: en obtieneSolicitudesActo ' . $sql);
@@ -262,22 +365,6 @@ class DBSigi {
         return $vacantesSolicitables;
     }
 
-    // consulta si la persona esta o no convocada a un acto de elección
-    public static function consultaConvocadoActoEleccion($dni) {
-        //error_log("DEBUG: consultaConvocadoActoEleccion " . $dni);
-        $sql = "SELECT cod_opc FROM sigi_can_pre_ae ";
-        $sql .= "WHERE dni=:dni ";
-        $resultado = self::ejecutaConsulta($sql, array('dni' => $dni));
-        $verificado = 'desde infenlaces: no esta convocado';
-
-        if (isset($resultado)) {
-            $fila = $resultado->fetch(PDO::FETCH_OBJ);
-            //error_log("DEBUG: consultaConvocadoActoEleccion ");
-            if ($fila !== false)
-                $verificado = 'desde localhost: Si que esta convocado a ' . $fila->cod_opc;
-        }
-        return $verificado;
-    }
 
     /**
      * Devuelve la información del acto de elección seleccionado

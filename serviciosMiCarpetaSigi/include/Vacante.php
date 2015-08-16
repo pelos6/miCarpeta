@@ -14,6 +14,15 @@ class Vacante {
     protected $lon;
     protected $cod_cen;
     protected $des_cen;
+    protected $des_vac;
+
+    function getDes_vac() {
+        return $this->des_vac;
+    }
+
+    function setdDes_vac($des_vac) {
+        $this->des_vac = $des_vac;
+    } 
 
     function getDes_cen() {
         return $this->des_cen;
@@ -80,6 +89,7 @@ class Vacante {
         $this->lon = $row['lon'];
         $this->cod_cen = $row['cod_cen'];
         $this->des_cen = $row['des_cen'];
+        $this->des_vac = $row['des_vac'];
     }
     
     public function muestra() {

@@ -19,7 +19,7 @@ $clienteSigi = new SoapClient(null, array('location' => $urlSigi, 'uri' => $uriS
         $nada = true;
         foreach ($actosActivos as $actoActivo) {
            // echo $actoActivo->tex_opc . "<br />\n";
-            echo '<a href="' . Url::toRoute(["actos/convocatoria", "cod_opc" => $actoActivo->cod_opc,"tex_opc" => $actoActivo->tex_opc]) . '">' . $actoActivo->tex_opc . "</a><br />\n";
+            echo '<a href="' . Url::toRoute(["actos/convocatoria", "cod_opc" => $actoActivo->cod_opc,"tex_opc" => $actoActivo->tex_opc,"modo" => '1']) . '">' . $actoActivo->tex_opc . "</a><br />\n";
             $nada = false;
         }
         if ($nada){
@@ -28,13 +28,13 @@ $clienteSigi = new SoapClient(null, array('location' => $urlSigi, 'uri' => $uriS
         ?>
     </div>
     <h3>Actos de elección: información personal </h3>
-     <h4>Actos de elección en las que esta preseleccionado . </h4> 
+     <h4>Actos de elección en los que esta preseleccionado . </h4> 
     <div class="alert alert-success">
         <?php
         $ActosConvocado = $clienteSigi->getActosConvocado(Yii::$app->user->identity->dni);
         $nada = true;
         foreach ($ActosConvocado as $ActoConvocado) {
-            echo '<a href="' . Url::toRoute(["actos/convocatoria", "cod_opc" => $ActoConvocado->cod_opc,"tex_opc" => $ActoConvocado->tex_opc]) . '">' . $ActoConvocado->tex_opc . "</a><br />\n";
+            echo '<a href="' . Url::toRoute(["actos/convocatoria", "cod_opc" => $ActoConvocado->cod_opc,"tex_opc" => $ActoConvocado->tex_opc,"modo" => '2']) . '">' . $ActoConvocado->tex_opc . "</a><br />\n";
             $nada = false;
         }
         if ($nada){

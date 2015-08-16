@@ -5,6 +5,48 @@ require_once('include/DBSigi.php');
 class ServerSigi {
      /**
      * Devuelve un array con las especialidades convocadas a un acto de elección 
+     * de las vacantes que puede pedir el usuario
+     * 
+     */
+    public function getEspecialidadesPedidas($cod_opc, $dni, $cod_sol) {
+        error_log('DEBUG: en getEspecialidadesPedidas '.$cod_opc);
+        $especialidadesActo = DBSigi::obtieneEspecialidadesPedidas($cod_opc, $dni, $cod_sol);
+        return $especialidadesActo;
+    }
+    /**
+     * Devuelve un array con las vacantes convocadas a un acto de elección 
+     * de la que puede pedir el usuario
+     * 
+     */
+    public function getVacantesPedidas($cod_opc, $dni, $cod_sol) {
+        //error_log('DEBUG: en getVacantesPedidas '.$cod_opc);
+        $vacantesActo = DBSigi::obtieneVacantesPedidas($cod_opc, $dni, $cod_sol);
+        return $vacantesActo;
+    }
+
+     /**
+     * Devuelve un array con las especialidades convocadas a un acto de elección 
+     * de las vacantes que puede pedir el usuario
+     * 
+     */
+    public function getEspecialidadesSeleccionables($cod_opc, $dni) {
+        error_log('DEBUG: en getEspecialidadesSeleccionables '.$cod_opc);
+        $especialidadesActo = DBSigi::obtieneEspecialidadesSeleccionables($cod_opc, $dni);
+        return $especialidadesActo;
+    }
+    /**
+     * Devuelve un array con las vacantes convocadas a un acto de elección 
+     * de la que puede pedir el usuario
+     * 
+     */
+    public function getVacantesSeleccionables($cod_opc, $dni) {
+        //error_log('DEBUG: en getVacantesSeleccionables '.$cod_opc);
+        $vacantesActo = DBSigi::obtieneVacantesSeleccionables($cod_opc, $dni);
+        return $vacantesActo;
+    }
+
+     /**
+     * Devuelve un array con las especialidades convocadas a un acto de elección 
      * 
      */
     public function getEspecialidadesActo($cod_opc) {
@@ -74,16 +116,6 @@ class ServerSigi {
         //error_log('DEBUG: en getConsultasSituacionListas ' . $dni);
         $consultasSituacionListas = DBSigi::obtieneConsultasSituacionListas($dni);
         return $consultasSituacionListas;
-    }
-
-    /**
-     * Obtiene el PVP de un producto a partir de su código
-     * 
-     */
-    public function getEstaConvocado($dni) {
-        //error_log('DEBUG: getEstaConvocado ' . $dni);
-        return DBSigi::consultaConvocadoActoEleccion($dni);
-        ;
     }
 
     /**
