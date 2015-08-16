@@ -17,6 +17,7 @@ $clienteConcursosSecundaria = new SoapClient(null, array('location' => $urlSecun
 <div class="site-about">
     <h1><?= Html::encode($this->title) ?></h1>
     <h3>Concursos de Traslados: información general. </h3>
+    <h4>Concursos de traslados activos. </h4> 
     <div class="alert alert-success">
         <?php
         $concursosActivosPrimaria = $clienteConcursosPrimaria->getConcursosActivos();

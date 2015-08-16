@@ -20,6 +20,7 @@ $clienteSigi = new SoapClient(null, array('location' => $urlSigi, 'uri' => $uriS
     <h1><?= Html::encode($this->title) ?></h1>
 
     <h3>Interinos información general.  </h3>
+    <h4>Convocatorias de ampliación de listas o de rebaremación activas. </h4> 
     <div class="alert alert-success">
         <?php
         $convocatoriasListasActivas = $clienteSigicon->getConvocatoriasListasActivas();

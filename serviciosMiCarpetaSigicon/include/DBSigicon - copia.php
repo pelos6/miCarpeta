@@ -47,7 +47,6 @@ class DBSigicon {
         return $resultado;
     }
 
-    /*INTERINOS*/
     /**
      * Devuelve un la información de la solicitud de seleccionada en la 
      * convocatoria seleccionada para la persona indicada
@@ -70,7 +69,54 @@ class DBSigicon {
         return $solicitudListas;
     }
 
-   
+
+    /**
+     * Devuelve la información de la solicitud de seleccionada en la 
+     * oposición seleccionada para la persona indicada
+     */
+    public static function obtieneSolicitudOposicion($cod_con, $dni, $cod_sol) {
+        $sql = "select tipo_id, dni, cod_con, des_con, cod_sol,fec_sol, cod_est_sol, des_est_sol ";
+        $sql .= " from vsolicitudesoposicion  WHERE cod_con=:cod_con ";
+        $sql .= " and dni=:dni ";
+        $sql .= " and cod_sol=:cod_sol ";
+        error_log('DEBUG: en obtieneSolicitudOposicion ' . $sql . ' ' . $cod_con . ' ' . $dni . ' ' . $cod_sol);
+        $resultado = self::ejecutaConsulta($sql, array('cod_con' => $cod_con, 'dni' => $dni, 'cod_sol' => $cod_sol));
+        //error_log('DEBUG: en obtieneSolicitudOposicion resultado ');
+
+        if ($resultado) {
+            //error_log('DEBUG: en obtieneSolicitudOposicion resultado true ');
+            // Añadimos un elemento por cada solicitud obtenido
+            $row = $resultado->fetch();
+                $solicitudListas = new SolicitudLista($row);
+            }
+        return $solicitudListas;
+    }
+
+
+ /**
+     * Devuelve un array con las solicitudes a oposicion
+     * del usuario
+     * 
+     */
+    public static function obtieneSolicitudesConvocatoriaOposicion($cod_con, $dni) {
+        $sql = "select tipo_id, dni, cod_con, des_con, cod_sol,des_est_sol, fec_sol, cod_est_sol ";
+        $sql .= " from vsolicitudesoposicion WHERE dni=:dni ";
+        $sql .= " and cod_con=:cod_con ";
+        //error_log('DEBUG: en obtieneSolicitudesConvocatoriaOposicion ' . $sql . ' ' . $cod_con . ' ' . $dni);
+        // $resultado = self::ejecutaConsulta($sql);
+        $resultado = self::ejecutaConsulta($sql, array('cod_con' => $cod_con, 'dni' => $dni));
+        $solicitudesListas = array();
+
+        if ($resultado) {
+            // Añadimos un elemento por cada solicitud obtenido
+            $row = $resultado->fetch();
+            while ($row != null) {
+                $solicitudesListas[] = new SolicitudLista($row);
+                $row = $resultado->fetch();
+            }
+        }
+        return $solicitudesListas;
+    }
     /**
      * Devuelve un array con las solicitudes a listas 
      * del usuario, tanto de ampliación de listas como de rebaremación
@@ -145,59 +191,6 @@ class DBSigicon {
         return $convocatoriasListasActivas;
     }
 
-
-    /**
-     * Devuelve un array con las convocatorias a listas que estan activas
-     * para el usuario, tanto de ampliación de listas como de rebaremación
-     * 
-     */
-    public static function obtieneConvocatoriasListasActivas() {
-        $sql = "select cod_con, des_con, cod_tip_con, 'S' l_act, f_res, f_pub,";
-        $sql .= " f_ini_sol, f_fin_sol, url from vconvocatoriaslistasactivas ";
-        //error_log('DEBUG: en obtieneConvocatoriasListasActivas ' . $sql);
-        $resultado = self::ejecutaConsulta($sql, null);
-        $convocatoriasListasActivas = array();
-
-        if ($resultado) {
-            
-            $row = $resultado->fetch();
-            // //error_log('DEBUG: en obtieneConvocatoriasListasActivas resultado true');
-            while ($row != null) {
-                //    //error_log('DEBUG: en obtieneConvocatoriasListasActivas en el loop');
-                $convocatoriasListasActivas[] = new ConvocatoriaLista($row);
-                $row = $resultado->fetch();
-            }
-        }
-
-        return $convocatoriasListasActivas;
-    }
-/*FIN INTERINOS*/
-
-/*OPOSICIONES*/
-   /**
-     * Devuelve un array con las oposiciones que estan activas
-     * 
-     */
-    public static function obtieneOposicionesActivas() {
-        error_log('DEBUG: en obtieneOposicionesActivas');
-//        $sql = "SELECT cod_con , des_con  , cod_sol, cod_tip_con,l_act  FROM voposicionesactivas;";
-        $sql = "select cod_con, des_con, cod_tip_con, 'S' l_act, f_res, f_pub,";
-        $sql .= " f_ini_sol, f_fin_sol, url from voposicionesactivas ";
-        error_log('DEBUG: en obtieneOposicionesActivas ' . $sql);
-        $resultado = self::ejecutaConsulta($sql, null);
-        $oposicionesActivos = array();
-
-        if ($resultado) {
-            //error_log('DEBUG: en obtieneOposicionesActivas resultado true');
-            $row = $resultado->fetch();
-            while ($row != null) {
-                $oposicionesActivos[] = new Oposicion($row);
-                $row = $resultado->fetch();
-            }
-        }
-        return $oposicionesActivos;
-    }
-
      /**
      * Devuelve un array con las oposiciones las que tiene solicitud
      * el usuario
@@ -224,81 +217,34 @@ class DBSigicon {
         return $convocatoriasoposicionesActivas;
     }
 
-         /**
-     * Devuelve un array con las solicitudes a oposicion
-     * del usuario
+
+    /**
+     * Devuelve un array con las convocatorias a listas que estan activas
+     * para el usuario, tanto de ampliación de listas como de rebaremación
      * 
      */
-    public static function obtieneSolicitudesConvocatoriaOposicion($cod_con, $dni) {
-        $sql = "select tipo_id, dni, cod_con, des_con, cod_sol,des_est_sol, fec_sol, cod_est_sol ";
-        $sql .= " from vsolicitudesoposicion WHERE dni=:dni ";
-        $sql .= " and cod_con=:cod_con ";
-        //error_log('DEBUG: en obtieneSolicitudesConvocatoriaOposicion ' . $sql . ' ' . $cod_con . ' ' . $dni);
-        // $resultado = self::ejecutaConsulta($sql);
-        $resultado = self::ejecutaConsulta($sql, array('cod_con' => $cod_con, 'dni' => $dni));
-        $solicitudesListas = array();
-
-        if ($resultado) {
-            // Añadimos un elemento por cada solicitud obtenido
-            $row = $resultado->fetch();
-            while ($row != null) {
-                $solicitudesListas[] = new SolicitudLista($row);
-                $row = $resultado->fetch();
-            }
-        }
-        return $solicitudesListas;
-    }
-
-/**
-     * Devuelve la información de la convocatoria seleccionada
-     * 
-     */
-    public static function obtieneConvocatoriaOposicion($cod_con) {
+    public static function obtieneConvocatoriasListasActivas() {
         $sql = "select cod_con, des_con, cod_tip_con, 'S' l_act, f_res, f_pub,";
-        $sql .= " f_ini_sol, f_fin_sol, url from voposicionesactivas ";
-        $sql .= " WHERE cod_con=:cod_con ";
-        //error_log('DEBUG: en obtieneConvocatoriaOposicion ' . $sql);
-        // $resultado = self::ejecutaConsulta($sql);
-        $resultado = self::ejecutaConsulta($sql, array('cod_con' => $cod_con));
+        $sql .= " f_ini_sol, f_fin_sol, url from vconvocatoriaslistasactivas ";
+        //error_log('DEBUG: en obtieneConvocatoriasListasActivas ' . $sql);
+        $resultado = self::ejecutaConsulta($sql, null);
+        $convocatoriasListasActivas = array();
 
         if ($resultado) {
             
             $row = $resultado->fetch();
-            ////error_log('DEBUG: en obtieneConvocatoriaListas resultado true');
-            $convocatoriaOposicion = new Oposicion($row);
-        }
-        return $convocatoriaOposicion;
-    }
-
-/***********A BORRAR LAS DE ABAJO********************************/
-
-
- /**
-     * Devuelve la información de la solicitud de seleccionada en la 
-     * oposición seleccionada para la persona indicada
-     */
-    public static function obtieneSolicitudOposicion($cod_con, $dni, $cod_sol) {
-        $sql = "select tipo_id, dni, cod_con, des_con, cod_sol,fec_sol, cod_est_sol, des_est_sol ";
-        $sql .= " from vsolicitudesoposicion  WHERE cod_con=:cod_con ";
-        $sql .= " and dni=:dni ";
-        $sql .= " and cod_sol=:cod_sol ";
-        error_log('DEBUG: en obtieneSolicitudOposicion ' . $sql . ' ' . $cod_con . ' ' . $dni . ' ' . $cod_sol);
-        $resultado = self::ejecutaConsulta($sql, array('cod_con' => $cod_con, 'dni' => $dni, 'cod_sol' => $cod_sol));
-        //error_log('DEBUG: en obtieneSolicitudOposicion resultado ');
-
-        if ($resultado) {
-            //error_log('DEBUG: en obtieneSolicitudOposicion resultado true ');
-            // Añadimos un elemento por cada solicitud obtenido
-            $row = $resultado->fetch();
-                $solicitudListas = new SolicitudLista($row);
+            // //error_log('DEBUG: en obtieneConvocatoriasListasActivas resultado true');
+            while ($row != null) {
+                //    //error_log('DEBUG: en obtieneConvocatoriasListasActivas en el loop');
+                $convocatoriasListasActivas[] = new ConvocatoriaLista($row);
+                $row = $resultado->fetch();
             }
-        return $solicitudListas;
+        }
+
+        return $convocatoriasListasActivas;
     }
 
-
-
-    
- /**
+    /**
      * Devuelve un array con las solicitudes a concursod de traslados del
      * usuario
      * 
@@ -322,9 +268,51 @@ class DBSigicon {
         return $solicitudesOposiciones;
     }
 
+/**
+     * Devuelve la información de la convocatoria seleccionada
+     * 
+     */
+    public static function obtieneConvocatoriaOposicion($cod_con) {
+        $sql = "select cod_con, des_con, cod_tip_con, 'S' l_act, f_res, f_pub,";
+        $sql .= " f_ini_sol, f_fin_sol, url from voposicionesactivas ";
+        $sql .= " WHERE cod_con=:cod_con ";
+        //error_log('DEBUG: en obtieneConvocatoriaOposicion ' . $sql);
+        // $resultado = self::ejecutaConsulta($sql);
+        $resultado = self::ejecutaConsulta($sql, array('cod_con' => $cod_con));
 
+        if ($resultado) {
+            
+            $row = $resultado->fetch();
+            ////error_log('DEBUG: en obtieneConvocatoriaListas resultado true');
+            $convocatoriaOposicion = new Oposicion($row);
+        }
+        return $convocatoriaOposicion;
+    }
 
-    /*FIN OPOSICIONES*/
+    /**
+     * Devuelve un array con las oposiciones que estan activas
+     * 
+     */
+    public static function obtieneOposicionesActivas() {
+        error_log('DEBUG: en obtieneOposicionesActivas');
+//        $sql = "SELECT cod_con , des_con  , cod_sol, cod_tip_con,l_act  FROM voposicionesactivas;";
+        $sql = "select cod_con, des_con, cod_tip_con, 'S' l_act, f_res, f_pub,";
+        $sql .= " f_ini_sol, f_fin_sol, url from voposicionesactivas ";
+        error_log('DEBUG: en obtieneOposicionesActivas ' . $sql);
+        $resultado = self::ejecutaConsulta($sql, null);
+        $oposicionesActivos = array();
+
+        if ($resultado) {
+            //error_log('DEBUG: en obtieneOposicionesActivas resultado true');
+            $row = $resultado->fetch();
+            while ($row != null) {
+                $oposicionesActivos[] = new Oposicion($row);
+                $row = $resultado->fetch();
+            }
+        }
+        return $oposicionesActivos;
+    }
+
 }
 
 ?>

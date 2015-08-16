@@ -20,16 +20,12 @@ $uriSigicon = Yii::$app->params["servidor"] . "/serviciosMiCarpetaSigicon";
 $clienteSigicon = new SoapClient(null, array('location' => $urlSigicon, 'uri' => $uriSigicon));
 ?>
 <div class="site-about">
-    <h4> Solicitudes presentadas a la oposición. </h4> 
-    <div class="container">
-  <div class="panel panel-default">
+    <h4> Solicitudes presentadas a la oposición  </h4> 
+    <div class="alert alert-success">
         <?php
         $solicitudesOposicion = $clienteSigicon->getSolicitudesConvocatoriaOposicion(Html::encode($_GET["cod_con"]), Yii::$app->user->identity->dni);
         foreach ($solicitudesOposicion as $solicitudOposicion) {
-            echo '<div class="panel panel-heading">'; 
-                echo 'Solicitud con código: '.$solicitudOposicion->cod_sol.' presentada  '.$solicitudOposicion->fec_sol .' '. $solicitudOposicion->des_est_sol. ' ' ; 
-                echo Html::a('Notas y baremo', ['oposiciones/notas',"cod_con" => $_GET["cod_con"],"des_con" => $_GET["des_con"],"cod_sol" => $solicitudOposicion->cod_sol,"modo" => '3'], ['class' => 'btn btn-success']) ;
-            echo '</div>';
+            echo '<a href="' . Url::toRoute(["oposiciones/solicitud", "cod_con" => $solicitudOposicion->cod_con, "cod_sol" => $solicitudOposicion->cod_sol]) . '">' . $solicitudOposicion->cod_sol . "</a><br />\n";
         }
 //    echo("<pre>");
 //    print_r($solicitudesOposicion);
@@ -37,5 +33,5 @@ $clienteSigicon = new SoapClient(null, array('location' => $urlSigicon, 'uri' =>
 //    
         ?>
     </div>
-</div>
+
 </div>

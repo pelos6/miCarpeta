@@ -3,7 +3,7 @@
 require_once('include/DBSigicon.php');
 
 class ServerSigicon {
-    /*INTERINOS*/
+
       /**
      * Devuelve la información de la solicitud seleccionada
      * en la convocatoria seleccionada
@@ -53,19 +53,7 @@ class ServerSigicon {
         $solicitudesListas = DBSigicon::obtieneSolicitudesConvocatoriaListas($cod_con,$dni);
         return $solicitudesListas;
     }
-    /* FIN INTERINOS*/
-
-    /*OPOSICIONES*/
-
-      /**
-     * Devuelve un array con las oposiciones activas 
-     * 
-     */
-    public function getOposicionesActivas() {
-        error_log('DEBUG: en getOposicionesActivas');
-        $oposicionesActivos = DBSigicon::obtieneOposicionesActivas();
-        return $oposicionesActivos;
-    }
+    
 
     /**
      * Devuelve un array con las oposiciones en las que 
@@ -78,7 +66,7 @@ class ServerSigicon {
         return $oposicionesSolicitud;
     }
 
- /**
+   /**
      * Devuelve un array con las solicitudes a oposición
      * 
      */
@@ -87,8 +75,13 @@ class ServerSigicon {
         $solicitudesOposicion = DBSigicon::obtieneSolicitudesConvocatoriaOposicion($cod_con,$dni);
         return $solicitudesOposicion;
     }
+    public function getSolicitudesOposiciones($dni) {
+        //error_log('DEBUG: en getSolicitudesOposiciones ' . $dni);
+        $solicitudesOposiciones = DBSigicon::obtieneSolicitudesOposiciones($dni);
+        return $solicitudesOposiciones;
+    }
 
- /**
+  /**
      * Devuelve la información de la oposición seleccionada
      * 
      */
@@ -98,17 +91,16 @@ class ServerSigicon {
         return $convocatoriaOposicion;
     }
 
-
-/****A BORRAR LOS DE ABAJO*******/
-
-    public function getSolicitudesOposiciones($dni) {
-        //error_log('DEBUG: en getSolicitudesOposiciones ' . $dni);
-        $solicitudesOposiciones = DBSigicon::obtieneSolicitudesOposiciones($dni);
-        return $solicitudesOposiciones;
+    /**
+     * Devuelve un array con las oposiciones activas 
+     * 
+     */
+    public function getOposicionesActivas() {
+        error_log('DEBUG: en getOposicionesActivas');
+        $oposicionesActivos = DBSigicon::obtieneOposicionesActivas();
+        return $oposicionesActivos;
     }
-  
 
- 
 
 /**
      * Devuelve un array con las oposiciones en las que 
@@ -132,7 +124,6 @@ class ServerSigicon {
         return $solicitudesListas;
     }
 
-    /*FIN OPOSICIONES*/
 }
 
 ?>

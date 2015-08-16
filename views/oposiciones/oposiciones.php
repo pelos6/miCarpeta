@@ -14,6 +14,7 @@ $clienteSigicon = new SoapClient(null, array('location' => $urlSigicon, 'uri' =>
 <div class="site-about">
     <h1><?= Html::encode($this->title) ?></h1>
     <h3>Oposiciones: información general</h3>
+    <h4>Oposiciones activas. </h4> 
     <div class="alert alert-success"> 
         <?php
         $oposicionesActivas = $clienteSigicon->getOposicionesActivas();

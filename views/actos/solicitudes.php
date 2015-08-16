@@ -26,9 +26,8 @@ $clienteSigi = new SoapClient(null, array('location' => $urlSigi, 'uri' => $uriS
         <?php
         $solicitudesActo = $clienteSigi->getSolicitudesActo(Html::encode($_GET["cod_opc"]), Yii::$app->user->identity->dni);
         foreach ($solicitudesActo as $solicitudesActo) {
-            echo '<div class="panel panel-heading">';
-            echo '<a href="' . Url::toRoute(["actos/solicitud", "cod_opc" => $solicitudesActo->cod_opc, "cod_sol" => $solicitudesActo->cod_sol]) . '">' . $solicitudesActo->cod_sol . "</a>\n";
-            echo 'Solicitud con código: '.$solicitudesActo->cod_sol.' presentada  '.$solicitudesActo->f_hor_ent .' estado  '. $solicitudesActo->des_est_sol. ' ' ; 
+            echo '<div class="panel panel-heading">'; 
+            echo 'Solicitud con código: '.$solicitudesActo->cod_sol.' presentada  '.$solicitudesActo->f_hor_ent .' '. $solicitudesActo->des_est_sol. ' ' ; 
             echo Html::a('Vacantes pedidas', ['actos/vacantes',"cod_opc" => $_GET["cod_opc"],"tex_opc" => $_GET["tex_opc"],"cod_sol" => $solicitudesActo->cod_sol,"modo" => '3'], ['class' => 'btn btn-success']) ;
             echo '</div>';
         }

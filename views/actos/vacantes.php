@@ -9,23 +9,28 @@ use yii\helpers\Url;
 $urlSigi = Yii::$app->params["servidor"] . "/serviciosMiCarpetaSigi/servicioSigi.php";
 $uriSigi = Yii::$app->params["servidor"] . "/serviciosMiCarpetaSigi";
 $clienteSigi = new SoapClient(null, array('location' => $urlSigi, 'uri' => $uriSigi));
+$this->params['breadcrumbs'][] = ['label' => 'Actos', 'url' => ['actos']];
+
 if (Html::encode($_GET["modo"]) == '1' ) {
   $vacantes = $clienteSigi->getVacantesActo($_GET["cod_opc"]);
   $especialidades = $clienteSigi->getEspecialidadesActo($_GET["cod_opc"]);
+  $this->params['breadcrumbs'][] = ['label' => Html::encode($_GET["tex_opc"]),
+ 'url' => ["actos/convocatoria", "cod_opc" => Html::encode($_GET["cod_opc"]),"tex_opc" => Html::encode($_GET["tex_opc"]),"modo" => Html::encode($_GET["modo"])]];
   $this->title = 'Vacantes ofertadas';
 }else if (Html::encode($_GET["modo"]) == '2' ) {
   $vacantes = $clienteSigi->getVacantesSeleccionables($_GET["cod_opc"],Yii::$app->user->identity->dni);
   $especialidades = $clienteSigi->getEspecialidadesSeleccionables($_GET["cod_opc"],Yii::$app->user->identity->dni);
+  $this->params['breadcrumbs'][] = ['label' => Html::encode($_GET["tex_opc"]),
+ 'url' => ["actos/convocatoria", "cod_opc" => Html::encode($_GET["cod_opc"]),"tex_opc" => Html::encode($_GET["tex_opc"]),"modo" => Html::encode($_GET["modo"])]];
   $this->title = 'Vacantes seleccionables';
 }  else {
   $vacantes = $clienteSigi->getVacantesPedidas($_GET["cod_opc"],Yii::$app->user->identity->dni, $_GET['cod_sol']);
   $especialidades = $clienteSigi->getEspecialidadesPedidas($_GET["cod_opc"],Yii::$app->user->identity->dni, $_GET['cod_sol']);
-  $this->title = 'Vacantes pedidas';
+  $this->params['breadcrumbs'][] = ['label' => 'solicitudes '. Html::encode($_GET["tex_opc"]),
+ 'url' => ["actos/solicitudes", "cod_opc" => Html::encode($_GET["cod_opc"]),"tex_opc" => Html::encode($_GET["tex_opc"])]];
+  $this->title = 'Vacantes pedidas solicitud '.$_GET['cod_sol'];
 }
 
-$this->params['breadcrumbs'][] = ['label' => 'Actos', 'url' => ['actos']];
-$this->params['breadcrumbs'][] = ['label' => Html::encode($_GET["tex_opc"]),
- 'url' => ["actos/convocatoria", "cod_opc" => Html::encode($_GET["cod_opc"]),"tex_opc" => Html::encode($_GET["tex_opc"]),"modo" => Html::encode($_GET["modo"])]];
 $this->params['breadcrumbs'][] = $this->title;
 
 

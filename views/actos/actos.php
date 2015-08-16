@@ -13,6 +13,7 @@ $clienteSigi = new SoapClient(null, array('location' => $urlSigi, 'uri' => $uriS
 <div class="site-about">
     <h1><?= Html::encode($this->title) ?></h1>
     <h3>Actos de elección: información general.</h3>
+    <h4>Actos de elección activos. </h4> 
     <div class="alert alert-success">
         <?php
         $actosActivos = $clienteSigi->getActosActivos();
