@@ -4,6 +4,24 @@ require_once('include/DBSigicon.php');
 
 class ServerSigicon {
     /*INTERINOS*/
+    /**
+     * Devuelve la información del baremo de la solicitud 
+     * en la convocatoria seleccionada
+     */
+    public function getBaremoSolicitudConvocatoriaListas($cod_con,$dni,$cod_sol) {
+        error_log('DEBUG: en getBaremoSolicitudConvocatoriaListas '. $cod_con.' ' . $dni. ' '. $cod_sol);
+        $solicitudBaremada = DBSigicon::obtieneBaremoSolicitudConvocatoriaListas($cod_con,$dni, $cod_sol);
+        return $solicitudBaremada;
+    }
+      /**
+     * Devuelve la información de si la solicitud esta o no baremada
+     * en la convocatoria seleccionada
+     */
+    public function getHaySolicitudConvocatoriaListasBaremada($cod_con,$dni,$cod_sol) {
+        //error_log('DEBUG: en getHaySolicitudConvocatoriaListasBaremada '. $cod_con.' ' . $dni. ' '. $cod_sol);
+        $solicitudBaremada = DBSigicon::obtieneHaySolicitudConvocatoriaListasBaremada($cod_con,$dni, $cod_sol);
+        return $solicitudBaremada;
+    }
       /**
      * Devuelve la información de la solicitud seleccionada
      * en la convocatoria seleccionada
@@ -56,7 +74,24 @@ class ServerSigicon {
     /* FIN INTERINOS*/
 
     /*OPOSICIONES*/
-
+    /**
+     * Devuelve la información del baremo de la solicitud 
+     * en la oposición seleccionada
+     */
+    public function getBaremoSolicitudOposicion($cod_con,$dni,$cod_sol) {
+        error_log('DEBUG: en getBaremoSolicitudOposicion '. $cod_con.' ' . $dni. ' '. $cod_sol);
+        $solicitudBaremada = DBSigicon::obtieneBaremoSolicitudOposicion($cod_con,$dni, $cod_sol);
+        return $solicitudBaremada;
+    }
+      /**
+     * Devuelve la información de si la solicitud esta o no baremada
+     * en la convocatoria seleccionada
+     */
+    public function getHaySolicitudOposicionBaremada($cod_con,$dni,$cod_sol) {
+        //error_log('DEBUG: en getHaySolicitudOposicionBaremada '. $cod_con.' ' . $dni. ' '. $cod_sol);
+        $solicitudBaremada = DBSigicon::obtieneHaySolicitudOposicionBaremada($cod_con,$dni, $cod_sol);
+        return $solicitudBaremada;
+    }
       /**
      * Devuelve un array con las oposiciones activas 
      * 

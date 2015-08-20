@@ -55,8 +55,8 @@ $clienteSigi = new SoapClient(null, array('location' => $urlSigi, 'uri' => $uriS
         <?php
         $ListasConSolilcitud = $clienteSigicon->getConvocatoriasListasHaySolicitud(Yii::$app->user->identity->dni);
         $nada = true;
-        foreach ($ListasConSolilcitud as $ListaConSolilcitud) {
-            echo '<a href="' . Url::toRoute(["interinos/solicitudes", "cod_con" => $ListaConSolilcitud->cod_con,"des_con" => $ListaConSolilcitud->des_con]) . '">' . $ListaConSolilcitud->des_con . "</a><br />\n";
+        foreach ($ListasConSolilcitud as $ListaConSolicitud) {
+            echo '<a href="' . Url::toRoute(["interinos/solicitudes", "cod_con" => $ListaConSolicitud->cod_con,"des_con" => $ListaConSolicitud->des_con]) . '">' . $ListaConSolicitud->des_con . "</a><br />\n";
             $nada = false;
         }
        if ($nada){

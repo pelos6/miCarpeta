@@ -2,10 +2,27 @@
 
 require_once('include/DBConcursosSecundaria.php');
 
-/**
- * Dada la situación de la
- */
 class ServerConcursosSecundaria {
+     /**
+     * Devuelve la información de si hay o no solicitud baremada para  
+     * esa solicitud en el concurso y para la persona seleccionada
+     * 
+     */
+    public function getSolicitudesConcursoBaremada($cod_con,$dni,$cod_sol) {
+        //error_log('DEBUG: en getSolicitudesConcursoBaremada ' . $dni);
+        $concursSolicitudBaremada = DBConcursosSecundaria::obtieneSolicitudConcursoBaremada($cod_con,$dni,$cod_sol);
+        return $concursSolicitudBaremada;
+    }
+    /**
+     * Devuelve la información de si hay o no solicitud baremada para  
+     * esa solicitud en el concurso y para la persona seleccionada
+     * 
+     */
+    public function getHaySolicitudConcursoBaremada($cod_con,$dni,$cod_sol) {
+        //error_log('DEBUG: en getHaySolicitudConcursoBaremada ' . $dni);
+        $concursoHaySolicitudBaremada = DBConcursosSecundaria::obtieneHaySolicitudConcursoBaremada($cod_con,$dni,$cod_sol);
+        return $concursoHaySolicitudBaremada;
+    }
         /**
      * Devuelve un array con los Concursos de Secundaria en las que 
      * tiene solicitud

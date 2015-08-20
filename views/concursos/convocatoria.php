@@ -4,8 +4,8 @@ use yii\helpers\Html;
 use yii\widgets\ActiveForm;
 use yii\helpers\Url;
 
-$this->title = 'convocatoria '. Html::encode($_GET["des_con"]);
-$this->params['breadcrumbs'][] = ['label' => 'Concursos ', 'url' => ['concursos']];
+$this->title =  Html::encode($_GET["des_con"]);
+$this->params['breadcrumbs'][] = ['label' => 'Concursos de Traslados', 'url' => ['concursos']];
 $this->params['breadcrumbs'][] = $this->title;
 
 if (Html::encode($_GET["cod_tip_con"] == 'P')) {
@@ -34,7 +34,7 @@ else{
 </div>  
 <div class="panel panel-success">
     <div class="panel-heading">
-        <h3 class="panel-title">Tipo del acto de elección</h3>
+        <h3 class="panel-title">Ambito del Concurso de Traslados</h3>
     </div>
     <div class="panel-body">
         <?= $concursoActivo->des_tip_con ?>
@@ -42,7 +42,7 @@ else{
 </div> 
 <div class="panel panel-success">
     <div class="panel-heading">
-        <h3 class="panel-title">Fecha del acto de elección</h3>
+        <h3 class="panel-title">Fase del Concurso de Traslados</h3>
     </div>
     <div class="panel-body">
         <?= $concursoActivo->des_fas_con ?>

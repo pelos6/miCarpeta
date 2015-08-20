@@ -11,6 +11,7 @@
 // los php requeridos que son otras clases
 require_once('ConcursoTraslados.php');
 require_once('SolicitudConcurso.php');
+require_once('SolicitudBaremada.php');
 
 class DBConcursosPrimaria {
 
@@ -36,11 +37,58 @@ class DBConcursosPrimaria {
 //        if (isset($dwes)) {
 //            $resultado = $dwes->query($sql);
 //        }
-        if (isset($dwes)) {
+    if (isset($dwes)) {
             $resultado = $dwes->prepare($sql);
-            $resultado->execute($valores);
+            try {
+                $resultado->execute($valores);
+            } catch  (PDOException $e) {
+                 error_log ("DEBUG: ". $e->getMessage() );
+                }
         }
         return $resultado;
+    }
+    /**
+     * Devuelve el baremo de la solicitud en esa convocatoria del
+     * usuario
+     * 
+     */
+    public static function obtieneSolicitudConcursoBaremada($cod_con,$dni,$cod_sol) {
+        $sql = " select cod_con, cod_sol, dni, res_tot, apa_1, apa_1_1, apa_1_1_1, apa_1_1_2, apa_1_1_3, apa_1_2, apa_1_2_1, apa_1_2_2, apa_1_2_3, apa_2, apa_3, apa_3_1, apa_3_1_1, apa_3_1_2, apa_3_1_3, apa_3_1_4, apa_3_2, apa_3_2_1, apa_3_2_2, apa_3_2_3, apa_3_2_4, apa_3_3, apa_4, apa_4_1, apa_4_2, apa_4_3, apa_5, apa_5_1, apa_5_2, apa_5_3, apa_6, apa_6_1, apa_6_2, apa_6_3, apa_6_4, apa_6_5, apa_6_6  ";
+        $sql .= " from vsolicitudesbaremadas  WHERE cod_con=:cod_con ";
+        $sql .= " and dni=:dni ";
+        $sql .= " and cod_sol=:cod_sol ";
+        error_log('DEBUG: en obtieneSolicitudConcursoBaremada Primaria ' . $sql . ' ' . $dni. ' ' . $cod_sol. ' ' . $cod_con);
+        $resultado = self::ejecutaConsulta($sql,array('cod_con' => $cod_con, 'dni' => $dni, 'cod_sol' => $cod_sol));
+          if ($resultado) {
+            //error_log('DEBUG: en obtieneBaremoSolicitudConvocatoriaListas resultado true ');
+            // Añadimos un elemento por el resultado obtenido
+            $row = $resultado->fetch();
+                $solicitudBaremada = new SolicitudBaremada($row);
+        }
+        return $solicitudBaremada;
+    }
+
+ /**
+     * Devuelve la información de si esta baremada la solicitud
+     * del usuario
+     * 
+     */
+    public static function obtieneHaySolicitudConcursoBaremada($cod_con,$dni,$cod_sol) {
+        $sql = " select cod_con, cod_sol, dni, res_tot, apa_1, apa_1_1, apa_1_1_1, apa_1_1_2, apa_1_1_3, apa_1_2, apa_1_2_1, apa_1_2_2, apa_1_2_3, apa_2, apa_3, apa_3_1, apa_3_1_1, apa_3_1_2, apa_3_1_3, apa_3_1_4, apa_3_2, apa_3_2_1, apa_3_2_2, apa_3_2_3, apa_3_2_4, apa_3_3, apa_4, apa_4_1, apa_4_2, apa_4_3, apa_5, apa_5_1, apa_5_2, apa_5_3, apa_6, apa_6_1, apa_6_2, apa_6_3, apa_6_4, apa_6_5, apa_6_6  ";
+        $sql .= " from vsolicitudesbaremadas  WHERE cod_con=:cod_con ";
+        $sql .= " and dni=:dni ";
+        $sql .= " and cod_sol=:cod_sol ";
+        error_log('DEBUG: en obtieneHaySolicitudConcursoBaremada Primaria ' . $sql . ' ' . $dni. ' ' . $cod_sol. ' ' . $cod_con);
+        $resultado = self::ejecutaConsulta($sql,array('cod_con' => $cod_con, 'dni' => $dni, 'cod_sol' => $cod_sol));
+         if ($resultado) {
+            $row = $resultado->fetch();
+            while ($row != null) {
+              //  error_log('DEBUG: en obtieneHaySolicitudConvocatoriaListasBaremada resultado true ');
+                return true;
+            }
+        }
+       // error_log('DEBUG: en obtieneHaySolicitudConvocatoriaListasBaremada resultado false ');
+        return false;
     }
 
     /**

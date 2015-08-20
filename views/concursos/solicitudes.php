@@ -31,13 +31,26 @@ else{
 ?>
 <div class="site-about">
     <h4> Solicitudes presentadas al concurso de traslados  </h4> 
-    <div class="alert alert-success">
-        <?php
-        foreach ($solicitudesConcurso as $solicitudConcurso) {
-            echo '<a href="' . Url::toRoute(["concursos/solicitud", "cod_tip_con" => Html::encode($_GET["cod_tip_con"]),  "cod_con" => $solicitudConcurso->cod_con, "cod_sol" => $solicitudConcurso->cod_sol]) . '">' . $solicitudConcurso->cod_sol . "</a><br />\n";
-        }
+    <div class="container">
+      <div class="panel panel-default">
+            <?php
+            foreach ($solicitudesConcurso as $solicitudConcurso) {
+                echo '<div class="panel panel-heading">'; 
+                echo 'Solicitud con código: <span class="badge">'.$solicitudConcurso->cod_sol.' </span> presentada <span class="badge"> '.$solicitudConcurso->f_hor_ent .' </span>' . 
+                '<br> '.$solicitudConcurso->des_est_sol. '<br>  ' ; 
+                if (Html::encode($_GET["cod_tip_con"] == 'P')) {
+                     if ($clienteConcursosPrimaria->getHaySolicitudConcursoBaremada(Html::encode($_GET["cod_con"]), Yii::$app->user->identity->dni, $solicitudConcurso->cod_sol)){
+                        echo Html::a('Baremo de la solicitud', ['concursos/baremo',"cod_con" => $_GET["cod_con"],"des_con" => $_GET["des_con"],"cod_sol" => $solicitudConcurso->cod_sol, "cod_tip_con" => $_GET["cod_tip_con"] ], ['class' => 'btn btn-success']) ;
+                    }
+                } else {
+                    if ($clienteConcursosSecundaria->getHaySolicitudConcursoBaremada(Html::encode($_GET["cod_con"]), Yii::$app->user->identity->dni, $solicitudConcurso->cod_sol)){
+                        echo Html::a('Baremo de la solicitud', ['concursos/baremo',"cod_con" => $_GET["cod_con"],"des_con" => $_GET["des_con"],"cod_sol" => $solicitudConcurso->cod_sol , "cod_tip_con" => $_GET["cod_tip_con"] ], ['class' => 'btn btn-success']) ;
+                    }
+                }
+                echo '</div>';
+            }
 
-        ?>
+            ?>
+        </div>
     </div>
-
 </div>

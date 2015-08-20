@@ -4,7 +4,7 @@ use yii\helpers\Html;
 use yii\widgets\ActiveForm;
 use yii\helpers\Url;
 
-$this->title = 'convocatoria '. Html::encode($_GET["des_con"]);
+$this->title =  Html::encode($_GET["des_con"]);
 $this->params['breadcrumbs'][] = ['label' => 'Interinos', 'url' => ['interinos']];
 $this->params['breadcrumbs'][] = $this->title;
 

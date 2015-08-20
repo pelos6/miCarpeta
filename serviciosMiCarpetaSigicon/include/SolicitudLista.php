@@ -9,6 +9,9 @@ class SolicitudLista {
 
     protected $cod_con;
     protected $des_con;
+    protected $des_cue;
+    protected $des_esp;
+    protected $des_cue_esp;
     protected $cod_sol;
     protected $tipo_id;
     protected $dni;
@@ -79,11 +82,39 @@ class SolicitudLista {
 
     function setDes_con($des_con) {
         $this->des_con = $des_con;
+    } 
+
+    function setCod_cue($cod_cue) {
+        $this->cod_cue = $cod_cue;
     }
+
+    function setDes_cue($des_cue) {
+        $this->des_cue = $des_cue;
+    }
+
+    function setCod_esp($cod_esp) {
+        $this->cod_esp = $cod_esp;
+    }
+
+    function setDes_esp($des_esp) {
+        $this->des_esp = $des_esp;
+    }
+
+    function setCod_cue_esp($cod_cue_esp) {
+        $this->cod_cue_esp = $cod_cue_esp;
+    }
+
+    function setDes_cue_esp($des_cue_esp) {
+        $this->des_cue_esp = $des_cue_esp;
+    }
+
 
     public function __construct($row) {
         $this->cod_con = $row['cod_con'];
         $this->des_con = $row['des_con'];
+        $this->des_cue = $row['des_cue'];
+        $this->des_esp = $row['des_esp'];
+        $this->des_cue_esp = $row['des_cue_esp'];
         $this->tipo_id = $row['tipo_id'];
         $this->cod_sol = $row['cod_sol'];
         $this->dni = $row['dni'];

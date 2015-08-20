@@ -42,9 +42,13 @@ class OposicionesController extends Controller {
     public function actionSolicitudes() {
         return $this->render('solicitudes');
     }
-
+/*
     public function actionSolicitud() {
         return $this->render('solicitud');
+    }
+*/
+    public function actionBaremo() {
+        return $this->render('baremo');
     }
 
 }

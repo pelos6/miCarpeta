@@ -40,8 +40,12 @@ class ConcursosController extends Controller {
         return $this->render('solicitudes');
     }
 
-    public function actionSolicitud() {
+/*    public function actionSolicitud() {
         return $this->render('solicitud');
+    }*/
+ 
+    public function actionBaremo() {
+        return $this->render('baremo');
     }
 
 }

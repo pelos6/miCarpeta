@@ -13,6 +13,7 @@ require_once('ConvocatoriaLista.php');
 require_once('SolicitudLista.php');
 require_once('Oposicion.php');
 require_once('SolicitudOposicion.php');
+require_once('SolicitudBaremada.php');
 
 class DBSigicon {
     /* con metodos estaticos dado que no se va a instanciar esta clase y
@@ -26,7 +27,7 @@ class DBSigicon {
         $usuario = 'root';
         $contrasena = 'javier';
         // para infenlaces
-//         $dsn = "mysql:host=localhost;dbname=javieriranzo_dwes";
+//          $dsn = "mysql:host=localhost;dbname=javieriranzo_dwes";
 //          $usuario = 'javieriranzo_dwe';
 //          $contrasena = 'javier';
         // para apostayadrede.com
@@ -42,18 +43,67 @@ class DBSigicon {
 //        }
         if (isset($dwes)) {
             $resultado = $dwes->prepare($sql);
-            $resultado->execute($valores);
+            try {
+                $resultado->execute($valores);
+            } catch  (PDOException $e) {
+                 error_log ("DEBUG: ". $e->getMessage() );
+                }
         }
         return $resultado;
     }
 
     /*INTERINOS*/
+    
+     /**
+     * Devuelve el baremo de la solicitud seleccionada en la 
+     * convocatoria seleccionada para la persona indicada esta baremada o no
+     */
+    public static function obtieneBaremoSolicitudConvocatoriaListas($cod_con, $dni, $cod_sol) {
+        $sql = "select  cod_con,  dni,  cod_sol,  res_tot,  apa_1,  apa_2,  apa_3, apa_1_1,  apa_1_2,  apa_1_3, apa_2_1,  apa_2_2,  apa_2_3, apa_3_1,  apa_3_2,  apa_3_3   ";
+        $sql .= " from vsolicitudesbaremadas  WHERE cod_con=:cod_con ";
+        $sql .= " and dni=:dni ";
+        $sql .= " and cod_sol=:cod_sol ";
+        error_log('DEBUG: en obtieneBaremoSolicitudConvocatoriaListas ' . $sql . ' ' . $cod_con . ' ' . $dni . ' ' . $cod_sol);
+        $resultado = self::ejecutaConsulta($sql, array('cod_con' => $cod_con, 'dni' => $dni, 'cod_sol' => $cod_sol));
+        //error_log('DEBUG: en obtieneBaremoSolicitudConvocatoriaListas resultado ');
+
+        if ($resultado) {
+            //error_log('DEBUG: en obtieneBaremoSolicitudConvocatoriaListas resultado true ');
+            // Añadimos un elemento por el resultado obtenido
+            $row = $resultado->fetch();
+                $solicitudBaremada = new SolicitudBaremada($row);
+        }
+        return $solicitudBaremada;
+    }
+     /**
+     * Devuelve la información de si la solicitud seleccionada en la 
+     * convocatoria seleccionada para la persona indicada esta baremada o no
+     */
+    public static function obtieneHaySolicitudConvocatoriaListasBaremada($cod_con, $dni, $cod_sol) {
+        $sql = "select  cod_con,  DNI,  cod_sol,  RES_TOT,  APA_1,  APA_2,  APA_3, APA_1_1,  APA_1_2,  APA_1_3, APA_2_1,  APA_2_2,  APA_2_3, APA_3_1,  APA_3_2,  APA_3_3   ";
+        $sql .= " from vsolicitudesbaremadas  WHERE cod_con=:cod_con ";
+        $sql .= " and dni=:dni ";
+        $sql .= " and cod_sol=:cod_sol ";
+        //error_log('DEBUG: en obtieneHaySolicitudConvocatoriaListasBaremada ' . $sql . ' ' . $cod_con . ' ' . $dni . ' ' . $cod_sol);
+        $resultado = self::ejecutaConsulta($sql, array('cod_con' => $cod_con, 'dni' => $dni, 'cod_sol' => $cod_sol));
+        //error_log('DEBUG: en obtieneHaySolicitudConvocatoriaListasBaremada resultado ');
+
+        if ($resultado) {
+            $row = $resultado->fetch();
+            while ($row != null) {
+              //  error_log('DEBUG: en obtieneHaySolicitudConvocatoriaListasBaremada resultado true ');
+                return true;
+            }
+        }
+       // error_log('DEBUG: en obtieneHaySolicitudConvocatoriaListasBaremada resultado false ');
+        return false;
+    }
     /**
-     * Devuelve un la información de la solicitud de seleccionada en la 
+     * Devuelve la información de la solicitud seleccionada en la 
      * convocatoria seleccionada para la persona indicada
      */
     public static function obtieneSolicitudListas($cod_con, $dni, $cod_sol) {
-        $sql = "select tipo_id, dni, cod_con, des_con, cod_sol,fec_sol, cod_est_sol, des_est_sol ";
+        $sql = "select tipo_id, dni, cod_con, des_con, des_cue, des_esp, des_cue_esp, cod_sol,fec_sol, cod_est_sol, des_est_sol ";
         $sql .= " from vsolicitudeslistas  WHERE cod_con=:cod_con ";
         $sql .= " and dni=:dni ";
         $sql .= " and cod_sol=:cod_sol ";
@@ -77,7 +127,7 @@ class DBSigicon {
      * 
      */
     public static function obtieneSolicitudesConvocatoriaListas($cod_con, $dni) {
-        $sql = "select tipo_id, dni, cod_con, des_con, cod_sol,des_est_sol, fec_sol, cod_est_sol ";
+        $sql = "select tipo_id, dni, cod_con, des_con, des_cue, des_esp, des_cue_esp, cod_sol,des_est_sol, fec_sol, cod_est_sol ";
         $sql .= " from vsolicitudeslistas WHERE dni=:dni ";
         $sql .= " and cod_con=:cod_con ";
         //error_log('DEBUG: en obtieneSolicitudesConvocatoriaListas ' . $sql . ' ' . $cod_con . ' ' . $dni);
@@ -174,6 +224,51 @@ class DBSigicon {
 /*FIN INTERINOS*/
 
 /*OPOSICIONES*/
+ /**
+     * Devuelve el baremo de la solicitud seleccionada en la 
+     * convocatoria seleccionada para la persona indicada esta baremada o no
+     */
+    public static function obtieneBaremoSolicitudOposicion($cod_con, $dni, $cod_sol) {
+        $sql = "select  cod_con,  dni,  cod_sol,  res_tot,  apa_1,  apa_2,  apa_3, apa_1_1,  apa_1_2,  apa_1_3, apa_2_1,  apa_2_2,  apa_2_3, apa_3_1,  apa_3_2,  apa_3_3   ";
+        $sql .= " from vsolicitudesbaremadas  WHERE cod_con=:cod_con ";
+        $sql .= " and dni=:dni ";
+        $sql .= " and cod_sol=:cod_sol ";
+        error_log('DEBUG: en obtieneBaremoSolicitudOposicion ' . $sql . ' ' . $cod_con . ' ' . $dni . ' ' . $cod_sol);
+        $resultado = self::ejecutaConsulta($sql, array('cod_con' => $cod_con, 'dni' => $dni, 'cod_sol' => $cod_sol));
+        //error_log('DEBUG: en obtieneBaremoSolicitudOposicion resultado ');
+
+        if ($resultado) {
+            //error_log('DEBUG: en obtieneBaremoSolicitudOposicion resultado true ');
+            // Añadimos un elemento por el resultado obtenido
+            $row = $resultado->fetch();
+                $solicitudBaremada = new SolicitudBaremada($row);
+        }
+        return $solicitudBaremada;
+    }
+     /**
+     * Devuelve la información de si la solicitud seleccionada en la 
+     * convocatoria seleccionada para la persona indicada esta baremada o no
+     */
+    public static function obtieneHaySolicitudOposicionBaremada($cod_con, $dni, $cod_sol) {
+        $sql = "select  cod_con,  DNI,  cod_sol,  RES_TOT,  APA_1,  APA_2,  APA_3, APA_1_1,  APA_1_2,  APA_1_3, APA_2_1,  APA_2_2,  APA_2_3, APA_3_1,  APA_3_2,  APA_3_3   ";
+        $sql .= " from vsolicitudesbaremadas  WHERE cod_con=:cod_con ";
+        $sql .= " and dni=:dni ";
+        $sql .= " and cod_sol=:cod_sol ";
+        //error_log('DEBUG: en obtieneHaySolicitudOposicionBaremada ' . $sql . ' ' . $cod_con . ' ' . $dni . ' ' . $cod_sol);
+        $resultado = self::ejecutaConsulta($sql, array('cod_con' => $cod_con, 'dni' => $dni, 'cod_sol' => $cod_sol));
+        //error_log('DEBUG: en obtieneHaySolicitudOposicionBaremada resultado ');
+
+        if ($resultado) {
+            $row = $resultado->fetch();
+            while ($row != null) {
+              //  error_log('DEBUG: en obtieneHaySolicitudOposicionBaremada resultado true ');
+                return true;
+            }
+        }
+       // error_log('DEBUG: en obtieneHaySolicitudOposicionBaremada resultado false ');
+        return false;
+    }
+
    /**
      * Devuelve un array con las oposiciones que estan activas
      * 
