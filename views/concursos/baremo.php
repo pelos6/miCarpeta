@@ -10,9 +10,9 @@ $session->open();
 //    echo("<pre>");
 //    print_r($_SESSION);
 //    echo ("</pre>");
-$this->title = 'Baremo solicitud ' . Html::encode($_GET["cod_sol"]);
-$this->params['breadcrumbs'][] = ['label' => 'Concurso de Traslados', 'url' => ['concursos']];
-$this->params['breadcrumbs'][] = ['label' => 'Solcitudes '.  $session->get('des_con_sel'), 'url' => ['solicitudes','cod_con' => Html::encode($_GET["cod_con"]),'des_con' => $session->get('des_con_sel'), 'cod_tip_con' => $_GET["cod_tip_con"]]];
+$this->title = 'BAREMO SOLICITUD ' . Html::encode($_GET["cod_sol"]);
+$this->params['breadcrumbs'][] = ['label' => 'CONCURSO DE TRASLADOS', 'url' => ['concursos']];
+$this->params['breadcrumbs'][] = ['label' => 'SOLICITUDES '.  $session->get('des_con_sel'), 'url' => ['solicitudes','cod_con' => Html::encode($_GET["cod_con"]),'des_con' => $session->get('des_con_sel'), 'cod_tip_con' => $_GET["cod_tip_con"]]];
 $this->params['breadcrumbs'][] = $this->title;
 if (Html::encode($_GET["cod_tip_con"] == 'P')) {
     $urlPrimaria =   Yii::$app->params["servidor"] ."/serviciosMiCarpetaCtPri/servicioConcursosPrimaria.php";

@@ -51,4 +51,8 @@ class OposicionesController extends Controller {
         return $this->render('baremo');
     }
 
+    public function actionNotas() {
+        return $this->render('notas');
+    }
+
 }

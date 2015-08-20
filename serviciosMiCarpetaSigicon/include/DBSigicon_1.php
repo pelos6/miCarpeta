@@ -14,7 +14,6 @@ require_once('SolicitudLista.php');
 require_once('Oposicion.php');
 require_once('SolicitudOposicion.php');
 require_once('SolicitudNotas.php');
-require_once('SolicitudBaremada.php');
 
 class DBSigicon {
     /* con metodos estaticos dado que no se va a instanciar esta clase y
@@ -24,17 +23,17 @@ class DBSigicon {
     protected static function ejecutaConsulta($sql, $valores = null) {
         $opc = array(PDO::MYSQL_ATTR_INIT_COMMAND => "SET NAMES utf8");
         // desarrollo local
-//        $dsn = "mysql:host=localhost;dbname=serviciosmicarpetasigicon";
-//        $usuario = 'root';
-//        $contrasena = 'javier';
+        $dsn = "mysql:host=localhost;dbname=serviciosmicarpetasigicon";
+        $usuario = 'root';
+        $contrasena = 'javier';
         // para infenlaces
 //          $dsn = "mysql:host=localhost;dbname=javieriranzo_dwes";
 //          $usuario = 'javieriranzo_dwe';
 //          $contrasena = 'javier';
         // para apostayadrede.com
-               $dsn = "mysql:host=localhost;dbname=c23sigicon";
+        /*        $dsn = "mysql:host=localhost;dbname=c23sigicon";
           $usuario = 'c23sigicon';
-          $contrasena = 'c23sigicon'; 
+          $contrasena = 'c23sigicon'; */
 
         $dwes = new PDO($dsn, $usuario, $contrasena, $opc);
         $resultado = null;
@@ -61,7 +60,7 @@ class DBSigicon {
      */
     public static function obtieneBaremoSolicitudConvocatoriaListas($cod_con, $dni, $cod_sol) {
         $sql = "select  cod_con,  dni,  cod_sol,  res_tot,  apa_1,  apa_2,  apa_3, apa_1_1,  apa_1_2,  apa_1_3, apa_2_1,  apa_2_2,  apa_2_3, apa_3_1,  apa_3_2,  apa_3_3   ";
-        $sql .= " from vsolicitudesbaremadas  WHERE cod_con=:cod_con ";
+        $sql .= " from vsolicitudesNotass  WHERE cod_con=:cod_con ";
         $sql .= " and dni=:dni ";
         $sql .= " and cod_sol=:cod_sol ";
         error_log('DEBUG: en obtieneBaremoSolicitudConvocatoriaListas ' . $sql . ' ' . $cod_con . ' ' . $dni . ' ' . $cod_sol);
@@ -83,10 +82,10 @@ class DBSigicon {
      */
     public static function obtieneHaySolicitudConvocatoriaListasBaremada($cod_con, $dni, $cod_sol) {
         $sql = "select  cod_con,  DNI,  cod_sol,  RES_TOT,  APA_1,  APA_2,  APA_3, APA_1_1,  APA_1_2,  APA_1_3, APA_2_1,  APA_2_2,  APA_2_3, APA_3_1,  APA_3_2,  APA_3_3   ";
-        $sql .= " from vsolicitudesbaremadas  WHERE cod_con=:cod_con ";
+        $sql .= " from vsolicitudesNotass  WHERE cod_con=:cod_con ";
         $sql .= " and dni=:dni ";
         $sql .= " and cod_sol=:cod_sol ";
-        error_log('DEBUG: en obtieneHaySolicitudConvocatoriaListasBaremada ' . $sql . ' ' . $cod_con . ' ' . $dni . ' ' . $cod_sol);
+        //error_log('DEBUG: en obtieneHaySolicitudConvocatoriaListasBaremada ' . $sql . ' ' . $cod_con . ' ' . $dni . ' ' . $cod_sol);
         $resultado = self::ejecutaConsulta($sql, array('cod_con' => $cod_con, 'dni' => $dni, 'cod_sol' => $cod_sol));
         //error_log('DEBUG: en obtieneHaySolicitudConvocatoriaListasNotas resultado ');
 
@@ -232,13 +231,14 @@ class DBSigicon {
      * convocatoria seleccionada para la persona indicada 
      */
     public static function obtieneNotasSolicitudOposicion($cod_con, $dni, $cod_sol) {
-        $sql = "select  cod_con, cod_cue, cod_esp, cod_acc, cod_sol, dni, res_tot_opo, pru_1_a_not, pru_2_a_not, pru_1_b_not, pru_2_b_not, pru_1_a_pon, pru_2_a_pon, pru_1_b_pon, pru_2_b_pon, sup, res_tot_con ";
+        $sql = "select  cod_con,  dni,  cod_sol,  res_tot,  apa_1,  apa_2,  apa_3, apa_1_1,  apa_1_2,  apa_1_3, apa_2_1,  apa_2_2,  apa_2_3, apa_3_1,  apa_3_2,  apa_3_3   ";
         $sql .= " from vsolicitudesnotas  WHERE cod_con=:cod_con ";
         $sql .= " and dni=:dni ";
         $sql .= " and cod_sol=:cod_sol ";
-        error_log('DEBUG: en obtieneNotasSolicitudOposicion ' . $sql . ' ' . $cod_con . ' ' . $dni . ' ' . $cod_sol);
+        error_log('DEBUG: en obtieneNotasSolicitudConvocatoriaOposicion ' . $sql . ' ' . $cod_con . ' ' . $dni . ' ' . $cod_sol);
         $resultado = self::ejecutaConsulta($sql, array('cod_con' => $cod_con, 'dni' => $dni, 'cod_sol' => $cod_sol));
         //error_log('DEBUG: en obtieneNotasSolicitudConvocatoriaOposicion resultado ');
+
         if ($resultado) {
             //error_log('DEBUG: en obtieneNotasSolicitudConvocatoriaOposicion resultado true ');
             // Añadimos un elemento por el resultado obtenido
@@ -253,17 +253,18 @@ class DBSigicon {
      * convocatoria seleccionada para la persona indicada esta Notas o no
      */
     public static function obtieneHaySolicitudOposicionNotas($cod_con, $dni, $cod_sol) {
-        $sql = "select  cod_con, cod_cue, cod_esp, cod_acc, cod_sol, dni, res_tot_opo, pru_1_a_not, pru_2_a_not, pru_1_b_not, pru_2_b_not, pru_1_a_pon, pru_2_a_pon, pru_1_b_pon, pru_2_b_pon, sup, res_tot_con ";
+        $sql = "select  cod_con,  DNI,  cod_sol,  RES_TOT,  APA_1,  APA_2,  APA_3, APA_1_1,  APA_1_2,  APA_1_3, APA_2_1,  APA_2_2,  APA_2_3, APA_3_1,  APA_3_2,  APA_3_3   ";
         $sql .= " from vsolicitudesnotas  WHERE cod_con=:cod_con ";
         $sql .= " and dni=:dni ";
         $sql .= " and cod_sol=:cod_sol ";
-        error_log('DEBUG: en obtieneHaySolicitudOposicionNotas ' . $sql . ' ' . $cod_con . ' ' . $dni . ' ' . $cod_sol);
+        error_log('DEBUG: en obtieneHaySolicitudConvocatoriaOposicionNotas ' . $sql . ' ' . $cod_con . ' ' . $dni . ' ' . $cod_sol);
         $resultado = self::ejecutaConsulta($sql, array('cod_con' => $cod_con, 'dni' => $dni, 'cod_sol' => $cod_sol));
-        //error_log('DEBUG: en obtieneHaySolicitudOposicionNotas resultado ');
+        //error_log('DEBUG: en obtieneHaySolicitudConvocatoriaOposicionNotas resultado ');
+
         if ($resultado) {
             $row = $resultado->fetch();
             while ($row != null) {
-                //  error_log('DEBUG: en obtieneHaySolicitudOposicionNotas resultado true ');
+                //  error_log('DEBUG: en obtieneHaySolicitudConvocatoriaOposicionNotas resultado true ');
                 return true;
             }
         }
@@ -277,7 +278,29 @@ class DBSigicon {
      */
     public static function obtieneBaremoSolicitudOposicion($cod_con, $dni, $cod_sol) {
         $sql = "select  cod_con,  dni,  cod_sol,  res_tot,  apa_1,  apa_2,  apa_3, apa_1_1,  apa_1_2,  apa_1_3, apa_2_1,  apa_2_2,  apa_2_3, apa_3_1,  apa_3_2,  apa_3_3   ";
-        $sql .= " from vsolicitudesbaremadas  WHERE cod_con=:cod_con ";
+        $sql .= " from vsolicitudesNotass  WHERE cod_con=:cod_con ";
+        $sql .= " and dni=:dni ";
+        $sql .= " and cod_sol=:cod_sol ";
+        error_log('DEBUG: en obtieneBaremoSolicitudConvocatoriaListas ' . $sql . ' ' . $cod_con . ' ' . $dni . ' ' . $cod_sol);
+        $resultado = self::ejecutaConsulta($sql, array('cod_con' => $cod_con, 'dni' => $dni, 'cod_sol' => $cod_sol));
+        //error_log('DEBUG: en obtieneBaremoSolicitudConvocatoriaListas resultado ');
+
+        if ($resultado) {
+            //error_log('DEBUG: en obtieneBaremoSolicitudConvocatoriaListas resultado true ');
+            // Añadimos un elemento por el resultado obtenido
+            $row = $resultado->fetch();
+            $solicitudNotas = new SolicitudNotas($row);
+        }
+        return $solicitudNotas;
+    }
+
+    /**
+     * Devuelve el baremo de la solicitud seleccionada en la 
+     * convocatoria seleccionada para la persona indicada esta Notas o no
+     */
+    public static function obtieneBaremoSolicitudOposicion($cod_con, $dni, $cod_sol) {
+        $sql = "select  cod_con,  dni,  cod_sol,  res_tot,  apa_1,  apa_2,  apa_3, apa_1_1,  apa_1_2,  apa_1_3, apa_2_1,  apa_2_2,  apa_2_3, apa_3_1,  apa_3_2,  apa_3_3   ";
+        $sql .= " from vsolicitudesNotass  WHERE cod_con=:cod_con ";
         $sql .= " and dni=:dni ";
         $sql .= " and cod_sol=:cod_sol ";
         error_log('DEBUG: en obtieneBaremoSolicitudOposicion ' . $sql . ' ' . $cod_con . ' ' . $dni . ' ' . $cod_sol);
@@ -288,33 +311,11 @@ class DBSigicon {
             //error_log('DEBUG: en obtieneBaremoSolicitudOposicion resultado true ');
             // Añadimos un elemento por el resultado obtenido
             $row = $resultado->fetch();
-            $solicitudBaremada = new SolicitudBaremada($row);
+            $solicitudNotas = new SolicitudNotas($row);
         }
-        return $solicitudBaremada;
+        return $solicitudNotas;
     }
-/**
-     * Devuelve la información de si la solicitud seleccionada en la 
-     * convocatoria seleccionada para la persona indicada esta baremada o no
-     */
-    public static function obtieneHaySolicitudOposicionBaremada($cod_con, $dni, $cod_sol) {
-        $sql = "select  cod_con,  DNI,  cod_sol,  RES_TOT,  APA_1,  APA_2,  APA_3, APA_1_1,  APA_1_2,  APA_1_3, APA_2_1,  APA_2_2,  APA_2_3, APA_3_1,  APA_3_2,  APA_3_3   ";
-        $sql .= " from vsolicitudesbaremadas  WHERE cod_con=:cod_con ";
-        $sql .= " and dni=:dni ";
-        $sql .= " and cod_sol=:cod_sol ";
-        error_log('DEBUG: en obtieneHaySolicitudOposicionBaremada ' . $sql . ' ' . $cod_con . ' ' . $dni . ' ' . $cod_sol);
-        $resultado = self::ejecutaConsulta($sql, array('cod_con' => $cod_con, 'dni' => $dni, 'cod_sol' => $cod_sol));
-        //error_log('DEBUG: en obtieneHaySolicitudConvocatoriaListasNotas resultado ');
 
-        if ($resultado) {
-            $row = $resultado->fetch();
-            while ($row != null) {
-                //  error_log('DEBUG: en obtieneHaySolicitudConvocatoriaListasNotas resultado true ');
-                return true;
-            }
-        }
-        // error_log('DEBUG: en obtieneHaySolicitudConvocatoriaListasNotas resultado false ');
-        return false;
-    }
     /**
      * Devuelve un array con las oposiciones que estan activas
      * 
@@ -370,11 +371,11 @@ class DBSigicon {
      * del usuario
      * 
      */
-    public static function obtieneSolicitudesOposicion($cod_con, $dni) {
+    public static function obtieneSolicitudesConvocatoriaOposicion($cod_con, $dni) {
         $sql = "select dni, cod_con, des_con, des_cue, des_esp, des_cue_esp, cod_sol,des_est_sol, fec_sol, cod_est_sol ";
         $sql .= " from vsolicitudesoposicion WHERE dni=:dni ";
         $sql .= " and cod_con=:cod_con ";
-        //error_log('DEBUG: en obtieneSolicitudesConvocatoriaOposicion ' . $sql . ' ' . $cod_con . ' ' . $dni);
+        error_log('DEBUG: en obtieneSolicitudesConvocatoriaOposicion ' . $sql . ' ' . $cod_con . ' ' . $dni);
         // $resultado = self::ejecutaConsulta($sql);
         $resultado = self::ejecutaConsulta($sql, array('cod_con' => $cod_con, 'dni' => $dni));
         $solicitudesOposicion = array();
@@ -409,6 +410,54 @@ class DBSigicon {
             $convocatoriaOposicion = new Oposicion($row);
         }
         return $convocatoriaOposicion;
+    }
+
+    /*     * *********A BORRAR LAS DE ABAJO******************************* */
+
+    /**
+     * Devuelve la información de la solicitud de seleccionada en la 
+     * oposición seleccionada para la persona indicada
+     */
+    public static function obtieneSolicitudOposicion($cod_con, $dni, $cod_sol) {
+        $sql = "select  dni, cod_con, des_con, cod_sol,fec_sol, cod_est_sol, des_est_sol ";
+        $sql .= " from vsolicitudesoposicion  WHERE cod_con=:cod_con ";
+        $sql .= " and dni=:dni ";
+        $sql .= " and cod_sol=:cod_sol ";
+        error_log('DEBUG: en obtieneSolicitudOposicion ' . $sql . ' ' . $cod_con . ' ' . $dni . ' ' . $cod_sol);
+        $resultado = self::ejecutaConsulta($sql, array('cod_con' => $cod_con, 'dni' => $dni, 'cod_sol' => $cod_sol));
+        //error_log('DEBUG: en obtieneSolicitudOposicion resultado ');
+
+        if ($resultado) {
+            //error_log('DEBUG: en obtieneSolicitudOposicion resultado true ');
+            // Añadimos un elemento por cada solicitud obtenido
+            $row = $resultado->fetch();
+            $solicitudListas = new SolicitudLista($row);
+        }
+        return $solicitudListas;
+    }
+
+    /**
+     * Devuelve un array con las solicitudes a concursod de traslados del
+     * usuario
+     * 
+     */
+    public static function obtieneSolicitudesOposiciones($dni) {
+        $sql = "select  dni, cod_con, des_con, cod_sol, estado  from vsolicitudesoposiciones ";
+        $sql .= " WHERE dni=:dni ";
+        //error_log('DEBUG: en obtieneSolicitudesOposiciones ' . $sql);
+        // $resultado = self::ejecutaConsulta($sql);
+        $resultado = self::ejecutaConsulta($sql, array('dni' => $dni));
+        $solicitudesOposiciones = array();
+
+        if ($resultado) {
+            // Añadimos un elemento por cada solicitud obtenida
+            $row = $resultado->fetch();
+            while ($row != null) {
+                $solicitudesOposiciones[] = new SolicitudOposicion($row);
+                $row = $resultado->fetch();
+            }
+        }
+        return $solicitudesOposiciones;
     }
 
     /* FIN OPOSICIONES */

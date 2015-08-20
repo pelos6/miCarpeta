@@ -11,8 +11,8 @@ $session->set('des_con_sel', Html::encode($_GET["des_con"]));
 //echo("<pre>");
 //print_r($_SESSION);
 //echo ("</pre>");
-$this->title = 'solicitudes ' . Html::encode($_GET["des_con"]);
-$this->params['breadcrumbs'][] = ['label' => 'Oposiciones', 'url' => ['oposiciones']];
+$this->title = 'SOLICITUDES ' . Html::encode($_GET["des_con"]);
+$this->params['breadcrumbs'][] = ['label' => 'OPOSICIONES', 'url' => ['oposiciones']];
 $this->params['breadcrumbs'][] = $this->title;
 
 $urlSigicon = Yii::$app->params["servidor"] . "/serviciosMiCarpetaSigicon/servicioSigicon.php";
@@ -24,15 +24,19 @@ $clienteSigicon = new SoapClient(null, array('location' => $urlSigicon, 'uri' =>
     <div class="container">
   <div class="panel panel-default">
         <?php
-        $solicitudesOposicion = $clienteSigicon->getSolicitudesConvocatoriaOposicion(Html::encode($_GET["cod_con"]), Yii::$app->user->identity->dni);
+        $solicitudesOposicion = $clienteSigicon->getSolicitudesOposicion(Html::encode($_GET["cod_con"]), Yii::$app->user->identity->dni);
         foreach ($solicitudesOposicion as $solicitudOposicion) {
                 echo '<div class="panel panel-heading">'; 
                 echo 'Solicitud con código: <span class="badge">'.$solicitudOposicion->cod_sol. ' </span> fecha  <span class="badge"> '.$solicitudOposicion->fec_sol . '</span>'.
                 '<br> '. $solicitudOposicion->des_cue_esp. 
                 '<br> '. $solicitudOposicion->des_est_sol. ' <br>' ; 
-                if ($clienteSigicon->getHaySolicitudConvocatoriaListasBaremada(Html::encode($_GET["cod_con"]), Yii::$app->user->identity->dni, $solicitudOposicion->cod_sol)){
-                    echo Html::a('Baremo de la solicitud', ['oposiciones/baremo',"cod_con" => $_GET["cod_con"],"des_con" => $_GET["des_con"],"cod_sol" => $solicitudOposicion->cod_sol], ['class' => 'btn btn-success']) ;
-                }   
+                if ($clienteSigicon->getHaySolicitudOposicionBaremada(Html::encode($_GET["cod_con"]), Yii::$app->user->identity->dni, $solicitudOposicion->cod_sol)){
+                    echo Html::a('Baremo', ['oposiciones/baremo',"cod_con" => $_GET["cod_con"],"des_con" => $_GET["des_con"],"cod_sol" => $solicitudOposicion->cod_sol], ['class' => 'btn btn-success']) ;
+                } 
+                echo '   ';
+                if ($clienteSigicon->getHaySolicitudOposicionNota(Html::encode($_GET["cod_con"]), Yii::$app->user->identity->dni, $solicitudOposicion->cod_sol)){
+                    echo Html::a('Notas', ['oposiciones/notas',"cod_con" => $_GET["cod_con"],"des_con" => $_GET["des_con"],"cod_sol" => $solicitudOposicion->cod_sol], ['class' => 'btn btn-success']) ;
+                } 
                 echo '</div>';
         }
 //    echo("<pre>");

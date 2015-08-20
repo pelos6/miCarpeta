@@ -4,7 +4,6 @@ require_once('include/DBSigicon.php');
 
 class ServerSigicon {
     /*INTERINOS*/
-    /*BAREMO*/
     /**
      * Devuelve la información del baremo de la solicitud 
      * en la convocatoria seleccionada
@@ -23,7 +22,6 @@ class ServerSigicon {
         $solicitudBaremada = DBSigicon::obtieneHaySolicitudConvocatoriaListasBaremada($cod_con,$dni, $cod_sol);
         return $solicitudBaremada;
     }
-        /*FIN BAREMO*/
       /**
      * Devuelve la información de la solicitud seleccionada
      * en la convocatoria seleccionada
@@ -51,7 +49,7 @@ class ServerSigicon {
         $convocatoriaListas = DBSigicon::obtieneConvocatoriaListas($cod_con);
         return $convocatoriaListas;
     }
-    /*SOLICITUDES*/
+
     /**
      * Devuelve un array con las convocatorias a listas en las que 
      * tiene solicitud
@@ -73,31 +71,45 @@ class ServerSigicon {
         $solicitudesListas = DBSigicon::obtieneSolicitudesConvocatoriaListas($cod_con,$dni);
         return $solicitudesListas;
     }
-       /*FIN SOLICITUDES*/
     /* FIN INTERINOS*/
 
     /*OPOSICIONES*/
-       /*NOTAS*/
     /**
      * Devuelve la información de las notas de la solicitud 
      * en la convocatoria seleccionada
      */
-    public function getNotasSolicitudOposicion($cod_con,$dni,$cod_sol) {
-        error_log('DEBUG: en getNotasSolicitudConvocatoriaOposicion '. $cod_con.' ' . $dni. ' '. $cod_sol);
-        $solicitudNotas = DBSigicon::obtieneNotasSolicitudOposicion($cod_con,$dni, $cod_sol);
+    public function getNotaSolicitudConvocatoriaOposicion($cod_con,$dni,$cod_sol) {
+        error_log('DEBUG: en getNotaSolicitudConvocatoriaOposicion '. $cod_con.' ' . $dni. ' '. $cod_sol);
+        $solicitudNotas = DBSigicon::obtieneNotasSolicitudConvocatoriaOposicion($cod_con,$dni, $cod_sol);
         return $solicitudNotas;
     }
       /**
      * Devuelve la información de si la solicitud esta o no calificada
      * en la convocatoria seleccionada
      */
-    public function getHaySolicitudOposicionNota($cod_con,$dni,$cod_sol) {
+    public function getHaySolicitudConvocatoriaOposicionNota($cod_con,$dni,$cod_sol) {
         //error_log('DEBUG: en getHaySolicitudConvocatoriaOposicionNota '. $cod_con.' ' . $dni. ' '. $cod_sol);
-        $solicitudNotas = DBSigicon::obtieneHaySolicitudOposicionNotas($cod_con,$dni, $cod_sol);
+        $solicitudNotas = DBSigicon::obtieneHaySolicitudConvocatoriaOposicionNotas($cod_con,$dni, $cod_sol);
         return $solicitudNotas;
     }
-    /*FIN NOTAS*/
-    /*BAREMO*/
+    /**
+     * Devuelve la información del baremo de la solicitud 
+     * en la convocatoria seleccionada
+     */
+    public function getBaremoSolicitudConvocatoriaOposicion($cod_con,$dni,$cod_sol) {
+        error_log('DEBUG: en getBaremoSolicitudConvocatoriaOposicion '. $cod_con.' ' . $dni. ' '. $cod_sol);
+        $solicitudBaremada = DBSigicon::obtieneBaremoSolicitudConvocatoriaOposicion($cod_con,$dni, $cod_sol);
+        return $solicitudBaremada;
+    }
+      /**
+     * Devuelve la información de si la solicitud esta o no baremada
+     * en la convocatoria seleccionada
+     */
+    public function getHaySolicitudConvocatoriaOposicionBaremada($cod_con,$dni,$cod_sol) {
+        //error_log('DEBUG: en getHaySolicitudConvocatoriaOposicionBaremada '. $cod_con.' ' . $dni. ' '. $cod_sol);
+        $solicitudBaremada = DBSigicon::obtieneHaySolicitudConvocatoriaOposicionBaremada($cod_con,$dni, $cod_sol);
+        return $solicitudBaremada;
+    }
     /**
      * Devuelve la información del baremo de la solicitud 
      * en la oposición seleccionada
@@ -116,7 +128,6 @@ class ServerSigicon {
         $solicitudBaremada = DBSigicon::obtieneHaySolicitudOposicionBaremada($cod_con,$dni, $cod_sol);
         return $solicitudBaremada;
     }
-    /*FIN BAREMO*/
       /**
      * Devuelve un array con las oposiciones activas 
      * 
@@ -142,9 +153,9 @@ class ServerSigicon {
      * Devuelve un array con las solicitudes a oposición
      * 
      */
-    public function getSolicitudesOposicion($cod_con,$dni) {
+    public function getSolicitudesConvocatoriaOposicion($cod_con,$dni) {
         //error_log('DEBUG: en getSolicitudesConvocatoriaListas '. $cod_con.' ' . $dni);
-        $solicitudesOposicion = DBSigicon::obtieneSolicitudesOposicion($cod_con,$dni);
+        $solicitudesOposicion = DBSigicon::obtieneSolicitudesConvocatoriaOposicion($cod_con,$dni);
         return $solicitudesOposicion;
     }
 
@@ -157,6 +168,41 @@ class ServerSigicon {
         $convocatoriaOposicion = DBSigicon::obtieneConvocatoriaOposicion($cod_con);
         return $convocatoriaOposicion;
     }
+
+
+/****A BORRAR LOS DE ABAJO*******/
+
+    public function getSolicitudesOposiciones($dni) {
+        //error_log('DEBUG: en getSolicitudesOposiciones ' . $dni);
+        $solicitudesOposiciones = DBSigicon::obtieneSolicitudesOposiciones($dni);
+        return $solicitudesOposiciones;
+    }
+  
+
+ 
+
+/**
+     * Devuelve un array con las oposiciones en las que 
+     * tiene solicitud el usuario
+     * 
+     */
+    public function getConvocatoriasOposicionHaySolicitud($dni) {
+       error_log('DEBUG: en getConvocatoriasOposicionHaySolicitud ' . $dni);
+        $convocatoriasOposicionSolicitud = DBSigicon::obtieneConvocatoriasOposicionHaySolicitud($dni);
+        return $convocatoriasOposicionSolicitud;
+    }
+
+
+     /**
+     * Devuelve la información de la solicitud seleccionada
+     * en la convocatoria seleccionada
+     */
+    public function getSolicitudOposicion($cod_con,$dni,$cod_sol) {
+        error_log('DEBUG: en getSolicitudOposicion '. $cod_con.' ' . $dni. ' '. $cod_sol);
+        $solicitudesListas = DBSigicon::obtieneSolicitudOposicion($cod_con,$dni, $cod_sol);
+        return $solicitudesListas;
+    }
+
     /*FIN OPOSICIONES*/
 }
 
