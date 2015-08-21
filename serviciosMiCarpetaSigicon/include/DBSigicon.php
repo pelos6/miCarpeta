@@ -24,24 +24,24 @@ class DBSigicon {
     protected static function ejecutaConsulta($sql, $valores = null) {
         $opc = array(PDO::MYSQL_ATTR_INIT_COMMAND => "SET NAMES utf8");
         // desarrollo local
-//        $dsn = "mysql:host=localhost;dbname=serviciosmicarpetasigicon";
-//        $usuario = 'root';
-//        $contrasena = 'javier';
+        $dsn = "mysql:host=localhost;dbname=serviciosmicarpetasigicon";
+        $usuario = 'root';
+        $contrasena = 'javier';
         // para infenlaces
-//          $dsn = "mysql:host=localhost;dbname=javieriranzo_dwes";
-//          $usuario = 'javieriranzo_dwe';
-//          $contrasena = 'javier';
+       /*   $dsn = "mysql:host=localhost;dbname=javieriranzo_dwes";
+          $usuario = 'javieriranzo_dwe';
+          $contrasena = 'javier';*/
         // para apostayadrede.com
-               $dsn = "mysql:host=localhost;dbname=c23sigicon";
+          /*$dsn = "mysql:host=localhost;dbname=c23sigicon";
           $usuario = 'c23sigicon';
-          $contrasena = 'c23sigicon'; 
+          $contrasena = 'c23sigicon'; */
 
         $dwes = new PDO($dsn, $usuario, $contrasena, $opc);
         $resultado = null;
         // lo hacemos con parametros por seguridad
-//        if (isset($dwes)) {
-//            $resultado = $dwes->query($sql);
-//        }
+ /*       if (isset($dwes)) {
+            $resultado = $dwes->query($sql);
+        }*/
         if (isset($dwes)) {
             $resultado = $dwes->prepare($sql);
             try {
@@ -72,9 +72,9 @@ class DBSigicon {
             //error_log('DEBUG: en obtieneBaremoSolicitudConvocatoriaListas resultado true ');
             // Añadimos un elemento por el resultado obtenido
             $row = $resultado->fetch();
-            $solicitudNotas = new SolicitudNotas($row);
+            $solicitudBaremada = new SolicitudBaremada($row);
         }
-        return $solicitudNotas;
+        return $solicitudBaremada;
     }
 
     /**
@@ -180,7 +180,7 @@ class DBSigicon {
         $sql = " select distinct cod_con, des_con,l_act, cod_tip_con,f_res, f_pub, f_ini_sol, ";
         $sql .= "f_fin_sol, url from vconvocatoriaslistassolicitud ";
         $sql .= " WHERE dni=:dni ";
-        //error_log('DEBUG: en obtieneConvocatoriasListasHaySolicitud ' . $sql . ' ' . $dni);
+        error_log('DEBUG: en obtieneConvocatoriasListasHaySolicitud ' . $sql . ' ' . $dni);
         $resultado = self::ejecutaConsulta($sql, array('dni' => $dni));
         $convocatoriasListasActivas = array();
 
@@ -205,7 +205,7 @@ class DBSigicon {
     public static function obtieneConvocatoriasListasActivas() {
         $sql = "select cod_con, des_con, cod_tip_con, 'S' l_act, f_res, f_pub,";
         $sql .= " f_ini_sol, f_fin_sol, url from vconvocatoriaslistasactivas ";
-        //error_log('DEBUG: en obtieneConvocatoriasListasActivas ' . $sql);
+        error_log('DEBUG: en obtieneConvocatoriasListasActivas ' . $sql);
         $resultado = self::ejecutaConsulta($sql, null);
         $convocatoriasListasActivas = array();
 
@@ -273,10 +273,10 @@ class DBSigicon {
 
     /**
      * Devuelve el baremo de la solicitud seleccionada en la 
-     * convocatoria seleccionada para la persona indicada esta Notas o no
+     * convocatoria seleccionada para la persona indicada
      */
     public static function obtieneBaremoSolicitudOposicion($cod_con, $dni, $cod_sol) {
-        $sql = "select  cod_con,  dni,  cod_sol,  res_tot,  apa_1,  apa_2,  apa_3, apa_1_1,  apa_1_2,  apa_1_3, apa_2_1,  apa_2_2,  apa_2_3, apa_3_1,  apa_3_2,  apa_3_3   ";
+        $sql = "select  cod_con,  dni,  cod_sol,  res_tot,  apa_1,  apa_2,  apa_3, apa_1_1,  apa_1_2,  apa_1_3, apa_2_1,  apa_2_2,  apa_2_3, apa_3_1,  apa_3_2,  apa_3_3 , apa_1_4, apa_2_4, apa_3_4  ";
         $sql .= " from vsolicitudesbaremadas  WHERE cod_con=:cod_con ";
         $sql .= " and dni=:dni ";
         $sql .= " and cod_sol=:cod_sol ";

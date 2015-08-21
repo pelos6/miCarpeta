@@ -5,7 +5,7 @@ use yii\widgets\ActiveForm;
 use yii\helpers\Url;
 
 $this->title = Html::encode($_GET["tex_opc"]);
-$this->params['breadcrumbs'][] = ['label' => 'Actos', 'url' => ['actos']];
+$this->params['breadcrumbs'][] = ['label' => 'ACTOS DE ELECCIÓN', 'url' => ['actos']];
 $this->params['breadcrumbs'][] = $this->title;
 
 $urlSigi = Yii::$app->params["servidor"] . "/serviciosMiCarpetaSigi/servicioSigi.php";

@@ -11,8 +11,8 @@ $session->set('des_con_sel', Html::encode($_GET["des_con"]));
 //echo("<pre>");
 //print_r($_SESSION);
 //echo ("</pre>");
-$this->title = 'Solicitudes ' . Html::encode($_GET["des_con"]);
-$this->params['breadcrumbs'][] = ['label' => 'Interinos', 'url' => ['interinos']];
+$this->title = 'SOLICITUDES ' . Html::encode($_GET["des_con"]);
+$this->params['breadcrumbs'][] = ['label' => 'INTERINOS', 'url' => ['interinos']];
 $this->params['breadcrumbs'][] = $this->title;
 
 $urlSigicon = Yii::$app->params["servidor"] . "/serviciosMiCarpetaSigicon/servicioSigicon.php";

@@ -11,7 +11,17 @@ class SolicitudConcurso {
     protected $cod_sol;
     protected $dni;
     protected $des_est_sol;
+    protected $des_mod_par;
     protected $f_hor_ent;
+    
+    function getDes_mod_par() {
+        return $this->des_mod_par;
+    }
+
+    function setDes_mod_par($des_mod_par) {
+        $this->des_mod_par = $des_mod_par;
+    }
+
     
 
     function getF_hor_ent() {
@@ -70,6 +80,7 @@ class SolicitudConcurso {
         $this->des_con = $row['des_con'];
         $this->cod_sol = $row['cod_sol'];
         $this->dni = $row['dni'];
+        $this->des_mod_par = $row['des_mod_par'];
         $this->des_est_sol = $row['des_est_sol'];
         $this->f_hor_ent = $row['f_hor_ent'];
     }

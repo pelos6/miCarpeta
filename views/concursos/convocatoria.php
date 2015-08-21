@@ -5,7 +5,7 @@ use yii\widgets\ActiveForm;
 use yii\helpers\Url;
 
 $this->title =  Html::encode($_GET["des_con"]);
-$this->params['breadcrumbs'][] = ['label' => 'Concursos de Traslados', 'url' => ['concursos']];
+$this->params['breadcrumbs'][] = ['label' => 'CONCURSOS DE TRASLADOS', 'url' => ['concursos']];
 $this->params['breadcrumbs'][] = $this->title;
 
 if (Html::encode($_GET["cod_tip_con"] == 'P')) {

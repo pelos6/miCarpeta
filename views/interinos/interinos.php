@@ -5,7 +5,7 @@ use yii\helpers\Url;
 
 
 /* @var $this yii\web\View */
-$this->title = 'Interinos';
+$this->title = 'INTERINOS';
 $this->params['breadcrumbs'][] = $this->title;
 $urlSigicon = Yii::$app->params["servidor"] . "/serviciosMiCarpetaSigicon/servicioSigicon.php";
 $uriSigicon = Yii::$app->params["servidor"] . "/serviciosMiCarpetaSigicon";
@@ -19,7 +19,7 @@ $clienteSigi = new SoapClient(null, array('location' => $urlSigi, 'uri' => $uriS
 <div class="site-about">
     <h1><?= Html::encode($this->title) ?></h1>
 
-    <h3>Interinos información general.  </h3>
+    <h3>Interinos información general. </h3>
     <h4>Convocatorias de ampliación de listas o de rebaremación activas. </h4> 
     <div class="alert alert-success">
         <?php

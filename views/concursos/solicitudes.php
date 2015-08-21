@@ -11,8 +11,8 @@ $session->set('des_con_sel', Html::encode($_GET["des_con"]));
 //echo("<pre>");
 //print_r($_SESSION);
 //echo ("</pre>");
-$this->title = 'Solicitudes ' . Html::encode($_GET["des_con"]);
-$this->params['breadcrumbs'][] = ['label' => 'Concursos', 'url' => ['concursos']];
+$this->title = 'SOLICITUDES ' . Html::encode($_GET["des_con"]);
+$this->params['breadcrumbs'][] = ['label' => 'CONCURSOS DE TRASLADOS', 'url' => ['concursos']];
 $this->params['breadcrumbs'][] = $this->title;
 
 if (Html::encode($_GET["cod_tip_con"] == 'P')) {
@@ -36,15 +36,16 @@ else{
             <?php
             foreach ($solicitudesConcurso as $solicitudConcurso) {
                 echo '<div class="panel panel-heading">'; 
-                echo 'Solicitud con código: <span class="badge">'.$solicitudConcurso->cod_sol.' </span> presentada <span class="badge"> '.$solicitudConcurso->f_hor_ent .' </span>' . 
-                '<br> '.$solicitudConcurso->des_est_sol. '<br>  ' ; 
+                echo 'SOLICITUD CON CÓDIGO: <span class="badge">'.$solicitudConcurso->cod_sol.' </span> GRABADA <span class="badge"> '.$solicitudConcurso->f_hor_ent .' </span>' . 
+                 '<br> MODALIDAD: '.$solicitudConcurso->des_mod_par.
+                 '<br> '.$solicitudConcurso->des_est_sol. '<br>  ' ; 
                 if (Html::encode($_GET["cod_tip_con"] == 'P')) {
                      if ($clienteConcursosPrimaria->getHaySolicitudConcursoBaremada(Html::encode($_GET["cod_con"]), Yii::$app->user->identity->dni, $solicitudConcurso->cod_sol)){
-                        echo Html::a('Baremo de la solicitud', ['concursos/baremo',"cod_con" => $_GET["cod_con"],"des_con" => $_GET["des_con"],"cod_sol" => $solicitudConcurso->cod_sol, "cod_tip_con" => $_GET["cod_tip_con"] ], ['class' => 'btn btn-success']) ;
+                        echo Html::a('BAREMO DE LA SOLICITUD', ['concursos/baremo',"cod_con" => $_GET["cod_con"],"des_con" => $_GET["des_con"],"cod_sol" => $solicitudConcurso->cod_sol, "cod_tip_con" => $_GET["cod_tip_con"] ], ['class' => 'btn btn-success']) ;
                     }
                 } else {
                     if ($clienteConcursosSecundaria->getHaySolicitudConcursoBaremada(Html::encode($_GET["cod_con"]), Yii::$app->user->identity->dni, $solicitudConcurso->cod_sol)){
-                        echo Html::a('Baremo de la solicitud', ['concursos/baremo',"cod_con" => $_GET["cod_con"],"des_con" => $_GET["des_con"],"cod_sol" => $solicitudConcurso->cod_sol , "cod_tip_con" => $_GET["cod_tip_con"] ], ['class' => 'btn btn-success']) ;
+                        echo Html::a('BAREMO DE LA SOLICITUD', ['concursos/baremo',"cod_con" => $_GET["cod_con"],"des_con" => $_GET["des_con"],"cod_sol" => $solicitudConcurso->cod_sol , "cod_tip_con" => $_GET["cod_tip_con"] ], ['class' => 'btn btn-success']) ;
                     }
                 }
                 echo '</div>';

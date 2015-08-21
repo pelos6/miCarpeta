@@ -125,7 +125,7 @@ class DBConcursosSecundaria {
      * 
      */
     public static function obtieneSolicitudesConcurso($cod_con,$dni) {
-        $sql = "select dni, cod_con, des_con, cod_sol, cod_est_sol , des_est_sol, f_hor_ent  from vconcursossolicitud ";
+        $sql = "select dni, cod_con, des_con, cod_sol, cod_est_sol , des_est_sol, f_hor_ent,des_mod_par  from vconcursossolicitud ";
         $sql .= " WHERE dni=:dni ";
         $sql .= " and  cod_con=:cod_con ";
         error_log('DEBUG: en obtieneSolicitudesConcurso Secundaria ' . $sql);

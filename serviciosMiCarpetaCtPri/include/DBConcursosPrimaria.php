@@ -42,7 +42,7 @@ class DBConcursosPrimaria {
             try {
                 $resultado->execute($valores);
             } catch  (PDOException $e) {
-                 error_log ("DEBUG: ". $e->getMessage() );
+                //error_log ("DEBUG: ". $e->getMessage() );
                 }
         }
         return $resultado;
@@ -57,10 +57,10 @@ class DBConcursosPrimaria {
         $sql .= " from vsolicitudesbaremadas  WHERE cod_con=:cod_con ";
         $sql .= " and dni=:dni ";
         $sql .= " and cod_sol=:cod_sol ";
-        error_log('DEBUG: en obtieneSolicitudConcursoBaremada Primaria ' . $sql . ' ' . $dni. ' ' . $cod_sol. ' ' . $cod_con);
+       //error_log('DEBUG: en obtieneSolicitudConcursoBaremada Primaria ' . $sql . ' ' . $dni. ' ' . $cod_sol. ' ' . $cod_con);
         $resultado = self::ejecutaConsulta($sql,array('cod_con' => $cod_con, 'dni' => $dni, 'cod_sol' => $cod_sol));
           if ($resultado) {
-            //error_log('DEBUG: en obtieneBaremoSolicitudConvocatoriaListas resultado true ');
+           //error_log('DEBUG: en obtieneBaremoSolicitudConvocatoriaListas resultado true ');
             // Añadimos un elemento por el resultado obtenido
             $row = $resultado->fetch();
                 $solicitudBaremada = new SolicitudBaremada($row);
@@ -78,16 +78,16 @@ class DBConcursosPrimaria {
         $sql .= " from vsolicitudesbaremadas  WHERE cod_con=:cod_con ";
         $sql .= " and dni=:dni ";
         $sql .= " and cod_sol=:cod_sol ";
-        error_log('DEBUG: en obtieneHaySolicitudConcursoBaremada Primaria ' . $sql . ' ' . $dni. ' ' . $cod_sol. ' ' . $cod_con);
+       //error_log('DEBUG: en obtieneHaySolicitudConcursoBaremada Primaria ' . $sql . ' ' . $dni. ' ' . $cod_sol. ' ' . $cod_con);
         $resultado = self::ejecutaConsulta($sql,array('cod_con' => $cod_con, 'dni' => $dni, 'cod_sol' => $cod_sol));
          if ($resultado) {
             $row = $resultado->fetch();
             while ($row != null) {
-              //  error_log('DEBUG: en obtieneHaySolicitudConvocatoriaListasBaremada resultado true ');
+              // //error_log('DEBUG: en obtieneHaySolicitudConvocatoriaListasBaremada resultado true ');
                 return true;
             }
         }
-       // error_log('DEBUG: en obtieneHaySolicitudConvocatoriaListasBaremada resultado false ');
+      //error_log('DEBUG: en obtieneHaySolicitudConvocatoriaListasBaremada resultado false ');
         return false;
     }
 
@@ -97,18 +97,18 @@ class DBConcursosPrimaria {
      * 
      */
     public static function obtieneConcursoHaySolicitud($dni) {
-        $sql = " select distinct cod_con , des_con  , cod_tip_con, des_tip_con, l_act, url, f_ini_sol, f_fin_sol, des_fas_con  ";
+        $sql = " select distinct cod_con , des_con  , cod_tip_con, des_tip_con, l_act, url, f_ini_sol, f_fin_sol, des_fas_con ";
         $sql .= " from vconcursossolicitud ";
         $sql .= " WHERE dni=:dni ";
-        error_log('DEBUG: en obtieneconcursosHaySolicitud primaria ' . $sql . ' ' . $dni);
+       //error_log('DEBUG: en obtieneconcursosHaySolicitud primaria ' . $sql . ' ' . $dni);
         $resultado = self::ejecutaConsulta($sql, array('dni' => $dni));
         $concursosHaySolicitud = array();
 
         if ($resultado) {
             $row = $resultado->fetch();
-             //error_log('DEBUG: en obtieneconcursosHaySolicitud resultado true');
+            //error_log('DEBUG: en obtieneconcursosHaySolicitud resultado true');
             while ($row != null) {
-                  //error_log('DEBUG: en obtieneconcursosHaySolicitud en el loop');
+                 //error_log('DEBUG: en obtieneconcursosHaySolicitud en el loop');
                 $concursosHaySolicitud[] = new ConcursoTraslados($row);
                 $row = $resultado->fetch();
             }
@@ -125,10 +125,10 @@ class DBConcursosPrimaria {
      * 
      */
     public static function obtieneSolicitudesConcurso($cod_con,$dni) {
-        $sql = "select dni, cod_con, des_con, cod_sol, cod_est_sol , des_est_sol, f_hor_ent  from vconcursossolicitud ";
+        $sql = "select dni, cod_con, des_con, cod_sol, cod_est_sol , des_est_sol, f_hor_ent , des_mod_par   from vconcursossolicitud ";
         $sql .= " WHERE dni=:dni ";
         $sql .= " and  cod_con=:cod_con ";
-        error_log('DEBUG: en obtieneSolicitudesConcurso primaria ' . $sql);
+       //error_log('DEBUG: en obtieneSolicitudesConcurso primaria ' . $sql.' '.$cod_con.' '.$dni);
         $resultado = self::ejecutaConsulta($sql, array('cod_con' => $cod_con,'dni' => $dni));
         $solicitudesConcurso = array();
 
@@ -154,7 +154,7 @@ class DBConcursosPrimaria {
         $sql .= " from vconcursossolicitud  WHERE dni=:dni ";
         $sql .= " and  cod_con=:cod_con ";
         $sql .= " and  cod_sol=:cod_sol ";
-        error_log('DEBUG: en obtieneSolicitudConcurso ' . $sql.' '.$cod_con.' '.$cod_sol . ' '. $dni);
+       //error_log('DEBUG: en obtieneSolicitudConcurso ' . $sql.' '.$cod_con.' '.$cod_sol . ' '. $dni);
         $resultado = self::ejecutaConsulta($sql, array('cod_con' => $cod_con,'dni' => $dni, 'cod_sol' => $cod_sol));
         $row = $resultado->fetch();
         $solicitudConcurso = new SolicitudConcurso($row);
@@ -169,13 +169,13 @@ class DBConcursosPrimaria {
     public static function obtieneConcursosActivos() {
         $sql = "SELECT cod_con , des_con  , cod_tip_con, des_tip_con, l_act, url, f_ini_sol, f_fin_sol, des_fas_con ";
         $sql .= "  FROM vconcursosactivos ";
-        error_log('DEBUG: en obtieneConcursosActivos Primaria ' . $sql);
+       //error_log('DEBUG: en obtieneConcursosActivos Primaria ' . $sql);
         // $resultado = self::ejecutaConsulta($sql);
         $resultado = self::ejecutaConsulta($sql, null);
         $concursosActivos = array();
 
         if ($resultado) {
-            // error_log('DEBUG: en obtieneConcursosActivos Primaria resultado true');
+           //error_log('DEBUG: en obtieneConcursosActivos Primaria resultado true');
             $row = $resultado->fetch();
             while ($row != null) {
                 $concursosActivos[] = new ConcursoTraslados($row);
@@ -194,7 +194,7 @@ class DBConcursosPrimaria {
         $sql = "SELECT cod_con , des_con  ,f_ini_sol, f_fin_sol,cod_tip_con, des_tip_con,l_act, url, des_fas_con   ";
          $sql .= " FROM vconcursosactivos";
         $sql .= " WHERE cod_con=:cod_con ";
-        error_log('DEBUG: en obtieneConcursoActivo Primaria ' . $sql . ' '. $cod_con);
+       //error_log('DEBUG: en obtieneConcursoActivo Primaria ' . $sql . ' '. $cod_con);
         // $resultado = self::ejecutaConsulta($sql);
         $resultado = self::ejecutaConsulta($sql, array('cod_con' => $cod_con));  
 

@@ -27,15 +27,15 @@ $clienteSigicon = new SoapClient(null, array('location' => $urlSigicon, 'uri' =>
         $solicitudesOposicion = $clienteSigicon->getSolicitudesOposicion(Html::encode($_GET["cod_con"]), Yii::$app->user->identity->dni);
         foreach ($solicitudesOposicion as $solicitudOposicion) {
                 echo '<div class="panel panel-heading">'; 
-                echo 'Solicitud con código: <span class="badge">'.$solicitudOposicion->cod_sol. ' </span> fecha  <span class="badge"> '.$solicitudOposicion->fec_sol . '</span>'.
+                echo 'SOLICITUD CON CÓDIGO: <span class="badge">'.$solicitudOposicion->cod_sol. ' </span> FECHA  <span class="badge"> '.$solicitudOposicion->fec_sol . '</span>'.
                 '<br> '. $solicitudOposicion->des_cue_esp. 
                 '<br> '. $solicitudOposicion->des_est_sol. ' <br>' ; 
                 if ($clienteSigicon->getHaySolicitudOposicionBaremada(Html::encode($_GET["cod_con"]), Yii::$app->user->identity->dni, $solicitudOposicion->cod_sol)){
-                    echo Html::a('Baremo', ['oposiciones/baremo',"cod_con" => $_GET["cod_con"],"des_con" => $_GET["des_con"],"cod_sol" => $solicitudOposicion->cod_sol], ['class' => 'btn btn-success']) ;
+                    echo Html::a('BAREMO', ['oposiciones/baremo',"cod_con" => $_GET["cod_con"],"des_con" => $_GET["des_con"],"cod_sol" => $solicitudOposicion->cod_sol], ['class' => 'btn btn-success']) ;
                 } 
                 echo '   ';
                 if ($clienteSigicon->getHaySolicitudOposicionNota(Html::encode($_GET["cod_con"]), Yii::$app->user->identity->dni, $solicitudOposicion->cod_sol)){
-                    echo Html::a('Notas', ['oposiciones/notas',"cod_con" => $_GET["cod_con"],"des_con" => $_GET["des_con"],"cod_sol" => $solicitudOposicion->cod_sol], ['class' => 'btn btn-success']) ;
+                    echo Html::a('NOTAS', ['oposiciones/notas',"cod_con" => $_GET["cod_con"],"des_con" => $_GET["des_con"],"cod_sol" => $solicitudOposicion->cod_sol], ['class' => 'btn btn-success']) ;
                 } 
                 echo '</div>';
         }

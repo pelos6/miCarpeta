@@ -11,8 +11,8 @@ $session->set('tex_opc_sel', Html::encode($_GET["tex_opc"]));
 //echo("<pre>");
 //print_r($_SESSION);
 //echo ("</pre>");
-$this->title = 'solicitudes ' . Html::encode($_GET["tex_opc"]);
-$this->params['breadcrumbs'][] = ['label' => 'Actos', 'url' => ['actos']];
+$this->title = 'SOLICITUDES ' . Html::encode($_GET["tex_opc"]);
+$this->params['breadcrumbs'][] = ['label' => 'ACTOS', 'url' => ['actos']];
 $this->params['breadcrumbs'][] = $this->title;
 
 $urlSigi = Yii::$app->params["servidor"] . "/serviciosMiCarpetaSigi/servicioSigi.php";

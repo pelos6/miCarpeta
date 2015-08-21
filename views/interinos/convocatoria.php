@@ -5,7 +5,7 @@ use yii\widgets\ActiveForm;
 use yii\helpers\Url;
 
 $this->title =  Html::encode($_GET["des_con"]);
-$this->params['breadcrumbs'][] = ['label' => 'Interinos', 'url' => ['interinos']];
+$this->params['breadcrumbs'][] = ['label' => 'INTERINOS', 'url' => ['interinos']];
 $this->params['breadcrumbs'][] = $this->title;
 
 $urlSigicon = Yii::$app->params["servidor"] . "/serviciosMiCarpetaSigicon/servicioSigicon.php";

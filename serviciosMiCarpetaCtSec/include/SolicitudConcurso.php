@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Descripcion de SolicitudConcurso
  *
@@ -11,8 +12,16 @@ class SolicitudConcurso {
     protected $cod_sol;
     protected $dni;
     protected $des_est_sol;
+    protected $des_mod_par;
     protected $f_hor_ent;
-    
+
+    function getDes_mod_par() {
+        return $this->des_mod_par;
+    }
+
+    function setDes_mod_par($des_mod_par) {
+        $this->des_mod_par = $des_mod_par;
+    }
 
     function getF_hor_ent() {
         return $this->f_hor_ent;
@@ -22,7 +31,6 @@ class SolicitudConcurso {
         $this->f_hor_ent = $f_hor_ent;
     }
 
-        
     function getCod_sol() {
         return $this->cod_sol;
     }
@@ -35,7 +43,6 @@ class SolicitudConcurso {
         return $this->des_est_sol;
     }
 
-  
     function setCod_sol($cod_sol) {
         $this->cod_sol = $cod_sol;
     }
@@ -47,7 +54,7 @@ class SolicitudConcurso {
     function setDes_est_sol($des_est_sol) {
         $this->des_est_sol = $des_est_sol;
     }
- 
+
     function getCod_con() {
         return $this->cod_con;
     }
@@ -64,16 +71,16 @@ class SolicitudConcurso {
         $this->des_con = $des_con;
     }
 
-            
     public function __construct($row) {
         $this->cod_con = $row['cod_con'];
         $this->des_con = $row['des_con'];
         $this->cod_sol = $row['cod_sol'];
         $this->dni = $row['dni'];
         $this->des_est_sol = $row['des_est_sol'];
+        $this->des_mod_par = $row['des_mod_par'];
         $this->f_hor_ent = $row['f_hor_ent'];
     }
-    
+
     public function muestra() {
         print "<p>" . $this->cod_opc . "</p>";
     }

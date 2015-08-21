@@ -4,7 +4,7 @@ use yii\helpers\Html;
 use yii\helpers\Url;
 
 /* @var $this yii\web\View */
-$this->title = 'Actos de elección';
+$this->title = 'ACTOS DE ELECCIÓN';
 $this->params['breadcrumbs'][] = $this->title;
 $urlSigi = Yii::$app->params["servidor"] . "/serviciosMiCarpetaSigi/servicioSigi.php";
 $uriSigi = Yii::$app->params["servidor"] . "/serviciosMiCarpetaSigi";

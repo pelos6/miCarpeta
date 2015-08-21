@@ -29,7 +29,7 @@ class ServerConcursosPrimaria {
      * 
      */
     public function getConcursoHaySolicitud($dni) {
-        error_log('DEBUG: en getConcursoHaySolicitud ' . $dni);
+        //error_log('DEBUG: en getConcursoHaySolicitud ' . $dni);
         $concursoHaySolicitud = DBConcursosPrimaria::obtieneConcursoHaySolicitud($dni);
         return $concursoHaySolicitud;
     }
@@ -40,7 +40,7 @@ class ServerConcursosPrimaria {
      * 
      */
     public function getSolicitudesConcurso($cod_opc,$dni) {
-        error_log('DEBUG: en getSolicitudesConcurso ' . $cod_opc.' '. $dni);
+        //error_log('DEBUG: en getSolicitudesConcurso ' . $cod_opc.' '. $dni);
         $solicitudesConcurso = DBConcursosPrimaria::obtieneSolicitudesConcurso($cod_opc,$dni);
         return $solicitudesConcurso;
     }
@@ -51,7 +51,7 @@ class ServerConcursosPrimaria {
      * 
      */
     public function getSolicitudConcurso($cod_opc,$dni,$cod_sol) {
-        error_log('DEBUG: en getSolicitudConcurso ' . $cod_opc.' '. $dni. ' '. $cod_sol);
+        //error_log('DEBUG: en getSolicitudConcurso ' . $cod_opc.' '. $dni. ' '. $cod_sol);
         $solicitudConcurso = DBConcursosPrimaria::obtieneSolicitudConcurso($cod_opc,$dni,$cod_sol);
         return $solicitudConcurso;
     }
@@ -62,7 +62,7 @@ class ServerConcursosPrimaria {
      * 
      */
     public function getConcursosActivos() {
-        error_log('DEBUG: en getConcursosActivos Primaria');
+        //error_log('DEBUG: en getConcursosActivos Primaria');
         $concursosActivos = DBConcursosPrimaria::obtieneConcursosActivos();
         return $concursosActivos;
     }
@@ -72,7 +72,7 @@ class ServerConcursosPrimaria {
      * 
      */
     public function getConcursoActivo($cod_con) {
-        error_log('DEBUG: en getConcursoActivo Primaria');
+        //error_log('DEBUG: en getConcursoActivo Primaria');
         $concursoActivo = DBConcursosPrimaria::obtieneConcursoActivo($cod_con);
         return $concursoActivo;
     }
