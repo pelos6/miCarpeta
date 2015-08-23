@@ -220,6 +220,7 @@ class UserController extends Controller {
     public function actionUpdate() {
         $model = new UsuarioForm;
         $msg = null;
+        // validando la modificación
         if ($model->load(Yii::$app->request->post())) {
             if ($model->validate()) {
                 error_log('DEBUG 2: ' . $model->id . ' ' . $model->username);
@@ -239,7 +240,9 @@ class UserController extends Controller {
                           $msg = "El Usuario no ha podido ser actualizado";
                           } */
                         $table->update();
-                        $msg = "El Usuario ha sido actualizado correctamente";
+                        //$msg = "El Usuario ha sido actualizado correctamente";
+                        $msg = "El Usuario ha sido actualizado correctamente, redireccionando a la página de inicio ...";
+                        $msg .= "<meta http-equiv='refresh' content='3; " . Url::toRoute("site/login") . "'>";
                     } catch (\Exception $e) {
                         $msg = "El Usuario no ha podido ser actualizado " . $e;
                         // throw $e;
@@ -248,11 +251,13 @@ class UserController extends Controller {
                     $msg = "El Usuario seleccionado no ha sido encontrado";
                 }
             } else {
+                // si la modificación no es correcta ... a corregirla
                 $model->getErrors();
+                return $this->render("update", ["model" => $model, "msg" => $msg]);
             }
         }
 
-
+        // si todo ha ido bien se recupera de la base de datos y se muestra
         if (Yii::$app->request->get("id")) {
             $id = Html::encode($_GET["id"]);
             if ((int) $id) {
@@ -275,6 +280,8 @@ class UserController extends Controller {
         } else {
             return $this->redirect(["user/index"]);
         }
+        
+        
         return $this->render("update", ["model" => $model, "msg" => $msg]);
     }
 

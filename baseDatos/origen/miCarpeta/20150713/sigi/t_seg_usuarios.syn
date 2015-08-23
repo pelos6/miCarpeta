@@ -1,3 +1,0 @@
-create or replace synonym T_SEG_USUARIOS
-  for EDUSOL.T_SEG_USUARIOS;
-

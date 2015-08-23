@@ -1,3 +1,0 @@
-create or replace synonym PB_ESTABLECE_VALIDEZ_APLI
-  for EDUSOL.PB_ESTABLECE_VALIDEZ_APLI;
-

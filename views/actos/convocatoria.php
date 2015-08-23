@@ -14,15 +14,7 @@ $clienteSigi = new SoapClient(null, array('location' => $urlSigi, 'uri' => $uriS
 $actoActivo = $clienteSigi->getActoActivo($_GET["cod_opc"]);
 
 ?>
-
-<div class="panel panel-success">
-    <div class="panel-heading">
-        <h3 class="panel-title">Codigo de convocatoria</h3>
-    </div>
-    <div class="panel-body">
-        <?= Html::encode($_GET["cod_opc"]) ?>
-    </div>
-</div>    
+   
 <div class="panel panel-success">
     <div class="panel-heading">
         <h3 class="panel-title">Descripción de convocatoria</h3>
@@ -76,9 +68,9 @@ $actoActivo = $clienteSigi->getActoActivo($_GET["cod_opc"]);
     <div class="panel-body">
        <?php
        if (Html::encode($_GET["modo"]) == '1' ) {
-            echo Html::a('Vacantes ofertadas', ['actos/vacantes',"cod_opc" => $_GET["cod_opc"],"tex_opc" => $_GET["tex_opc"],"modo" => '1'], ['class' => 'btn btn-success']) ;
+            echo Html::a('VACANTES OFERTADAS', ['actos/vacantes',"cod_opc" => $_GET["cod_opc"],"tex_opc" => $_GET["tex_opc"],"modo" => '1'], ['class' => 'btn btn-success']) ;
         } else {
-            echo Html::a('Vacantes seleccionables', ['actos/vacantes',"cod_opc" => $_GET["cod_opc"],"tex_opc" => $_GET["tex_opc"],"modo" => '2'], ['class' => 'btn btn-success']) ;
+            echo Html::a('VACANTES SELECCIONABLES', ['actos/vacantes',"cod_opc" => $_GET["cod_opc"],"tex_opc" => $_GET["tex_opc"],"modo" => '2'], ['class' => 'btn btn-success']) ;
         }
        ?>
     </div>

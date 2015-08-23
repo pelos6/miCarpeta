@@ -1,3 +1,0 @@
-create or replace synonym FB_DESENCRIPTA
-  for EDUSOL.FB_DESENCRIPTA;
-

@@ -58,8 +58,8 @@ AppAsset::register($this);
                             ['label' => 'Oposiciones', 'url' => ['/oposiciones/oposiciones'], 'visible' => false] :
                             ['label' => 'Oposiciones', 'url' => ['/oposiciones/oposiciones'], 'visible' => Yii::$app->user->identity->oposiciones == 1],
                     Yii::$app->user->isGuest ?
-                            ['label' => 'modificar el usuario', 'visible' => false] :
-                            ['label' => 'modificar el usuario', 'url' => Url::toRoute(["user/update", "id" => Yii::$app->user->identity->id])],
+                            ['label' => 'Modificar el usuario', 'visible' => false] :
+                            ['label' => 'Modificar el usuario', 'url' => Url::toRoute(["user/update", "id" => Yii::$app->user->identity->id])],
                     Yii::$app->user->isGuest ?
                             ['label' => 'Acceder', 'url' => ['/site/login']] :
                            // ['label' => 'Salir (' . Yii::$app->user->identity->username . ' i ' . Yii::$app->user->identity->interinos . ' a ' . Yii::$app->user->identity->actos . ' c ' . Yii::$app->user->identity->concursos . ' o ' . Yii::$app->user->identity->oposiciones . ')',

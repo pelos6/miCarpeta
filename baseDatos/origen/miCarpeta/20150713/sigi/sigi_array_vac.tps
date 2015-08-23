@@ -1,4 +1,0 @@
-CREATE OR REPLACE TYPE "SIGI_ARRAY_VAC"
-is TABLE of sigi_t_vac
-/
-

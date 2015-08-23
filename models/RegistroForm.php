@@ -8,11 +8,16 @@ use app\models\Users;
 
 class RegistroForm extends Model {
 
-    public $username = 'usuario1';
-    public $dni = '00000001R';
-    public $email = 'javieriranzo@hotmail.com';
-    public $password = 'usuario1';
-    public $password_repeat = 'usuario1';
+//    public $username = 'usuario1';
+//    public $dni = '00000001R';
+//    public $email = 'javieriranzo@hotmail.com';
+//    public $password = 'usuario1';
+//    public $password_repeat = 'usuario1';
+    public $username  ;
+    public $dni ;
+    public $email;
+    public $password ;
+    public $password_repeat ;
     public $interinos = false;
     public $actos = false;
     public $concursos = false;
@@ -42,17 +47,17 @@ class RegistroForm extends Model {
     }
 
     public function validar_dni($attribute, $params) {
-        error_log('DEBUG: dni'. $this->dni);
+        error_log('DEBUG: dni' . $this->dni);
 
         $letra = substr($this->dni, -1);
-        error_log('DEBUG: letra '. $letra);
+        error_log('DEBUG: letra ' . $letra);
         $numeros = substr($this->dni, 0, -1);
-        error_log('DEBUG: numeros '. $numeros);
-        if (!( substr("TRWAGMYFPDXBNJZSQVHLCKE", $numeros%23, 1) == $letra && 
-            strlen($letra) == 1 && strlen ($numeros) == 8 )){
-             $this->addError($attribute, "El dni no es válido. 8 numeros, 1 letra mayuscula sin ceros por delante ");
+        error_log('DEBUG: numeros ' . $numeros);
+        if (!( substr("TRWAGMYFPDXBNJZSQVHLCKE", $numeros % 23, 1) == $letra &&
+                strlen($letra) == 1 && strlen($numeros) == 8 )) {
+            $this->addError($attribute, "El dni no es válido. 8 numeros, 1 letra mayuscula sin ceros por delante ");
         }
-    }   
+    }
 
     public function email_existe($attribute, $params) {
 
@@ -75,7 +80,7 @@ class RegistroForm extends Model {
         }
     }
 
-     public function dni_existe($attribute, $params) {
+    public function dni_existe($attribute, $params) {
 
         //Buscar el email en la tabla
         $table = Users::find()->where("dni=:dni", [":dni" => $this->dni]);
@@ -107,4 +112,5 @@ class RegistroForm extends Model {
             'password_repeat' => 'Repite la contraseña',
         ];
     }
+
 }

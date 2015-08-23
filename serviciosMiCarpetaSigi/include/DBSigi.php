@@ -81,7 +81,7 @@ class DBSigi {
         $sql .= " WHERE cod_opc=:cod_opc ";
         $sql .= " and  dni=:dni ";
         $sql .= " and  cod_sol=:cod_sol ";
-        error_log('DEBUG: en obtieneVacantesPedidas ' . $sql);
+        error_log('DEBUG: en obtieneVacantesPedidas ' . $sql .' '.$cod_opc.' '.$dni.' '.$cod_sol);
         // $resultado = self::ejecutaConsulta($sql);
         $resultado = self::ejecutaConsulta($sql, array('cod_opc' => $cod_opc, 'dni' => $dni, 'cod_sol' => $cod_sol));
         $vacantesPedidas = array();
@@ -316,54 +316,54 @@ class DBSigi {
     }
 
     // obtiene las vacantes solicitables de un interino
-    public static function obtieneVacantesSolicitables($dni) {
-        //error_log('DEBUG: en obtieneVacantesSolicitables ' . $dni);
-        $sql = "SELECT num_vac,cod_esp FROM sigiv_vac_int ";
-        $sql .= "WHERE dni=:dni ";
-        //error_log('DEBUG: en obtieneVacantesSolicitables ' . $sql);
-        // $resultado = self::ejecutaConsulta($sql);
-        $resultado = self::ejecutaConsulta($sql, array('dni' => $dni));
-        $vacantesSolicitables = array();
+//    public static function obtieneVacantesSolicitables($dni) {
+//        //error_log('DEBUG: en obtieneVacantesSolicitables ' . $dni);
+//        $sql = "SELECT num_vac,cod_esp FROM sigiv_vac_int ";
+//        $sql .= "WHERE dni=:dni ";
+//        //error_log('DEBUG: en obtieneVacantesSolicitables ' . $sql);
+//        // $resultado = self::ejecutaConsulta($sql);
+//        $resultado = self::ejecutaConsulta($sql, array('dni' => $dni));
+//        $vacantesSolicitables = array();
+//
+//        if ($resultado) {
+//            //error_log('DEBUG: en obtieneVacantesSolicitables resultado true');
+//            $row = $resultado->fetch(PDO::FETCH_BOTH);
+//            //error_log('DEBUG: en obtieneActosActivos  ' . $row);
+//            //$row1 = $resultado->fetchColumn(1);
+//            while ($row != null) {
+//                // //error_log('DEBUG: en obtieneActosActivos resultado while '.$row[0].' '.$row[1]);
+//                $vacantesSolicitables[] = $row;
+//                //$vacantesSolicitables['cod_esp'] = $row1;
+//                $row = $resultado->fetch(PDO::FETCH_BOTH);
+//                //   $row1 = $resultado->fetchColumn(1);
+//            }
+//        }
+//        //error_log('DEBUG: en obtieneVacantesSolicitables resultado antes del return');
+//        return $vacantesSolicitables;
+//    }
 
-        if ($resultado) {
-            //error_log('DEBUG: en obtieneVacantesSolicitables resultado true');
-            $row = $resultado->fetch(PDO::FETCH_BOTH);
-            //error_log('DEBUG: en obtieneActosActivos  ' . $row);
-            //$row1 = $resultado->fetchColumn(1);
-            while ($row != null) {
-                // //error_log('DEBUG: en obtieneActosActivos resultado while '.$row[0].' '.$row[1]);
-                $vacantesSolicitables[] = $row;
-                //$vacantesSolicitables['cod_esp'] = $row1;
-                $row = $resultado->fetch(PDO::FETCH_BOTH);
-                //   $row1 = $resultado->fetchColumn(1);
-            }
-        }
-        //error_log('DEBUG: en obtieneVacantesSolicitables resultado antes del return');
-        return $vacantesSolicitables;
-    }
-
-    // obtiene las vacantes solicitables de un interino
-    public static function obtieneVacantesSolicitables1($dni) {
-        //error_log('DEBUG: en obtieneVacantesSolicitables ' . $dni);
-        $sql = "SELECT num_vac, cod_esp /*, nombre*/ FROM sigiv_vac_int ";
-        $sql .= "WHERE dni=:dni ";
-        //error_log('DEBUG: en obtieneVacantesSolicitables ' . $sql);
-        // $resultado = self::ejecutaConsulta($sql);
-        $resultado = self::ejecutaConsulta($sql, array('dni' => $dni));
-        $vacantesSolicitables = array();
-
-        if ($resultado) {
-            //error_log('DEBUG: en obtieneVacantesSolicitables resultado true');
-            $row = $resultado->fetchColumn(PDO::FETCH_ASSOC);
-            while ($row != null) {
-                //error_log('DEBUG: en obtieneActosActivos resultado while ' . $row);
-                $vacantesSolicitables[] = $row;
-                $row = $resultado->fetchColumn(PDO::FETCH_ASSOC);
-            }
-        }
-        //error_log('DEBUG: en obtieneVacantesSolicitables resultado antes del return');
-        return $vacantesSolicitables;
-    }
+//    // obtiene las vacantes solicitables de un interino
+//    public static function obtieneVacantesSolicitables1($dni) {
+//        //error_log('DEBUG: en obtieneVacantesSolicitables ' . $dni);
+//        $sql = "SELECT num_vac, cod_esp /*, nombre*/ FROM sigiv_vac_int ";
+//        $sql .= "WHERE dni=:dni ";
+//        //error_log('DEBUG: en obtieneVacantesSolicitables ' . $sql);
+//        // $resultado = self::ejecutaConsulta($sql);
+//        $resultado = self::ejecutaConsulta($sql, array('dni' => $dni));
+//        $vacantesSolicitables = array();
+//
+//        if ($resultado) {
+//            //error_log('DEBUG: en obtieneVacantesSolicitables resultado true');
+//            $row = $resultado->fetchColumn(PDO::FETCH_ASSOC);
+//            while ($row != null) {
+//                //error_log('DEBUG: en obtieneActosActivos resultado while ' . $row);
+//                $vacantesSolicitables[] = $row;
+//                $row = $resultado->fetchColumn(PDO::FETCH_ASSOC);
+//            }
+//        }
+//        //error_log('DEBUG: en obtieneVacantesSolicitables resultado antes del return');
+//        return $vacantesSolicitables;
+//    }
 
 
     /**

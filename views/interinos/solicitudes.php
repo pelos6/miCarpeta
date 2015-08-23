@@ -29,11 +29,11 @@ $clienteSigicon = new SoapClient(null, array('location' => $urlSigicon, 'uri' =>
             $solicitudesListas = $clienteSigicon->getSolicitudesConvocatoriaListas(Html::encode($_GET["cod_con"]), Yii::$app->user->identity->dni);
             foreach ($solicitudesListas as $solicitudLista) {
                 echo '<div class="panel panel-heading">'; 
-                echo 'Solicitud con código: <span class="badge">'.$solicitudLista->cod_sol. ' </span> fecha  <span class="badge"> '.$solicitudLista->fec_sol . '</span>'.
+                echo 'SOLICITUD CON CÓDIGO: <span class="badge">'.$solicitudLista->cod_sol. ' </span> FECHA  <span class="badge"> '.$solicitudLista->fec_sol . '</span>'.
                 '<br> '. $solicitudLista->des_cue_esp. 
                 '<br> '. $solicitudLista->des_est_sol. ' <br>' ; 
                 if ($clienteSigicon->getHaySolicitudConvocatoriaListasBaremada(Html::encode($_GET["cod_con"]), Yii::$app->user->identity->dni, $solicitudLista->cod_sol)){
-                    echo Html::a('Baremo de la solicitud', ['interinos/baremo',"cod_con" => $_GET["cod_con"],"des_con" => $_GET["des_con"],"cod_sol" => $solicitudLista->cod_sol], ['class' => 'btn btn-success']) ;
+                    echo Html::a('BAREMO DE LA SOLICITUD', ['interinos/baremo',"cod_con" => $_GET["cod_con"],"des_con" => $_GET["des_con"],"cod_sol" => $solicitudLista->cod_sol], ['class' => 'btn btn-success']) ;
                 }   
                 echo '</div>';
             }

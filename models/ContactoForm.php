@@ -57,7 +57,7 @@ class ContactoForm extends Model
                 ->setTo($email)
                 ->setFrom([$this->email => $this->name])
                 ->setSubject($this->subject)
-                ->setTextBody($this->body)
+                ->setTextBody($this->body.' email indicado:'.$this->email)
                 ->send();
 
             return true;

@@ -3,7 +3,7 @@ use yii\helpers\Html;
 use yii\widgets\ActiveForm;
 ?>
 
-<h1>Crear Usuario trtrtrtrtr</h1>
+<h1>Crear Usuario</h1>
 <h3><?= $msg ?></h3>
 <?php $form = ActiveForm::begin([
     "method" => "post",

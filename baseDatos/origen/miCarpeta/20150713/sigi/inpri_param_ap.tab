@@ -1,9 +1,0 @@
-create table INPRI_PARAM_AP
-(
-  VARIABLE    VARCHAR2(25 BYTE) not null,
-  VALOR       VARCHAR2(60 BYTE),
-  FORMATO     VARCHAR2(20 BYTE) not null,
-  SIGNIFICADO VARCHAR2(99 BYTE) not null
-)
-;
-

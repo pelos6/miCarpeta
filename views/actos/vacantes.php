@@ -28,7 +28,7 @@ if (Html::encode($_GET["modo"]) == '1') {
 } else {
     $vacantes = $clienteSigi->getVacantesPedidas($_GET["cod_opc"], Yii::$app->user->identity->dni, $_GET['cod_sol']);
     $especialidades = $clienteSigi->getEspecialidadesPedidas($_GET["cod_opc"], Yii::$app->user->identity->dni, $_GET['cod_sol']);
-    $this->params['breadcrumbs'][] = ['label' => 'solicitudes ' . Html::encode($_GET["tex_opc"]),
+    $this->params['breadcrumbs'][] = ['label' => 'SOLICITUDES' . Html::encode($_GET["tex_opc"]),
         'url' => ["actos/solicitudes", "cod_opc" => Html::encode($_GET["cod_opc"]), "tex_opc" => Html::encode($_GET["tex_opc"])]];
     $this->title = 'VACANTES PEDIDAS SOLICITUD ' . $_GET['cod_sol'];
     $tex = ' vacantes pedidas en la solicitud '.$_GET['cod_sol'];
@@ -38,7 +38,6 @@ $this->params['breadcrumbs'][] = $this->title;
 ?>
 <h4 id="texto">Situación geográfica de las  <?= $tex ?> </h4> 
 <div id="googleMap" style="width:500px;height:380px;"> </div>
-<!--  <a href="#googleMap" onclick="mostrarActoEleccionMapa('12/05/2015');">Primaria Acto de eleccion 25/05/2015</a> -->
 <?php
 foreach ($vacantes as $vacante) {
     // echo $vacante->num_vac .' '.$vacante->lat.' '.$vacante->lon . "<br />\n" ;

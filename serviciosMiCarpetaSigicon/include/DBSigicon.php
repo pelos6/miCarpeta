@@ -24,17 +24,17 @@ class DBSigicon {
     protected static function ejecutaConsulta($sql, $valores = null) {
         $opc = array(PDO::MYSQL_ATTR_INIT_COMMAND => "SET NAMES utf8");
         // desarrollo local
-        $dsn = "mysql:host=localhost;dbname=serviciosmicarpetasigicon";
+  /*      $dsn = "mysql:host=localhost;dbname=serviciosmicarpetasigicon";
         $usuario = 'root';
-        $contrasena = 'javier';
+        $contrasena = 'javier';*/
         // para infenlaces
        /*   $dsn = "mysql:host=localhost;dbname=javieriranzo_dwes";
           $usuario = 'javieriranzo_dwe';
           $contrasena = 'javier';*/
         // para apostayadrede.com
-          /*$dsn = "mysql:host=localhost;dbname=c23sigicon";
+          $dsn = "mysql:host=localhost;dbname=c23sigicon";
           $usuario = 'c23sigicon';
-          $contrasena = 'c23sigicon'; */
+          $contrasena = 'c23sigicon';
 
         $dwes = new PDO($dsn, $usuario, $contrasena, $opc);
         $resultado = null;

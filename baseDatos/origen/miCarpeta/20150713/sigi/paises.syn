@@ -1,3 +1,0 @@
-create or replace synonym PAISES
-  for EDUSOL.PAISES;
-

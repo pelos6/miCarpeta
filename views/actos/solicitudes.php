@@ -29,7 +29,7 @@ $clienteSigi = new SoapClient(null, array('location' => $urlSigi, 'uri' => $uriS
                 echo '<div class="panel panel-heading">'; 
                 echo 'Solicitud con código: <span class="badge">'.$solicitudesActo->cod_sol.' </span> presentada <span class="badge"> '.$solicitudesActo->f_hor_ent .' </span>' . 
                 '<br> '.$solicitudesActo->des_est_sol. '<br>  ' ; 
-                echo Html::a('Vacantes pedidas', ['actos/vacantes',"cod_opc" => $_GET["cod_opc"],"tex_opc" => $_GET["tex_opc"],"cod_sol" => $solicitudesActo->cod_sol,"modo" => '3'], ['class' => 'btn btn-success']) ;
+                echo Html::a('VACANTES PEDIDAS', ['actos/vacantes',"cod_opc" => $_GET["cod_opc"],"tex_opc" => $_GET["tex_opc"],"cod_sol" => $solicitudesActo->cod_sol,"modo" => '3'], ['class' => 'btn btn-success']) ;
                 echo '</div>';
             }
 

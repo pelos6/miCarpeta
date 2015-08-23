@@ -1,3 +1,0 @@
-create or replace synonym FB_ENCRIPTA
-  for EDUSOL.FB_ENCRIPTA;
-

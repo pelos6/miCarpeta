@@ -1,3 +1,0 @@
-create or replace synonym CUERPOS
-  for EDUSOL.CUERPOS;
-

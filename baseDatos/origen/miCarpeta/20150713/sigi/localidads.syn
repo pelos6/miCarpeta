@@ -1,3 +1,0 @@
-create or replace synonym LOCALIDADS
-  for EDUSOL.LOCALIDADS;
-

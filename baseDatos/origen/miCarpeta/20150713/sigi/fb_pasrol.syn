@@ -1,3 +1,0 @@
-create or replace synonym FB_PASROL
-  for EDUSOL.FB_PASROL;
-

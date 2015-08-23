@@ -1,4 +1,0 @@
-CREATE OR REPLACE TYPE "AE_ARRAY_VAC"
-is TABLE of ae_reg_vac
-/
-
