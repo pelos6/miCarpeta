@@ -42,8 +42,8 @@ $this->params['breadcrumbs'][] = $this->title;
     <div class="form-group">
         <a href="<?= Url::toRoute("site/recoverpass") ?>">Recuperar contraseña</a>
     </div>
-    <div class="col-lg-offset-1" style="color:#999;">
-        Te puede logear con <strong>usuario1/usuario1 usuario</strong> o <strong>------/------- administrador</strong> <br>
+  <!--  <div class="col-lg-offset-1" style="color:#999;">
+        Te puede logear con <strong>    </strong> <br>
        
-    </div>
+    </div> -->
 </div>

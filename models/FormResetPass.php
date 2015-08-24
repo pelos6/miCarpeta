@@ -2,9 +2,9 @@
  
 namespace app\models;
 use Yii;
-use yii\base\model;
+use yii\base\Model;
  
-class FormResetPass extends model{
+class FormResetPass extends Model{
  
     public $email;
  public $password;

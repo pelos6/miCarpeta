@@ -2,9 +2,9 @@
 
 namespace app\models;
 use Yii;
-use yii\base\model;
+use yii\base\Model;
 
-class UsuarioForm extends model{
+class UsuarioForm extends Model{
 
 public $id;
 public $username;
