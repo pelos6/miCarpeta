@@ -1,40 +1,36 @@
-Proyecto Mi Carpeta para CFGS-DAW
+Proyecto Mi Carpeta
 ============================
-
-Yii 2 Basic Project Template is a skeleton [Yii 2](http://www.yiiframework.com/) application best for
-rapidly creating small projects.
-
-The template contains the basic features including user login/logout and a contact page.
-It includes all commonly used configurations that would allow you to focus on adding new
-features to your application.
-
-[![Latest Stable Version](https://poser.pugx.org/yiisoft/yii2-app-basic/v/stable.png)](https://packagist.org/packages/yiisoft/yii2-app-basic)
-[![Total Downloads](https://poser.pugx.org/yiisoft/yii2-app-basic/downloads.png)](https://packagist.org/packages/yiisoft/yii2-app-basic)
-[![Build Status](https://travis-ci.org/yiisoft/yii2-app-basic.svg?branch=master)](https://travis-ci.org/yiisoft/yii2-app-basic)
+Proyecyo fín de ciclo para el Ciclo Formativo de Grado Superior de Desarrollo de Aplicaciones Web.
 
 Estructura de directorios
 -------------------
 
-      assets/                 contiene assets definition
-      commands/               contiene console commands (controllers)
-      config/                 contiene application configurations
-      controllers/            contiene Web controller classes
+      assets/                 contiene la definición de assets 
+      baseDatos/              contiene el script para la creación de la basse de datos para MiCarpeta
+      commands/               contiene los comandos de consola
+      config/                 contiene la configuración de la aplicación
+      controllers/            contiene los controladores
+      doc/                    contiene la documentación del proyecto
       mail/                   contiene view files for e-mails
-      models/                 contiene model classes
-      runtime/                contiene files generated during runtime
-      tests/                  contiene various tests for the basic application
-      vendor/                 contiene dependent 3rd-party packages
+      models/                 contiene los modelos
+      runtime/                contiene archivos generados en tiempo de ejecucción
+      tests/                  contiene los tests para la aplicación
+      vendor/                 contiene los paquetes de terceros
       views/                  contiene view files for the Web application
-      web/                    contiene the entry script and Web resources
-      serviciosMiCarpetaCtPri     contiene el servicio web para el esquema de concurso de primaria
-      serviciosMiCarpetaCtSec     contiene el servicio web para el esquema de concurso de secundaria
-      serviciosMiCarpetaSigi      contiene el servicio web para el esquema SIGI
-      serviciosMiCarpetaSigicon   contiene el servicio web para el esquema SIGICON
+      web/                    contiene la entrada a los recursos accesibles desde la web
+      serviciosMiCarpetaCtPri/     contiene el servicio web para el esquema de concurso de primaria
+            baseDatos/              contiene el script para la creación de la base de datos para los servicios web de Concurso Primaria
+      serviciosMiCarpetaCtSec/     contiene el servicio web para el esquema de concurso de secundaria
+            baseDatos/              contiene el script para la creación de la base de datos para los servicios web de Concurso Secundaria
+      serviciosMiCarpetaSigi/      contiene el servicio web para el esquema SIGI
+            baseDatos/              contiene el script para la creación de la base de datos para los servicios web de Sigi
+      serviciosMiCarpetaSigicon/   contiene el servicio web para el esquema SIGICON
+            baseDatos/              contiene el script para la creación de la base de datos para los servicios web de Sigicon
 
 
 
 
-REQUIREMENTS
+REQUISITOS
 ------------
 
-The minimum requirement by this project that your Web server supports PHP 5.4.0.
+Este proyecto necesita que el servidor web soporte una versión mínima para PHP 5.4.0.
