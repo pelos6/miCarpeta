@@ -48,11 +48,27 @@
 	"buffers":
 	[
 		{
-			"file": "serviciosMiCarpetaSigicon/baseDatos/serviciosMiCarpetaSigiconTablasVistasDatos1_0_2.sql",
+			"file": "README.md",
 			"settings":
 			{
-				"buffer_size": 52302,
+				"buffer_size": 2114,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"contents": "Este documento pretende ser una especie de reflexión y de análisis de las posibles desviaciones en la realización del proyecto, así como indicar los problemas encontrados y estrategias adoptadas para solventarlos",
+			"settings":
+			{
+				"buffer_size": 212,
 				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "views/site/index.php",
+			"settings":
+			{
+				"buffer_size": 2290,
+				"line_ending": "Unix"
 			}
 		}
 	],
@@ -255,6 +271,8 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"  ",
+			"   ",
 			"ALG",
 			"DROP",
 			"ALGO",
@@ -380,9 +398,7 @@
 			"hotmail",
 			"algo",
 			"072982803",
-			"012345678",
-			"pr",
-			"vconcurso"
+			"012345678"
 		],
 		"highlight": true,
 		"in_selection": false,
@@ -402,32 +418,87 @@
 	"groups":
 	[
 		{
-			"selected": 0,
+			"selected": 1,
 			"sheets":
 			[
 				{
 					"buffer": 0,
-					"file": "serviciosMiCarpetaSigicon/baseDatos/serviciosMiCarpetaSigiconTablasVistasDatos1_0_2.sql",
+					"file": "README.md",
 					"settings":
 					{
-						"buffer_size": 52302,
+						"buffer_size": 2114,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								47810,
-								52302
+								1910,
+								1910
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/SQL/SQL.tmLanguage",
-							"translate_tabs_to_spaces": false
+							"syntax": "Packages/Markdown/Markdown.tmLanguage",
+							"tab_size": 6,
+							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 15451.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"settings":
+					{
+						"buffer_size": 212,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								212
+							]
+						],
+						"settings":
+						{
+							"auto_name": "",
+							"syntax": "Packages/PHP/PHP.tmLanguage"
+						},
+						"translation.x": 596.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "views/site/index.php",
+					"settings":
+					{
+						"buffer_size": 2290,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1969,
+								2231
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 270.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
@@ -495,6 +566,6 @@
 	"show_open_files": false,
 	"show_tabs": true,
 	"side_bar_visible": true,
-	"side_bar_width": 481.0,
+	"side_bar_width": 285.0,
 	"status_bar_visible": true
 }

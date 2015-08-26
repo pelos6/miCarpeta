@@ -19,13 +19,13 @@ Estructura de directorios
       views/                  contiene view files for the Web application
       web/                    contiene la entrada a los recursos accesibles desde la web
       serviciosMiCarpetaCtPri/     contiene el servicio web para el esquema de concurso de primaria
-            baseDatos/              contiene el script para la creación de la base de datos para los servicios web de Concurso Primaria
+            baseDatos/             contiene el script para la creación de la base de datos para los servicios web de Concurso Primaria
       serviciosMiCarpetaCtSec/     contiene el servicio web para el esquema de concurso de secundaria
-            baseDatos/              contiene el script para la creación de la base de datos para los servicios web de Concurso Secundaria
+            baseDatos/             contiene el script para la creación de la base de datos para los servicios web de Concurso Secundaria
       serviciosMiCarpetaSigi/      contiene el servicio web para el esquema SIGI
-            baseDatos/              contiene el script para la creación de la base de datos para los servicios web de Sigi
+            baseDatos/             contiene el script para la creación de la base de datos para los servicios web de Sigi
       serviciosMiCarpetaSigicon/   contiene el servicio web para el esquema SIGICON
-            baseDatos/              contiene el script para la creación de la base de datos para los servicios web de Sigicon
+            baseDatos/             contiene el script para la creación de la base de datos para los servicios web de Sigicon
 
 
 

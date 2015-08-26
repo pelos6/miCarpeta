@@ -20,7 +20,7 @@ $this->title = 'Mi Carpeta';
             <div class="col-lg-3">
                 <h2>Interinos</h2>
 
-                <p>Podrá consultar las convocatorias de amplicación de listas y de nueva baremación de las listas actuales que 
+                <p>Podrá consultar las convocatorias de ampliación de listas y de nueva baremación de las listas actuales que 
                     estan activas tanto de primaria como de secundaria.
                     También podrá consultar las solicitudes presentadas en esas convocatorias así como el estado de tramitación 
                     de esas solicitudes</p>
