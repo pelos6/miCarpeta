@@ -47,6 +47,14 @@
 	},
 	"buffers":
 	[
+		{
+			"file": "serviciosMiCarpetaSigicon/baseDatos/serviciosMiCarpetaSigiconTablasVistasDatos1_0_2.sql",
+			"settings":
+			{
+				"buffer_size": 52302,
+				"line_ending": "Windows"
+			}
+		}
 	],
 	"build_system": "",
 	"command_palette":
@@ -100,6 +108,10 @@
 	},
 	"file_history":
 	[
+		"/C/Users/Javier/Dropbox/CicloFormativoGradoSuperior/practicas_propias/php/miCarpeta/serviciosMiCarpetaSigicon/baseDatos/serviciosMiCarpetaSigiconTablasVistasDatos1_0_2.sql",
+		"/C/Users/Javier/Dropbox/CicloFormativoGradoSuperior/practicas_propias/php/miCarpeta/serviciosMiCarpetaSigi/baseDatos/serviciosMiCarpetaSigiTablasVistasDatos1_0_2.sql",
+		"/C/Users/Javier/Dropbox/CicloFormativoGradoSuperior/practicas_propias/php/miCarpeta/serviciosMiCarpetaCtPri/baseDatos/serviciosMiCarpetaCtPriTablasVistasDatos1_0_2.sql",
+		"/C/Users/Javier/Dropbox/CicloFormativoGradoSuperior/practicas_propias/php/miCarpeta/serviciosMiCarpetaCtSec/baseDatos/serviciosMiCarpetaCtSecTablasVistasDatos1_0_2.sql",
 		"/C/Users/Javier/Dropbox/CicloFormativoGradoSuperior/practicas_propias/php/miCarpeta/views/oposiciones/oposiciones.php",
 		"/C/Users/Javier/Dropbox/CicloFormativoGradoSuperior/practicas_propias/php/miCarpeta/serviciosMiCarpetaSigicon/ServerSigicon.php",
 		"/C/Users/Javier/Dropbox/CicloFormativoGradoSuperior/practicas_propias/php/miCarpeta/views/oposiciones/solicitudes.php",
@@ -223,11 +235,7 @@
 		"/C/Users/Javier/Dropbox/CicloFormativoGradoSuperior/practicas_propias/php/app_yii1/index.php",
 		"/C/Users/Javier/Dropbox/CicloFormativoGradoSuperior/practicas_propias/php/app_yii1/protected/config/main.php",
 		"/C/Bitnami/wampstack-5.5.22-0/apps/mediawiki/htdocs/README",
-		"/C/Users/Javier/Downloads/image-img_metadata.bin",
-		"/C/Bitnami/wampstack-5.5.22-0/apps/mediawiki/htdocs/RELEASE-NOTES-1.24",
-		"/C/Bitnami/wampstack-5.5.22-0/apps/mediawiki/htdocs/INSTALL",
-		"/C/Bitnami/wampstack-5.5.22-0/apps/mediawiki/htdocs/HISTORY",
-		"/C/Bitnami/wampstack-5.5.22-0/apps/mediawiki/licenses/COPYING"
+		"/C/Users/Javier/Downloads/image-img_metadata.bin"
 	],
 	"find":
 	{
@@ -247,6 +255,10 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"ALG",
+			"DROP",
+			"ALGO",
+			"DROP",
 			"tipo_id",
 			"obtieneSolicitudesConvocatoriaOposicion",
 			"function obtieneHaySolicitudConvocatoriaOposicionNotas",
@@ -370,11 +382,7 @@
 			"072982803",
 			"012345678",
 			"pr",
-			"vconcurso",
-			"vcon",
-			"alg",
-			"micarpeta",
-			"algori"
+			"vconcurso"
 		],
 		"highlight": true,
 		"in_selection": false,
@@ -394,8 +402,36 @@
 	"groups":
 	[
 		{
+			"selected": 0,
 			"sheets":
 			[
+				{
+					"buffer": 0,
+					"file": "serviciosMiCarpetaSigicon/baseDatos/serviciosMiCarpetaSigiconTablasVistasDatos1_0_2.sql",
+					"settings":
+					{
+						"buffer_size": 52302,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								47810,
+								52302
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/SQL/SQL.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 15451.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				}
 			]
 		}
 	],
@@ -459,6 +495,6 @@
 	"show_open_files": false,
 	"show_tabs": true,
 	"side_bar_visible": true,
-	"side_bar_width": 320.0,
+	"side_bar_width": 481.0,
 	"status_bar_visible": true
 }
