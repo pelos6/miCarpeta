@@ -1,0 +1,334 @@
+<?xml version="1.0"?>
+<wsdl:definitions xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:soap-enc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:soap-env="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="http://localhost/CicloFormativoGradoSuperior/practicas_propias/php/miCarpeta/serviciosMiCarpetaSigi/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="http://localhost/CicloFormativoGradoSuperior/practicas_propias/php/miCarpeta/serviciosMiCarpetaSigi/">
+    <wsdl:types>
+        <xsd:schema targetNamespace="http://localhost/CicloFormativoGradoSuperior/practicas_propias/php/miCarpeta/serviciosMiCarpetaSigi/">
+            <xsd:complexType name="stringArray">
+                <xsd:complexContent>
+                    <xsd:restriction base="soap-enc:Array">
+                        <xsd:attribute ref="soap-enc:arrayType" wsdl:arrayType="xsd:string[]"/>
+                    </xsd:restriction>
+                </xsd:complexContent>
+            </xsd:complexType>
+        </xsd:schema>
+    </wsdl:types>
+    <wsdl:message name="getEspecialidadesPedidasRequest">
+        <wsdl:part name="cod_opc" type="xsd:string"/>
+        <wsdl:part name="dni" type="xsd:string"/>
+        <wsdl:part name="cod_sol" type="xsd:string"/>
+    </wsdl:message>
+    <wsdl:message name="getEspecialidadesPedidasResponse">
+        <wsdl:part name="getEspecialidadesPedidasReturn" type="tns:stringArray"/>
+    </wsdl:message>
+    <wsdl:message name="getVacantesPedidasRequest">
+        <wsdl:part name="cod_opc" type="xsd:string"/>
+        <wsdl:part name="dni" type="xsd:string"/>
+        <wsdl:part name="cod_sol" type="xsd:string"/>
+    </wsdl:message>
+    <wsdl:message name="getVacantesPedidasResponse">
+        <wsdl:part name="getVacantesPedidasReturn" type="tns:stringArray"/>
+    </wsdl:message>
+    <wsdl:message name="getEspecialidadesSeleccionablesRequest">
+        <wsdl:part name="cod_opc" type="xsd:string"/>
+        <wsdl:part name="dni" type="xsd:string"/>
+    </wsdl:message>
+    <wsdl:message name="getEspecialidadesSeleccionablesResponse">
+        <wsdl:part name="getEspecialidadesSeleccionablesReturn" type="tns:stringArray"/>
+    </wsdl:message>
+    <wsdl:message name="getVacantesSeleccionablesRequest">
+        <wsdl:part name="cod_opc" type="xsd:string"/>
+        <wsdl:part name="dni" type="xsd:string"/>
+    </wsdl:message>
+    <wsdl:message name="getVacantesSeleccionablesResponse">
+        <wsdl:part name="getVacantesSeleccionablesReturn" type="tns:stringArray"/>
+    </wsdl:message>
+    <wsdl:message name="getEspecialidadesActoRequest">
+        <wsdl:part name="cod_opc" type="xsd:string"/>
+    </wsdl:message>
+    <wsdl:message name="getEspecialidadesActoResponse">
+        <wsdl:part name="getEspecialidadesActoReturn" type="tns:stringArray"/>
+    </wsdl:message>
+    <wsdl:message name="getVacantesActoRequest">
+        <wsdl:part name="cod_opc" type="xsd:string"/>
+    </wsdl:message>
+    <wsdl:message name="getVacantesActoResponse">
+        <wsdl:part name="getVacantesActoReturn" type="tns:stringArray"/>
+    </wsdl:message>
+    <wsdl:message name="getActosHaySolicitudRequest">
+        <wsdl:part name="dni" type="xsd:string"/>
+    </wsdl:message>
+    <wsdl:message name="getActosHaySolicitudResponse">
+        <wsdl:part name="getActosHaySolicitudReturn" type="tns:stringArray"/>
+    </wsdl:message>
+    <wsdl:message name="getActosConvocadoRequest">
+        <wsdl:part name="dni" type="xsd:string"/>
+    </wsdl:message>
+    <wsdl:message name="getActosConvocadoResponse">
+        <wsdl:part name="getActosConvocadoReturn" type="tns:stringArray"/>
+    </wsdl:message>
+    <wsdl:message name="getSolicitudesActoRequest">
+        <wsdl:part name="cod_opc" type="xsd:string"/>
+        <wsdl:part name="dni" type="xsd:string"/>
+    </wsdl:message>
+    <wsdl:message name="getSolicitudesActoResponse">
+        <wsdl:part name="getSolicitudesActoReturn" type="tns:stringArray"/>
+    </wsdl:message>
+    <wsdl:message name="getSolicitudActoRequest">
+        <wsdl:part name="cod_opc" type="xsd:string"/>
+        <wsdl:part name="dni" type="xsd:string"/>
+        <wsdl:part name="cod_sol" type="xsd:string"/>
+    </wsdl:message>
+    <wsdl:message name="getSolicitudActoResponse">
+        <wsdl:part name="getSolicitudActoReturn" type="tns:stringArray"/>
+    </wsdl:message>
+    <wsdl:message name="getConsultasSituacionListasRequest">
+        <wsdl:part name="dni" type="xsd:string"/>
+    </wsdl:message>
+    <wsdl:message name="getConsultasSituacionListasResponse">
+        <wsdl:part name="getConsultasSituacionListasReturn" type="tns:stringArray"/>
+    </wsdl:message>
+    <wsdl:message name="getActosActivosRequest"/>
+    <wsdl:message name="getActosActivosResponse">
+        <wsdl:part name="getActosActivosReturn" type="tns:stringArray"/>
+    </wsdl:message>
+    <wsdl:message name="getActoActivoRequest">
+        <wsdl:part name="cod_opc" type="xsd:string"/>
+    </wsdl:message>
+    <wsdl:message name="getActoActivoResponse">
+        <wsdl:part name="getActoActivoReturn" type="tns:stringArray"/>
+    </wsdl:message>
+    <wsdl:message name="getVacantesSolicitablesRequest">
+        <wsdl:part name="dni" type="xsd:string"/>
+    </wsdl:message>
+    <wsdl:message name="getVacantesSolicitablesResponse">
+        <wsdl:part name="getVacantesSolicitablesReturn" type="tns:stringArray"/>
+    </wsdl:message>
+    <wsdl:message name="getActoEleccionRequest">
+        <wsdl:part name="cod_opc" type="xsd:string"/>
+        <wsdl:part name="f_con_ae" type="xsd:string"/>
+    </wsdl:message>
+    <wsdl:message name="getActoEleccionResponse">
+        <wsdl:part name="getActoEleccionReturn" type="tns:stringArray"/>
+    </wsdl:message>
+    <wsdl:portType name="ServerSigiPortType">
+        <wsdl:operation name="getEspecialidadesPedidas">
+            <wsdl:documentation>Devuelve un array con las especialidades convocadas a un acto de elecci&#xF3;n de las vacantes que puede pedir el usuario</wsdl:documentation>
+            <wsdl:input message="tns:getEspecialidadesPedidasRequest"/>
+            <wsdl:output message="tns:getEspecialidadesPedidasResponse"/>
+        </wsdl:operation>
+        <wsdl:operation name="getVacantesPedidas">
+            <wsdl:documentation>Devuelve un array con las vacantes convocadas a un acto de elecci&#xF3;n de la que puede pedir el usuario</wsdl:documentation>
+            <wsdl:input message="tns:getVacantesPedidasRequest"/>
+            <wsdl:output message="tns:getVacantesPedidasResponse"/>
+        </wsdl:operation>
+        <wsdl:operation name="getEspecialidadesSeleccionables">
+            <wsdl:documentation>Devuelve un array con las especialidades convocadas a un acto de elecci&#xF3;n de las vacantes que puede pedir el usuario</wsdl:documentation>
+            <wsdl:input message="tns:getEspecialidadesSeleccionablesRequest"/>
+            <wsdl:output message="tns:getEspecialidadesSeleccionablesResponse"/>
+        </wsdl:operation>
+        <wsdl:operation name="getVacantesSeleccionables">
+            <wsdl:documentation>Devuelve un array con las vacantes convocadas a un acto de elecci&#xF3;n de la que puede pedir el usuario</wsdl:documentation>
+            <wsdl:input message="tns:getVacantesSeleccionablesRequest"/>
+            <wsdl:output message="tns:getVacantesSeleccionablesResponse"/>
+        </wsdl:operation>
+        <wsdl:operation name="getEspecialidadesActo">
+            <wsdl:documentation>Devuelve un array con las especialidades convocadas a un acto de elecci&#xF3;n</wsdl:documentation>
+            <wsdl:input message="tns:getEspecialidadesActoRequest"/>
+            <wsdl:output message="tns:getEspecialidadesActoResponse"/>
+        </wsdl:operation>
+        <wsdl:operation name="getVacantesActo">
+            <wsdl:documentation>Devuelve un array con las vacantes convocadas a un acto de elecci&#xF3;n</wsdl:documentation>
+            <wsdl:input message="tns:getVacantesActoRequest"/>
+            <wsdl:output message="tns:getVacantesActoResponse"/>
+        </wsdl:operation>
+        <wsdl:operation name="getActosHaySolicitud">
+            <wsdl:documentation>Devuelve un array con los actos de elecci&#xF3;n en las que tiene solicitud</wsdl:documentation>
+            <wsdl:input message="tns:getActosHaySolicitudRequest"/>
+            <wsdl:output message="tns:getActosHaySolicitudResponse"/>
+        </wsdl:operation>
+        <wsdl:operation name="getActosConvocado">
+            <wsdl:documentation>Devuelve un array con los actos de elecci&#xF3;n en las que esta convocado</wsdl:documentation>
+            <wsdl:input message="tns:getActosConvocadoRequest"/>
+            <wsdl:output message="tns:getActosConvocadoResponse"/>
+        </wsdl:operation>
+        <wsdl:operation name="getSolicitudesActo">
+            <wsdl:documentation>Devuelve un array con las solicitudes al acto de elecci&#xF3;n del usuario</wsdl:documentation>
+            <wsdl:input message="tns:getSolicitudesActoRequest"/>
+            <wsdl:output message="tns:getSolicitudesActoResponse"/>
+        </wsdl:operation>
+        <wsdl:operation name="getSolicitudActo">
+            <wsdl:documentation>Devuelve la informaci&#xF3;n de la solicitud al acto de elecci&#xF3;n del usuario</wsdl:documentation>
+            <wsdl:input message="tns:getSolicitudActoRequest"/>
+            <wsdl:output message="tns:getSolicitudActoResponse"/>
+        </wsdl:operation>
+        <wsdl:operation name="getConsultasSituacionListas">
+            <wsdl:documentation>Devuelve un array con las consultas sobre la situaci&#xF3;n en listas relevantes para el usuario</wsdl:documentation>
+            <wsdl:input message="tns:getConsultasSituacionListasRequest"/>
+            <wsdl:output message="tns:getConsultasSituacionListasResponse"/>
+        </wsdl:operation>
+        <wsdl:operation name="getActosActivos">
+            <wsdl:documentation>Devuelve un array con los c&#xF3;digos de todas los actos de elecci&#xF3;n activos</wsdl:documentation>
+            <wsdl:input message="tns:getActosActivosRequest"/>
+            <wsdl:output message="tns:getActosActivosResponse"/>
+        </wsdl:operation>
+        <wsdl:operation name="getActoActivo">
+            <wsdl:documentation>Devuelve la informaci&#xF3;n del acto de elecci&#xF3;n activo</wsdl:documentation>
+            <wsdl:input message="tns:getActoActivoRequest"/>
+            <wsdl:output message="tns:getActoActivoResponse"/>
+        </wsdl:operation>
+        <wsdl:operation name="getVacantesSolicitables">
+            <wsdl:documentation>Devuelve un array con los c&#xF3;digos de todas los actos de elecci&#xF3;n activos</wsdl:documentation>
+            <wsdl:input message="tns:getVacantesSolicitablesRequest"/>
+            <wsdl:output message="tns:getVacantesSolicitablesResponse"/>
+        </wsdl:operation>
+        <wsdl:operation name="getActoEleccion">
+            <wsdl:documentation>Devuelve un array con el acto de eleccion</wsdl:documentation>
+            <wsdl:input message="tns:getActoEleccionRequest"/>
+            <wsdl:output message="tns:getActoEleccionResponse"/>
+        </wsdl:operation>
+    </wsdl:portType>
+    <wsdl:binding name="ServerSigiBinding" type="tns:ServerSigiPortType">
+        <soap-env:binding xmlns="http://schemas.xmlsoap.org/wsdl/soap/" style="rpc" transport="http://schemas.xmlsoap.org/soap/http"/>
+        <wsdl:operation name="getEspecialidadesPedidas">
+            <soap-env:operation xmlns="http://schemas.xmlsoap.org/wsdl/soap/" soapAction="http://localhost/CicloFormativoGradoSuperior/practicas_propias/php/miCarpeta/serviciosMiCarpetaSigi/ServerSigi.php?method=getEspecialidadesPedidas" style="rpc"/>
+            <wsdl:input>
+                <soap-env:body xmlns="http://schemas.xmlsoap.org/wsdl/soap/" use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap-env:body xmlns="http://schemas.xmlsoap.org/wsdl/soap/" use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="getVacantesPedidas">
+            <soap-env:operation xmlns="http://schemas.xmlsoap.org/wsdl/soap/" soapAction="http://localhost/CicloFormativoGradoSuperior/practicas_propias/php/miCarpeta/serviciosMiCarpetaSigi/ServerSigi.php?method=getVacantesPedidas" style="rpc"/>
+            <wsdl:input>
+                <soap-env:body xmlns="http://schemas.xmlsoap.org/wsdl/soap/" use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap-env:body xmlns="http://schemas.xmlsoap.org/wsdl/soap/" use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="getEspecialidadesSeleccionables">
+            <soap-env:operation xmlns="http://schemas.xmlsoap.org/wsdl/soap/" soapAction="http://localhost/CicloFormativoGradoSuperior/practicas_propias/php/miCarpeta/serviciosMiCarpetaSigi/ServerSigi.php?method=getEspecialidadesSeleccionables" style="rpc"/>
+            <wsdl:input>
+                <soap-env:body xmlns="http://schemas.xmlsoap.org/wsdl/soap/" use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap-env:body xmlns="http://schemas.xmlsoap.org/wsdl/soap/" use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="getVacantesSeleccionables">
+            <soap-env:operation xmlns="http://schemas.xmlsoap.org/wsdl/soap/" soapAction="http://localhost/CicloFormativoGradoSuperior/practicas_propias/php/miCarpeta/serviciosMiCarpetaSigi/ServerSigi.php?method=getVacantesSeleccionables" style="rpc"/>
+            <wsdl:input>
+                <soap-env:body xmlns="http://schemas.xmlsoap.org/wsdl/soap/" use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap-env:body xmlns="http://schemas.xmlsoap.org/wsdl/soap/" use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="getEspecialidadesActo">
+            <soap-env:operation xmlns="http://schemas.xmlsoap.org/wsdl/soap/" soapAction="http://localhost/CicloFormativoGradoSuperior/practicas_propias/php/miCarpeta/serviciosMiCarpetaSigi/ServerSigi.php?method=getEspecialidadesActo" style="rpc"/>
+            <wsdl:input>
+                <soap-env:body xmlns="http://schemas.xmlsoap.org/wsdl/soap/" use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap-env:body xmlns="http://schemas.xmlsoap.org/wsdl/soap/" use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="getVacantesActo">
+            <soap-env:operation xmlns="http://schemas.xmlsoap.org/wsdl/soap/" soapAction="http://localhost/CicloFormativoGradoSuperior/practicas_propias/php/miCarpeta/serviciosMiCarpetaSigi/ServerSigi.php?method=getVacantesActo" style="rpc"/>
+            <wsdl:input>
+                <soap-env:body xmlns="http://schemas.xmlsoap.org/wsdl/soap/" use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap-env:body xmlns="http://schemas.xmlsoap.org/wsdl/soap/" use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="getActosHaySolicitud">
+            <soap-env:operation xmlns="http://schemas.xmlsoap.org/wsdl/soap/" soapAction="http://localhost/CicloFormativoGradoSuperior/practicas_propias/php/miCarpeta/serviciosMiCarpetaSigi/ServerSigi.php?method=getActosHaySolicitud" style="rpc"/>
+            <wsdl:input>
+                <soap-env:body xmlns="http://schemas.xmlsoap.org/wsdl/soap/" use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap-env:body xmlns="http://schemas.xmlsoap.org/wsdl/soap/" use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="getActosConvocado">
+            <soap-env:operation xmlns="http://schemas.xmlsoap.org/wsdl/soap/" soapAction="http://localhost/CicloFormativoGradoSuperior/practicas_propias/php/miCarpeta/serviciosMiCarpetaSigi/ServerSigi.php?method=getActosConvocado" style="rpc"/>
+            <wsdl:input>
+                <soap-env:body xmlns="http://schemas.xmlsoap.org/wsdl/soap/" use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap-env:body xmlns="http://schemas.xmlsoap.org/wsdl/soap/" use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="getSolicitudesActo">
+            <soap-env:operation xmlns="http://schemas.xmlsoap.org/wsdl/soap/" soapAction="http://localhost/CicloFormativoGradoSuperior/practicas_propias/php/miCarpeta/serviciosMiCarpetaSigi/ServerSigi.php?method=getSolicitudesActo" style="rpc"/>
+            <wsdl:input>
+                <soap-env:body xmlns="http://schemas.xmlsoap.org/wsdl/soap/" use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap-env:body xmlns="http://schemas.xmlsoap.org/wsdl/soap/" use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="getSolicitudActo">
+            <soap-env:operation xmlns="http://schemas.xmlsoap.org/wsdl/soap/" soapAction="http://localhost/CicloFormativoGradoSuperior/practicas_propias/php/miCarpeta/serviciosMiCarpetaSigi/ServerSigi.php?method=getSolicitudActo" style="rpc"/>
+            <wsdl:input>
+                <soap-env:body xmlns="http://schemas.xmlsoap.org/wsdl/soap/" use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap-env:body xmlns="http://schemas.xmlsoap.org/wsdl/soap/" use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="getConsultasSituacionListas">
+            <soap-env:operation xmlns="http://schemas.xmlsoap.org/wsdl/soap/" soapAction="http://localhost/CicloFormativoGradoSuperior/practicas_propias/php/miCarpeta/serviciosMiCarpetaSigi/ServerSigi.php?method=getConsultasSituacionListas" style="rpc"/>
+            <wsdl:input>
+                <soap-env:body xmlns="http://schemas.xmlsoap.org/wsdl/soap/" use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap-env:body xmlns="http://schemas.xmlsoap.org/wsdl/soap/" use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="getActosActivos">
+            <soap-env:operation xmlns="http://schemas.xmlsoap.org/wsdl/soap/" soapAction="http://localhost/CicloFormativoGradoSuperior/practicas_propias/php/miCarpeta/serviciosMiCarpetaSigi/ServerSigi.php?method=getActosActivos" style="rpc"/>
+            <wsdl:input>
+                <soap-env:body xmlns="http://schemas.xmlsoap.org/wsdl/soap/" use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap-env:body xmlns="http://schemas.xmlsoap.org/wsdl/soap/" use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="getActoActivo">
+            <soap-env:operation xmlns="http://schemas.xmlsoap.org/wsdl/soap/" soapAction="http://localhost/CicloFormativoGradoSuperior/practicas_propias/php/miCarpeta/serviciosMiCarpetaSigi/ServerSigi.php?method=getActoActivo" style="rpc"/>
+            <wsdl:input>
+                <soap-env:body xmlns="http://schemas.xmlsoap.org/wsdl/soap/" use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap-env:body xmlns="http://schemas.xmlsoap.org/wsdl/soap/" use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="getVacantesSolicitables">
+            <soap-env:operation xmlns="http://schemas.xmlsoap.org/wsdl/soap/" soapAction="http://localhost/CicloFormativoGradoSuperior/practicas_propias/php/miCarpeta/serviciosMiCarpetaSigi/ServerSigi.php?method=getVacantesSolicitables" style="rpc"/>
+            <wsdl:input>
+                <soap-env:body xmlns="http://schemas.xmlsoap.org/wsdl/soap/" use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap-env:body xmlns="http://schemas.xmlsoap.org/wsdl/soap/" use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="getActoEleccion">
+            <soap-env:operation xmlns="http://schemas.xmlsoap.org/wsdl/soap/" soapAction="http://localhost/CicloFormativoGradoSuperior/practicas_propias/php/miCarpeta/serviciosMiCarpetaSigi/ServerSigi.php?method=getActoEleccion" style="rpc"/>
+            <wsdl:input>
+                <soap-env:body xmlns="http://schemas.xmlsoap.org/wsdl/soap/" use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap-env:body xmlns="http://schemas.xmlsoap.org/wsdl/soap/" use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+            </wsdl:output>
+        </wsdl:operation>
+    </wsdl:binding>
+    <wsdl:service name="ServerSigi">
+        <wsdl:documentation/>
+        <wsdl:port name="ServerSigiPort" binding="tns:ServerSigiBinding">
+            <soap-env:address location="http://localhost/CicloFormativoGradoSuperior/practicas_propias/php/miCarpeta/serviciosMiCarpetaSigi/ServerSigi.php"/>
+        </wsdl:port>
+    </wsdl:service>
+</wsdl:definitions>
+

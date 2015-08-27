@@ -1,0 +1,338 @@
+<?xml version="1.0"?>
+<wsdl:definitions xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:soap-enc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:soap-env="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="http://localhost/CicloFormativoGradoSuperior/practicas_propias/php/miCarpeta/serviciosMiCarpetaSigicon/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="http://localhost/CicloFormativoGradoSuperior/practicas_propias/php/miCarpeta/serviciosMiCarpetaSigicon/">
+    <wsdl:types>
+        <xsd:schema targetNamespace="http://localhost/CicloFormativoGradoSuperior/practicas_propias/php/miCarpeta/serviciosMiCarpetaSigicon/">
+            <xsd:complexType name="stringArray">
+                <xsd:complexContent>
+                    <xsd:restriction base="soap-enc:Array">
+                        <xsd:attribute ref="soap-enc:arrayType" wsdl:arrayType="xsd:string[]"/>
+                    </xsd:restriction>
+                </xsd:complexContent>
+            </xsd:complexType>
+        </xsd:schema>
+    </wsdl:types>
+    <wsdl:message name="getBaremoSolicitudConvocatoriaListasRequest">
+        <wsdl:part name="cod_con" type="xsd:string"/>
+        <wsdl:part name="dni" type="xsd:string"/>
+        <wsdl:part name="cod_sol" type="xsd:string"/>
+    </wsdl:message>
+    <wsdl:message name="getBaremoSolicitudConvocatoriaListasResponse">
+        <wsdl:part name="getBaremoSolicitudConvocatoriaListasReturn" type="tns:stringArray"/>
+    </wsdl:message>
+    <wsdl:message name="getHaySolicitudConvocatoriaListasBaremadaRequest">
+        <wsdl:part name="cod_con" type="xsd:string"/>
+        <wsdl:part name="dni" type="xsd:string"/>
+        <wsdl:part name="cod_sol" type="xsd:string"/>
+    </wsdl:message>
+    <wsdl:message name="getHaySolicitudConvocatoriaListasBaremadaResponse">
+        <wsdl:part name="getHaySolicitudConvocatoriaListasBaremadaReturn" type="tns:stringArray"/>
+    </wsdl:message>
+    <wsdl:message name="getSolicitudListasRequest">
+        <wsdl:part name="cod_con" type="xsd:string"/>
+        <wsdl:part name="dni" type="xsd:string"/>
+        <wsdl:part name="cod_sol" type="xsd:string"/>
+    </wsdl:message>
+    <wsdl:message name="getSolicitudListasResponse">
+        <wsdl:part name="getSolicitudListasReturn" type="tns:stringArray"/>
+    </wsdl:message>
+    <wsdl:message name="getConvocatoriasListasActivasRequest"/>
+    <wsdl:message name="getConvocatoriasListasActivasResponse">
+        <wsdl:part name="getConvocatoriasListasActivasReturn" type="tns:stringArray"/>
+    </wsdl:message>
+    <wsdl:message name="getConvocatoriaListasRequest">
+        <wsdl:part name="cod_con" type="xsd:string"/>
+    </wsdl:message>
+    <wsdl:message name="getConvocatoriaListasResponse">
+        <wsdl:part name="getConvocatoriaListasReturn" type="tns:stringArray"/>
+    </wsdl:message>
+    <wsdl:message name="getConvocatoriasListasHaySolicitudRequest">
+        <wsdl:part name="dni" type="xsd:string"/>
+    </wsdl:message>
+    <wsdl:message name="getConvocatoriasListasHaySolicitudResponse">
+        <wsdl:part name="getConvocatoriasListasHaySolicitudReturn" type="tns:stringArray"/>
+    </wsdl:message>
+    <wsdl:message name="getSolicitudesConvocatoriaListasRequest">
+        <wsdl:part name="cod_con" type="xsd:string"/>
+        <wsdl:part name="dni" type="xsd:string"/>
+    </wsdl:message>
+    <wsdl:message name="getSolicitudesConvocatoriaListasResponse">
+        <wsdl:part name="getSolicitudesConvocatoriaListasReturn" type="tns:stringArray"/>
+    </wsdl:message>
+    <wsdl:message name="getNotasSolicitudOposicionRequest">
+        <wsdl:part name="cod_con" type="xsd:string"/>
+        <wsdl:part name="dni" type="xsd:string"/>
+        <wsdl:part name="cod_sol" type="xsd:string"/>
+    </wsdl:message>
+    <wsdl:message name="getNotasSolicitudOposicionResponse">
+        <wsdl:part name="getNotasSolicitudOposicionReturn" type="tns:stringArray"/>
+    </wsdl:message>
+    <wsdl:message name="getHaySolicitudOposicionNotaRequest">
+        <wsdl:part name="cod_con" type="xsd:string"/>
+        <wsdl:part name="dni" type="xsd:string"/>
+        <wsdl:part name="cod_sol" type="xsd:string"/>
+    </wsdl:message>
+    <wsdl:message name="getHaySolicitudOposicionNotaResponse">
+        <wsdl:part name="getHaySolicitudOposicionNotaReturn" type="tns:stringArray"/>
+    </wsdl:message>
+    <wsdl:message name="getBaremoSolicitudOposicionRequest">
+        <wsdl:part name="cod_con" type="xsd:string"/>
+        <wsdl:part name="dni" type="xsd:string"/>
+        <wsdl:part name="cod_sol" type="xsd:string"/>
+    </wsdl:message>
+    <wsdl:message name="getBaremoSolicitudOposicionResponse">
+        <wsdl:part name="getBaremoSolicitudOposicionReturn" type="tns:stringArray"/>
+    </wsdl:message>
+    <wsdl:message name="getHaySolicitudOposicionBaremadaRequest">
+        <wsdl:part name="cod_con" type="xsd:string"/>
+        <wsdl:part name="dni" type="xsd:string"/>
+        <wsdl:part name="cod_sol" type="xsd:string"/>
+    </wsdl:message>
+    <wsdl:message name="getHaySolicitudOposicionBaremadaResponse">
+        <wsdl:part name="getHaySolicitudOposicionBaremadaReturn" type="tns:stringArray"/>
+    </wsdl:message>
+    <wsdl:message name="getOposicionesActivasRequest"/>
+    <wsdl:message name="getOposicionesActivasResponse">
+        <wsdl:part name="getOposicionesActivasReturn" type="tns:stringArray"/>
+    </wsdl:message>
+    <wsdl:message name="getOposicionesHaySolicitudRequest">
+        <wsdl:part name="dni" type="xsd:string"/>
+    </wsdl:message>
+    <wsdl:message name="getOposicionesHaySolicitudResponse">
+        <wsdl:part name="getOposicionesHaySolicitudReturn" type="tns:stringArray"/>
+    </wsdl:message>
+    <wsdl:message name="getSolicitudesOposicionRequest">
+        <wsdl:part name="cod_con" type="xsd:string"/>
+        <wsdl:part name="dni" type="xsd:string"/>
+    </wsdl:message>
+    <wsdl:message name="getSolicitudesOposicionResponse">
+        <wsdl:part name="getSolicitudesOposicionReturn" type="tns:stringArray"/>
+    </wsdl:message>
+    <wsdl:message name="getConvocatoriaOposicionRequest">
+        <wsdl:part name="cod_con" type="xsd:string"/>
+    </wsdl:message>
+    <wsdl:message name="getConvocatoriaOposicionResponse">
+        <wsdl:part name="getConvocatoriaOposicionReturn" type="tns:stringArray"/>
+    </wsdl:message>
+    <wsdl:portType name="ServerSigiconPortType">
+        <wsdl:operation name="getBaremoSolicitudConvocatoriaListas">
+            <wsdl:documentation>Devuelve la informaci&#xF3;n del baremo de la solicitud en la convocatoria seleccionada</wsdl:documentation>
+            <wsdl:input message="tns:getBaremoSolicitudConvocatoriaListasRequest"/>
+            <wsdl:output message="tns:getBaremoSolicitudConvocatoriaListasResponse"/>
+        </wsdl:operation>
+        <wsdl:operation name="getHaySolicitudConvocatoriaListasBaremada">
+            <wsdl:documentation>Devuelve la informaci&#xF3;n de si la solicitud esta o no baremada en la convocatoria seleccionada</wsdl:documentation>
+            <wsdl:input message="tns:getHaySolicitudConvocatoriaListasBaremadaRequest"/>
+            <wsdl:output message="tns:getHaySolicitudConvocatoriaListasBaremadaResponse"/>
+        </wsdl:operation>
+        <wsdl:operation name="getSolicitudListas">
+            <wsdl:documentation>Devuelve la informaci&#xF3;n de la solicitud seleccionada en la convocatoria seleccionada</wsdl:documentation>
+            <wsdl:input message="tns:getSolicitudListasRequest"/>
+            <wsdl:output message="tns:getSolicitudListasResponse"/>
+        </wsdl:operation>
+        <wsdl:operation name="getConvocatoriasListasActivas">
+            <wsdl:documentation>Devuelve un array con las convocatorias a listas activas</wsdl:documentation>
+            <wsdl:input message="tns:getConvocatoriasListasActivasRequest"/>
+            <wsdl:output message="tns:getConvocatoriasListasActivasResponse"/>
+        </wsdl:operation>
+        <wsdl:operation name="getConvocatoriaListas">
+            <wsdl:documentation>Devuelve la informaci&#xF3;n de la convocatoria a listas seleccionada</wsdl:documentation>
+            <wsdl:input message="tns:getConvocatoriaListasRequest"/>
+            <wsdl:output message="tns:getConvocatoriaListasResponse"/>
+        </wsdl:operation>
+        <wsdl:operation name="getConvocatoriasListasHaySolicitud">
+            <wsdl:documentation>Devuelve un array con las convocatorias a listas en las que tiene solicitud</wsdl:documentation>
+            <wsdl:input message="tns:getConvocatoriasListasHaySolicitudRequest"/>
+            <wsdl:output message="tns:getConvocatoriasListasHaySolicitudResponse"/>
+        </wsdl:operation>
+        <wsdl:operation name="getSolicitudesConvocatoriaListas">
+            <wsdl:documentation>Devuelve un array con las solicitudes a listas de la convocatoria tanto de ampliaci&#xF3;n de listas como de rebaremaci&#xF3;n</wsdl:documentation>
+            <wsdl:input message="tns:getSolicitudesConvocatoriaListasRequest"/>
+            <wsdl:output message="tns:getSolicitudesConvocatoriaListasResponse"/>
+        </wsdl:operation>
+        <wsdl:operation name="getNotasSolicitudOposicion">
+            <wsdl:documentation>Devuelve la informaci&#xF3;n de las notas de la solicitud en la convocatoria seleccionada</wsdl:documentation>
+            <wsdl:input message="tns:getNotasSolicitudOposicionRequest"/>
+            <wsdl:output message="tns:getNotasSolicitudOposicionResponse"/>
+        </wsdl:operation>
+        <wsdl:operation name="getHaySolicitudOposicionNota">
+            <wsdl:documentation>Devuelve la informaci&#xF3;n de si la solicitud esta o no calificada en la convocatoria seleccionada</wsdl:documentation>
+            <wsdl:input message="tns:getHaySolicitudOposicionNotaRequest"/>
+            <wsdl:output message="tns:getHaySolicitudOposicionNotaResponse"/>
+        </wsdl:operation>
+        <wsdl:operation name="getBaremoSolicitudOposicion">
+            <wsdl:documentation>Devuelve la informaci&#xF3;n del baremo de la solicitud en la oposici&#xF3;n seleccionada</wsdl:documentation>
+            <wsdl:input message="tns:getBaremoSolicitudOposicionRequest"/>
+            <wsdl:output message="tns:getBaremoSolicitudOposicionResponse"/>
+        </wsdl:operation>
+        <wsdl:operation name="getHaySolicitudOposicionBaremada">
+            <wsdl:documentation>Devuelve la informaci&#xF3;n de si la solicitud esta o no baremada en la convocatoria seleccionada</wsdl:documentation>
+            <wsdl:input message="tns:getHaySolicitudOposicionBaremadaRequest"/>
+            <wsdl:output message="tns:getHaySolicitudOposicionBaremadaResponse"/>
+        </wsdl:operation>
+        <wsdl:operation name="getOposicionesActivas">
+            <wsdl:documentation>Devuelve un array con las oposiciones activas</wsdl:documentation>
+            <wsdl:input message="tns:getOposicionesActivasRequest"/>
+            <wsdl:output message="tns:getOposicionesActivasResponse"/>
+        </wsdl:operation>
+        <wsdl:operation name="getOposicionesHaySolicitud">
+            <wsdl:documentation>Devuelve un array con las oposiciones en las que tiene solicitud</wsdl:documentation>
+            <wsdl:input message="tns:getOposicionesHaySolicitudRequest"/>
+            <wsdl:output message="tns:getOposicionesHaySolicitudResponse"/>
+        </wsdl:operation>
+        <wsdl:operation name="getSolicitudesOposicion">
+            <wsdl:documentation>Devuelve un array con las solicitudes a oposici&#xF3;n</wsdl:documentation>
+            <wsdl:input message="tns:getSolicitudesOposicionRequest"/>
+            <wsdl:output message="tns:getSolicitudesOposicionResponse"/>
+        </wsdl:operation>
+        <wsdl:operation name="getConvocatoriaOposicion">
+            <wsdl:documentation>Devuelve la informaci&#xF3;n de la oposici&#xF3;n seleccionada</wsdl:documentation>
+            <wsdl:input message="tns:getConvocatoriaOposicionRequest"/>
+            <wsdl:output message="tns:getConvocatoriaOposicionResponse"/>
+        </wsdl:operation>
+    </wsdl:portType>
+    <wsdl:binding name="ServerSigiconBinding" type="tns:ServerSigiconPortType">
+        <soap-env:binding xmlns="http://schemas.xmlsoap.org/wsdl/soap/" style="rpc" transport="http://schemas.xmlsoap.org/soap/http"/>
+        <wsdl:operation name="getBaremoSolicitudConvocatoriaListas">
+            <soap-env:operation xmlns="http://schemas.xmlsoap.org/wsdl/soap/" soapAction="http://localhost/CicloFormativoGradoSuperior/practicas_propias/php/miCarpeta/serviciosMiCarpetaSigicon/ServerSigicon.php?method=getBaremoSolicitudConvocatoriaListas" style="rpc"/>
+            <wsdl:input>
+                <soap-env:body xmlns="http://schemas.xmlsoap.org/wsdl/soap/" use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap-env:body xmlns="http://schemas.xmlsoap.org/wsdl/soap/" use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="getHaySolicitudConvocatoriaListasBaremada">
+            <soap-env:operation xmlns="http://schemas.xmlsoap.org/wsdl/soap/" soapAction="http://localhost/CicloFormativoGradoSuperior/practicas_propias/php/miCarpeta/serviciosMiCarpetaSigicon/ServerSigicon.php?method=getHaySolicitudConvocatoriaListasBaremada" style="rpc"/>
+            <wsdl:input>
+                <soap-env:body xmlns="http://schemas.xmlsoap.org/wsdl/soap/" use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap-env:body xmlns="http://schemas.xmlsoap.org/wsdl/soap/" use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="getSolicitudListas">
+            <soap-env:operation xmlns="http://schemas.xmlsoap.org/wsdl/soap/" soapAction="http://localhost/CicloFormativoGradoSuperior/practicas_propias/php/miCarpeta/serviciosMiCarpetaSigicon/ServerSigicon.php?method=getSolicitudListas" style="rpc"/>
+            <wsdl:input>
+                <soap-env:body xmlns="http://schemas.xmlsoap.org/wsdl/soap/" use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap-env:body xmlns="http://schemas.xmlsoap.org/wsdl/soap/" use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="getConvocatoriasListasActivas">
+            <soap-env:operation xmlns="http://schemas.xmlsoap.org/wsdl/soap/" soapAction="http://localhost/CicloFormativoGradoSuperior/practicas_propias/php/miCarpeta/serviciosMiCarpetaSigicon/ServerSigicon.php?method=getConvocatoriasListasActivas" style="rpc"/>
+            <wsdl:input>
+                <soap-env:body xmlns="http://schemas.xmlsoap.org/wsdl/soap/" use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap-env:body xmlns="http://schemas.xmlsoap.org/wsdl/soap/" use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="getConvocatoriaListas">
+            <soap-env:operation xmlns="http://schemas.xmlsoap.org/wsdl/soap/" soapAction="http://localhost/CicloFormativoGradoSuperior/practicas_propias/php/miCarpeta/serviciosMiCarpetaSigicon/ServerSigicon.php?method=getConvocatoriaListas" style="rpc"/>
+            <wsdl:input>
+                <soap-env:body xmlns="http://schemas.xmlsoap.org/wsdl/soap/" use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap-env:body xmlns="http://schemas.xmlsoap.org/wsdl/soap/" use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="getConvocatoriasListasHaySolicitud">
+            <soap-env:operation xmlns="http://schemas.xmlsoap.org/wsdl/soap/" soapAction="http://localhost/CicloFormativoGradoSuperior/practicas_propias/php/miCarpeta/serviciosMiCarpetaSigicon/ServerSigicon.php?method=getConvocatoriasListasHaySolicitud" style="rpc"/>
+            <wsdl:input>
+                <soap-env:body xmlns="http://schemas.xmlsoap.org/wsdl/soap/" use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap-env:body xmlns="http://schemas.xmlsoap.org/wsdl/soap/" use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="getSolicitudesConvocatoriaListas">
+            <soap-env:operation xmlns="http://schemas.xmlsoap.org/wsdl/soap/" soapAction="http://localhost/CicloFormativoGradoSuperior/practicas_propias/php/miCarpeta/serviciosMiCarpetaSigicon/ServerSigicon.php?method=getSolicitudesConvocatoriaListas" style="rpc"/>
+            <wsdl:input>
+                <soap-env:body xmlns="http://schemas.xmlsoap.org/wsdl/soap/" use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap-env:body xmlns="http://schemas.xmlsoap.org/wsdl/soap/" use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="getNotasSolicitudOposicion">
+            <soap-env:operation xmlns="http://schemas.xmlsoap.org/wsdl/soap/" soapAction="http://localhost/CicloFormativoGradoSuperior/practicas_propias/php/miCarpeta/serviciosMiCarpetaSigicon/ServerSigicon.php?method=getNotasSolicitudOposicion" style="rpc"/>
+            <wsdl:input>
+                <soap-env:body xmlns="http://schemas.xmlsoap.org/wsdl/soap/" use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap-env:body xmlns="http://schemas.xmlsoap.org/wsdl/soap/" use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="getHaySolicitudOposicionNota">
+            <soap-env:operation xmlns="http://schemas.xmlsoap.org/wsdl/soap/" soapAction="http://localhost/CicloFormativoGradoSuperior/practicas_propias/php/miCarpeta/serviciosMiCarpetaSigicon/ServerSigicon.php?method=getHaySolicitudOposicionNota" style="rpc"/>
+            <wsdl:input>
+                <soap-env:body xmlns="http://schemas.xmlsoap.org/wsdl/soap/" use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap-env:body xmlns="http://schemas.xmlsoap.org/wsdl/soap/" use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="getBaremoSolicitudOposicion">
+            <soap-env:operation xmlns="http://schemas.xmlsoap.org/wsdl/soap/" soapAction="http://localhost/CicloFormativoGradoSuperior/practicas_propias/php/miCarpeta/serviciosMiCarpetaSigicon/ServerSigicon.php?method=getBaremoSolicitudOposicion" style="rpc"/>
+            <wsdl:input>
+                <soap-env:body xmlns="http://schemas.xmlsoap.org/wsdl/soap/" use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap-env:body xmlns="http://schemas.xmlsoap.org/wsdl/soap/" use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="getHaySolicitudOposicionBaremada">
+            <soap-env:operation xmlns="http://schemas.xmlsoap.org/wsdl/soap/" soapAction="http://localhost/CicloFormativoGradoSuperior/practicas_propias/php/miCarpeta/serviciosMiCarpetaSigicon/ServerSigicon.php?method=getHaySolicitudOposicionBaremada" style="rpc"/>
+            <wsdl:input>
+                <soap-env:body xmlns="http://schemas.xmlsoap.org/wsdl/soap/" use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap-env:body xmlns="http://schemas.xmlsoap.org/wsdl/soap/" use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="getOposicionesActivas">
+            <soap-env:operation xmlns="http://schemas.xmlsoap.org/wsdl/soap/" soapAction="http://localhost/CicloFormativoGradoSuperior/practicas_propias/php/miCarpeta/serviciosMiCarpetaSigicon/ServerSigicon.php?method=getOposicionesActivas" style="rpc"/>
+            <wsdl:input>
+                <soap-env:body xmlns="http://schemas.xmlsoap.org/wsdl/soap/" use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap-env:body xmlns="http://schemas.xmlsoap.org/wsdl/soap/" use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="getOposicionesHaySolicitud">
+            <soap-env:operation xmlns="http://schemas.xmlsoap.org/wsdl/soap/" soapAction="http://localhost/CicloFormativoGradoSuperior/practicas_propias/php/miCarpeta/serviciosMiCarpetaSigicon/ServerSigicon.php?method=getOposicionesHaySolicitud" style="rpc"/>
+            <wsdl:input>
+                <soap-env:body xmlns="http://schemas.xmlsoap.org/wsdl/soap/" use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap-env:body xmlns="http://schemas.xmlsoap.org/wsdl/soap/" use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="getSolicitudesOposicion">
+            <soap-env:operation xmlns="http://schemas.xmlsoap.org/wsdl/soap/" soapAction="http://localhost/CicloFormativoGradoSuperior/practicas_propias/php/miCarpeta/serviciosMiCarpetaSigicon/ServerSigicon.php?method=getSolicitudesOposicion" style="rpc"/>
+            <wsdl:input>
+                <soap-env:body xmlns="http://schemas.xmlsoap.org/wsdl/soap/" use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap-env:body xmlns="http://schemas.xmlsoap.org/wsdl/soap/" use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="getConvocatoriaOposicion">
+            <soap-env:operation xmlns="http://schemas.xmlsoap.org/wsdl/soap/" soapAction="http://localhost/CicloFormativoGradoSuperior/practicas_propias/php/miCarpeta/serviciosMiCarpetaSigicon/ServerSigicon.php?method=getConvocatoriaOposicion" style="rpc"/>
+            <wsdl:input>
+                <soap-env:body xmlns="http://schemas.xmlsoap.org/wsdl/soap/" use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap-env:body xmlns="http://schemas.xmlsoap.org/wsdl/soap/" use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+            </wsdl:output>
+        </wsdl:operation>
+    </wsdl:binding>
+    <wsdl:service name="ServerSigicon">
+        <wsdl:documentation/>
+        <wsdl:port name="ServerSigiconPort" binding="tns:ServerSigiconBinding">
+            <soap-env:address location="http://localhost/CicloFormativoGradoSuperior/practicas_propias/php/miCarpeta/serviciosMiCarpetaSigicon/ServerSigicon.php"/>
+        </wsdl:port>
+    </wsdl:service>
+</wsdl:definitions>
+
