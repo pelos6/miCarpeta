@@ -1,6 +1,6 @@
 Proyecto Mi Carpeta
 ============================
-Proyecyo fín de ciclo para el Ciclo Formativo de Grado Superior de Desarrollo de Aplicaciones Web.
+Proyecto fín de ciclo para el Ciclo Formativo de Grado Superior de Desarrollo de Aplicaciones Web.
 
 Estructura de directorios
 -------------------
@@ -29,8 +29,15 @@ Estructura de directorios
 
 
 
+DOCUMENTACIÓN
+------------
+Puede navegar por la documentación empezando por el mapa
+doc/proyectoMapa.doc
+
+DEMO
+------------
+Puede ver una demo de este programa en http://www.javieriranzo.infenlaces.com/
 
 REQUISITOS
 ------------
-
 Este proyecto necesita que el servidor web soporte una versión mínima para PHP 5.4.0.
