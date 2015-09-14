@@ -1,0 +1,170 @@
+<?xml version="1.0"?>
+<wsdl:definitions xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:soap-enc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:soap-env="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="http://localhost/CicloFormativoGradoSuperior/practicas_propias/php/miCarpeta/serviciosMiCarpetaCtPri/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="http://localhost/CicloFormativoGradoSuperior/practicas_propias/php/miCarpeta/serviciosMiCarpetaCtPri/">
+    <wsdl:types>
+        <xsd:schema targetNamespace="http://localhost/CicloFormativoGradoSuperior/practicas_propias/php/miCarpeta/serviciosMiCarpetaCtPri/">
+            <xsd:complexType name="stringArray">
+                <xsd:complexContent>
+                    <xsd:restriction base="soap-enc:Array">
+                        <xsd:attribute ref="soap-enc:arrayType" wsdl:arrayType="xsd:string[]"/>
+                    </xsd:restriction>
+                </xsd:complexContent>
+            </xsd:complexType>
+        </xsd:schema>
+    </wsdl:types>
+    <wsdl:message name="getSolicitudesConcursoBaremadaRequest">
+        <wsdl:part name="cod_con" type="xsd:string"/>
+        <wsdl:part name="dni" type="xsd:string"/>
+        <wsdl:part name="cod_sol" type="xsd:string"/>
+    </wsdl:message>
+    <wsdl:message name="getSolicitudesConcursoBaremadaResponse">
+        <wsdl:part name="getSolicitudesConcursoBaremadaReturn" type="tns:stringArray"/>
+    </wsdl:message>
+    <wsdl:message name="getHaySolicitudConcursoBaremadaRequest">
+        <wsdl:part name="cod_con" type="xsd:string"/>
+        <wsdl:part name="dni" type="xsd:string"/>
+        <wsdl:part name="cod_sol" type="xsd:string"/>
+    </wsdl:message>
+    <wsdl:message name="getHaySolicitudConcursoBaremadaResponse">
+        <wsdl:part name="getHaySolicitudConcursoBaremadaReturn" type="tns:stringArray"/>
+    </wsdl:message>
+    <wsdl:message name="getConcursoHaySolicitudRequest">
+        <wsdl:part name="dni" type="xsd:string"/>
+    </wsdl:message>
+    <wsdl:message name="getConcursoHaySolicitudResponse">
+        <wsdl:part name="getConcursoHaySolicitudReturn" type="tns:stringArray"/>
+    </wsdl:message>
+    <wsdl:message name="getSolicitudesConcursoRequest">
+        <wsdl:part name="cod_opc" type="xsd:string"/>
+        <wsdl:part name="dni" type="xsd:string"/>
+    </wsdl:message>
+    <wsdl:message name="getSolicitudesConcursoResponse">
+        <wsdl:part name="getSolicitudesConcursoReturn" type="tns:stringArray"/>
+    </wsdl:message>
+    <wsdl:message name="getSolicitudConcursoRequest">
+        <wsdl:part name="cod_opc" type="xsd:string"/>
+        <wsdl:part name="dni" type="xsd:string"/>
+        <wsdl:part name="cod_sol" type="xsd:string"/>
+    </wsdl:message>
+    <wsdl:message name="getSolicitudConcursoResponse">
+        <wsdl:part name="getSolicitudConcursoReturn" type="tns:stringArray"/>
+    </wsdl:message>
+    <wsdl:message name="getConcursosActivosRequest"/>
+    <wsdl:message name="getConcursosActivosResponse">
+        <wsdl:part name="getConcursosActivosReturn" type="tns:stringArray"/>
+    </wsdl:message>
+    <wsdl:message name="getConcursoActivoRequest">
+        <wsdl:part name="cod_con" type="xsd:string"/>
+    </wsdl:message>
+    <wsdl:message name="getConcursoActivoResponse">
+        <wsdl:part name="getConcursoActivoReturn" type="tns:stringArray"/>
+    </wsdl:message>
+    <wsdl:portType name="ServerConcursosPrimariaPortType">
+        <wsdl:operation name="getSolicitudesConcursoBaremada">
+            <wsdl:documentation>Devuelve la informaci&#xF3;n de si hay o no solicitud baremada para esa solicitud en el concurso y para la persona seleccionada</wsdl:documentation>
+            <wsdl:input message="tns:getSolicitudesConcursoBaremadaRequest"/>
+            <wsdl:output message="tns:getSolicitudesConcursoBaremadaResponse"/>
+        </wsdl:operation>
+        <wsdl:operation name="getHaySolicitudConcursoBaremada">
+            <wsdl:documentation>Devuelve la informaci&#xF3;n de si hay o no solicitud baremada para esa solicitud en el concurso y para la persona seleccionada</wsdl:documentation>
+            <wsdl:input message="tns:getHaySolicitudConcursoBaremadaRequest"/>
+            <wsdl:output message="tns:getHaySolicitudConcursoBaremadaResponse"/>
+        </wsdl:operation>
+        <wsdl:operation name="getConcursoHaySolicitud">
+            <wsdl:documentation>Devuelve un array con los Concursos de primaria en las que tiene solicitud</wsdl:documentation>
+            <wsdl:input message="tns:getConcursoHaySolicitudRequest"/>
+            <wsdl:output message="tns:getConcursoHaySolicitudResponse"/>
+        </wsdl:operation>
+        <wsdl:operation name="getSolicitudesConcurso">
+            <wsdl:documentation>Devuelve un array con las solicitudes al concurso de traslasdos de primaria del usuario</wsdl:documentation>
+            <wsdl:input message="tns:getSolicitudesConcursoRequest"/>
+            <wsdl:output message="tns:getSolicitudesConcursoResponse"/>
+        </wsdl:operation>
+        <wsdl:operation name="getSolicitudConcurso">
+            <wsdl:documentation>Devuelve la informaci&#xF3;n de la solicitud al concurso de traslasdos de primaria del usuario</wsdl:documentation>
+            <wsdl:input message="tns:getSolicitudConcursoRequest"/>
+            <wsdl:output message="tns:getSolicitudConcursoResponse"/>
+        </wsdl:operation>
+        <wsdl:operation name="getConcursosActivos">
+            <wsdl:documentation>Devuelve un array con los concursos activos</wsdl:documentation>
+            <wsdl:input message="tns:getConcursosActivosRequest"/>
+            <wsdl:output message="tns:getConcursosActivosResponse"/>
+        </wsdl:operation>
+        <wsdl:operation name="getConcursoActivo">
+            <wsdl:documentation>Devuelve la informaci&#xF3;n del concurso seleccionado</wsdl:documentation>
+            <wsdl:input message="tns:getConcursoActivoRequest"/>
+            <wsdl:output message="tns:getConcursoActivoResponse"/>
+        </wsdl:operation>
+    </wsdl:portType>
+    <wsdl:binding name="ServerConcursosPrimariaBinding" type="tns:ServerConcursosPrimariaPortType">
+        <soap-env:binding xmlns="http://schemas.xmlsoap.org/wsdl/soap/" style="rpc" transport="http://schemas.xmlsoap.org/soap/http"/>
+        <wsdl:operation name="getSolicitudesConcursoBaremada">
+            <soap-env:operation xmlns="http://schemas.xmlsoap.org/wsdl/soap/" soapAction="http://localhost/CicloFormativoGradoSuperior/practicas_propias/php/miCarpeta/serviciosMiCarpetaCtPri/ServerConcursosPrimaria.php?method=getSolicitudesConcursoBaremada" style="rpc"/>
+            <wsdl:input>
+                <soap-env:body xmlns="http://schemas.xmlsoap.org/wsdl/soap/" use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap-env:body xmlns="http://schemas.xmlsoap.org/wsdl/soap/" use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="getHaySolicitudConcursoBaremada">
+            <soap-env:operation xmlns="http://schemas.xmlsoap.org/wsdl/soap/" soapAction="http://localhost/CicloFormativoGradoSuperior/practicas_propias/php/miCarpeta/serviciosMiCarpetaCtPri/ServerConcursosPrimaria.php?method=getHaySolicitudConcursoBaremada" style="rpc"/>
+            <wsdl:input>
+                <soap-env:body xmlns="http://schemas.xmlsoap.org/wsdl/soap/" use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap-env:body xmlns="http://schemas.xmlsoap.org/wsdl/soap/" use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="getConcursoHaySolicitud">
+            <soap-env:operation xmlns="http://schemas.xmlsoap.org/wsdl/soap/" soapAction="http://localhost/CicloFormativoGradoSuperior/practicas_propias/php/miCarpeta/serviciosMiCarpetaCtPri/ServerConcursosPrimaria.php?method=getConcursoHaySolicitud" style="rpc"/>
+            <wsdl:input>
+                <soap-env:body xmlns="http://schemas.xmlsoap.org/wsdl/soap/" use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap-env:body xmlns="http://schemas.xmlsoap.org/wsdl/soap/" use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="getSolicitudesConcurso">
+            <soap-env:operation xmlns="http://schemas.xmlsoap.org/wsdl/soap/" soapAction="http://localhost/CicloFormativoGradoSuperior/practicas_propias/php/miCarpeta/serviciosMiCarpetaCtPri/ServerConcursosPrimaria.php?method=getSolicitudesConcurso" style="rpc"/>
+            <wsdl:input>
+                <soap-env:body xmlns="http://schemas.xmlsoap.org/wsdl/soap/" use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap-env:body xmlns="http://schemas.xmlsoap.org/wsdl/soap/" use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="getSolicitudConcurso">
+            <soap-env:operation xmlns="http://schemas.xmlsoap.org/wsdl/soap/" soapAction="http://localhost/CicloFormativoGradoSuperior/practicas_propias/php/miCarpeta/serviciosMiCarpetaCtPri/ServerConcursosPrimaria.php?method=getSolicitudConcurso" style="rpc"/>
+            <wsdl:input>
+                <soap-env:body xmlns="http://schemas.xmlsoap.org/wsdl/soap/" use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap-env:body xmlns="http://schemas.xmlsoap.org/wsdl/soap/" use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="getConcursosActivos">
+            <soap-env:operation xmlns="http://schemas.xmlsoap.org/wsdl/soap/" soapAction="http://localhost/CicloFormativoGradoSuperior/practicas_propias/php/miCarpeta/serviciosMiCarpetaCtPri/ServerConcursosPrimaria.php?method=getConcursosActivos" style="rpc"/>
+            <wsdl:input>
+                <soap-env:body xmlns="http://schemas.xmlsoap.org/wsdl/soap/" use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap-env:body xmlns="http://schemas.xmlsoap.org/wsdl/soap/" use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="getConcursoActivo">
+            <soap-env:operation xmlns="http://schemas.xmlsoap.org/wsdl/soap/" soapAction="http://localhost/CicloFormativoGradoSuperior/practicas_propias/php/miCarpeta/serviciosMiCarpetaCtPri/ServerConcursosPrimaria.php?method=getConcursoActivo" style="rpc"/>
+            <wsdl:input>
+                <soap-env:body xmlns="http://schemas.xmlsoap.org/wsdl/soap/" use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap-env:body xmlns="http://schemas.xmlsoap.org/wsdl/soap/" use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+            </wsdl:output>
+        </wsdl:operation>
+    </wsdl:binding>
+    <wsdl:service name="ServerConcursosPrimaria">
+        <wsdl:documentation/>
+        <wsdl:port name="ServerConcursosPrimariaPort" binding="tns:ServerConcursosPrimariaBinding">
+            <soap-env:address location="http://localhost/CicloFormativoGradoSuperior/practicas_propias/php/miCarpeta/serviciosMiCarpetaCtPri/ServerConcursosPrimaria.php"/>
+        </wsdl:port>
+    </wsdl:service>
+</wsdl:definitions>
