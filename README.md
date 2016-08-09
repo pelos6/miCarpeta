@@ -43,7 +43,7 @@ REQUISITOS
 Este proyecto necesita que el servidor web soporte una versión mínima para PHP 5.4.0.
 
 ver como resuelve las etiquetas 
-# esto es un titulo superor
+# esto es un titulo superior
 loren ipsum
 ## esto es otro inferior
 loren ipsum
@@ -53,5 +53,5 @@ loren ipsum
 loren ipsum
 ## esto es otro inferior
 loren ipsum
-# esto es un titulo supero
+# esto es un titulo superior
 loren ipsum
